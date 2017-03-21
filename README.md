@@ -4,8 +4,8 @@ This is the supporting material for a one-day hands-on workshop that introduces 
 All of the material here is released under the [MIT license](https://github.com/apigee-internal/devjam3/blob/master/LICENSE.md)
 
 ### Agenda
-A brief presentation : 15 mins
-Product Demo : 60 mins
+* A brief presentation : 15 mins
+* Product Demo : 60 mins
 
 ### Core Labs
 * API Design - Create a Reverse Proxy with OpenAPI specification
