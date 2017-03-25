@@ -27,11 +27,11 @@ Basic understanding of [OpenAPI Specification](https://github.com/OAI/OpenAPI-Sp
 
 * Select **Develop → Specs** in the side navigation menu
 
-![image alt text](image_0.png)
+![image alt text](./media/image_0.png)
 
 * Click **+Spec.** Click on **Import URL** to add a new spec from existing source.
 
-![image alt text](image_1.png)
+![image alt text](./media/image_1.png)
 
 * Enter spec details. Replace **{your-initials}** with the initials of your name.
 
@@ -39,7 +39,7 @@ Basic understanding of [OpenAPI Specification](https://github.com/OAI/OpenAPI-Sp
 
   * URL: [http://playground.apistudio.io/070cde0a-44f7-4e2c-8085-6e1020db7baf/spec](http://playground.apistudio.io/070cde0a-44f7-4e2c-8085-6e1020db7baf/spec)
 
-![image alt text](image_2.png)
+![image alt text](./media/image_2.png)
 
 **	**
 
@@ -47,30 +47,30 @@ Basic understanding of [OpenAPI Specification](https://github.com/OAI/OpenAPI-Sp
 
 * Spec has been imported into Apigee Edge & Ready to use. You should see your spec in the list. For example,
 
-![image alt text](image_3.png)
+![image alt text](./media/image_3.png)
 
 * Click on **{your-initials}**_employee_api_spec from the list to access Open API spec editor & interactive documentation that lists API details & API Resources.
 
-![image alt text](image_4.png)
+![image alt text](./media/image_4.png)
 
 * It’s time to create Apigee API Proxy from Open API Spec. Click on **Develop > API Proxies** from side navigation menu.
 
-![image alt text](image_5.jpg)
+![image alt text](./media/image_5.jpg)
 
 * Click **+Proxy** The Build a Proxy wizard is invoked. 
-![image alt text](image_6.jpg)
+![image alt text](./media/image_6.jpg)
 
 * Select **Reverse proxy**, Click on **Use OpenAPI** below reverse proxy option.
 
-![image alt text](image_7.png)
+![image alt text](./media/image_7.png)
 
 * You should see a popup with list of Specs. Select **{your-initials}**_employee_api_spec and click **Select.** 
 
-![image alt text](image_8.png)
+![image alt text](./media/image_8.png)
 
 * You can see the selected OpenAPI Spec URL below the Reverse Proxy option, Click **Next** to continue.
 
-![image alt text](image_9.png)
+![image alt text](./media/image_9.png)
 
 * Enter details in the proxy wizard. Replace **{your-initials}** with the initials of your name. 
 
@@ -80,29 +80,29 @@ Basic understanding of [OpenAPI Specification](https://github.com/OAI/OpenAPI-Sp
 
   * Existing API: Observe the field value which is auto filled from OpenAPI Spec.
 
-![image alt text](image_10.png)
+![image alt text](./media/image_10.png)
 
 * Verify the values and click **Next**.
 
 * You can select, de-select list of API Proxy Resources that are pre-filled from OpenAPI Spec. Select all & Click on **Next**
 
-![image alt text](image_11.png)
+![image alt text](./media/image_11.png)
 
 * Select **Pass through (none)** for the authorization in order to choose not to apply any security policy for the proxy. Click Next. 
-![image alt text](image_12.jpg)
+![image alt text](./media/image_12.jpg)
 
 * Go with the **default Virtual Host** configuration.
-![image alt text](image_13.jpg)
+![image alt text](./media/image_13.jpg)
 
 * Ensure that only the **test** environment is selected to deploy to and click **Build and Deploy** 
-![image alt text](image_14.jpg)
+![image alt text](./media/image_14.jpg)
 
 * Once the API proxy is built and deployed **click** the link to view your proxy in the proxy editor. 
 
-![image alt text](image_15.png)
+![image alt text](./media/image_15.png)
 
 * You should see the proxy **Overview** screen
-![image alt text](image_16.png)
+![image alt text](./media/image_16.png)
 
 * *Congratulations!* ...You have now built a reverse proxy for an existing backend service.
 
@@ -111,14 +111,14 @@ Basic understanding of [OpenAPI Specification](https://github.com/OAI/OpenAPI-Sp
 * Copy the URL for your API proxy. 
 
 	
-![image alt text](image_17.png)
+![image alt text](./media/image_17.png)
 
 * Paste the link on the REST Client and make a GET call
 
-![image alt text](image_18.png)
+![image alt text](./media/image_18.png)
 
 * You should see a success response similar to this -
-![image alt text](image_19.jpg)
+![image alt text](./media/image_19.jpg)
 
 # Lab Video
 
