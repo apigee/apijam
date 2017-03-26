@@ -24,21 +24,21 @@ You have an API proxy created in Apigee Edge. If not, jump back to *API Design :
 
 * Select **Develop → API Proxies** in the side navigation menu
 
-	![image alt text](./media/image_0.jpg)
+![image alt text](./media/image_0.jpg)
 
-* From the list of proxies, Click the name of your API proxy.
+* From the list of proxies, click on your Employee API proxy that you created in the earlier lab.
 
-	![image alt text](./media/image_1.png)
+![image alt text](./media/image_1.png)
 
 * Click on the **Develop** tab. Select **PreFlow** from the sidebar under **Proxy Endpoints** section
 
-	![image alt text](./media/image_2.png)
+![image alt text](./media/image_2.png)
 
 * First, let’s protect your backend from XML threats by enforcing certain limits on the XML structure of the payload.
 
 * In the Request flow, click the **+ Step** button and from the *Security* section, add the policy named **XML Threat Protection**.
 
-	![image alt text](./media/image_3.png)
+![image alt text](./media/image_3.png)
 
 * Click on the Policy in PreFlow and clear the boilerplate code and paste the code below in the code editor.
 
@@ -75,11 +75,11 @@ You have an API proxy created in Apigee Edge. If not, jump back to *API Design :
 </RegularExpressionProtection>
 ```
 
-[image alt text](./media/image_6.png)
+![image alt text](./media/image_6.png)
 
 * **Save** the proxy and deploy it on the *test* environment.
 
-	![image alt text](./media/image_7.png)
+![image alt text](./media/image_7.png)
 
 * *Congratulations!*...Your API is now protected from SQL Injection Attacks.
 
@@ -87,11 +87,11 @@ You have an API proxy created in Apigee Edge. If not, jump back to *API Design :
 
 * Copy the URL for your API proxy. 
 
-	![image alt text](./media/image_8.png)
+![image alt text](./media/image_8.png)
 
 * Paste the URL, select **POST** from the dropdown and then add *Content-type* header with the value ``application/xml``
 
-  ![image alt text](./media/image_9.png)
+![image alt text](./media/image_9.png)
 
 * Select the **body** tab and then paste the following body content and click the **Send** button
 
@@ -104,7 +104,7 @@ You have an API proxy created in Apigee Edge. If not, jump back to *API Design :
 </book>
 ```
 
-  ![image alt text](./media/image_10.png)
+![image alt text](./media/image_10.png)
 
 * You should see a response like this
 
@@ -118,7 +118,7 @@ Note: The above response shows that the children count exceeded 3 because, the p
 
 * You should see a response like this
 
-	![image alt text](./media/image_12.png)
+![image alt text](./media/image_12.png)
 
 # Lab Video
 
