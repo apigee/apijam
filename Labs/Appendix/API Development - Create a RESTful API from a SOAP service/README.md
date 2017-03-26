@@ -76,7 +76,7 @@ Note: Replace **{your-initials}** with your initials.
 
 * *Congratulations!*...You have now built a RESTful API proxy for an existing SOAP backend service.
 
-* Now let’s test the newly built API proxy using the [REST Client] (https://apigee-rest-client.appspot.com/). Open the REST Client on a new browser window.  
+* Now let’s test the newly built API proxy using the [REST Client](https://apigee-rest-client.appspot.com/). Open the REST Client on a new browser window.  
 
 * Copy the URL for your API proxy.  Also copy the resource name - ```/quote```.  We will use this endpoint to obtain the stock quote for symbol **GOOG** (for Google).
 
