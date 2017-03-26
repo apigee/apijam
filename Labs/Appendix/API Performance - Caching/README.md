@@ -228,7 +228,9 @@ You should see something like this, Select the **test** environment:
 
 Create a named cache resource with your initials. Then, return to your Proxy, and modify the ResponseCache policy to explicitly use that named cache resource. hint: see [the documentation for the ResponseCache policy](http://apigee.com/docs/api-services/reference/response-cache-policy). It might have something to do with adding an element like this to the configuration: 
 
+```
 <CacheResource>name_of_cache_resource</CacheResource>
+```
 
 Verify the behavior with 10 second TTL is now changed. Another thing to try: reset the TTL in the policy to 3600, and then run a few test requests. Verify that the cache is hot. Return to the cache management page, and clear the cache you created. Then try a new request. You should see that the cache is now cold.
 
