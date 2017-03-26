@@ -34,13 +34,19 @@ None.
 
   ![image alt text](./media/image_2.jpg)
 
-* Enter details in the proxy wizard. Replace **{your-initials}** with the initials of your name. 
+* Enter details in the proxy wizard. 
+
+	* Proxy Name - **{your-initials}**_stockquote
+	
+	* Proxy Base Path - /v1/**{your-initials}**_stockquote
 
   ![image alt text](./media/image_3.jpg)
 
+Note: Replace **{your-initials}** with your initials.
+
 * **Verify** the values and click **Next**.
 
-* Set the API Proxy Type to **REST to SOAP to REST **and click Next.
+* Set the API Proxy Type to **REST to SOAP to REST** and click **Next**.
 
   ![image alt text](./media/image_4.jpg)	
 
