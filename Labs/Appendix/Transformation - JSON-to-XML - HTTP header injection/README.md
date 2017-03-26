@@ -36,7 +36,7 @@ For this lab, you will need an API Proxy that returns JSON.  If you do not have 
 
 ![image alt text](./media/image_0.jpg)
 
-* Find and open the API Proxy you want to transform by clicking on it.
+* Find and open the Employee API Proxy that you want transform by clicking on it.
 
 ![image alt text](./media/image_1.png)
 
