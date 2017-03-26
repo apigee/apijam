@@ -18,7 +18,7 @@ All of the material here is released under the [MIT license](https://github.com/
 8. Consume APIs
 9. API Analytics - Custom Reports
 
-### Appendix Labs
+### [Appendix Labs](https://github.com/SudheendraBS/devjam3/tree/patch-2/Labs/Appendix)
 * API Development - Create a RESTful API from a SOAP service
 * API Development - Create a Reverse Proxy
 * API Security - Securing APIs with OAuth (3-legged)
