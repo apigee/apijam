@@ -16,19 +16,7 @@ In this lab we will see how to use an out of the box traffic management policy, 
 
 # Pre-requisites
 
-Apigee Edge API Proxy created in earlier lab exercise. If not, jump back to "API Development - Create a Reverse Proxy" lab.
-
-Let’s override the API Proxy to make it ready for this lab. We are going to revert the proxy to initial revision to get started with this lab.
-
-* Upload the bundle downloaded in "API Development - Create a Reverse Proxy" lab by following instructions below.
-
-![image alt text](./media/image_0.png)
-
-* Select the downloaded bundle from your local machine.
-
-![image alt text](./media/image_1.png)
-
-Above steps will reset the API proxy to the initial version so that you are ready to proceed with lab below.
+Apigee Edge API Proxy created in earlier lab exercise. If not, jump back to "API Design - Create a Reverse Proxy with OpenAPI specification" lab.
 
 # Instructions
 
