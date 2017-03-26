@@ -110,7 +110,6 @@ Basic understanding of [OpenAPI Specification](https://github.com/OAI/OpenAPI-Sp
 
 * Copy the URL for your API proxy. 
 
-	
 ![image alt text](./media/image_17.png)
 
 * Paste the link on the REST Client and make a GET call
@@ -119,6 +118,14 @@ Basic understanding of [OpenAPI Specification](https://github.com/OAI/OpenAPI-Sp
 
 * You should see a success response similar to this -
 ![image alt text](./media/image_19.jpg)
+
+# Save the API Proxy
+
+* Let’s save the API Proxy locally as an API Bundle so that we can reuse it in other labs.
+
+* Save the API Proxy by downloading the proxy bundle, See screenshot below for instructions.
+
+![image alt text](./media/image_20.png)
 
 # Lab Video
 
