@@ -94,7 +94,7 @@ In order to get access to an API key you must register a developer App with the 
 
 # Part 3 - Test access to the API using the API Key
 
-* Let us test the API proxy using the [REST Client] (https://apigee-rest-client.appspot.com/). Open the REST Client on a new browser window.  
+* Let us test the API proxy using the [REST Client](https://apigee-rest-client.appspot.com/). Open the REST Client on a new browser window.  
 
 * Copy the URL for your API proxy. 
 
