@@ -8,15 +8,15 @@ All of the material here is released under the [MIT license](https://github.com/
 * Product Demo : 60 mins
 
 ### Core Labs
-* API Design - Create a Reverse Proxy with OpenAPI specification
-* Traffic Management - Throttle APIs
-* API Diagnostics - Trace tool
-* API Security - Securing APIs with API Keys
-* Traffic Management - Rate Limit APIs
-* API Publishing - Documentation 
-* API Publishing - Developer Portal Customization
-* Consume APIs
-* API Analytics - Custom Reports
+1. API Design - Create a Reverse Proxy with OpenAPI specification
+2. Traffic Management - Throttle APIs
+3. API Diagnostics - Trace tool
+4. API Security - Securing APIs with API Keys
+5. Traffic Management - Rate Limit APIs
+6. API Publishing - Documentation 
+7. API Publishing - Developer Portal Customization
+8. Consume APIs
+9. API Analytics - Custom Reports
 
 ### Appendix Labs
 * API Development - Create a RESTful API from a SOAP service
