@@ -1,1 +1,0 @@
-Apigee DevJam Core labs.
