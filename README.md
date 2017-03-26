@@ -7,7 +7,7 @@ All of the material here is released under the [MIT license](https://github.com/
 * A brief presentation : 15 mins
 * Product Demo : 60 mins
 
-### Core Labs
+### [Core Labs](https://github.com/SudheendraBS/devjam3/tree/patch-2/Labs/Core)
 1. API Design - Create a Reverse Proxy with OpenAPI specification
 2. Traffic Management - Throttle APIs
 3. API Diagnostics - Trace tool
