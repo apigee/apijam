@@ -84,7 +84,7 @@ None.
 
   ![image alt text](./media/image_11.jpg)
 
-# Save the API Proxy:
+# Save the API Proxy
 
 * Let’s save the API Proxy locally as an API Bundle so that we can reuse it in other labs.
 
