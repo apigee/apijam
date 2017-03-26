@@ -175,7 +175,7 @@ An App Developer can create any number of Apps.  Each App can register for any n
 
 * You should see a 401 (unauthorized) response for your API Call because the API Proxy was expecting an API Key as a query parameter.  See the trace session below
 
-* Now add the query parameter *?apikey={your_api_key}* to the URL in the trace tool and try again.  (Use the API Key you created [here](#bookmark=id.mueb50zfeta3)) and resend the request.
+* Now add the query parameter ```?apikey={your_api_key}``` to the URL in the trace tool and try again.  (Use the API Key you created [here](#bookmark=id.mueb50zfeta3)) and resend the request.
 
 * You should see a 2xx response code and the Trace for that request should show that the Verify API Key policy is now passing.
 
