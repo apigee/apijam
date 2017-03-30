@@ -1,5 +1,5 @@
 # Apigee DevJam
-This is the supporting material for a one-day hands-on workshop that introduces developers to Apigee Edge. We call it a "**Apigee DevJam**".
+This is the supporting material for a one-day hands-on workshop that introduces developers to Apigee Edge. We call it this event, the "**Apigee DevJam**".
 
 All of the material here is released under the [MIT license](https://github.com/apigee-internal/devjam3/blob/master/LICENSE.md)
 
@@ -7,7 +7,7 @@ All of the material here is released under the [MIT license](https://github.com/
 * A brief presentation : 15 mins
 * Product Demo : 60 mins
 
-### [Core Labs](https://github.com/SudheendraBS/devjam3/tree/patch-2/Labs/Core)
+### [Core Labs](./Labs/Core)
 1. API Design - Create a Reverse Proxy with OpenAPI specification
 2. Traffic Management - Throttle APIs
 3. API Diagnostics - Trace tool
@@ -18,7 +18,7 @@ All of the material here is released under the [MIT license](https://github.com/
 8. Consume APIs
 9. API Analytics - Custom Reports
 
-### [Appendix Labs](https://github.com/SudheendraBS/devjam3/tree/patch-2/Labs/Appendix)
+### [Appendix Labs](./Labs/Appendix)
 * API Development - Create a RESTful API from a SOAP service
 * API Development - Create a Reverse Proxy
 * API Security - Securing APIs with OAuth (3-legged)
