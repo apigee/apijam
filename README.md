@@ -1,7 +1,7 @@
 # Apigee DevJam
 This is the supporting material for a one-day hands-on workshop that introduces developers to Apigee Edge. We call it this event, the "**Apigee DevJam**".
 
-All of the material here is released under the [MIT license](https://github.com/apigee-internal/devjam3/blob/master/LICENSE.md)
+All of the material here is released under the [MIT license](./LICENSE.md)
 
 ### Agenda
 * A brief presentation : 15 mins
