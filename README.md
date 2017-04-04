@@ -1,5 +1,5 @@
 # Apigee DevJam
-This is the supporting material for a one-day hands-on workshop that introduces developers to Apigee Edge. We call it this event an "**Apigee DevJam**".
+This is the supporting material for a one-day hands-on workshop that introduces developers to Apigee Edge. We call this event an "**Apigee DevJam**".
 
 All of the material here is released under the [MIT license](./LICENSE.md)
 
