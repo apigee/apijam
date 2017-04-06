@@ -52,16 +52,12 @@ Apigee Edge API Proxy created in earlier lab exercise. If not, jump back to "API
 
 * Change the Policy XML configuration to below code & update the rate to 12pm.
 ```
-<table>
-  <tr>
-    <td><?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <SpikeArrest async="false" continueOnError="false" enabled="true" name="Spike-Arrest-1">
     <DisplayName>Spike Arrest-1</DisplayName>
     <Properties/>
     <Rate>12pm</Rate>
-</SpikeArrest></td>
-  </tr>
-</table>
+</SpikeArrest>
 ```
 
 Think of Spike Arrest as a way to generally protect against traffic spikes rather than as a way to limit traffic to a specific number of requests. Your APIs and backend can handle a certain amount of traffic, and the Spike Arrest policy helps you smooth traffic to the general amounts you want.
