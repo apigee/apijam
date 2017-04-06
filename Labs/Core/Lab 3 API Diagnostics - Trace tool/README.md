@@ -41,7 +41,7 @@ You have an API proxy created in Apigee Edge. If not, jump back to the "Create R
 
 ![image alt text](./media/image_3.png)
 
-* Select **Extract Variables Policy**. Name the policy "Extract My Initials", and click on the **Add** button to add the Extract Variables policy.
+* Select **Extract Variables Policy**. Name the policy "Extract-Initials", and click on the **Add** button to add the Extract Variables policy.  Be aware that if you choose a different policy name, it will conflict when you paste the policy code snippet below.
 
 Note: The Extract Variables policy icon is visible on the request flow and shows exactly where the policy is attached. Corresponding XML (in keeping with Edge’s config-then-code approach) can be seen in an edit pane below.
 
