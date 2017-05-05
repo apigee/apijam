@@ -36,9 +36,9 @@ For this lab, you will need an API Proxy that is not currently secured.  If you 
 
 ![image alt text](./media/image_0.jpg)
 
-* Find and open the API Proxy you want to secure by clicking on it.
+* Select the *{your_initials}*_employee_proxty that you created in an earlier lab exercise.
 
-![image alt text](./media/image_1.png)
+![image alt text](./media/image_1_123.png)
 
 * Verify that the API Proxy is deployed to an environment from the **Overview** page.  Environment(s) to which the selected revision of the API Proxy is deployed will be indicated by a green circle.  If it is not deployed, click an environment from the "Deployment" pull-down to deploy the API Proxy to that environment.
 
