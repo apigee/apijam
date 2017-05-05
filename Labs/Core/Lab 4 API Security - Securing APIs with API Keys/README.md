@@ -80,7 +80,7 @@ Once secured, consuming apps will need an API Key to successfully invoke your AP
 
             * Click the **+API Proxy** button
 
-            * Select your API Proxy
+            * Select your Employee API Proxy.
 
 * **Save** the API Product.
 
