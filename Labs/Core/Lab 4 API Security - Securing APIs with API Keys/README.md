@@ -50,8 +50,6 @@ For this lab, you will need an API Proxy that is not currently secured.  If you 
 
 * The Trace view allows you to initiate tracing for up to 10 minutes, during which time all requests (regardless of whether they are sent from the trace tool or any other client) will be captured and their traces made visible to you.
 
-![image alt text](./media/image_3.png)
-
 * Click **Start Trace Session** to begin a trace session.
 
 * Click **Send** to send a request.  If your API Proxy requires query parameters add them here prior to sending.
