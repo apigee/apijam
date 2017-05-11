@@ -31,9 +31,6 @@ Apigee Edge Microgateway provides the following features:
 * Create your custom policies in Node.js and enforce by Microgateway
 
 
-### NOTE : THIS LAB WILL ONLY WORK ON ENTERPRISE ORGS (NOT ON TRIAL)
-
-
 # Overview
 
 This topic shows you how to setup and configure a working Edge Microgateway instance. In general, you'll need to follow these same steps each time you set up a new instance of Edge Microgateway. 
