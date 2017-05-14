@@ -137,3 +137,4 @@ That completes this hands-on lesson. In this simple lab you learned how to custo
 
 How did you like this lab? Rate [here](https://goo.gl/forms/GvGcxAgV1RTGAV2y1).
 
+Now to go [Lab-8](https://github.com/apigee/devjam3/tree/master/Labs/Core/Lab%208%20Consume%20APIs)
