@@ -181,3 +181,4 @@ In this lab, you learned how to diagnose a reported problem with your API in rea
 
 How did you link this lab? Rate [here](https://docs.google.com/a/google.com/forms/d/1Rc17-TqTtqfXgOu9SqYbVGyAzssnANftD2Hpspmr1KQ).
 
+Now to go [Lab-4](https://github.com/apigee/devjam3/tree/master/Labs/Core/Lab%204%20API%20Security%20-%20Securing%20APIs%20with%20API%20Keys)
