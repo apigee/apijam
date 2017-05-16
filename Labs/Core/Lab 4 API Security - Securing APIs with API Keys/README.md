@@ -169,7 +169,7 @@ An App Developer can create any number of Apps.  Each App can register for any n
 
 * Click **Start Trace Session** to begin a trace session.
 
-* Click **Send** to send a request.  If your API Proxy requires query parameters add them dire prior to sending (Do not add the API Key yet)
+* Click **Send** to send a request.  If your API Proxy requires query parameters, add them  prior to sending (Do not add the API Key yet)
 
 * You should see a 401 (unauthorized) response for your API Call because the API Proxy was expecting an API Key as a query parameter.  See the trace session below
 
