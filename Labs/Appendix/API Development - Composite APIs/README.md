@@ -38,7 +38,7 @@ For the service callout to convert the zipcode to the geocoordinate, you will us
 
 # How can Apigee Edge help?
 
-Apigee Edge enables you to design API behavior by using the out of the box policie'. A policy is like a module that implements a specific, limited management function. Policies are designed to let you add common types of management capabilities to an API easily and reliably.
+Apigee Edge enables you to design API behavior by using the out of the box policies. A policy is like a module that implements a specific, limited management function. Policies are designed to let you add common types of management capabilities to an API easily and reliably.
 
 In this lab we will see how you can extend an existing API by aggregating it with another API and creating a single interface for your App Developers to consume. In this example, we will be combining data from our Employee API with the Google Weather to have a single response of the employee information and weather for their location. We will discover and use the following types of policies:
 
