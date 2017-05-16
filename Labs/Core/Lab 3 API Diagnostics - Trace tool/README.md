@@ -100,7 +100,7 @@ Consider a scenario where one of your API consumers reports seeing 404 errors in
 * Edit your URL field once more to follow the pattern below
 
 ```
-/07b830b3-1f91-11e7-9fee-0ad881f403bf?initials={your initials}
+/e7f5ce16-205e-11e7-990c-0eec2415f3df?initials={your initials}
 ```
 
 * Update above {your initials} with your actual initials & remove the braces
@@ -120,7 +120,7 @@ Now, imagine troubleshooting this issue - except with hundreds or thousands of r
 * Expand the filters pane on the left side of your screen.  Then add a query parameter filter named ‘initials’.  Put your initials in the value column and ensure the URL also holds your initials, like before.
 
 ```
-/07b830b3-1f91-11e7-9fee-0ad881f403bf?initials={your initials}
+/e7f5ce16-205e-11e7-990c-0eec2415f3df?initials={your initials}
 ```
 
 ![image alt text](./media/image_8.png)
@@ -132,7 +132,7 @@ Now, imagine troubleshooting this issue - except with hundreds or thousands of r
 * Update the URL with a new, fake value for the initials query parameter.  Example below.
 
 ```
-/07b830b3-1f91-11e7-9fee-0ad881f403bf?initials=xyz
+/e7f5ce16-205e-11e7-990c-0eec2415f3df?initials=xyz
 ```
 
 ![image alt text](./media/image_11.png)
