@@ -137,7 +137,7 @@ Now that you have created a reverse proxy using OpenAPI spec, Click on the Devel
 
 # Quiz
 
-1. How to download (backup) the proxy you just created ? 
+1. How do you download (backup) the proxy you just created ? 
 
 2. Why trace is useful in API Proxy development ?
 
