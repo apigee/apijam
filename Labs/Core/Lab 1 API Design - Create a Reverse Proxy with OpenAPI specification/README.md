@@ -6,7 +6,7 @@
 
 # Use case
 
-You have a requirement to create a reverse proxy for taking requests from the Internet and forward them to an existing service. You have decided to follow design first approach & built a reusable component, a specification which can be used to build API Proxies, generate API documentation, generate API test cases using OpenAPI Specification format. You would like to generate an Apigee API Proxy by using the OpenAPI Specification (Swagger) instead of building the API Proxy from scratch.
+You have a requirement to create a reverse proxy for taking requests from the Internet and forward them to an existing service. You have decided to follow a design first approach & built a reusable component, a specification which can be used to build API Proxies, generate API documentation, generate API test cases using OpenAPI Specification format. You would like to generate an Apigee API Proxy by using the OpenAPI Specification (Swagger) instead of building the API Proxy from scratch.
 
 # How can Apigee Edge help?
 
@@ -112,7 +112,7 @@ Basic understanding of [OpenAPI Specification](https://github.com/OAI/OpenAPI-Sp
 
 ![image alt text](./media/image_17.png)
 
-* Paste the link on the REST Client and make a GET call
+* Paste the link into the REST Client and make a GET call
 
 ![image alt text](./media/image_18.png)
 
@@ -139,7 +139,7 @@ Now that you have created a reverse proxy using OpenAPI spec, Click on the Devel
 
 1. How do you download (backup) the proxy you just created ? 
 
-2. Why trace is useful in API Proxy development ?
+2. Why is the Trace tool useful in API Proxy development?
 
 # Summary
 
