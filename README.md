@@ -33,3 +33,6 @@ You can start with the first lab [1. API Design - Create a Reverse Proxy with Op
 * API Security - Securing APIs with OAuth (2-legged)
 
 NOTE: Appendix items are optional.
+
+#### Apigee Community 
+If you have any questions/comments please visit https://community.apigee.com/index.html
