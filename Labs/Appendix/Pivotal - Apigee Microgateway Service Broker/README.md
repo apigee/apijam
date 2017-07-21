@@ -1,4 +1,4 @@
-# Pivotal : Create a Microgateway Service Broker
+# Apigee Microgateway Service Broker Pivotal CF: Create an API Proxy 
 
 *Duration : 45 mins*
 
