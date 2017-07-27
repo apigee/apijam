@@ -172,9 +172,6 @@ PCF_SPACE: An org can contain multiple spaces. This is the space you will pick f
     - You can choose to decorate your App, with the Apigee Edge Microgateway meta build pack
     - If you are using Apigee Private cloud, you can choose to manage the private cloud through PCF's BOSH
 
-# Lab Video
-
-If you are lazy and don’t want to implement this use case, it’s OK. You can watch this short video. Guess what, the lab owner is equally lazy. We will update the lab video soon!
 
 # Earn Extra-points
 
@@ -203,5 +200,5 @@ In this lab you have added API Management to an API created in PCF.
 
 # Rate this lab
 
-How did you link this lab? Rate [here](https://drive.google.com/open?id=1L95jU79wmOP-rHVY2Laba8lApZpS-yztwdONz0nCzWs).
+How did you like this lab? Rate [here](https://docs.google.com/forms/d/e/1FAIpQLSf048tEsGEfy6f6B0dd3ujg5MrkBgmcXKf9zVzgIubHtTEwnw/viewform?c=0&w=1).
 
