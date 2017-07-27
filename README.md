@@ -1,7 +1,7 @@
 # Apigee API Jam
 This is the supporting material for a one-day hands-on workshop that introduces developers to Apigee Edge. We call this event an "**Apigee API Jam**".
 
-All of the material here is released under the [MIT license](./LICENSE.md)
+All of the material here is released under the [Apache 2.0 license](./LICENSE.md)
 
 ### Agenda
 * A brief presentation : 15 mins
@@ -31,6 +31,7 @@ You can start with the first lab [1. API Design - Create a Reverse Proxy with Op
 * API Development - Composite APIs
 * API Publishing - Packaging APIs
 * API Security - Securing APIs with OAuth (2-legged)
+* Pivotal Cloud Foundry - Apigee Edge Service Broker Org Plan
 
 NOTE: Appendix items are optional.
 
