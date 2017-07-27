@@ -1,4 +1,4 @@
-# Apigee Edge Service Broker Pivotal CF: Create an API Proxy
+# Apigee Edge Service Broker Org Plan: Secure a CF App
 
 *Duration : 45 mins*
 
