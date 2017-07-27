@@ -114,10 +114,6 @@ PCF-PASSWORD: PCF Password
    curl http://rest-service.local.pcfdev.io/edgemicro_hello -H "x-api-key: {api key}"
    ```
 
-# Lab Video
-
-If you are lazy and don’t want to implement this use case, it’s OK. You can watch this short video. Guess what, the lab owner is equally lazy. We will update the lab video soon!
-
 # Summary
 
 In this lab you have added API Management via Cloud Foundry Decorator (Buildpack) to an API deployed on CLoud Foundry.
@@ -130,4 +126,4 @@ In this lab you have added API Management via Cloud Foundry Decorator (Buildpack
 
 # Rate this lab
 
-How did you link this lab? Rate [here](https://drive.google.com/open?id=1L95jU79wmOP-rHVY2Laba8lApZpS-yztwdONz0nCzWs).
+How did you like this lab? Rate [here](https://docs.google.com/forms/d/e/1FAIpQLSdbReinSeZTrCgrZgOWufDfX0yQJMMiBiU6Ql8L5AjTMbaHYA/viewform?c=0&w=1).
