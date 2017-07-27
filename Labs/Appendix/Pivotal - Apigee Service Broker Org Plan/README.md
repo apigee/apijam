@@ -101,7 +101,15 @@ PCF_SPACE: An org can contain multiple spaces. This is the space you will pick f
     
     You should be able to send a request, by copy/pasting the URL under the urls section of your app, to a new browser tab. `https://{URL OF YOUR APP}`
     
-    ![image alt text](./media/image_0.png)
+    ```
+    cf apps
+    Getting apps in org Apigee / space sudhee as sudheendras@google.com...
+    OK
+
+   name              requested state   instances   memory   disk   urls
+   sudhee_helloapi   started           1/1         128M     1G     sudhee_helloapi.apps.pcf.apigeek.net
+   ```
+   i.e http://sudhee_helloapi.apps.pcf.apigeek.net/ in the above e.g.
     
 3. Login to Apigee, through Apigee's SSO
 
@@ -152,7 +160,7 @@ PCF_SPACE: An org can contain multiple spaces. This is the space you will pick f
     Select the API and select `TRACE` tab on the top right
     Click on the `Start Trace Session`, the green button on the top left
     Send a request to the same endpoint, as you did in step 2 - by copy/pasting the URL under the urls section of your app, to a new browser tab. `https://{URL OF YOUR APP}`
-    ![image alt text](./media/image_0.png)
+      
     If you forgot the URL OF YOUR APP, you can get if through the following command (the output will have a urls section corresponding to your app)
     ```
     cf apps
