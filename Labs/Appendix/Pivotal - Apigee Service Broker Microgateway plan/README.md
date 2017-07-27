@@ -1,4 +1,4 @@
-# Apigee Microgateway Service Broker Pivotal CF: Create an API Proxy 
+# Apigee Edge Service Broker - Microgateway Plan: Create an API Proxy 
 
 *Duration : 45 mins*
 
