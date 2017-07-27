@@ -31,6 +31,9 @@ You can start with the first lab [1. API Design - Create a Reverse Proxy with Op
 * API Development - Composite APIs
 * API Publishing - Packaging APIs
 * API Security - Securing APIs with OAuth (2-legged)
+* Pivotal Cloud Foundry - Apigee Edge Service Broker Org Plan
+* Pivotal Cloud Foundry - Apigee Edge Service Broker Microgateway Plan
+* Pivotal Cloud Foundry - Apigee Microgateway Decorator pattern
 
 NOTE: Appendix items are optional.
 
