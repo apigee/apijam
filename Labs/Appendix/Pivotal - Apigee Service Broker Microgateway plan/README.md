@@ -287,10 +287,6 @@ PCF_SPACE: An org can contain multiple spaces. This is the space you will pick f
 	{"hello":"hello from cf app"}
 	```
 
-# Lab Video
-
-If you are lazy and don’t want to implement this use case, it’s OK. You can watch this short video. Guess what, the lab owner is equally lazy. We will update the lab video soon!
-
 # Summary
 
 In this lab you have added API Management via Microgateway to an API created in PCF.
@@ -303,4 +299,4 @@ In this lab you have added API Management via Microgateway to an API created in 
 
 # Rate this lab
 
-How did you link this lab? Rate [here](https://drive.google.com/open?id=1L95jU79wmOP-rHVY2Laba8lApZpS-yztwdONz0nCzWs).
+How did you like this lab? Rate [here](https://docs.google.com/forms/d/e/1FAIpQLScJZF-Tk9lACEFRZ2cwQ4HN3loDNoDgu8I8hxNbb4XUFooIzg/viewform?c=0&w=1).
