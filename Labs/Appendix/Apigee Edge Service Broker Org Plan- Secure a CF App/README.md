@@ -103,7 +103,7 @@ PCF_SPACE: An org can contain multiple spaces. This is the space you will pick f
     
     ```
     cf apps
-    Getting apps in org Apigee / space sudhee as sudheendras@google.com...
+    Getting apps in org Apigee / space sudhee as sXXXXXs@gXXXe.com...
     OK
 
    name              requested state   instances   memory   disk   urls
