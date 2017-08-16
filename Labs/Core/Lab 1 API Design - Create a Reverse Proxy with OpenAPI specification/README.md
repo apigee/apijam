@@ -119,7 +119,7 @@ Basic understanding of [OpenAPI Specification](https://github.com/OAI/OpenAPI-Sp
 4. You should see a success response similar to this -
 ![image alt text](./media/image_19.jpg)
 
-# Save the API Proxy
+## Save the API Proxy
 
 1. Let’s save the API Proxy locally as an API Bundle so that we can reuse it in other labs.
 
