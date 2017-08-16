@@ -73,11 +73,11 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
 13. Enter details in the proxy wizard. Replace **{your-initials}** with the initials of your name. 
 
-   * Proxy Name: **{your_initials}**_employee_proxy
+    * Proxy Name: **{your_initials}**_employee_proxy
 
-   * Proxy Base Path: /v1/**{your_initials}**_employee_proxy
+    * Proxy Base Path: /v1/**{your_initials}**_employee_proxy
 
-  * Existing API: Observe the field value which is auto filled from OpenAPI Spec.
+    * Existing API: Observe the field value which is auto filled from OpenAPI Spec.
 
 ![image alt text](./media/image_10.png)
 
