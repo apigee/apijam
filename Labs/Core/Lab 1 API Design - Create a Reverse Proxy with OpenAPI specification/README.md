@@ -22,6 +22,8 @@ Basic understanding of [OpenAPI Specification](https://github.com/OAI/OpenAPI-Sp
 
 # Instructions
 
+## Create the API Proxy
+
 1. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI. 
 
 2. Select **Develop → Specs** in the side navigation menu
