@@ -19,6 +19,7 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 # Pre-requisites
 
 * Basic understanding of [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification) (Swagger)
+* Open the [REST Client](https://apigee-rest-client.appspot.com/) on a browser window.
 
 # Instructions
 
