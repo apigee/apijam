@@ -138,9 +138,8 @@ Now that you have created a reverse proxy using OpenAPI spec, Click on the Devel
 
 # Quiz
 
-1. How do you download (backup) the proxy you just created ? 
-
-2. Why is the Trace tool useful in API Proxy development?
+1. How do you import the proxy bundle you just downloaded? 
+2. How does Apigee Edge handle API versioning? 
 
 # Summary
 
