@@ -140,6 +140,7 @@ Now that you have created a reverse proxy using OpenAPI spec, Click on the Devel
 
 1. How do you import the proxy bundle you just downloaded? 
 2. How does Apigee Edge handle API versioning? 
+3. Are there administrative APIs to create, update or delete API proxies in Apigee?
 
 # Summary
 
