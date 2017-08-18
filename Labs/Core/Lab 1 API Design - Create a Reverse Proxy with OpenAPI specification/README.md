@@ -23,7 +23,7 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
 # Instructions
 
-## Import the OpenAPI Specification
+## Import the Open API Specification
 
 1. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI. 
 
@@ -43,23 +43,22 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
 ![image alt text](./media/image_2.png)
 
-5. Verify the values and click **Import**.
-
-6. Spec has been imported into Apigee Edge & Ready to use. You should see your spec in the list. For example,
+5. Verify the values and click **Import**. Spec has been imported into Apigee Edge & Ready to use. You should see your spec in the list. For example,
 
 ![image alt text](./media/image_3.png)
 
-7. Click on **{your-initials}**_employee_api_spec from the list to access Open API spec editor & interactive documentation that lists API details & API Resources.
+6. Click on **{your-initials}**_employee_api_spec from the list to access Open API spec editor & interactive documentation that lists API details & API Resources.
 
 ![image alt text](./media/image_4.png)
 
 ## Create the API Proxy
 
-1. It’s time to create Apigee API Proxy from Open API Spec. Click on **Develop → API Proxies** from side navigation menu.
+1. It’s time to create Apigee API Proxy from Open API Specification. Click on **Develop → API Proxies** from side navigation menu.
 
 ![image alt text](./media/image_5.jpg)
 
 2. Click **+Proxy** The Build a Proxy wizard is invoked. 
+
 ![image alt text](./media/image_6.jpg)
 
 3. Select **Reverse proxy**, Click on **Use OpenAPI** below reverse proxy option.
@@ -109,7 +108,6 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 13. *Congratulations!* ...You have now built a reverse proxy for an existing backend service. You should see the proxy **Overview** screen.
 
 ![image alt text](./media/image_16.png)
-
 
 ## Test the API Proxy
 1. Let us test the newly built API proxy using the [REST Client](https://apigee-rest-client.appspot.com/). Open the REST Client on a new browser window.  
