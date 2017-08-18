@@ -23,7 +23,7 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
 # Instructions
 
-## Create the API Proxy
+## Import the OpenAPI Specification
 
 1. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI. 
 
@@ -52,6 +52,8 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 7. Click on **{your-initials}**_employee_api_spec from the list to access Open API spec editor & interactive documentation that lists API details & API Resources.
 
 ![image alt text](./media/image_4.png)
+
+## Create the API Proxy
 
 8. It’s time to create Apigee API Proxy from Open API Spec. Click on **Develop → API Proxies** from side navigation menu.
 
