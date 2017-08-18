@@ -55,26 +55,26 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
 ## Create the API Proxy
 
-8. It’s time to create Apigee API Proxy from Open API Spec. Click on **Develop → API Proxies** from side navigation menu.
+1. It’s time to create Apigee API Proxy from Open API Spec. Click on **Develop → API Proxies** from side navigation menu.
 
 ![image alt text](./media/image_5.jpg)
 
-9. Click **+Proxy** The Build a Proxy wizard is invoked. 
+2. Click **+Proxy** The Build a Proxy wizard is invoked. 
 ![image alt text](./media/image_6.jpg)
 
-10. Select **Reverse proxy**, Click on **Use OpenAPI** below reverse proxy option.
+3. Select **Reverse proxy**, Click on **Use OpenAPI** below reverse proxy option.
 
 ![image alt text](./media/image_7.png)
 
-11. You should see a popup with list of Specs. Select **{your-initials}**_employee_api_spec and click **Select.** 
+4. You should see a popup with list of Specs. Select **{your-initials}**_employee_api_spec and click **Select.** 
 
 ![image alt text](./media/image_8.png)
 
-12. You can see the selected OpenAPI Spec URL below the Reverse Proxy option, Click **Next** to continue.
+5. You can see the selected OpenAPI Spec URL below the Reverse Proxy option, Click **Next** to continue.
 
 ![image alt text](./media/image_9.png)
 
-13. Enter details in the proxy wizard. Replace **{your-initials}** with the initials of your name. 
+6. Enter details in the proxy wizard. Replace **{your-initials}** with the initials of your name. 
 
     * Proxy Name: **{your_initials}**_employee_proxy
 
@@ -84,29 +84,28 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
 ![image alt text](./media/image_10.png)
 
-14. Verify the values and click **Next**.
+7. Verify the values and click **Next**.
 
-15. You can select, de-select list of API Proxy Resources that are pre-filled from OpenAPI Spec. Select all & Click on **Next**
+8. You can select, de-select list of API Proxy Resources that are pre-filled from OpenAPI Spec. Select all & Click on **Next**
 
 ![image alt text](./media/image_11.png)
 
-16. Select **Pass through (none)** for the authorization in order to choose not to apply any security policy for the proxy. Click Next. 
+9. Select **Pass through (none)** for the authorization in order to choose not to apply any security policy for the proxy. Click Next. 
 ![image alt text](./media/image_12.jpg)
 
-17. Go with the **default Virtual Host** configuration.
+10. Go with the **default Virtual Host** configuration.
 ![image alt text](./media/image_13.jpg)
 
-18. Ensure that only the **test** environment is selected to deploy to and click **Build and Deploy** 
+11. Ensure that only the **test** environment is selected to deploy to and click **Build and Deploy** 
 ![image alt text](./media/image_14.jpg)
 
-19. Once the API proxy is built and deployed **click** the link to view your proxy in the proxy editor. 
+12. Once the API proxy is built and deployed **click** the link to view your proxy in the proxy editor. 
 
 ![image alt text](./media/image_15.png)
 
-20. You should see the proxy **Overview** screen
+13. *Congratulations!* ...You have now built a reverse proxy for an existing backend service. You should see the proxy **Overview** screen
 ![image alt text](./media/image_16.png)
 
-21. *Congratulations!* ...You have now built a reverse proxy for an existing backend service.
 
 ## Test the API Proxy
 1. Let us test the newly built API proxy using the [REST Client](https://apigee-rest-client.appspot.com/). Open the REST Client on a new browser window.  
