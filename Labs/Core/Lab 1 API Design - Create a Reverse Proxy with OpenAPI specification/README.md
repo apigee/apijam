@@ -91,19 +91,23 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 ![image alt text](./media/image_11.png)
 
 9. Select **Pass through (none)** for the authorization in order to choose not to apply any security policy for the proxy. Click Next. 
+
 ![image alt text](./media/image_12.jpg)
 
 10. Go with the **default Virtual Host** configuration.
+
 ![image alt text](./media/image_13.jpg)
 
 11. Ensure that only the **test** environment is selected to deploy to and click **Build and Deploy** 
+
 ![image alt text](./media/image_14.jpg)
 
 12. Once the API proxy is built and deployed **click** the link to view your proxy in the proxy editor. 
 
 ![image alt text](./media/image_15.png)
 
-13. *Congratulations!* ...You have now built a reverse proxy for an existing backend service. You should see the proxy **Overview** screen
+13. *Congratulations!* ...You have now built a reverse proxy for an existing backend service. You should see the proxy **Overview** screen.
+
 ![image alt text](./media/image_16.png)
 
 
