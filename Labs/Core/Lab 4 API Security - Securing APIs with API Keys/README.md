@@ -36,7 +36,7 @@ For this lab, you will need an API Proxy that is not currently secured.  If you 
 
 ![image alt text](./media/image_0.jpg)
 
-3. Select the **{your_initials}**_employee_proxty that you created in an earlier lab exercise.
+3. Select the **{your_initials}**_employee_proxy that you created in an earlier lab exercise.
 
 ![image alt text](./media/image_1_123.png)
 
