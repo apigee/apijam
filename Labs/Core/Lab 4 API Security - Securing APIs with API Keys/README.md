@@ -136,7 +136,7 @@ An App Developer can create any number of Apps.  Each App can register for any n
 
 4. Click **Save**.
 
-   Open the newly created App and click *Show* under *Consumer Key*.  This will reveal the API Key that must be used to invoke    the API when API Key verification is in use.  Copy this key into a text document for later use.  
+   Open the newly created App and click *Show* under *Consumer Key*.  This will reveal the API Key that must be used to invoke the API when API Key verification is in use.  Copy this key into a text document for later use.  
 
 ![image alt text](./media/image_10.png)
 
