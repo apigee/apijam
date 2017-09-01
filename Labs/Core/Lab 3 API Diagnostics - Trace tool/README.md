@@ -137,7 +137,7 @@ Now, imagine troubleshooting this issue - except with hundreds or thousands of r
 
 Note: No matter how many times you click send, no new trace entry is captured!  This is expected behavior, as our filter is configured to only trace requests with your initials in the query.
 
-6. One more thing -- with your trace session still active, click the **Download Trace Session** button to export a record of the trace results.  You’ll need this for the extra credit.
+One more thing -- with your trace session still active, click the **Download Trace Session** button to export a record of the trace results.  You’ll need this for the extra credit.
 
 So you’ve diagnosed a real-time problem with your API and distilled the information down to show only requests relevant to your investigation.  In a true-to-life scenario, you’d likely filter on API key or another, more sophisticated identifier than initials.
 
@@ -160,6 +160,8 @@ Finally, take a look at the exported trace session from the lab.  See if you can
 2. How do you detemine the total time taken for the API transaction? 
 
 3. How do you detemine the time taken for individual policies on the request/response side?
+
+4. How do analyze the Downloaded Trace session?
 
 # Summary
 
