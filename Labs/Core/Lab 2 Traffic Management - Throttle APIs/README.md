@@ -38,7 +38,7 @@ Apigee Edge API Proxy created in earlier lab exercise. If not, jump back to "API
 
 5. Click on **PreFlow** under Proxy Endpoint default, Click on **+Step** on top of Request flow to attach a spike arrest policy.
 
-![image alt text](./media/image_6.png)
+![image alt text](./media/image_6_updated.png)
 
 6. Select **Spike Arrest Policy**. Click on **Add** button to add spike arrest policy to proxy endpoint preflow request.
 
