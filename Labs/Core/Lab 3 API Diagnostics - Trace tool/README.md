@@ -34,7 +34,7 @@ You have an API proxy created in Apigee Edge. If not, jump back to the "Create R
 
 4. Click on the **Develop** tab to access the API Proxy development dashboard.
 
-![image alt text](./media/image_2.png)
+![image alt text](./media/image_2_updated.png)
 
 5. Click on **PreFlow** under Proxy Endpoints default, Click on **+Step** on the Request flow to attach an *Extract Variables* policy.
 
