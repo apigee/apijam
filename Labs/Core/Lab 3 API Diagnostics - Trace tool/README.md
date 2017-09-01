@@ -38,7 +38,7 @@ You have an API proxy created in Apigee Edge. If not, jump back to the "Create R
 
 5. Click on **PreFlow** under Proxy Endpoints default, Click on **+Step** on the Request flow to attach an *Extract Variables* policy.
 
-![image alt text](./media/image_3.png)
+![image alt text](./media/image_3_updated.png)
 
 6. Select **Extract Variables Policy**. Name the policy "Extract-Initials", and click on the **Add** button to add the Extract Variables policy.  Be aware that if you choose a different policy name, it will conflict when you paste the policy code snippet below.
 
