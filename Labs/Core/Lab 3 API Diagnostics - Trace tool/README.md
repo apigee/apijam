@@ -121,7 +121,7 @@ Now, imagine troubleshooting this issue - except with hundreds or thousands of r
 /e7f5ce16-205e-11e7-990c-0eec2415f3df?initials={your initials}
 ```
 
-![image alt text](./media/image_8.png)
+![image alt text](./media/image_8_updated.png)
 
 3. Click the green **Start Trace Session** button, then click the **Send** button again to fire another API call.  Note the captured trace entry.
 
