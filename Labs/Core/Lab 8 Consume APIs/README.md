@@ -20,81 +20,85 @@ Secure APIs with API Keys, Publishing API Documentation lab exercises. If not, j
 
 # Instructions
 
-* Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI. 
+## Open Your Portal
 
-* Select **Publish → Portals** in the side navigation menu.
+1. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI. 
+
+2. Select **Publish → Portals** in the side navigation menu.
 
 ![image alt text](./media/image_0.png)
 
-* Click on **{your_initials}_{api_proxy_name}_portal** that you have created in earlier lab exercise.	
+3. Click on **{your_initials}_{api_proxy_name}_portal** that you have created in earlier lab exercise.	
 
 ![image alt text](./media/image_1.png)
 
-* Click on **Live Portal** link to access Developer Portal to start interacting as Developer persona.
+4. Click on **Live Portal** link to access Developer Portal to start interacting as Developer persona.
 
 ![image alt text](./media/image_2.png)
 
 ![image alt text](./media/image_3.png)
 
-* In this lab, we will play the role of App Developer who would like to access the APIs and API Documentation.
+## Gain Access to API Documentation
 
-* Let’s register as an App Developer by clicking on **Sign Up** link on home page.
+1. In this lab, we will play the role of App Developer who would like to access the APIs and API Documentation.
+
+2. Let’s register as an App Developer by clicking on **Sign Up** link on home page.
 
 ![image alt text](./media/image_4.png)
 
-* Fill the details, Click on **Create**.
+3. Fill the details, Click on **Create**.
 
 ![image alt text](./media/image_5.png)
 
-* You will notice a message that says, **Check your Email**. Check your inbox for verification link.
+4. You will notice a message that says, **Check your Email**. Check your inbox for verification link.
 
 ![image alt text](./media/image_6.png)
 
-* Click on verification link in your inbox to login in as App Developer into Apigee Developer Portal. Notice your email address in developer portal menu link that indicates that you are logged in.
+5. Click on verification link in your inbox to login in as App Developer into Apigee Developer Portal. Notice your email address in developer portal menu link that indicates that you are logged in.
 
 ![image alt text](./media/image_7.png)
 
 ![image alt text](./media/image_8.png)
 
-* Click on **APIs** link in top menu and then click on **{your_initials}_{api_name}_product** category to access API Documentation.
+6. Click on **APIs** link in top menu and then click on **{your_initials}_{api_name}_product** category to access API Documentation.
 
 ![image alt text](./media/image_9.png)
 
 ![image alt text](./media/image_10.png)
 
-* Go through API Documentation and understand the API Request and Response.
+7. Go through API Documentation and understand the API Request and Response.
 
 ![image alt text](./media/image_11.png)
 
-* Let’s **create** a Developer App.
+## Register a New App
 
 Typically, developers who want to consume APIs go to developer portal and register to use them. When registering, the developer gets to select which of API products he or she wishes to use. For example, some products may be offered for free, while others require payment depending on a service plan. Upon completion, this registration step produces an Edge entity called a **developer app**. A developer app includes the products the developer selected and a set of API keys that the developer will be required to use to access the APIs that are associated with those products. 
 
-* To Create an App, Click on **Email Address** & then **My Apps** in top menu bar.
+1. To Create an App, Click on **Email Address** & then **My Apps** in top menu bar.
 
 ![image alt text](./media/image_12.png)
 
-* Click on **Get Started** to create an App.
+2. Click on **Get Started** to create an App.
 
 ![image alt text](./media/image_13.png)
 
-* Update App Name & Description. Click on **Create** button to create a new App.
+3. Update App Name & Description. Click on **Create** button to create a new App.
 
 ![image alt text](./media/image_14.png)
 
-* Click on **{your_intial}-employee-app** to access App Details.
+4. Click on **{your_intial}-employee-app** to access App Details.
 
 ![image alt text](./media/image_15.png)
 
-* Let’s add API Product to app before we user API keys, Click on **Manage Products** to add API Product to the App that we have created.
+5. Let’s add API Product to app before we user API keys, Click on **Manage Products** to add API Product to the App that we have created.
 
 ![image alt text](./media/image_16.png)
 
-* Choose **{your_initials}_{api_name}**_product & flip **Access** switch to **ON** and then click on **Save** to add API Product to the App.
+6. Choose **{your_initials}_{api_name}**_product & flip **Access** switch to **ON** and then click on **Save** to add API Product to the App.
 
 ![image alt text](./media/image_17.png)
 
-* *Congratulations*, You have successfully generated API key which can be used to make secured API Calls.
+**Congratulations** You have successfully generated API key which can be used to make secured API Calls.
 
 ![image alt text](./media/image_18.png)
 

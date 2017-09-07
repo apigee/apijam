@@ -20,49 +20,55 @@ Apigee Developer Portal created in earlier lab exercise. If not, jump back to *A
 
 # Instructions
 
-* Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI. 
+## Open Your Portal
 
-* Select **Publish → Portals** in the side navigation menu.
+1. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI. 
+
+2. Select **Publish → Portals** in the side navigation menu.
 
 ![image alt text](./media/image_0.png)
 
-* Click on **{your_initials}_{api_proxy_name}_portal** that you have created in earlier lab exercise.	
+3. Click on **{your_initials}_{api_proxy_name}_portal** that you have created in earlier lab exercise.	
 
 ![image alt text](./media/image_1.png)
 
-* Click on **Live Portal** link to access Apigee Developer Portal to see out of the box theme.
+4. Click on **Live Portal** link to access Apigee Developer Portal to see out of the box theme.
 
 ![image alt text](./media/image_2.png)
 
 ![image alt text](./media/image_3.png)
 
-* Let’s change the logo of the developer portal with Google logo, Navigate to [https://goo.gl/jNaH2y](https://goo.gl/jNaH2y) and download the Google logo to your local machine. **Rename** the file to logo.png.
+## Change The Logo
 
-* Go back to **{your_initials}_{api_proxy_name}**_portal overview screen and click on files section to upload the Google logo.
+1. Let’s change the logo of the developer portal with Google logo, Navigate to [https://goo.gl/jNaH2y](https://goo.gl/jNaH2y) and download the Google logo to your local machine. **Rename** the file to logo.png.
+
+2. Go back to **{your_initials}_{api_proxy_name}**_portal overview screen and click on files section to upload the Google logo.
 
 ![image alt text](./media/image_4.png)
 
-* Delete the *logo.png* file from the files list.
+3. Delete the *logo.png* file from the files list.
 
 ![image alt text](./media/image_5.png)
 
-* Upload the Google logo that you have downloaded in earlier step,
+4. Upload the Google logo that you have downloaded in earlier step,
 
 ![image alt text](./media/image_6.png)
 
 ![image alt text](./media/image_7.png)
 
-* Click on **Live Portal** to see logo changes. 
+5. Click on **Live Portal** to see logo changes. 
 
 ![image alt text](./media/image_8.png)
 
 Note: Flush browser cache if it displays old logo.
 
-* Switch to **Theme Settings** page by selecting **Theme** from the drop down next to *Live Portal* link in the UI.
+## Add Custom CSS
+
+1. Switch to **Theme Settings** page by selecting **Theme** from the drop down next to *Live Portal* link in the UI.
 
 ![image alt text](./media/image_9.png)
 
-* Replace the css mentioned in below screenshot with the code mentioned below,
+2. Replace the css mentioned in below screenshot with the code mentioned below,
 
 ![image alt text](./media/image_10.png)
 
@@ -87,27 +93,29 @@ body nav.navbar-default ul.nav li a:hover {
 }
 ```
 
-* Publish the changes by clicking on **Publish** button at right bottom and Confirm the changes.
+3. Publish the changes by clicking on **Publish** button at right bottom and Confirm the changes.
 
 	![image alt text](./media/image_11.png)
 
-* Let’s update the home page text by selecting **Pages** from dropdown.
+## Create Your Own Portal Content
+
+1. Let’s update the home page text by selecting **Pages** from dropdown.
 
 ![image alt text](./media/image_12.png)
 
-* Click on **Home** to edit homepage content,
+2. Click on **Home** to edit homepage content,
 
 ![image alt text](./media/image_13.png)
 
-* Update h1 tag content to "**Apigee Edge**", Click **Publish** to save changes.
+3. Update h1 tag content to "**Apigee Edge**", Click **Publish** to save changes.
 
 ![image alt text](./media/image_14.png)
 
-* Click on **Live Portal** to see header and home page content changes.
+4. Click on **Live Portal** to see header and home page content changes.
 
 ![image alt text](./media/image_15.png)
 
-* *Congratulations!*...You have now customised developer portal with new look and feel.
+**Congratulations!** You have now customised the out-of-box developer portal with a shiny new look and feel.
 
 # Lab Video
 
