@@ -44,31 +44,31 @@ Note: As you will have already completed the *API Security - Securing APIs with 
 
 4. Your API Proxy should now look like this:
 
-![image alt text](./media/image_0.png)
+    ![image alt text](./media/image_0.png)
 
 5. Create 2 new API Products that include this proxy, ‘**{your_initials}**_Employees Bronze Product’ and ‘**{your_initials}**_Employees Platinum Product’
 
-For both products specify as before:
+    For both products specify as before:
 
-  * Environment: test
+    * Environment: test
 
-  * Access: Public
+     * Access: Public
 
-  * Key Approval Type: Automatic
+      * Key Approval Type: Automatic
 
-For the **Bronze** product specify a quota limit of 1 request per minute:
+    For the **Bronze** product specify a quota limit of 1 request per minute:
 
-![image alt text](./media/image_1.png)
+    ![image alt text](./media/image_1.png)
 
-For the **Platinum** product specify a quota limit of 1000 requests per minute:
+    For the **Platinum** product specify a quota limit of 1000 requests per minute:
 
-![image alt text](./media/image_2.png)	
+    ![image alt text](./media/image_2.png)	
 
 6. Register 2 new Developer Apps, one for each of your new products. Record the API Keys for each App.
 
 7. Launch the [REST Test client](https://apigee-rest-client.appspot.com/) and run some tests using each API Key. Verify that with the *Bronze* API key that you cannot send in more than 1 request per minute without triggering a quota exceeded exception:
 
-![image alt text](./media/image_3.png)
+    ![image alt text](./media/image_3.png)
 
 8. Verify with the *Platinum* key that you can send in more than 1 request per minute.	
 
