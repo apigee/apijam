@@ -42,7 +42,7 @@ For this lab, you will need an API Proxy that is not currently secured.  If you 
 
 4. Verify that the API Proxy is deployed to an environment from the **Overview** page.  Environment(s) to which the selected revision of the API Proxy is deployed will be indicated by a green circle.  If it is not deployed, click an environment from the "Deployment" pull-down to deploy the API Proxy to that environment.
 
- ![image alt text](./media/image_2.png)
+![image alt text](./media/image_2.png)
 
 5. Remove the **Extract Variables** policy that you created in the previous lab.  Click on **X** on the top right corner of   the policy to remove the policy.
 
