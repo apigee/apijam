@@ -44,15 +44,17 @@ For this lab, you will need an API Proxy that is not currently secured.  If you 
 
  ![image alt text](./media/image_2.png)
 
-5. Verify that you can successfully make calls using the built-in trace tool.
+5. Remove the **Extract Variables** policy that you created in the previous lab.  Click on **X** on the top right corner of   the policy to remove the policy.
 
-6. Click the **Trace** tab near the top of the window.
+6. Verify that you can successfully make calls using the built-in trace tool.
+
+7. Click the **Trace** tab near the top of the window.
 
    The Trace view allows you to initiate tracing for up to 10 minutes, during which time all requests (regardless of whether      they are sent from the trace tool or any other client) will be captured and their traces made visible to you.
 
-7. Click **Start Trace Session** to begin a trace session.
+8. Click **Start Trace Session** to begin a trace session.
 
-8. Click **Send** to send a request.  If your API Proxy requires query parameters add them here prior to sending.
+9. Click **Send** to send a request.  If your API Proxy requires query parameters add them here prior to sending.
 
    You should see a successful 2xx response for your API Call (it may take a few seconds for the trace results to appear)
 
