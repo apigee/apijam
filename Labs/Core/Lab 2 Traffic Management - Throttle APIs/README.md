@@ -20,37 +20,35 @@ Apigee Edge API Proxy created in earlier lab exercise. If not, jump back to "API
 
 # Instructions
 
-* Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI. 
+1. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI. 
 
-* Select **Develop → API Proxies** in the side navigation menu.
+2. Select **Develop → API Proxies** in the side navigation menu.
 
 ![image alt text](./media/image_2.jpg)
 
-* Click on **{your_initials}**_employee_proxy that you have created in earlier lab exercise.
-
+3. Click on **{your_initials}**_employee_proxy that you have created in earlier lab exercise.
 
 ![image alt text](./media/image_3.png)
 
-
-* Click on **Develop** tab to access API Proxy development dashboard.
+4. Click on **Develop** tab to access API Proxy development dashboard.
 
 ![image alt text](./media/image_4.png)
 
 ![image alt text](./media/image_5.png)
 
-* Click on **PreFlow** under Proxy Endpoint default, Click on **+Step** on top of Request flow to attach a spike arrest policy.
+5. Click on **PreFlow** under Proxy Endpoint default, Click on **+Step** on top of Request flow to attach a spike arrest policy.
 
-![image alt text](./media/image_6.png)
+![image alt text](./media/image_6_updated.png)
 
-* Select **Spike Arrest Policy**. Click on **Add** button to add spike arrest policy to proxy endpoint preflow request.
+6. Select **Spike Arrest Policy**. Click on **Add** button to add spike arrest policy to proxy endpoint preflow request.
 
 ![image alt text](./media/image_7.png)
 
-* You can notice Spike Arrest policy icon on top of request flow that shows where exactly policy is attached and policy XML configuration below in editor.
+7. You can notice Spike Arrest policy icon on top of request flow that shows where exactly policy is attached and policy XML configuration below in editor.
 
 ![image alt text](./media/image_8.png)
 
-* Change the Policy XML configuration to below code & update the rate to 12pm.
+8. Change the Policy XML configuration to below code & update the rate to 12pm.
 ```
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <SpikeArrest async="false" continueOnError="false" enabled="true" name="Spike-Arrest-1">
@@ -72,27 +70,29 @@ What actually happens, then? To prevent spike-like behavior, Spike Arrest smooth
 
 * **Per-second** rates get smoothed into full requests allowed in intervals of **milliseconds**. For example, 10ps gets smoothed like this: 1000 milliseconds (1 second) / 10ps = 100-millisecond intervals, or 1 request allowed every 100 milliseconds. A second request inside of 100ms will fail. Also, an 11th request within a second will fail.
 
-* Click on **Save** to save the API Proxy changes.
+9. Click on **Save** to save the API Proxy changes.
 
 ![image alt text](./media/image_9.png)
 
-* *Congratulations!*...You have now secured your backend against denial of service attacks, performance lags or downtime of target servers.
+*Congratulations!*...You have now secured your backend against denial of service attacks, performance lags or downtime of target servers.
 
-* Let us test the updated API proxy using the Trace Console. Click on **Trace** tab.
+## Test the API policy configuration
+
+1. Let us test the updated API proxy using the Trace Console. Click on **Trace** tab.
 
 ![image alt text](./media/image_10.png)
 
-* Click on **Start Trace Session** to see API Proxy with spike arrest in action.
+2. Click on **Start Trace Session** to see API Proxy with spike arrest in action.
 
 ![image alt text](./media/image_11.png)
 
-* Click on **Send** button multiple times, You will see 500 response code when spike arrest policy kicks in to protect target servers from spike in traffic.
+3. Click on **Send** button multiple times, You will see 500 response code when spike arrest policy kicks in to protect target servers from spike in traffic.
 
-	![image alt text](./media/image_12.png)
+![image alt text](./media/image_12.png)
 
-* You might notice that number of requests with 200 response is more than spike arrest rate value configured, It’s due to multiple message processors where policies gets executed and each has individual counters.
+4. You might notice that number of requests with 200 response is more than spike arrest rate value configured, It’s due to multiple message processors where policies gets executed and each has individual counters.
 
-* You can also use [Apigee Rest Client](https://apigee-rest-client.appspot.com/) to test Spike Arrest Policy.
+5. You can also use [Apigee Rest Client](https://apigee-rest-client.appspot.com/) to test Spike Arrest Policy.
 
 ![image alt text](./media/image_13.png)
 
