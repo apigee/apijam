@@ -26,71 +26,77 @@ For this lab, you will need…
 
 ## Review your OpenAPI Specification
 
-* Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI
+1. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI
 
-* Select **Develop → Specs**
+2. Select **Develop → Specs**
 
 ![image alt text](./media/image_0.png)
 
-* Review the OpenAPI Specification in the Swagger Editor.
+3. Review the OpenAPI Specification in the Swagger Editor.
 
 ## Publish a new Portal on Apigee Edge
 
-* Select **Publish → Portals → +Portal**
+1. Select **Publish → Portals → +Portal**
 
 ![image alt text](./media/image_1.png)
 
-* Enter details in the portal creation wizard. Replace **{your-initials}** with the initials of your name and replace **{api_proxy_name}** with the name of the proxy.
+2. Enter details in the portal creation wizard. Replace **{your-initials}** with the initials of your name and replace **{api_proxy_name}** with the name of the proxy.
 
   * Name: **{your_initials}**_**{api_proxy_name}**_portal
 
   * Description: Enter a brief description
 
-* Click **Create Portal**
+3. Click **Create Portal**
 
 ![image alt text](./media/image_2.png)
 
 ## Publish an API Product to the Portal
 
-* Click the Portal Editor’s dropdown and select **APIs** from the list of sections
+1. Click the Portal Editor’s dropdown and select **APIs** from the list of sections
 
 ![image alt text](./media/image_3.png)
 
-* Click **+API Product** to select an API Product to publish to the Portal
+2. Click **+API Product** to select an API Product to publish to the Portal
 
 ![image alt text](./media/image_4.png)
 
-* Select the API Product to publish
+3. Select the API Product to publish
 
 ![image alt text](./media/image_5.png)
 
-* Choose a Snapshot Source.  A Snapshot represents a version of the OpenAPI Specification at a particular point in time.  The Source is the OpenAPI Specification used to generate the Snapshot.  Because the specification might change over time, you take snapshots so that your Portal will reflect the version of the specification that is published, which may differ from the version under current development.  Read [this document](https://docs-new.apigee.com/publish-apis#snapshot-overview) to better understand snapshots.
+4. Choose a Snapshot Source.  
+
+  * A Snapshot represents a version of the OpenAPI Specification at a particular point in time.  The Source is the OpenAPI Specification used to generate the Snapshot.  Because the specification might change over time, you take snapshots so that your Portal will reflect the version of the specification that is published, which may differ from the version under current development.  Read [this document](https://docs-new.apigee.com/publish-apis#snapshot-overview) to better understand snapshots.
 
 ![image alt text](./media/image_6.png)
 
-* Select OpenAPI Specification from which to create a Snapshot.
+5. Select the OpenAPI Specification from which to create a Snapshot.
 
 ![image alt text](./media/image_7.png)
 
-* Click **Review** to review selections made prior to creating Snapshot.
+6. Click **Review** to review selections made prior to creating Snapshot.
 
 ![image alt text](./media/image_8.png)
 
-* Review selections and click **Save** to publish the API product (and OpenAPI Specification Snapshot) to the Developer Portal
+7. Review selections and click **Save & Complete** to publish the API product (and OpenAPI Specification Snapshot) to the Developer Portal
 
 ![image alt text](./media/image_9.png)
 
-* You should now see your new API Product published to the portal.
+## Review Published API Product
 
-* Click the **Live Portal** link to launch a browser tab/window with the new Developer Portal.
+1. Click the **Live Portal** link to launch a browser tab/window with the new Developer Portal.
 
 ![image alt text](./media/image_10.png)
 
-* In the Portal UI, click **APIs** to view the products that have been published. For demonstrative purposes, the screenshot includes multiple products. Products are used to bundle APIs together so that a developer can request access to a set of related functionality without registering for each API.  They are also useful for managing access to, and quotas for, particular developers.  For more on API Products, [read this document](http://docs.apigee.com/developer-services/content/what-api-product).
+10. In the Portal UI, click **APIs** to view the products that have been published. 
+
+  * For demonstrative purposes, the screenshot includes multiple products. Products are used to bundle APIs together so that a developer can request access to a set of related functionality without registering for each API.  They are also useful for managing access to, and quotas for, particular developers.  For more on API Products, [read this document](http://docs.apigee.com/developer-services/content/what-api-product).
 
 ![image alt text](./media/image_11.png)
 
-* The Portal will display the OpenAPI Specification (Swagger UI) for browsing the APIs included in the product.  The view below contains two collapsed operations and one expanded to show the details of the operation.  Depending on the method, you’d expect to see model details, response codes, etc., as per the [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md).
+11. Click an API product to view documentation.
+
+  * The Portal will display the OpenAPI Specification (Swagger UI) for browsing the APIs included in the product.  The view below contains two collapsed operations and one expanded to show the details of the operation.  Depending on the method, you’d expect to see model details, response codes, etc., as per the [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md).
 
 ![image alt text](./media/image_12.png)
 
