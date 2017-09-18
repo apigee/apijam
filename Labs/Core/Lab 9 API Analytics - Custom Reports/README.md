@@ -36,47 +36,47 @@ In this lab, you will create a custom report to provide insight into the consump
 
 ## Creating a Custom Report
 
-* Click **+Custom Report**.
+1. Click **+Custom Report**.
 
 ![image alt text](./media/image_1.png)
 
-* Enter the **Report Name** and **Report Description**.
+2. Enter the **Report Name** and **Report Description**.
 
 ![image alt text](./media/image_2.png)
 
-* Select a chart type, **Column**. This is the style of chart that will be used to present your custom analytic data.
+3. Select a chart type, **Column**. This is the style of chart that will be used to present your custom analytic data.
 
 ![image alt text](./media/image_3.png)
 
-* In the Metrics sections, choose the metric that you wish to analyze. Select **Traffic** as the metric. See [Custom Metrics ](https://docs.google.com/document/d/1T33fq5q5D6z7nmxI7gcKtcIcNvOxbuIv_BO8DWWthis/edit#heading=h.ksg236njnyhd)for a description of each metric.
+4. In the Metrics sections, choose the metric that you wish to analyze. Select **Traffic** as the metric. See [Custom Metrics ](https://docs.google.com/document/d/1T33fq5q5D6z7nmxI7gcKtcIcNvOxbuIv_BO8DWWthis/edit#heading=h.ksg236njnyhd)for a description of each metric.
 
 ![image alt text](./media/image_4.png)
 
-* Select an **Aggregate Function** that you want applied to the data for the first metric. You can select an aggregation function to display the *Sum*, *Average*, *Min*, or *Max* values. Select **Sum** as the Aggregate Function. 
+5. Select an **Aggregate Function** that you want applied to the data for the first metric. You can select an aggregation function to display the *Sum*, *Average*, *Min*, or *Max* values. Select **Sum** as the Aggregate Function. 
 
-* (Optional) Click **+Metric** to add additional metrics. Select **Total Response Time** as the metric and **Average** as the Aggregate Function.
+6. (Optional) Click **+Metric** to add additional metrics. Select **Total Response Time** as the metric and **Average** as the Aggregate Function.
 
 ![image alt text](./media/image_5.png)
 
-* Click on the **Dimension** dropdown and select **Proxy**. Every dimension you add (by clicking **+Dimension**) constrains the data set used to generate the reports. In effect, you're presenting more and more specific data with each drill down. 
+7. Click on the **Dimension** dropdown and select **Proxy**. Every dimension you add (by clicking **+Dimension**) constrains the data set used to generate the reports. In effect, you're presenting more and more specific data with each drill down. 
 
 ![image alt text](./media/image_6.png)
 
-* Add an additional **Dimension** for **Request Path**.
+8. Add an additional **Dimension** for **Request Path**.
 
 ![image alt text](./media/image_7.png)
 
-* You can further narrow the data displayed by adding filters to your report definition. 
+9. You can further narrow the data displayed by adding filters to your report definition. 
 In the **Filter** section of the page, click **+Filter Condition**. 
 Select **Proxy** as the entity you want to filter on, select **=** as the **Operator** and set the **Value** to your API Proxy name (e.g. "ap_employees").
 
 ![image alt text](./media/image_8.png)
 
-* Click on the check button under Actions to save this filter.
+10. Click on the check button under Actions to save this filter.
 
 ![image alt text](./media/image_9.png)
 
-* Click **Save**. 
+11. Click **Save**. 
 
 *Note: Data delay interval - After API calls are made to proxies, it takes about **10-15 minutes** for the data to appear in dashboards, custom reports, and management API calls.*
 
