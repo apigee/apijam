@@ -142,3 +142,33 @@ You can copy/paste the following configuration for your `HTTPTargetConnection`:
 * On the Overview tab, click on the test and prod URLs to call the API in each environment.
 
 ![Click on URLs](./media/call-prod-and-test-apis.png)
+
+* Verify you get a JSON response from both the test and prod APIs. If you do, congrats, you've successfully configured an API which relies on named target servers instead of hard coded URLs!
+
+# Lab Video
+
+Coming soon
+
+# Earn Extra Points
+
+In this lab, we configured a single target server, but Apigee Edge can actually [load balance between multiple target servers](http://docs.apigee.com/api-services/content/load-balancing-across-backend-servers). Try some of these more advanced options as well:
+* Add a second target server and configure the load balancer to send traffic equally between th e two target servers.
+* Configure a weighted load balancer configuration to send 2 times the traffic to one target server versus the other
+* Disable one target server and experiment with failover behavior
+* Try creating a target server from the [management API](http://docs.apigee.com/management/apis/post/organizations/%7Borg_name%7D/environments/%7Benv_name%7D/targetservers)
+
+# Quiz
+
+1. How might target servers be useful as part of your CI/CD process?
+
+2. What additional steps would you need to think about if you didn't have the ability to create named target servers in Apigee Edge?
+
+# Summary
+
+In this lab, we saw how target URLs can be externalized using Target Servers to implement routing to the correct backend server based on the environment an API is deployed to. This helps to make it easy to configure Apigee Edge to work in a way that conforms to your SDLC.
+
+# References
+
+* [Target Server and load balancing documentation](http://docs.apigee.com/api-services/content/load-balancing-across-backend-servers)
+* [Management API documentation for creaating Target Servers](http://docs.apigee.com/management/apis/post/organizations/%7Borg_name%7D/environments/%7Benv_name%7D/targetservers)
+
