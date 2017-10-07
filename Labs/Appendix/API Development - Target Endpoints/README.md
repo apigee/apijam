@@ -74,4 +74,71 @@ Enabled: checked
 
 ![Populate target server](./media/populate-test-target-server.png)
 
-At this point we now have created our target server for the *Employees Service* in both the test and prod environments. 
+At this point we now have created our target server for the *Employees Service* in both the test and prod environments. Our next task will be configuring a proxy that uses the named target servers.
+
+* Navigate to the API Proxies list view:
+
+![Proxies list](./media/open-api-proxies-list.png)
+
+* Click on +API Proxy to create a new API Proxy
+
+![New API Proxy](./media/new-api-proxy.png)
+
+* Select the Reverse Proxy option then click on Next
+
+![Proxy Wizard](./media/proxy-wizard-1.png)
+
+* Configure your API Proxy as shown in the following diagram:
+
+![Proxy Wizard](./media/proxy-wizard-2.png)
+
+* Select the Pass Through option for Authorization
+
+![Proxy Wizard](./media/proxy-wizard-3.png)
+
+* Select the default options for virtual host bindings:
+
+![Proxy Wizard](./media/proxy-wizard-4.png)
+
+* Select the default options for deployment options
+
+![Proxy Wizard](./media/proxy-wizard-5.png)
+
+* Once you get confirmation your proxy was successfully created, click on the provided link to open your API Proxy
+
+![Proxy Wizard](./media/proxy-wizard-6.png)
+
+* Once you arrive on the Overview page for your new proxy, click on the develop tab.
+
+![Open Develop Tab](./media/open-develop-tab.png)
+
+* In the develop tab, select the *default* Target Connection from the left hand pane. Scroll down to the bottom of the XML configuration until you see a tag labeled `HTTPTargetConnection`:
+
+![Find Target Connection](./media/find-target-connection.png)
+
+* Modify the `HTTPTargetConnection` to use a Load Balancer configuration as shown below. You can copy and paste the configuration provided below the image, making sure to replace {your-initials} with your actual initials. Click Save to save the proxy changes.
+
+![Configure Target](./media/configure-proxy-target-endpoint.png)
+
+You can copy/paste the following configuration for your `HTTPTargetConnection`:
+
+```
+  <HTTPTargetConnection>
+    <LoadBalancer>
+      <Server name="{your-initials}-employees-service" />
+    </LoadBalancer>
+    <Path>/v1/employees</Path>
+  </HTTPTargetConnection>
+```
+
+* Click on the Deployment drop down and select the prod environment to deploy your proxy to prod. This will bring up a confirmation dialog, click on the *Deploy* button to deploy.
+
+![Deploy to Prod](./media/deploy-to-prod.png)
+
+* Click on the Overview tab to verify that your API Proxy is deployed to both test and prod:
+
+![Click on Overview](./media/click-on-overview.png)
+
+* On the Overview tab, click on the test and prod URLs to call the API in each environment.
+
+![Click on URLs](./media/call-prod-and-test-apis.png)
