@@ -147,7 +147,7 @@ You can copy/paste the following configuration for your `HTTPTargetConnection`:
 
 # Lab Video
 
-Coming soon
+[Configuring Target Servers](https://www.youtube.com/watch?v=crnuHAgj9Vo&index=18&list=PLIXjuPlujxxxe3iTmLtgfIBgpMo7iD7fk)
 
 # Earn Extra Points
 
