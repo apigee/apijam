@@ -36,9 +36,9 @@ None
 
 ![New target server](./media/new-target-server.png)
 
-* Making sure the prod environment is selected, enter the following values for your production target server:
+* Making sure the prod environment is selected, enter the following values for your production target server, then save your configuration:
 
-Name: employees-service
+Name: {your-initials}-employees-service
 Host: cosafinity-prod.apigee.net
 Port: 80
 Enabled: checked
@@ -59,13 +59,13 @@ You should see a message indicating your target server was created successfully 
 
 ![New target server](./media/new-target-server-test.png)
 
-* Making sure the test environment is selected, enter the following values for your test target server:
+* Making sure the test environment is selected, enter the following values for your test target server then save your configuration:
 
-Name: employees-service
+Name: {your-initials}-employees-service
 Host: cosafinity-test.apigee.net
 Port: 80
 Enabled: checked
 
 ![Populate target server](./media/populate-test-target-server.png)
 
-
+At this point we now have created our target server for the *Employees Service* in both the test and prod environments. 
