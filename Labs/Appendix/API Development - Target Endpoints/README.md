@@ -32,7 +32,7 @@ None
 
 ![Click on edit](./media/click-on-edit.png)
 
-* Click on the *+Target Server+ button to add a new target server
+* Click on the *+Target Server* button to add a new target server
 
 ![New target server](./media/new-target-server.png)
 
