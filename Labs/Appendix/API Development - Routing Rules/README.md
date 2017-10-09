@@ -32,6 +32,8 @@ None
 
 * Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI. 
 
+## Create a new API Proxy
+
 * Open the Develop Menu from the left hand side navigation bar then click on the API Proxies menu item.
 
 ![API Proxies](./media/open-api-proxy-list.png)
@@ -70,9 +72,13 @@ Existing API: https://findemo-168618.appspot.com/can/branches
 
 ![Confirmation](./media/proxy-wizard-6.png)
 
+## Make a test call to the API
+
 * From the API Overview, click on the URL link. This should open up a list of bank branches from Canada. Once you've verified your API Proxy is working, click on the Develop tab to open the proxy editor. 
 
 ![Open proxy editor](./media/open-develop-tab.png)
+
+## Add the US Target Endpoint
 
 * On the Proxy Editor, click on the *default* Target Endpoint
 
@@ -104,6 +110,8 @@ HTTP Target: https://findemo-168618.appspot.com/us/branches
 ![Save API Proxy](./media/save-api-proxy-2.png)
 
 * Click on +Step on the Request pipeline to add a new policy
+
+## Add validation for missing zip codes
 
 ![New step](./media/new-step-1.png)
 
@@ -155,6 +163,8 @@ HTTP Target: https://findemo-168618.appspot.com/us/branches
 
 ![Open URL](./media/open-api-url-1.png)
 
+## Add Routing Rules for US vs Canadian Zip Codes
+
 * After verifying the validation is working, click on the Develop tab to open the proxy editor. 
 
 ![Open proxy editor](./media/open-develop-tab-1.png)
@@ -176,6 +186,9 @@ HTTP Target: https://findemo-168618.appspot.com/us/branches
 
 * After the confirmation appears that your API Proxy has been saved, click on the Trace tab.
 
+
+## Use Trace to Verify Routing is Working
+
 ![Open trace tab](./media/open-trace-tab.png)
 
 * Click on the Start Trace Session button
@@ -188,7 +201,9 @@ HTTP Target: https://findemo-168618.appspot.com/us/branches
 
 * Now make another API call using a Canadian zip code value: `?zipcode=S1C 9P7` *Note that you will need to make this request outside the trace window due to limitations in sending query params with whitespace.*
 
-* Verify using Trace that your route rules are correctly sending Canadian zip codes to the Canadian endpoint and that US zip codes to the USA endpoint. 
+* Verify using Trace that your route rules are correctly sending Canadian zip codes to the Canadian endpoint and that US zip codes to the USA endpoint.
+
+If you successfully retrieve both branches when supplying a Canadian and a US zip code, Congratulations! You have successfully configured conditional routing rules and have completed the main instructions for this lab.
 
 # Lab Video
 
