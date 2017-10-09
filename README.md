@@ -23,6 +23,8 @@ You can start with the first lab [1. API Design - Create a Reverse Proxy with Op
 ### [Appendix Labs](./Labs/Appendix)
 * API Development - Create a RESTful API from a SOAP service
 * API Development - Create a Reverse Proxy
+* API Development - Target Endpoints
+* API Development - Using Routing Rules for Multiple Backends
 * API Security - Securing APIs with OAuth (3-legged)
 * Hybrid Deployment : Edge Microgateway
 * Transformation - JSON-to-XML & HTTP header injection
