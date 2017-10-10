@@ -150,8 +150,7 @@ PCF_SPACE: An org can contain multiple spaces. This is the space you will pick f
     ```
     Now we will bind the app (Our Node.js app that servers the Hello API) to an Apigee ORG with the following command.
     ```
-    cf bind-route-service $PCF_APPMGR $PCF_ORG
- --hostname $PCF_APPHOST -c '{"org":"'$(echo $ORG)'","env":"'$(echo $ENV)'", "bearer":"'$(cat ~/.sso-cli/valid_token.dat)'", "action":"proxy bind"}'
+    cf bind-route-service $PCF_APPMGR $PCF_ORG --hostname $PCF_APPHOST -c '{"org":"'$(echo $ORG)'","env":"'$(echo $ENV)'", "bearer":"'$(cat ~/.sso-cli/valid_token.dat)'", "action":"proxy bind"}'
     ```
 
 4. Testing the API
