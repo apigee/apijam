@@ -22,8 +22,8 @@ Sometimes you may need or desire to work on your script while offline. One of th
 
 1. Open up a command line and change to a directory where you wish to clone the repository
 ```bash
-mkdir apijam
-cd apijam
+mkdir dev
+cd dev
 git clone git@github.com:apigee/apijam.git
 ```
 
@@ -58,8 +58,10 @@ curl http://localhost:8080
 ```
 You should have now been rewarded with the same `Hello, World!` seen when you ran this inside of apigee
 
+3. Let's cancel out of that process. Return to the terminal where you started first.js and hit `ctrl-c` to cancel the process.
+
 ## Create a whole new script and test it locally
-1. Our first example was quite simple. Now let's do something a little more interesting. Open up an editor and create a new script in this directory called `second.js` and insert the following lines.
+1. Our first example was quite simple. Now let's do something a little more interesting. Open up an editor and create a new script in this directory called `tryIt.js` and insert the following lines.
 ```javascript
 const express = require('express'),
   fetch = require('node-fetch');
@@ -99,7 +101,12 @@ app.listen(PORT, () => {
 
 This script relies on the same express library for parsing URL paths but adds a whole new path: `/route`. This new path relies on a promise returned from the `getRoute` function. That function is using the fetch-sdk to make a REST call to the google routing API. Essentially, it's a node.js API proxy for the existing google proxy. Try it out by passing in some from and to locations and examine the output. NOTE: This API is a bit finnicky and prefers specific from and to locations: City, State or City, Country style locations.
 
-2. Try out the following example showing the driving directions between Uppsala, Sweden to Stockholm, Sweden:
+2. Let's start the new tryIt.js script like so:
+```bash
+node tryIt.js
+```
+
+3. Try out the following example showing the driving directions between Uppsala, Sweden to Stockholm, Sweden:
 ```bash
 curl 'http://localhost:8080/route?from=Stockholm%2CSweden&to=Uppsala%2CSweden'
 ```
@@ -108,6 +115,8 @@ or this one which looks at the directions from Toronto, Canada all the way to Ja
 ```bash
 curl 'http://localhost:8080/route?from=Toronto%2C&to=Jacksonville%2CFL'
 ```
+
+4. Let's cancel out of that process. Return to the terminal where you started first.js and hit `ctrl-c` to cancel the process.
 
 ## Now lets update the proxy inside of apigee
 1. Navigate back to your proxy and go to the develop tab

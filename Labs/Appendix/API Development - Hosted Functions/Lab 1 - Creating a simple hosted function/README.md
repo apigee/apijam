@@ -129,9 +129,7 @@ app.listen(PORT, () => {
 
 # Quiz
 
-1. How do you import the proxy bundle you just downloaded? 
-2. How does Apigee Edge handle API versioning? 
-3. Are there administrative APIs to create, update or delete API proxies in Apigee?
+1. Let's put some happy fun questions in here
 
 # Summary
 
