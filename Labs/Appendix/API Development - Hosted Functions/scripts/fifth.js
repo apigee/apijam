@@ -16,6 +16,7 @@ function getRoute(from,to)  {
   console.log('About to fetch route url', url);
   return fetch( url )
     .then( d => d.json() );
+    .then( route => route.routes[0].legs[0]  )
 }
 
 /*
@@ -72,7 +73,7 @@ app.get('/route', (req, res) => {
     (wFrom,wTo,route) => {
       route.startWeather = wFrom.query.results.channel.item.condition;
       route.endWeather = getWeatherForDate( wTo.query.results.channel.item.forecast,
-        new Date().getTime() + route.routes[0].legs[0].duration.value * 1000 )
+        new Date().getTime() + route.duration.value * 1000 )
       return route;
     })
     .then( d => {

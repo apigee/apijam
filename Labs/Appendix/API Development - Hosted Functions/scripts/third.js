@@ -15,6 +15,7 @@ function getRoute(from,to)  {
   console.log('About to fetch: ', url);
   return fetch( url )
     .then( d => d.json() )
+    .then( route => route.routes[0].legs[0]  )
 }
 
 /*

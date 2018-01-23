@@ -65,13 +65,32 @@ In this lab we'll be creating a hosted function that utilizes node.js to paralle
 ## Test the API Proxy
 1. Let us test the newly built API proxy by copying the url and hitting it in a new tab in the browser. If all is well it should return "Hello, World!"
 
+![image alt text](./media/helloWorldOutput.png)
+
 ## Extend the proxy with new functionality
 
-1. The default proxy isn't very interesting. Let's extend it a bit. First let's update the package.json file
+The default proxy isn't very interesting. Let's extend it a bit. First let's update the package.json file.
 
+1. Let's move into the development view
+![image alt text](./media/clickOnDevelop.png)
+
+
+2. Next click on `package.json` from the scripts view in the lower left hand navigation pane.
+![image alt text](./media/clickOnPackageDotJson.png)
+
+3. Update the package.json as per the following. We're adding threw new dependencies that the hosted functions service will automatically install for us and which we'll need going forward.
 
 ```javascript
 {
+  "name": "hello-world",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+   "start": "node index.js"
+  },
+  "author": "",
+  "license": "",
+  "description": "Hello World Application",
   "dependencies": {
     "bluebird": "^3.5.1",
     "express": "^4.16.2",
@@ -79,11 +98,34 @@ In this lab we'll be creating a hosted function that utilizes node.js to paralle
   }
 }
 ```
-![image alt text](./media/package.json)
 
-# Earn Extra-points
+4. Click on the `index.js` script to update it.
+![image alt text](./media/clickOnIndexDotJs.png)
 
-Now that you have created a reverse proxy using OpenAPI spec, Click on the Develop tab & explore the flow conditions populated from OpenAPI spec. Also, Explore OpenAPI Spec editor using which you can edit OpenAPI specification & Generate API Proxy using the link above the OpenAPI Spec editor. Explore trace tab in Proxy overview page.
+5. Update the script with the following. This is a complete rewrite that's now relying on two of the three dependencies we added when we updated `package.json`
+
+```javascript
+const express = require('express'),
+  fetch = require('node-fetch');
+
+const app = express();
+
+app.get('/', (req, res) => {
+  res.status(200).send('Hello, world!').end();
+});
+
+// Start the server
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+  console.log(`App listening on port ${PORT}`);
+  console.log('Press Ctrl+C to quit.');
+});
+```
+
+6. Save the newly updated script
+![image alt text](./media/saveIndexDotJs.png)
+
+7. Test our new script by refreshing the tab we previewed earlier and you should see a simple text line reading: `Hello, World!`.
 
 # Quiz
 
@@ -97,17 +139,10 @@ That completes this hands-on lesson. In this simple lab you learned how to creat
 
 # References
 
-* Useful Apigee documentation links on API Proxies - 
+* TBD ... we don't have anything to link here yet
 
-    * Build a simple API Proxy - [http://docs.apigee.com/api-services/content/build-simple-api-proxy](http://docs.apigee.com/api-services/content/build-simple-api-proxy) 
-
-    * Best practices for API proxy design and development - [http://docs.apigee.com/api-services/content/best-practices-api-proxy-design-and-development](http://docs.apigee.com/api-services/content/best-practices-api-proxy-design-and-development) 
-
-* Watch this 4minute video on "Anatomy of an API proxy" - [https://youtu.be/O5DJuCXXIRg](https://youtu.be/O5DJuCXXIRg) 
 
 # Rate this lab
 
-How did you like this lab? Rate [here](https://goo.gl/forms/G8LAPkDWVNncR9iw2).
-
-Now go to [Lab-2](https://github.com/apigee/devjam3/tree/master/Labs/Core/Lab%202%20Traffic%20Management%20-%20Throttle%20APIs)
+How did you like this lab? Rate .. to be filled in later
 
