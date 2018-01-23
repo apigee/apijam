@@ -63,30 +63,23 @@ In this lab we'll be creating a hosted function that utilizes node.js to paralle
 ![image alt text](./media/image_16.png)
 
 ## Test the API Proxy
-1. Let us test the newly built API proxy using the [REST Client](https://apigee-rest-client.appspot.com/). Open the REST Client on a new browser window.  
+1. Let us test the newly built API proxy by copying the url and hitting it in a new tab in the browser. If all is well it should return "Hello, World!"
 
-2. Copy the URL for your API proxy. 
+## Extend the proxy with new functionality
 
-![image alt text](./media/image_17.png)
+1. The default proxy isn't very interesting. Let's extend it a bit. First let's update the package.json file
 
-3. Paste the link into the REST Client and make a GET call
 
-![image alt text](./media/image_18.png)
-
-4. You should see a success response similar to this -
-![image alt text](./media/image_19.jpg)
-
-## Save the API Proxy
-
-1. Let’s save the API Proxy locally as an API Bundle so that we can reuse it in other labs.
-
-2. Save the API Proxy by downloading the proxy bundle, See screenshot below for instructions.
-
-![image alt text](./media/image_20.png)
-
-# Lab Video
-
-If you like to learn by watching, here is a short video on creating a reverse proxy using Open API Specification - [https://www.youtube.com/watch?v=3XBG9QOUPzg](https://www.youtube.com/watch?v=3XBG9QOUPzg) 
+```javascript
+{
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "express": "^4.16.2",
+    "node-fetch": "^1.7.3"
+  }
+}
+```
+![image alt text](./media/package.json)
 
 # Earn Extra-points
 
