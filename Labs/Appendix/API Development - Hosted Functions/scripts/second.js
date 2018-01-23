@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/route', (req, res) => {
-  getRoute( req.param('from'), req.param('to') ) 
+  getRoute( req.query.from, req.query.to ) 
     .then( d => {
       res.status(200).json(d).end();
     });
