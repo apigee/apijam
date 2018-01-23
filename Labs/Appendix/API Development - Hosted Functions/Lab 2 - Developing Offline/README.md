@@ -111,15 +111,15 @@ curl 'http://localhost:8080/route?from=Toronto%2C&to=Jacksonville%2CFL'
 
 ## Now lets update the proxy inside of apigee
 1. Navigate back to your proxy and go to the develop tab
-![image alt text](./media/clickOnDevelop.png) (Click on the develop tab)
+![image alt text](./media/clickOnDevelop.png)
 
 2. Now click on the `index.js` file from the scripts pane in the lower left hand corner.
-![image alt text](./media/clickOnIndexDotJs.png) (Click on index.js)
+![image alt text](./media/clickOnIndexDotJs.png)
 
 3. Now update the script with the same file from above in the previous section
 
 4. Save the script which will deploy it to the hosted functions backend
-![image alt text](./media/saveIndexDotJs.png) (Save the script)
+![image alt text](./media/saveIndexDotJs.png)
 
 5. Test it by using one of your previous curl tests and update the url appropriately. Here's an example: `https://apigee-hf-testing-test.apigee.net/gs-hf-proxy/route?from=Toronto%2CCanada&to=Austin%2CTX%2CUSA`
 
@@ -140,4 +140,3 @@ That completes this hands-on lesson. In this simple lab you learned how to do ho
 # Rate this lab
 
 How did you like this lab? Rate .. to be filled in later
-
