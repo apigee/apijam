@@ -129,7 +129,7 @@ app.listen(PORT, () => {
 
 # Quiz
 
-1. Let's put some happy fun questions in here
+1. Could you add traditional policies to the hosted function?
 
 # Summary
 
