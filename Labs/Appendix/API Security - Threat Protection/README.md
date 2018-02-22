@@ -51,6 +51,7 @@ You have an API proxy created in Apigee Edge. If not, jump back to *API Design :
         <NodeDepth>3</NodeDepth>
        <AttributeCountPerElement>2</AttributeCountPerElement>
         <NamespaceCountPerElement>3</NamespaceCountPerElement>
+        <ChildCount includeComment="true" includeElement="true" includeProcessingInstruction="true" includeText="true">3</ChildCount>
     </StructureLimits>
 </XMLThreatProtection>
 ```
