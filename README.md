@@ -39,3 +39,5 @@ NOTE: Appendix items are optional.
 
 #### Apigee Community 
 If you have any questions/comments please visit https://community.apigee.com/index.html
+
+##### This is not an official Google or Apigee product. This repository is used for educational/training purposes only.
