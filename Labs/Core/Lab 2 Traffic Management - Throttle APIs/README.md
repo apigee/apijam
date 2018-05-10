@@ -54,6 +54,8 @@ Apigee Edge API Proxy created in earlier lab exercise. If not, jump back to "API
 <SpikeArrest async="false" continueOnError="false" enabled="true" name="Spike-Arrest-1">
     <DisplayName>Spike Arrest-1</DisplayName>
     <Properties/>
+    <Identifier ref="request.header.some-header-name"/>
+    <MessageWeight ref="request.header.weight"/>
     <Rate>12pm</Rate>
 </SpikeArrest>
 ```
