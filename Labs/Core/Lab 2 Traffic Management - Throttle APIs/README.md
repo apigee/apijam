@@ -55,6 +55,7 @@ Apigee Edge API Proxy created in earlier lab exercise. If not, jump back to "API
     <DisplayName>Spike Arrest-1</DisplayName>
     <Properties/>
     <Rate>12pm</Rate>
+    <UseEffectiveCount>true</UseEffectiveCount>
 </SpikeArrest>
 ```
 
