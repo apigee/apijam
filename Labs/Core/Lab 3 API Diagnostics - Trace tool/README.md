@@ -76,7 +76,7 @@ Consider a scenario where one of your API consumers reports seeing 404 errors in
 2. Locate the URL field and append the following to the end
 
 ```
-/41b82365-8922-11e8-86ee-021e63aadcc4?initials={your intials}
+/7ed25ec5-c89f-11e6-861b-0ad881f403bfaaa?initials={your intials}
 ```
 
 3. Update above *{your initials}* with your actual initials and remove the braces.
@@ -98,7 +98,7 @@ Consider a scenario where one of your API consumers reports seeing 404 errors in
 6. Edit your URL field once more to follow the pattern below
 
 ```
-/e7f5ce16-205e-11e7-990c-0eec2415f3df?initials={your initials}
+/41be3def-8922-11e8-86ee-021e63aadcc4?initials={your initials}
 ```
 
 7. Update above {your initials} with your actual initials & remove the braces
@@ -118,7 +118,7 @@ Now, imagine troubleshooting this issue - except with hundreds or thousands of r
 2. Expand the filters pane on the left side of your screen.  Then add a query parameter filter named ‘initials’.  Put your initials in the value column and ensure the URL also holds your initials, like before.
 
 ```
-/e7f5ce16-205e-11e7-990c-0eec2415f3df?initials={your initials}
+/41be3def-8922-11e8-86ee-021e63aadcc4?initials={your initials}
 ```
 
 ![image alt text](./media/image_8_updated.png)
@@ -128,7 +128,7 @@ Now, imagine troubleshooting this issue - except with hundreds or thousands of r
 4. Update the URL with a new, fake value for the initials query parameter.  Example below.
 
 ```
-/e7f5ce16-205e-11e7-990c-0eec2415f3df?initials=xyz
+/41be3def-8922-11e8-86ee-021e63aadcc4?initials=xyz
 ```
 
 ![image alt text](./media/image_11.png)
