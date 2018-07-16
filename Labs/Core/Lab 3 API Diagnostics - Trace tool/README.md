@@ -76,7 +76,7 @@ Consider a scenario where one of your API consumers reports seeing 404 errors in
 2. Locate the URL field and append the following to the end
 
 ```
-/7ed25ec5-c89f-11e6-861b-0ad881f403bfaaa?initials={your intials}
+/41b82365-8922-11e8-86ee-021e63aadcc4?initials={your intials}
 ```
 
 3. Update above *{your initials}* with your actual initials and remove the braces.
