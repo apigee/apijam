@@ -104,4 +104,4 @@ That completes this hands-on lesson. In this simple lab you learned how to apply
 
 How did you like this lab? Rate [here](https://goo.gl/forms/BJGUY07XCGboHxrw2).
 
-Now to go [Lab-6](https://github.com/apigee/devjam3/tree/master/Labs/Core/Lab%206%20API%20Publishing%20-%20Documentation)
+Now to go [Lab-6](../Lab%206%20API%20Publishing%20-%20Documentation)
