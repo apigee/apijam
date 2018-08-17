@@ -45,7 +45,7 @@
                     {
                         "name": "body",
                         "required": true,
-                        "description": "an Employee oject",
+                        "description": "an Employee object",
                         "in": "body",
                         "schema": {
                             "$ref": "#/definitions/Employee"
@@ -98,7 +98,7 @@
                     {
                         "name": "body",
                         "required": true,
-                        "description": "an Employee oject",
+                        "description": "an Employee object",
                         "in": "body",
                         "schema": {
                             "$ref": "#/definitions/Employee"
