@@ -64,14 +64,14 @@
         },
         "/{employee-uuid}": {
             "get": {
-                "summary": "Get an Employee with given UUID.",
-                "description": "This endpoint returns a Employee from a given UUID.",
+                "summary": "Get an Employee with given UUID",
+                "description": "This endpoint returns an Employee.",
                 "parameters": [
                     {
                         "name": "employee-uuid",
                         "in": "path",
                         "required": true,
-                        "description": "UUID of a Employee",
+                        "description": "UUID of an Employee",
                         "type": "integer"
                     }
                 ],
