@@ -22,6 +22,9 @@ In this lab, you will protect an existing API Proxy with the [Verify API Key Pol
 
 * [API Product](http://docs.apigee.com/developer-services/content/what-api-product)
 
+In addition, you will add [CORS functionality](https://docs.apigee.com/api-platform/develop/adding-cors-support-api-proxy) to your proxy so that your API can be called from the developer portal we will be adding later.
+
+
 # Pre-requisites
 
 For this lab, you will need an API Proxy that is not currently secured.  If you do not have an API Proxy available for this lab, revisit the lab "API Design : Create a Reverse Proxy with OpenAPI Specification" and then return here to complete these steps.
@@ -140,7 +143,6 @@ An App Developer can create any number of Apps.  Each App can register for any n
 
 5. Click **Save**.
 
-
    Open the newly created App and click *Show* under *Consumer Key*.  This will reveal the API Key that must be used to invoke the API when API Key verification is in use.  Copy this key into a text document for later use.  
 
 ![image alt text](./media/image_10.png)
@@ -155,7 +157,7 @@ An App Developer can create any number of Apps.  Each App can register for any n
 
 4. Click **Add**
 
-5. The policy will be added after any policies you previously had in the Request flow.  Since we likely want this to occur first, drag the new policy to be the leftmost.
+5. The policy will be added after any policies you previously had in the Request flow.  Whenever adding a policy to a flow, think about where the policy should be in relation to the other policies in the flow. In this case, drag the new policy to be the leftmost.
 
 6. With the *Verify API Key* policy selected, you can see its configuration (the default policy configuration is below).  Note that the API Key is being retrieved from the context as the variable *request.queryparam.apikey*.  This is the default but the policy can be configured to retrieve the key from any parameter key you prefer.
 
@@ -168,19 +170,69 @@ An App Developer can create any number of Apps.  Each App can register for any n
 </VerifyAPIKey>
 ```
 
-7. **Save** the API Proxy.
+7. Let's also add [CORS functionality](https://docs.apigee.com/api-platform/develop/adding-cors-support-api-proxy) to the proxy. We didn't use the *Add CORS* checkbox when we created the proxy using the wizard. This is because you might run into problems if you use the default implementation when using the "Try it out" functionality of the portal API documentation.
 
-8. Click the **Trace** tab near the top of the window.
+First, select the Proxy PostFlow, and click **+Step** on the response flow. Select *Assign Message* policy from the *Mediation* section of the list. Name the policy *Add-CORS*.
 
-9. Click **Start Trace Session** to begin a trace session.
+Replace the *Assign Message* policy text with the following:
 
-10. Click **Send** to send a request.  If your API Proxy requires query parameters, add them  prior to sending (Do not add the API Key yet)
+```
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage async="false" continueOnError="false" enabled="true" name="Add-CORS">
+    <DisplayName>Add CORS</DisplayName>
+    <FaultRules/>
+    <Properties/>
+    <Set>
+        <Headers>
+            <Header name="Access-Control-Allow-Origin">{request.header.Origin}</Header>
+            <Header name="Access-Control-Allow-Headers">origin, x-requested-with, accept, content-type</Header>
+            <Header name="Access-Control-Max-Age">600</Header>
+            <Header name="Access-Control-Allow-Methods">GET, PATCH, PUT, POST, DELETE</Header>
+        </Headers>
+    </Set>
+    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+    <AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>
+```
 
-   You should see a 401 (unauthorized) response for your API Call because the API Proxy was expecting an API Key as a query      parameter.  See the trace session below
+This policy will set the required CORS headers. We only want to set the headers if the Origin header is set in the request, so add a condition to the policy:
 
-11. Now add the query parameter ```?apikey={your_api_key}``` to the URL in the trace tool and try again.  (Use the API Key you created [here](#bookmark=id.mueb50zfeta3)) and resend the request.
+```
+    <PostFlow name="PostFlow">
+        <Request/>
+        <Response>
+            <Step>
+                <Name>Add-CORS</Name>
+                <Condition>request.header.Origin != null</Condition>
+            </Step>
+        </Response>
+    </PostFlow>
+```
 
-   You should see a 2xx response code and the Trace for that request should show that the Verify API Key policy is now            passing.
+We also want to make sure that the target is skipped if the request verb is "OPTIONS". We'll add a no target route rule for this case. Change the route rules to this:
+
+```
+    <RouteRule name="NoRoute">
+        <Condition>request.verb == "OPTIONS" AND request.header.Origin != null</Condition>
+    </RouteRule>
+    <RouteRule name="default">
+        <TargetEndpoint>default</TargetEndpoint>
+    </RouteRule>
+```
+
+8. **Save** the API Proxy.
+
+9. Click the **Trace** tab near the top of the window.
+
+10. Click **Start Trace Session** to begin a trace session.
+
+11. Click **Send** to send a request.  If your API Proxy requires query parameters, add them  prior to sending (Do not add the API Key yet)
+
+   You should see a 401 (unauthorized) response for your API Call because the API Proxy was expecting an API Key as a query      parameter.
+
+12. Now add the query parameter ```?apikey={your_api_key}``` to the URL in the trace tool and try again.  (Use the API Key you created [here](#bookmark=id.mueb50zfeta3)) and resend the request.
+
+   You should see a 2xx response code and the Trace for that request should show that the Verify API Key policy is now passing.
 
 ![image alt text](./media/image_11.png)
 
@@ -204,7 +256,7 @@ A few examples of where this might be useful.
 
 1. What would happen if a Quota Policy were placed before the Verify API Key policy?
 
-2. Why is the Verify API Key policy typically found as the first policy in the Request PreFlow?  When might it be in a conditional PreFlow instead of the "All" PreFlow?
+2. Why is the Verify API Key policy typically one of the first policies in the Proxy Request PreFlow?  When might it be in a conditional flow instead of the "All" PreFlow?
 
 3. How would you configure the policy to get the API Key from a header called "Api-Key" instead of the default query parameter location?
 

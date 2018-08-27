@@ -112,11 +112,11 @@ Now that you have Registered in Developer Portal, Created App, Read API Document
 
 # Quiz
 
-1. When you create an APP, What are the different keys associated with it ?
+1. When you create an app, what are the different keys associated with it?
 
-2. Is it possible to create different Apps with same App Name ?
+2. Is it possible to create different apps with same app name?
 
-3. Is it possible to associate multiple API Products with same App ?
+3. Is it possible to associate multiple API Products with same app?
 
 # Summary
 
