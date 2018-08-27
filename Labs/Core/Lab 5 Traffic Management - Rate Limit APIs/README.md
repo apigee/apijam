@@ -26,7 +26,7 @@ Note: As you will have already completed the *API Security - Securing APIs with 
 
 2. Open up the **Develop** tab of your Employees API that you used in the previous lab.
 
-3. In the proxy request pre-flow add a **Quota policy** directly after the *Verify API Key Policy* with the following configuration (note that in the below configuration ‘Verify-API-Key-1’ refers to the name of the Verify API Key policy that you had added. If you used a different name you will need to alter this in the configuration):
+3. In the proxy request pre-flow add a **Quota policy** directly after the *Spike Arrest policy* with the following configuration (note that in the below configuration ‘Verify-API-Key-1’ refers to the name of the Verify API Key policy that you had added. If you used a different name you will need to alter this in the configuration):
 
 ```
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -85,6 +85,8 @@ Start a trace session for your API Proxy and use it to determine at what point t
 1. In the configuration we provided the ‘distributed’ and ‘synchronous’ attributes were both set to ‘true’. What is the implication if we set these to ‘false’?
 
 2. How would you configure the quota so that POST calls are counted as 2 calls for the purposes of evaluating the quota?
+
+3. What adverse effect could happen for the caller if the quota policy had been put before the spike arrest policy?
 
 # Summary
 

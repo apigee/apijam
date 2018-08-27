@@ -37,9 +37,9 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
 4. Enter spec details. Replace **{your-initials}** with the initials of your name.
 
-   * File Name: **{your-initials}**_employee_api_spec
+   * File Name: **{your-initials}**_employee_backend_api_spec
 
-   * URL: [https://raw.githubusercontent.com/apigeekdemos/apijam/master/Resources/employees-oas.json](https://raw.githubusercontent.com/apigeekdemos/apijam/master/Resources/employees-oas.json)
+   * URL: [https://raw.githubusercontent.com/apigeekdemos/apijam/master/Resources/employee-openapi-spec.yaml](https://raw.githubusercontent.com/apigeekdemos/apijam/master/Resources/employee-openapi-spec.yaml)
 
 ![image alt text](./media/image_2.png)
 
@@ -47,13 +47,13 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
 ![image alt text](./media/image_3.png)
 
-6. Click on **{your-initials}**_employee_api_spec from the list to access Open API spec editor & interactive documentation that lists API details & API Resources.
+6. Click on **{your-initials}**_employee_backend_api_spec from the list to access Open API spec editor & interactive documentation that lists API details & API Resources.
 
 ![image alt text](./media/image_4.png)
 
 ## Create an API Proxy
 
-1. It’s time to create Apigee API Proxy from Open API Specification. Click on **Develop → API Proxies** from side navigation menu.
+1. It’s time to create an Apigee API Proxy from Open API Specification. We will be creating an API Proxy that calls the backend service documented in the OpenAPI spec. Click on **Develop → API Proxies** from side navigation menu.
 
 ![image alt text](./media/image_5.jpg)
 
@@ -65,7 +65,7 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
 ![image alt text](./media/image_7.png)
 
-4. You should see a popup with list of Specs. Select **{your-initials}**_employee_api_spec and click **Select.** 
+4. You should see a popup with list of Specs. Select **{your-initials}**_employee_backend_api_spec and click **Select.** 
 
 ![image alt text](./media/image_8.png)
 
@@ -77,7 +77,7 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
     * Proxy Name: **{your_initials}**_employee_proxy
 
-    * Proxy Base Path: /v1/**{your_initials}**_employee_proxy
+    * Proxy Base Path: **/v1/{your_initials}_employee_proxy**
 
     * Existing API: Observe the field value which is auto filled from OpenAPI Spec.
 
@@ -89,17 +89,17 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
 ![image alt text](./media/image_11.png)
 
-9. Select **Pass through (none)** for the authorization in order to choose not to apply any security policy for the proxy. Click Next. 
+9. Select **Pass through (none)** for the authorization in order to choose not to apply any security policy for the proxy. Leave the CORS headers checkbox unchecked -- we will be adding CORS to our proxy manually. Click Next. 
 
 ![image alt text](./media/image_12.jpg)
 
-10. Go with the **default Virtual Host** configuration.
+10. This allows us to decide whether the proxy will be available over http (default), https (secure), or both. In this case, our API deals with employee data. This is generally sensitive information, so we will only allow access via https. Uncheck the **default** virtual host.
 
-![image alt text](./media/image_13.jpg)
+![image alt text](./media/image_13.png)
 
 11. Ensure that only the **test** environment is selected to deploy to and click **Build and Deploy** 
 
-![image alt text](./media/image_14.jpg)
+![image alt text](./media/image_14.png)
 
 12. Once the API proxy is built and deployed **click** the link to view your proxy in the proxy editor. 
 

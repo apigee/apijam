@@ -42,7 +42,7 @@ Apigee Developer Portal created in earlier lab exercise. If not, jump back to *A
 
 1. Let’s change the logo of the developer portal with Google logo, Navigate to [https://goo.gl/jNaH2y](https://goo.gl/jNaH2y) and download the Google logo to your local machine. **Rename** the file to logo.png.
 
-2. Go back to **{your_initials}_{api_proxy_name}**_portal overview screen and click on files section to upload the Google logo.
+2. Go back to **{your_initials}_{api_proxy_name}**_portal overview screen and click on the Assets section to upload the Google logo.
 
 ![image alt text](./media/image_4.png)
 
@@ -50,11 +50,9 @@ Apigee Developer Portal created in earlier lab exercise. If not, jump back to *A
 
 ![image alt text](./media/image_5.png)
 
-4. Upload the Google logo that you have downloaded in earlier step,
+4. Upload the Google logo that you have downloaded in earlier step. Note that you might need to flush the browser cache to see the new logo image.
 
 ![image alt text](./media/image_6.png)
-
-![image alt text](./media/image_7.png)
 
 5. Click on **Live Portal** to see logo changes. 
 
@@ -93,21 +91,17 @@ body nav.navbar-default ul.nav li a:hover {
 }
 ```
 
-3. Publish the changes by clicking on **Publish** button at right bottom and Confirm the changes.
+3. Publish the changes by clicking on **Publish** button at right bottom and confirming the changes.
 
 	![image alt text](./media/image_11.png)
 
 ## Create Your Own Portal Content
 
-1. Let’s update the home page text by selecting **Pages** from dropdown.
+1. Let’s update the home page text by selecting **Pages** from dropdown. Click on **Home** to edit homepage content.
 
 ![image alt text](./media/image_12.png)
 
-2. Click on **Home** to edit homepage content,
-
-![image alt text](./media/image_13.png)
-
-3. Update h1 tag content to "**Apigee Edge**", Click **Publish** to save changes.
+3. Update h1 tag content to "**Employee Portal**", Click **Publish** to save changes.
 
 ![image alt text](./media/image_14.png)
 
