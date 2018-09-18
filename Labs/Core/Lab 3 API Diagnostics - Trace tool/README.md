@@ -46,7 +46,7 @@ Note: The Extract Variables policy icon is visible on the request flow and shows
 
 7. Change the Policy XML configuration to match the code below.  Doing so will "teach" your proxy to extract your initials from a query parameter in the API request.
 
-Note: In the following snippet, the Pattern value that reads *{my_initials}* is referencing a variable in your API proxy called *my_initials*, you do not need to replace this with your initials. 
+**Note**: In the following snippet, the Pattern value that reads *{my_initials}* is referencing a variable in your API proxy called *my_initials*, **you do not need to replace this with your initials**. 
 
 ```
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -59,11 +59,10 @@ Note: In the following snippet, the Pattern value that reads *{my_initials}* is 
 </ExtractVariables>
 ```
 
-8. Click on **Save**. It will prompts to create a new revision, then click on *Save as new Revision*. 
+8. Click on **Save**. It may prompt to create a new revision. If it does, then click on *Save as new Revision*, and then **Deploy** the new revision to *test* environment. 
 
 ![image alt text](./media/image_4.png)
 
-9. **Deploy** the new revision to *test* environment. 
 
 ![image alt text](./media/image_6_updated.png)
 
