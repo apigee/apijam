@@ -36,7 +36,7 @@ You have an API proxy created in Apigee Edge. If not, jump back to the "Create R
 
 ![image alt text](./media/image_2_updated.png)
 
-5. Click on **PreFlow** under Proxy Endpoints default, Click on **+Step** on the Request flow to attach an *Extract Variables* policy.
+5. Click on **PreFlow** under Proxy Endpoints default, Click on **+Step** on the Request flow to attach an *Extract Variables*  policy.
 
 ![image alt text](./media/image_3_updated.png)
 
@@ -76,7 +76,7 @@ Consider a scenario where one of your API consumers reports seeing 404 errors in
 2. Locate the URL field and append the following to the end
 
 ```
-/7ed25ec5-c89f-11e6-861b-0ad881f403bfaaa?initials={your intials}
+/7ed25ec5-c89f-11e6-861b-0ad881f403bfaaa?initials={your initials}
 ```
 
 3. Update above *{your initials}* with your actual initials and remove the braces.
