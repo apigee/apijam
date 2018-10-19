@@ -21,7 +21,7 @@ In this lab we will start with a simple proxy that generates and validates JWT t
 0. Download the pre-built proxy bundle from [here](./Resources/JWT_flow.zip) 
 
 1. Create a new proxy using this proxy bundle and name it "JWT_flow_{your_initials}.
-    ![image alt text](./media/img-1.png)
+    ![image alt text](./Media/img-1.png)
 
 2. Deploy the proxy to `test` environment. Then go ahead and test the proxy using the trace tool by making the following calls:
 - Make a `GET` call to `http://<org-name>-<org-env>.apigee.net/jwt-flow/generate`. You may also use the curl command `curl http://<org-name>-<org-env>.apigee.net/jwt-flow/generate`
@@ -32,31 +32,31 @@ In this lab we will start with a simple proxy that generates and validates JWT t
 
 3. If you examine the assign message policy named `set secret`, you can see the secret that we use to sign the JWT token. This secret, just like your password credentials, is very sensitive and shouldn't be out in the open. Let's use an encrypted KVM to store this secret instead and modify this proxy to retrieve it from that KVM.
 
-    ![image alt text](./media/img-2.png)
+    ![image alt text](./Media/img-2.png)
 
 4. Keep this tab open. And in a new tab, Head over to `Admin -> Environments -> Key Value Maps`, and make sure you have the `test` environment selected.
 
-    ![image alt text](./media/img-3.png)
+    ![image alt text](./Media/img-3.png)
 
 5. Click on `+ Key Value Map` and name it `JWTSecrets`. Also check the box `encrypted`, this will encrypt the data you store in this KVM.
 
-    ![image alt text](./media/img-4.png)
+    ![image alt text](./Media/img-4.png)
 
-    ![image alt text](./media/img-5.png)
+    ![image alt text](./Media/img-5.png)
 
 6. Select the `JWTSecrets` KVM and add an entry by clicking the `+ Entry` button. Put `secret` in the as the name and `apigee0` as the value. Hit save.
 
-    ![image alt text](./media/img-6.png)
+    ![image alt text](./Media/img-6.png)
 
 7. Hit refresh on your browser and you'll notice that the data in that KVM is now masked.
 
-    ![image alt text](./media/img-7.png)
+    ![image alt text](./Media/img-7.png)
 
 8. Head back to your previous tab, you'll edit your proxy to use the KVM we just created.
 
 9. Delete the Assign Message policies.
 
-    ![image alt text](./media/img-8.png)
+    ![image alt text](./Media/img-8.png)
 
 10. Create a new `Key Value Map Operations` policy and replace its content with the XML below.
 ```
@@ -74,17 +74,17 @@ In this lab we will start with a simple proxy that generates and validates JWT t
 ```
 Here we are calling our KVM and storing the key `secret` in a variable named `private.secret`. In Apigee, the `private.` prefix in front of a variable name masks its value during runtime and is required for all values extracted from an encrypted KVM.
 
-  ![image alt text](./media/img-9.png)
+  ![image alt text](./Media/img-9.png)
 
 11. Add this policy in two places: 1. Before the JWT-Generate policy in the /generate flow; 2. Before the JWT-Verify policy in the /verify flow.
 
-    ![image alt text](./media/img-10.png)
-    ![image alt text](./media/img-11.png)
+    ![image alt text](./Media/img-10.png)
+    ![image alt text](./Media/img-11.png)
 
 12. Test your proxy in a same manner as in step 2. You'll have the same experience, but now your credentials are secure!
 
-    ![image alt text](./media/img-12.png)
-    ![image alt text](./media/img-13.png)
+    ![image alt text](./Media/img-12.png)
+    ![image alt text](./Media/img-13.png)
 
 # Summary
 
