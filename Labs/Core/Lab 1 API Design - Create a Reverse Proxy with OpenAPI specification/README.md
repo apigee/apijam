@@ -110,7 +110,7 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 ![image alt text](./media/image_16.png)
 
 ## Test the API Proxy
-1. Let us test the newly built API proxy using the [REST Client](https://apigee-rest-client.appspot.com/). Open the REST Client on a new browser window.  
+1. Let us test the newly built API proxy using the [REST Client](https://apigee-restclient.appspot.com/). Open the REST Client on a new browser window.  
 
 2. Copy the URL for your API proxy. 
 
