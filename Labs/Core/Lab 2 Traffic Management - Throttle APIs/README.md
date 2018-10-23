@@ -95,7 +95,7 @@ What actually happens, then? To prevent spike-like behavior, Spike Arrest smooth
 
 4. You might notice that number of requests with 200 response is more than spike arrest rate value configured, It’s due to multiple message processors where policies gets executed and each has individual counters.
 
-5. You can also use [Apigee Rest Client](https://apigee-rest-client.appspot.com/) to test Spike Arrest Policy.
+5. You can also use [Apigee Rest Client](https://apigee-restclient.appspot.com/) to test Spike Arrest Policy.
 
 ![image alt text](./media/image_13.png)
 
