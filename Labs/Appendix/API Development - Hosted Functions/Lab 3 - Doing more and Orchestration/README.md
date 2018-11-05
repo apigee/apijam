@@ -1,4 +1,4 @@
-# API Development : Hosted Functions : Doing more and Orchestration
+# API Development : Hosted Targets : Doing more and Orchestration
 
 *Duration : 20 mins*
 
@@ -81,7 +81,7 @@ app.listen(PORT, () => {
 });
 ```
 
-4. Save the script which will deploy it to the hosted functions backend
+4. Save the script which will deploy it to the hosted targets backend
 ![image alt text](./media/saveIndexDotJs.png)
 
 5. Test it by using the new route and sending in a location `https://apigee-hf-testing-test.apigee.net/gs-hf-proxy/weather/Austin%2CTX%2CUSA`
@@ -285,7 +285,7 @@ What we've added here is a `weatherForDate` function which is using the duration
 
 # Summary
 
-That completes this hands-on lesson. In this simple lab you learned how to do hosted functions development on your local machine and then you leanred that you could take that same script and move it directly to your running proxy.
+That completes this hands-on lesson. In this simple lab you learned how to do hosted targets development on your local machine and then you leanred that you could take that same script and move it directly to your running proxy.
 
 # References
 

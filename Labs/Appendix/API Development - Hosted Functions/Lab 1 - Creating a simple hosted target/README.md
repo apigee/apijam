@@ -1,4 +1,4 @@
-# API Development : Hosted Functions
+# API Development : Hosted Targets
 
 *Duration : 20 mins*
 
@@ -10,9 +10,9 @@ You have a proxy requirement where you want to aggregate the results of several 
 
 # How can Apigee Edge help?
 
-Hosted Functions provide a mechanism where customers can combine the rich support of policies with node.js apps deployed automatically by Apigee. The use case described here is best solved with real code. Through some simple code a developer can unambiguously handle the individual calls, aggregate and massage the output and with an eye to parallel execution.
+Hosted Targets provide a mechanism where customers can combine the rich support of policies with node.js apps deployed automatically by Apigee. The use case described here is best solved with real code. Through some simple code a developer can unambiguously handle the individual calls, aggregate and massage the output and with an eye to parallel execution.
 
-In this lab we'll be creating a hosted function that utilizes node.js to parallelize several backend calls and then combine the results into a single response.
+In this lab we'll be creating a hosted target that utilizes node.js to parallelize several backend calls and then combine the results into a single response.
 
 # Pre-requisites
 
@@ -20,7 +20,7 @@ In this lab we'll be creating a hosted function that utilizes node.js to paralle
 
 # Instructions
 
-## Create a "Hosted Function" API Proxy
+## Create a "Hosted Target" API Proxy
 
 1. It’s time to create Apigee API Proxy from Open API Specification. Click on **Develop → API Proxies** from side navigation menu.
 
@@ -32,7 +32,7 @@ In this lab we'll be creating a hosted function that utilizes node.js to paralle
 
 3. Select **Reverse proxy**, Click on **Use OpenAPI** below reverse proxy option.
 
-![image alt text](./media/ChooseHostedFunction.png)
+![image alt text](./media/ChooseHostedTarget.png)
 
 4. Enter details in the proxy wizard. Replace **{your-initials}** with the initials of your name. 
 
@@ -58,7 +58,7 @@ In this lab we'll be creating a hosted function that utilizes node.js to paralle
 
 ![image alt text](./media/image_15.png)
 
-9. *Congratulations!* ...You have now built a hosted function proxy. You should see the proxy **Overview** screen.
+9. *Congratulations!* ...You have now built a hosted target proxy. You should see the proxy **Overview** screen.
 
 ![image alt text](./media/image_16.png)
 
@@ -78,7 +78,7 @@ The default proxy isn't very interesting. Let's extend it a bit. First let's upd
 2. Next click on `package.json` from the scripts view in the lower left hand navigation pane.
 ![image alt text](./media/clickOnPackageDotJson.png)
 
-3. Update the package.json as per the following. We're adding threw new dependencies that the hosted functions service will automatically install for us and which we'll need going forward.
+3. Update the package.json as per the following. We're adding threw new dependencies that the hosted targets service will automatically install for us and which we'll need going forward.
 
 ```javascript
 {
@@ -129,7 +129,7 @@ app.listen(PORT, () => {
 
 # Quiz
 
-1. Could you add traditional policies to the hosted function?
+1. Could you add traditional policies to the hosted target?
 
 # Summary
 

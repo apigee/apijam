@@ -1,4 +1,4 @@
-# API Development : Hosted Functions : Developing Offline
+# API Development : Hosted Targets : Developing Offline
 
 *Duration : 20 mins*
 
@@ -6,7 +6,7 @@
 
 # Use case
 
-Sometimes you may need or desire to work on your script while offline. One of the many advantages to working with Hosted Functions is that this is both possible and easy assuming you have the tooling required on your local workstation.
+Sometimes you may need or desire to work on your script while offline. One of the many advantages to working with Hosted Targets is that this is both possible and easy assuming you have the tooling required on your local workstation.
 
 # Pre-requisites
 
@@ -29,7 +29,7 @@ git clone git@github.com:apigee/apijam.git
 
 2. Now let's change to the directory where these scripts are stored
 ```bash
-cd apijam/Labs/Appendix/API\ Development\ -\ Hosted\ Functions/scripts
+cd apijam/Labs/Appendix/API\ Development\ -\ Hosted\ Targets/scripts
 ```
 
 3. This directory contains a package.json file already (The same one you used in the first lab). We can now install all dependencies here
@@ -40,7 +40,7 @@ npm install
 
 4. Now you should see a `node_modules` directory containing all the dependencies
 
-## Run and test a hosted function locally
+## Run and test a hosted target locally
 1. Now that we have the scripts directory ready we can execute the `first.js` script directly from your local machine. Execute the script by simply runnin node against it:
 
 ```bash
@@ -127,7 +127,7 @@ curl 'http://localhost:8080/route?from=Toronto%2C&to=Jacksonville%2CFL'
 
 3. Now update the script with the same file from above in the previous section
 
-4. Save the script which will deploy it to the hosted functions backend
+4. Save the script which will deploy it to the hosted targets backend
 ![image alt text](./media/saveIndexDotJs.png)
 
 5. Test it by using one of your previous curl tests and update the url appropriately. Here's an example: `https://apigee-hf-testing-test.apigee.net/gs-hf-proxy/route?from=Toronto%2CCanada&to=Austin%2CTX%2CUSA`
@@ -139,7 +139,7 @@ curl 'http://localhost:8080/route?from=Toronto%2C&to=Jacksonville%2CFL'
 
 # Summary
 
-That completes this hands-on lesson. In this simple lab you learned how to do hosted functions development on your local machine and then you leanred that you could take that same script and move it directly to your running proxy.
+That completes this hands-on lesson. In this simple lab you learned how to do hosted targets development on your local machine and then you leanred that you could take that same script and move it directly to your running proxy.
 
 # References
 
