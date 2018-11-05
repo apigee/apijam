@@ -1,8 +1,10 @@
 const express = require('express'),
-  fetch = require('node-fetch');
+  fetch = require('node-fetch'),
+  key = require('./mapquestKey');
 
 const app = express();
-const routeURL = 'http://maps.googleapis.com/maps/api/directions/json';
+//const routeURL = 'http://maps.googleapis.com/maps/api/directions/json';
+const routeURL = 'https://www.mapquestapi.com/directions/v2/route';
 const yqlURL = 'https://query.yahooapis.com/v1/public/yql?format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys';
 const weatherQuery = 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="@LOCATION@")';
 
@@ -11,11 +13,12 @@ const weatherQuery = 'select * from weather.forecast where woeid in (select woei
  * Fetch routing info passed in as query parameters
  */
 function getRoute(from,to)  {
-  let url = `${routeURL}?origin=${from}&destination=${to}`;
+  let url = `${routeURL}?from=${from}&to=${to}&key=${key.key}`;
   console.log('About to fetch: ', url);
   return fetch( url )
     .then( d => d.json() )
-    .then( route => route.routes[0].legs[0]  )
+    //.then( route => route.routes[0].legs[0] )
+    .then( route => route.route.legs[0] )
 }
 
 /*

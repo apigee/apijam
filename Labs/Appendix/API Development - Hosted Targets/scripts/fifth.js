@@ -1,9 +1,11 @@
 const express = require('express'),
   Promise = require('bluebird'),
-  fetch = require('node-fetch');
+  fetch = require('node-fetch'),
+  key = require('./mapquestKey');
 
 const app = express();
-const routeURL = 'http://maps.googleapis.com/maps/api/directions/json';
+//const routeURL = 'http://maps.googleapis.com/maps/api/directions/json';
+const routeURL = 'https://www.mapquestapi.com/directions/v2/route';
 const yqlURL = 'https://query.yahooapis.com/v1/public/yql?format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys';
 const weatherQuery = 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="@LOCATION@") and u="c"';
 
@@ -12,11 +14,12 @@ const weatherQuery = 'select * from weather.forecast where woeid in (select woei
  * Fetch routing info passed in as query parameters
  */
 function getRoute(from,to)  {
-  let url = `${routeURL}?origin=${from}&destination=${to}`;
-  console.log('About to fetch route url', url);
+  let url = `${routeURL}?from=${from}&to=${to}&key=${key.key}`;
+  console.log('About to fetch: ', url);
   return fetch( url )
-    .then( d => d.json() );
-    .then( route => route.routes[0].legs[0]  )
+    .then( d => d.json() )
+    //.then( route => route.routes[0].legs[0] )
+    .then( route => route.route.legs[0] )
 }
 
 /*
@@ -71,9 +74,14 @@ app.get('/route', (req, res) => {
     getWeather( req.param('to') ),
     getRoute( req.param('from'), req.param('to') ),
     (wFrom,wTo,route) => {
+      let totalSeconds = ( 
+        (route.formattedTime.split(':')[0] * 60 *60) + 
+        (route.formattedTime.split(':')[1] * 60) + 
+        (route.formattedTime.split(':')[2] ) 
+      );
       route.startWeather = wFrom.query.results.channel.item.condition;
       route.endWeather = getWeatherForDate( wTo.query.results.channel.item.forecast,
-        new Date().getTime() + route.duration.value * 1000 )
+        new Date().getTime() + totalSeconds )
       return route;
     })
     .then( d => {
