@@ -25,10 +25,12 @@ One main use case for switching to code instead of policies is if you know that 
 3. Now update the script with the following:
 ```javascript
 const express = require('express'),
-  fetch = require('node-fetch');
+  fetch = require('node-fetch'),
+  key = require('./mapquestKey');
 
 const app = express();
-const routeURL = 'http://maps.googleapis.com/maps/api/directions/json';
+//const routeURL = 'http://maps.googleapis.com/maps/api/directions/json';
+const routeURL = 'https://www.mapquestapi.com/directions/v2/route';
 const yqlURL = 'https://query.yahooapis.com/v1/public/yql?format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys';
 const weatherQuery = 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="@LOCATION@")';
 
@@ -37,11 +39,12 @@ const weatherQuery = 'select * from weather.forecast where woeid in (select woei
  * Fetch routing info passed in as query parameters
  */
 function getRoute(from,to)  {
-  let url = `${routeURL}?origin=${from}&destination=${to}`;
+  let url = `${routeURL}?from=${from}&to=${to}&key=${key.key}`;
   console.log('About to fetch: ', url);
   return fetch( url )
     .then( d => d.json() )
-    .then( route => route.routes[0].legs[0]  )
+    //.then( route => route.routes[0].legs[0] )
+    .then( route => route.route.legs[0] )
 }
 
 /*
@@ -79,6 +82,7 @@ app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
   console.log('Press Ctrl+C to quit.');
 });
+
 ```
 
 4. Save the script which will deploy it to the hosted targets backend
@@ -106,10 +110,12 @@ To do this efficiently we're going to use an additional promise library called: 
 ```javascript
 const express = require('express'),
   Promise = require('bluebird'),
-  fetch = require('node-fetch');
+  fetch = require('node-fetch'),
+  key = require('./mapquestKey');
 
 const app = express();
-const routeURL = 'http://maps.googleapis.com/maps/api/directions/json';
+//const routeURL = 'http://maps.googleapis.com/maps/api/directions/json';
+const routeURL = 'https://www.mapquestapi.com/directions/v2/route';
 const yqlURL = 'https://query.yahooapis.com/v1/public/yql?format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys';
 const weatherQuery = 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="@LOCATION@") and u="c"';
 
@@ -118,11 +124,12 @@ const weatherQuery = 'select * from weather.forecast where woeid in (select woei
  * Fetch routing info passed in as query parameters
  */
 function getRoute(from,to)  {
-  let url = `${routeURL}?origin=${from}&destination=${to}`;
+  let url = `${routeURL}?from=${from}&to=${to}&key=${key.key}`;
   console.log('About to fetch: ', url);
   return fetch( url )
     .then( d => d.json() )
-    .then( route => route.routes[0].legs[0]  )
+    //.then( route => route.routes[0].legs[0] )
+    .then( route => route.route.legs[0] )
 }
 
 /*
@@ -169,6 +176,7 @@ app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
   console.log('Press Ctrl+C to quit.');
 });
+
 ```
 
 This time we've upated the `/route` endpoint with a `Promise.join`. The join lets us run three separate function calls (which in turn make their own outbound api calls) which are executed in parallel. Then it takes the results of those three calls and passes it to that last fat arrow function that starts with `(wFrom,wTo,route) => {`. As you can see we've simply passed the responses from those three separate calls into a single function where we can combine them into a new response. With that done the promise chain continues and returns the new javascript object containing two new attributes that we've added: startWeather and endWeather.
@@ -187,10 +195,12 @@ Now we're getting real responses, but what if our trip is going to take a couple
 ```javascript
 const express = require('express'),
   Promise = require('bluebird'),
-  fetch = require('node-fetch');
+  fetch = require('node-fetch'),
+  key = require('./mapquestKey');
 
 const app = express();
-const routeURL = 'http://maps.googleapis.com/maps/api/directions/json';
+//const routeURL = 'http://maps.googleapis.com/maps/api/directions/json';
+const routeURL = 'https://www.mapquestapi.com/directions/v2/route';
 const yqlURL = 'https://query.yahooapis.com/v1/public/yql?format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys';
 const weatherQuery = 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="@LOCATION@") and u="c"';
 
@@ -199,11 +209,12 @@ const weatherQuery = 'select * from weather.forecast where woeid in (select woei
  * Fetch routing info passed in as query parameters
  */
 function getRoute(from,to)  {
-  let url = `${routeURL}?origin=${from}&destination=${to}`;
-  console.log('About to fetch route url', url);
+  let url = `${routeURL}?from=${from}&to=${to}&key=${key.key}`;
+  console.log('About to fetch: ', url);
   return fetch( url )
-    .then( d => d.json() );
-    .then( route => route.routes[0].legs[0]  )
+    .then( d => d.json() )
+    //.then( route => route.routes[0].legs[0] )
+    .then( route => route.route.legs[0] )
 }
 
 /*
@@ -258,9 +269,14 @@ app.get('/route', (req, res) => {
     getWeather( req.param('to') ),
     getRoute( req.param('from'), req.param('to') ),
     (wFrom,wTo,route) => {
+      let totalSeconds = ( 
+        (route.formattedTime.split(':')[0] * 60 *60) + 
+        (route.formattedTime.split(':')[1] * 60) + 
+        (route.formattedTime.split(':')[2] ) 
+      );
       route.startWeather = wFrom.query.results.channel.item.condition;
       route.endWeather = getWeatherForDate( wTo.query.results.channel.item.forecast,
-        new Date().getTime() + route.duration.value * 1000 )
+        new Date().getTime() + totalSeconds )
       return route;
     })
     .then( d => {
@@ -275,6 +291,7 @@ app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
   console.log('Press Ctrl+C to quit.');
 });
+
 ```
 
 What we've added here is a `weatherForDate` function which is using the duration plus the current time and associating it with the forecast data in order to return the weather that's most likely correct (we're doing some simple math to see if it's within the last 24 hours).

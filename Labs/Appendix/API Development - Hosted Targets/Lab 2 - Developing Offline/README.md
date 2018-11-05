@@ -62,22 +62,29 @@ You should have now been rewarded with the same `Hello, World!` seen when you ra
 
 ## Create a whole new script and test it locally
 1. Our first example was quite simple. Now let's do something a little more interesting. Open up an editor and create a new script in this directory called `tryIt.js` and insert the following lines.
+
+
+NOTE: This script relies on a key stored in mapquestKey.js. Your instructor will provide a method for you to grab this key and use it during this and the next lab.
+
 ```javascript
 const express = require('express'),
-  fetch = require('node-fetch');
+  fetch = require('node-fetch'),
+  key = require('./mapquestKey');
 
 const app = express();
-const routeURL = 'http://maps.googleapis.com/maps/api/directions/json';
+//const routeURL = 'http://maps.googleapis.com/maps/api/directions/json';
+const routeURL = 'https://www.mapquestapi.com/directions/v2/route';
 
 /*
  * Fetch routing info passed in as query parameters
  */
 function getRoute(from,to)  {
-  let url = `${routeURL}?origin=${from}&destination=${to}`;
+  let url = `${routeURL}?from=${from}&to=${to}&key=${key.key}`;
   console.log('About to fetch: ', url);
   return fetch( url )
     .then( d => d.json() )
-    .then( route => route.routes[0].legs[0] )
+    //.then( route => route.routes[0].legs[0] )
+    .then( route => route.route.legs[0] )
 }
 
 app.get('/', (req, res) => {
