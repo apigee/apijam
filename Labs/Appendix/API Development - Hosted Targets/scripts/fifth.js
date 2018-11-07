@@ -32,7 +32,6 @@ function getWeather(location)  {
   return fetch( url )
     .then( d => d.json() )
     .then( d => {
-      console.log('got this: %j', d);
       return d;
     } )
     .catch( e => {
@@ -50,7 +49,6 @@ function getWeatherForDate( forecast, date ) {
     let d = new Date( f.date ).getTime();
     let diff = date - d;
     if ( (diff > 0) && diff < (24*60*60*1000) )  {
-      console.log('compared %s with %s', (date-d), (24*60*60*1000));
       arrivalConditions = f;
     }
   })
@@ -75,13 +73,13 @@ app.get('/route', (req, res) => {
     getRoute( req.param('from'), req.param('to') ),
     (wFrom,wTo,route) => {
       let totalSeconds = ( 
-        (route.formattedTime.split(':')[0] * 60 *60) + 
-        (route.formattedTime.split(':')[1] * 60) + 
-        (route.formattedTime.split(':')[2] ) 
+        (parseInt(route.formattedTime.split(':')[0]) * ( 60*60 )) + 
+        (parseInt(route.formattedTime.split(':')[1]) * 60) + 
+        (parseInt(route.formattedTime.split(':')[2]) ) 
       );
       route.startWeather = wFrom.query.results.channel.item.condition;
       route.endWeather = getWeatherForDate( wTo.query.results.channel.item.forecast,
-        new Date().getTime() + totalSeconds )
+        new Date().getTime() + (totalSeconds*1000) )
       return route;
     })
     .then( d => {
