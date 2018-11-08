@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "apigee-org-admin": "^0.8.7",
     "bluebird": "^3.5.1",
     "express": "^4.16.2",
     "node-fetch": "^1.7.3"
