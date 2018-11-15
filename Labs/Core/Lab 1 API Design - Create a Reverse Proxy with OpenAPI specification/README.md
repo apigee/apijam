@@ -39,7 +39,7 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
    * File Name: **{your-initials}**_employee_api_spec
 
-   * URL: [https://storage.googleapis.com/dynolab-153020.appspot.com/employees-oas.json](https://storage.googleapis.com/dynolab-153020.appspot.com/employees-oas.json)
+   * URL: [https://raw.githubusercontent.com/apigee/apijam/master/Resources/employees-oas.json](https://raw.githubusercontent.com/apigee/apijam/master/Resources/employees-oas.json)
 
 ![image alt text](./media/image_2.png)
 
