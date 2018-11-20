@@ -10,7 +10,7 @@ As a member of the API team, you would like to aggregate multiple APIs, in this 
 
 The goal is to have the proxy perform a geolocation query against our Employee data collection to return results within a certain radius of a zip code.
 
-API BaaS supports the ability to retrieve entities within a specified distance of any geocoordinate based on its location property:
+This API supports the ability to retrieve entities within a specified distance of any geocoordinate based on its location property:
 
 ```
 location within {distance_in_meters} of {latitude},{longitude}
@@ -56,6 +56,16 @@ In this lab we will see how you can extend an existing API by aggregating it wit
 
 # Instructions
 
+## Obtain the API key for Google Maps APIs.
+1. Open the Google Map API documentation [page](https://developers.google.com/maps/documentation/geocoding/start?authuser=0#get-a-key). Click on **Get Started** to register and activate Google Map APIs. 
+2. Select the **Places** product as that contains the Geocode APIs. Click Continue.
+![image alt text](./media/gcp-select-places.png)
+3. Click on **Create a Project** option under *Select or Create a Project* drop down. Provide a name. Click **Next**.
+4. Enable and Create or Set Billing Account (if already available)
+5. Enable the API to complete the configuration
+6. Once the configuration is complete, you should find your API Key. Please copy this in a safe place. Click **Done**.
+![image alt text](./media/gcp-geocode-apikey.png)
+
 ## Select existing Employees API
 
 1. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI. 
@@ -78,7 +88,7 @@ In this lab we will see how you can extend an existing API by aggregating it wit
 
 ![image alt text](./media/image_4.png)
 
-6. Modify the policy to reflect a request with the appropriate query parameters for the Google Geolocation API.
+6. Modify the policy to reflect a request with the appropriate query parameters for the Google Geolocation API. Also replace `YOUR_KEY_GOES_HERE` with your Google Map's API key.
 
 ```
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -90,6 +100,7 @@ In this lab we will see how you can extend an existing API by aggregating it wit
             <QueryParam name="address">{request.queryparam.zipcode}</QueryParam>
             <QueryParam name="region">US</QueryParam>
             <QueryParam name="sensor">false</QueryParam>
+            <QueryParam name="key">YOUR_KEY_GOES_HERE</QueryParam>
         </QueryParams>
         <Verb>GET</Verb>
     </Set>
@@ -131,7 +142,7 @@ Note: The properties associated with the ‘Assign Message’ policy could have 
 Scroll down the policy list and select **Service Callout** and update the default display name to **Call Geocoding API** select **HTTP** and then enter the **HTTP Target** with the following URL:
 
 ```
-http://maps.googleapis.com/maps/api/geocode/json
+https://maps.googleapis.com/maps/api/geocode/json
 ```
 
 ![image alt text](./media/image_6.png)
@@ -146,7 +157,7 @@ Then click on **Add** button.
 
 **<Response>**- This element names a variable ‘GeoCodingResponse’ in which the response from the Google Geocoding API will be stored. As you will see, this variable will be accessed later by the ExtractVariables policy.
 
-**<HTTPTargetConnection><URL>** - Specifies the target URL to be used by the service callout - in this case the URL of the Google Geocoding API: [http://maps.googleapis.com/maps/api/geocode/json](http://maps.googleapis.com/maps/api/geocode/json) 
+**<HTTPTargetConnection><URL>** - Specifies the target URL to be used by the service callout - in this case the URL of the Google Geocoding API: [https://maps.googleapis.com/maps/api/geocode/json](https://maps.googleapis.com/maps/api/geocode/json) 
 
 * **Save** the API Proxy.
 
