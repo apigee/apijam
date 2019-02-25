@@ -42,6 +42,24 @@ Note: As you will have already completed the *API Security - Securing APIs using
 
 Note the *Identifier* field -- the quota will be enforced per client_id (API key). The *Allow*, *Interval*, and *TimeUnit* fields will take their values from the API product quota configuration.
 
+Also add a condition to the policy that skips the quota check if the request verb is OPTIONS (this is for CORS -- see Lab 4):
+
+```
+        <Request>
+            <Step>
+                <Name>VAK-VerifyKey</Name>
+                <Condition>request.verb != "OPTIONS"</Condition>
+            </Step>
+            <Step>
+                <Name>SA-GlobalSpikeArrest</Name>
+            </Step>
+            <Step>
+                <Name>Q-EnforceQuotaPerKey</Name>
+                <Condition>request.verb != "OPTIONS"</Condition>
+            </Step>
+        </Request>
+```
+
 Your API Proxy should now look like this:
 
 ![image alt text](./media/image_1.png)
