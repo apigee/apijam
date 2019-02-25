@@ -235,6 +235,15 @@ We also want to make sure that the target is skipped if the request verb is "OPT
 
 ![image alt text](./media/image_24.png)
 
+If the request verb is "OPTIONS", we also shouldn't require the API key. Add a condition that does not verify the API key for OPTIONS requests:
+
+```
+            <Step>
+                <Name>VAK-VerifyKey</Name>
+                <Condition>request.verb != "OPTIONS"</Condition>
+            </Step>
+```
+
 8. **Save** the API Proxy.
 
 9. Click the **Trace** tab near the top of the window.
