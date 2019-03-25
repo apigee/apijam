@@ -97,7 +97,7 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
 ![image alt text](./media/image_13.jpg)
 
-11. Ensure that only the **test** environment is selected to deploy to and click **Build and Deploy** 
+11. Select option 1 (Use my organization's default permissions) and click on Next. Ensure that only the **test** environment is selected to deploy to and click **Build and Deploy** 
 
 ![image alt text](./media/image_14.jpg)
 
