@@ -1,4 +1,4 @@
-# API Design : Create a Reverse Proxy with OpenAPI Specification
+# Open API Design : Create a Reverse Proxy with OpenAPI Specification
 
 *Duration : 20 mins*
 
@@ -6,7 +6,7 @@
 
 # Use case
 
-You have a requirement to create a reverse proxy for taking requests from the Internet and forward them to an existing service. You have decided to follow a design first approach & built a reusable component, a specification which can be used to build API Proxies, generate API documentation, generate API test cases using OpenAPI Specification format. You would like to generate an Apigee API Proxy by using the OpenAPI Specification (Swagger) instead of building the API Proxy from scratch.
+You have a requirement to create a reverse proxy for accepting requests from the Internet and forward them to an existing service. You have decided to follow an API design first approach & built a reusable component, a specification which can be used to build API Proxies, generate API documentation, generate API test cases using OpenAPI Specification format. You would like to generate an Apigee API Proxy by using the OpenAPI Specification (Swagger) instead of building the API Proxy from scratch.
 
 # How can Apigee Edge help?
 
@@ -25,7 +25,7 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
 ## Import an Open API Specification
 
-1. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI. 
+1. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Apigee Edge Management UI. 
 
 2. Select **Develop → Specs** in the side navigation menu
 
@@ -37,9 +37,9 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
 4. Enter spec details. Replace **{your-initials}** with the initials of your name.
 
-   * File Name: **{your-initials}**_employee_api_spec
+   * Import Name: **{your-initials}**_employee_api_spec
 
-   * URL: [https://raw.githubusercontent.com/apigee/apijam/master/Resources/employees-oas.json](https://raw.githubusercontent.com/apigee/apijam/master/Resources/employees-oas.json)
+   * Import URL: [https://raw.githubusercontent.com/apigee/apijam/master/Resources/employees-oas.json](https://raw.githubusercontent.com/apigee/apijam/master/Resources/employees-oas.json)
 
 ![image alt text](./media/image_2.png)
 
