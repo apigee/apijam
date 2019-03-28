@@ -38,7 +38,7 @@ For this lab, you will need:
 
   * File Name: Acme Employee
 
-  * URL: [https://raw.githubusercontent.com/apigeekdemos/apijam/master/Resources/employee-openapi-spec.yaml](https://raw.githubusercontent.com/apigeekdemos/apijam/master/Resources/employee-openapi-spec.yaml)
+  * URL: [https://raw.githubusercontent.com/apigee/apijam/master/Resources/employee-openapi-spec.yaml](https://raw.githubusercontent.com/apigee/apijam/master/Resources/employee-openapi-spec.yaml)
 
 ![image alt text](./media/image_1.png)
 
@@ -136,7 +136,7 @@ A Spec represents a version of the OpenAPI Specification at a particular point i
 ![image alt text](./media/image_14.png)
 
 In the dropdown choose **External Image**. Set the Image URL:
-  [https://raw.githubusercontent.com/apigeekdemos/apijam/master/Resources/employee-image.jpg](https://raw.githubusercontent.com/apigeekdemos/apijam/master/Resources/employee-image.jpg)
+  [https://raw.githubusercontent.com/apigee/apijam/master/Resources/employee-image.jpg](https://raw.githubusercontent.com/apigee/apijam/master/Resources/employee-image.jpg)
 
 Click **Add**.
 
