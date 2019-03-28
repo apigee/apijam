@@ -43,7 +43,7 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
 ![image alt text](./media/image_2.png)
 
-5. Verify the values and click **Import**. Spec has been imported into Apigee Edge is ready to use. You should see your spec in the list. For example,
+5. Verify the values and click **Import**. Spec has been imported into Apigee Edge and is ready to use. You should see your spec in the list. For example,
 
 ![image alt text](./media/image_3.png)
 
@@ -89,7 +89,7 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
 7. Verify the values and click **Next**.
 
-8. You can select, de-select list of API Proxy Resources that are pre-filled from the OpenAPI Spec. For example, you might decide that you don't want to expose the delete operation via the API. In this case, we will expose all the operations, so make sure all 5 are selected and click on **Next**.
+8. You can select and de-select list of API Proxy Resources that are pre-filled from the OpenAPI Spec. For example, you might decide that you don't want to expose the delete operation via the API. In this case, we will expose all the operations, so make sure all 5 are selected and click on **Next**.
 
 ![image alt text](./media/image_11.png)
 
