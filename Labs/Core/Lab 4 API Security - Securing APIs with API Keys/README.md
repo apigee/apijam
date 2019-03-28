@@ -14,7 +14,7 @@ The [Verify API Key Policy](https://docs.apigee.com/api-platform/reference/polic
 
 In addition to authenticating requests, the [Verify API Key Policy](https://docs.apigee.com/api-platform/reference/policies/verify-api-key-policy) provides context about the app making the call.  This context can be used to apply policies such as quota enforcement or routing based upon the client app.  On successful verification of the API Key, the API Context is populated with details about the App, Developer, and API Product associated with the call.  This data can be used for applying business logic as well as gaining business insights through analytics.
 
-In this lab, you will protect an existing API Proxy with the [Verify API Key Policy](http://docs.apigee.com/api-services/reference/verify-api-key-policy) and use the trace tool to see the policy in action.  To accomplish this you will modify an existing API Proxy to add a security policy to handle the authorization.  You will also create several artifacts in your [Organization](https://docs.apigee.com/api-baas/reference/organization).
+In this lab, you will protect an existing API Proxy with the [Verify API Key Policy](https://docs.apigee.com/api-platform/reference/policies/verify-api-key-policy) and use the trace tool to see the policy in action.  To accomplish this you will modify an existing API Proxy to add a security policy to handle the authorization.  You will also create several artifacts in your [Organization](https://docs.apigee.com/api-platform/fundamentals/apigee-edge-organization-structure).
 
 * [App Developer](https://docs.apigee.com/api-platform/publish/adding-developers-your-api-product)
 
