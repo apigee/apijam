@@ -43,7 +43,7 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
 ![image alt text](./media/image_2.png)
 
-5. Verify the values and click **Import**. Spec has been imported into Apigee Edge & Ready to use. You should see your spec in the list. For example,
+5. Verify the values and click **Import**. Spec has been imported into Apigee Edge is ready to use. You should see your spec in the list. For example,
 
 ![image alt text](./media/image_3.png)
 
@@ -89,7 +89,7 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
 7. Verify the values and click **Next**.
 
-8. You can select, de-select list of API Proxy Resources that are pre-filled from OpenAPI Spec. For example, you might decide that you don't want to expose the delete operation via the API. In this case, we will expose all the operations, so make sure all 5 are selected and click on **Next**.
+8. You can select, de-select list of API Proxy Resources that are pre-filled from the OpenAPI Spec. For example, you might decide that you don't want to expose the delete operation via the API. In this case, we will expose all the operations, so make sure all 5 are selected and click on **Next**.
 
 ![image alt text](./media/image_11.png)
 
@@ -137,7 +137,7 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
 # Lab Video
 
-If you like to learn by watching, here is a short video on creating a reverse proxy using Open API Specification - [https://www.youtube.com/watch?v=3XBG9QOUPzg](https://www.youtube.com/watch?v=3XBG9QOUPzg) 
+If you like to learn by watching, here is a short video on creating a reverse proxy using an Open API Specification - [https://youtu.be/3XBG9QOUPzg](https://youtu.be/3XBG9QOUPzg) 
 
 # Earn Extra-points
 
@@ -151,17 +151,17 @@ Now that you have created a reverse proxy using an OpenAPI spec, select the Deve
 
 # Summary
 
-That completes this hands-on lesson. In this simple lab you learned how to create a proxy for an existing backend using OpenAPI Specification and Apigee Edge proxy wizard.
+That completes this hands-on lesson. In this simple lab you learned how to create a proxy for an existing backend using an OpenAPI Specification and the Apigee proxy wizard.
 
 # References
 
-* Useful Apigee documentation links on API Proxies - 
+* Useful Apigee documentation links on API Proxies:
 
     * Build a simple API Proxy - [https://docs.apigee.com/api-platform/fundamentals/build-simple-api-proxy](https://docs.apigee.com/api-platform/fundamentals/build-simple-api-proxy) 
 
     * Best practices for API proxy design and development - [https://docs.apigee.com/api-platform/fundamentals/best-practices-api-proxy-design-and-development](https://docs.apigee.com/api-platform/fundamentals/best-practices-api-proxy-design-and-development) 
 
-* Watch this 4minute video on "Anatomy of an API proxy" - [https://youtu.be/O5DJuCXXIRg](https://youtu.be/O5DJuCXXIRg) 
+* Watch this 4minute video on the "Anatomy of an API proxy" - [https://youtu.be/O5DJuCXXIRg](https://youtu.be/O5DJuCXXIRg) 
 
 # Next step
 
