@@ -39,7 +39,7 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
    * Import Name: Employee Backend
 
-   * Import Url: [https://raw.githubusercontent.com/apigeekdemos/apijam/master/Resources/employee-openapi-spec.yaml](https://raw.githubusercontent.com/apigeekdemos/apijam/master/Resources/employee-openapi-spec.yaml)
+   * Import Url: [https://raw.githubusercontent.com/apigee/apijam/master/Resources/employee-openapi-spec.yaml](https://raw.githubusercontent.com/apigee/apijam/master/Resources/employee-openapi-spec.yaml)
 
 ![image alt text](./media/image_2.png)
 
