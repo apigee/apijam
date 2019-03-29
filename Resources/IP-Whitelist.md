@@ -6,4 +6,5 @@
 - https://apigee-rest-client.appspot.com/
 - http://docs.apigee.com/
 - http://maps.googleapis.com/
-- http://apigeedemovideos-test.apigee.net/e
+- http://apigeedemovideos-test.apigee.net/
+- https://cosafinity-prod.apigee.net

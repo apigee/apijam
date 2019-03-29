@@ -11,14 +11,13 @@ All of the material here is released under the [Apache 2.0 license](./LICENSE.md
 1. API Design - Create a Reverse Proxy with OpenAPI specification
 2. Traffic Management - Throttle APIs
 3. API Diagnostics - Trace tool
-4. API Security - Securing APIs with API Keys
+4. API Security - Securing APIs using API Keys
 5. Traffic Management - Rate Limit APIs
 6. API Publishing - Documentation 
-7. API Publishing - Developer Portal Customization
-8. Consume APIs
-9. API Analytics - Custom Reports
+7. Consume APIs
+8. API Analytics - Custom Reports
 
-You can start with the first lab [1. API Design - Create a Reverse Proxy with OpenAPI specification](https://github.com/apigee/devjam3/tree/master/Labs/Core/Lab%201%20API%20Design%20-%20Create%20a%20Reverse%20Proxy%20with%20OpenAPI%20specification)
+You can start with the first lab [1. API Design - Create a Reverse Proxy with OpenAPI specification](Labs/Core/Lab%201%20API%20Design%20-%20Create%20a%20Reverse%20Proxy%20with%20OpenAPI%20specification)
 
 ### [Appendix Labs](./Labs/Appendix)
 * API Development - Create a RESTful API from a SOAP service

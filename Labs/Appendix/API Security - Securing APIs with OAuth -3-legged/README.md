@@ -28,7 +28,7 @@ Authorization code is one of the most commonly used OAuth 2.0 grant types. The a
 
 	![image alt text](./media/image_0.jpg)
 
-* Download the pre-built OAuth proxy bundle from [here](https://github.com/apigee/devjam3/blob/master/Resources/xx_oauth_code_grant.zip) 
+* Download the pre-built OAuth proxy bundle from [here](../../../Resources/xx_oauth_code_grant.zip) 
 
 * Click the **+Proxy** button 
 
