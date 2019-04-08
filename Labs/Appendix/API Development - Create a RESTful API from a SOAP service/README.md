@@ -102,7 +102,7 @@ For e.g.
 ?StockSymbol=APIC&LicenseKey=0	
 ```
 
-* That concludes this hands-on lesson. It was simple, but you learned how quickly you were able to convert an existing SOAP service into API without writing a single line of code.
+* That concludes this hands-on lab. It was simple, but you learned how quickly you were able to convert an existing SOAP service into API without writing a single line of code.
 
 # Lab Video
 
