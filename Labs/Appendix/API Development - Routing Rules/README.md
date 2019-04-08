@@ -63,6 +63,7 @@ Existing API: https://findemo-168618.appspot.com/can/branches
 * Accept all the default values for the Virtual Host configuration then click Next.
 
 ![Pass through](./media/proxy-wizard-4.png)
+![Pass through](./media/proxy-wizard-4.1.png)
 
 * Accept all the default values for the final configuration confirmation, then click Next.
 
