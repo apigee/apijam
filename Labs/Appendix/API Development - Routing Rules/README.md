@@ -146,6 +146,12 @@ HTTP Target: https://findemo-168618.appspot.com/us/branches
 
 * Add a condition to only raise a fault if the zipcode query parameter wasn't supplied in the API request. Once the condition is added, click on the Save button.
 
+```
+
+<Condition>request.queryparam.zipcode = null</Condition>
+
+```
+
 ![Missing zip code condition](./media/add-missing-zipcode-condition.png)
 
 * Once the API has been saved, click on the Deployment drop down menu and select the test option. Note that in the image below there is a dev environment, this will very likely not be present in your organization.
@@ -203,6 +209,9 @@ HTTP Target: https://findemo-168618.appspot.com/us/branches
 * Now make another API call using a Canadian zip code value: `?zipcode=S1C 9P7` *Note that you will need to make this request outside the trace window due to limitations in sending query params with whitespace.*
 
 * Verify using Trace that your route rules are correctly sending Canadian zip codes to the Canadian endpoint and that US zip codes to the USA endpoint.
+
+Refer to the "targetURL" in the Trace Tool to see the routing rule in effect.
+![TraceTool](./media/TraceTool.png)
 
 If you successfully retrieve both branches when supplying a Canadian and a US zip code, Congratulations! You have successfully configured conditional routing rules and have completed the main instructions for this lab.
 
