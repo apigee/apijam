@@ -6,13 +6,13 @@
 
 # Use case
 
-You have are planning on modernising your legacy SOAP based web-services by expose them as RESTful APIs. You are looking for a platform to do this protocol transformation.
+You are planning on modernising your legacy SOAP based web-services by exposing them as RESTful APIs. You are looking for a platform to do this protocol transformation.
 
 # How can Apigee Edge help?
 
-Apigee Edge can consume a WSDL file to extract and convert the SOAP end-points to REST interfaces automatically using the SOAP import wizard. The wizard allows developers to define the new service as a pass-through or expose the service as a RESTful service. You can create two kinds of SOAP proxies in Edge. One generates a RESTful interface to the backend SOAP service and the other performs a "pass through" of the SOAP message to the backend. 
+Apigee Edge can consume a WSDL file to extract and convert the SOAP end-points to REST interfaces automatically using the SOAP import wizard. The wizard allows developers to define the new service as a pass-through or expose the service as a RESTful service. You can create two kinds of SOAP proxies in Apigee Edge. One generates a RESTful interface to the backend SOAP service and the other performs a "pass through" of the SOAP message to the backend. 
 
-In this lab you will see how to convert an existing SOAP interface to REST. The REST to SOAP to REST option processes the WSDL to generate a RESTful API proxy. Edge determines from the WSDL the service's supported operations, input parameters, and so on. Edge "guesses" which HTTP method to use for each operation. Typically, Edge translates operations into GET requests, which have the advantage of being cacheable. Edge also sets up the backend target endpoint, which can vary per SOAP operation.
+In this lab we will see how to convert an existing SOAP interface to REST. The REST to SOAP to REST option processes the WSDL to generate a RESTful API proxy. Apigee Edge determines from the WSDL the service's supported operations, input parameters, and so on. Edge "guesses" which HTTP method to use for each operation. Typically, Edge translates operations into GET requests, which have the advantage of being cacheable. Edge also sets up the backend target endpoint, which can vary per SOAP operation.
 
 # Pre-requisites
 
