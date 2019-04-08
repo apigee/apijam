@@ -57,6 +57,7 @@ Note: Replace **{your-initials}** with your initials.
 * Go with the **default Virtual Host** configuration.
 
   ![image alt text](./media/image_6.jpg)
+  ![image alt text](./media/image_6.1.jpg)
 
 * Ensure that only the **test** environment is selected to deploy to and click **Build and Deploy** 
 
