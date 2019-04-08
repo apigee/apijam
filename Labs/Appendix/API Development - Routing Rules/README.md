@@ -44,7 +44,7 @@ None
 
 * In the new proxy creation wizard, select the Reverse Proxy option and then click on Next
 
-![Reverse Proxy](./media/proxy-wizard-1.1.png)
+![Reverse Proxy](./media/proxy-wizard-1.1.jpg)
 
 * Enter values for Proxy Name, Proxy Base Path and Existing API. Click Next.
 
