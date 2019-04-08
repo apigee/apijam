@@ -32,7 +32,7 @@ None.
 
 * Select **SOAP service**. Click on **Next**.
 
-  ![image alt text](./media/image_2.jpg)
+  ![image alt text](./media/image_2.1.jpg)
 
 * Enter details in the proxy wizard. 
 
