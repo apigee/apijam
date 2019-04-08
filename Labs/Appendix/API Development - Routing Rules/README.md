@@ -110,7 +110,7 @@ HTTP Target: https://findemo-168618.appspot.com/us/branches
 
 ![Save API Proxy](./media/save-api-proxy-2.png)
 
-* Click on +Step on the Request pipeline to add a new policy
+* Under the Proxy Endpoint, click the default and select the PreFlow. Click on +Step on the Request pipeline to add a new policy
 
 ## Add validation for missing zip codes
 
