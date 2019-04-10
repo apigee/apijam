@@ -44,7 +44,7 @@ You should see a message indicating your target server was created successfully 
 
 * Using the environment drop down, change to the *test* environment:
 
-![switch to test environment](./media/switch-to-test-environment.png)
+![switch to test environment](./media/new-target-server-test.1.png)
 
 * Click on the Edit button in the top right corner of the target servers tab
 
