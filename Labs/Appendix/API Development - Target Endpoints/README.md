@@ -52,7 +52,7 @@ You should see a message indicating your target server was created successfully 
 
 * Click on the *+Target Server+ button to add a new target server
 
-![New target server](./media/new-target-server-test.png)
+![New target server](./media/new-target-server-test.1.png)
 
 * Making sure the test environment is selected, enter the following values for your test target server then save your configuration:
 
