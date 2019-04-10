@@ -70,7 +70,7 @@ At this point we now have created our target server for the *Employees Service* 
 
 * Select the Reverse Proxy option then click on Next
 
-![Proxy Wizard](./media/proxy-wizard-1.png)
+![Proxy Wizard](./media/proxy-wizard-1.1.png)
 
 * Configure your API Proxy as shown in the following diagram:
 
