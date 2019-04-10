@@ -38,7 +38,7 @@ Port: 80
 
 Enabled: checked
 
-![Populate target server](./media/populate-prod-target-server.png)
+![Populate target server](./media/prod-targetserver.png)
 
 You should see a message indicating your target server was created successfully and your new target server should be displayed on the sreen.
 
