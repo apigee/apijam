@@ -64,7 +64,7 @@ Port: 80
 
 Enabled: checked
 
-![Populate target server](./media/populate-test-target-server.png)
+![Populate target server](./media/populate-prod-target-server.1.png)
 
 At this point we now have created our target server for the *Employees Service* in both the test and prod environments. Our next task will be configuring a proxy that uses the named target servers.
 
