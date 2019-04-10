@@ -42,15 +42,7 @@ Enabled: checked
 
 You should see a message indicating your target server was created successfully and your new target server should be displayed on the sreen.
 
-* Using the environment drop down, change to the *test* environment:
-
-![switch to test environment](./media/new-target-server-test.1.png)
-
-* Click on the Edit button in the top right corner of the target servers tab
-
-![Click on edit](./media/click-on-edit-test.png)
-
-* Click on the *+Target Server+ button to add a new target server
+* Using the environment drop down, select the *test* environment. Click on *+Target server* to add a new target server.
 
 ![New target server](./media/new-target-server-test.1.png)
 
