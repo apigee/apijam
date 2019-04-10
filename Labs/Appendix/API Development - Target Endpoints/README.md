@@ -24,17 +24,9 @@ None
 
 ![Open Environment Menu](./media/open-environments-menu.1.png)
 
-* In the Environments Configuration page, select the Target Servers tab:
-
-![Select target servers](./media/select-target-servers.png)
-
-* Click on the Edit button in the top right corner of the target servers tab
-
-![Click on edit](./media/click-on-edit.png)
-
 * Click on the *+Target Server* button to add a new target server
 
-![New target server](./media/new-target-server.png)
+![New target server](./media/new-target-server.1.png)
 
 * Making sure the prod environment is selected, enter the following values for your production target server, then save your configuration:
 
