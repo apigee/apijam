@@ -6,7 +6,7 @@
 
 # Use case
 
-Backend target URLs often change as an API is promoted from development through testing and finally into production. The ability to externalize these endpoints ensures you can take your API configuration and promote it through your SDLC without making manual changes as part of your deployment/promotion process.
+Backend target URLs often change as an API is promoted from development through testing and finally into production. The ability to externalize these endpoints ensures you can take your API configurations and promote them through your SDLC without making manual changes as part of your deployment/promotion process.
 
 # How can Apigee Edge help?
 
@@ -22,7 +22,7 @@ None
 
 * On the left hand menu, navigate to *Admin->Environments*:
 
-![Open Environment Menu](./media/open-environments-menu.png)
+![Open Environment Menu](./media/open-environments-menu.1.png)
 
 * In the Environments Configuration page, select the Target Servers tab:
 
