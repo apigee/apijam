@@ -83,6 +83,7 @@ At this point we now have created our target server for the *Employees Service* 
 * Select the default options for virtual host bindings:
 
 ![Proxy Wizard](./media/proxy-wizard-4.png)
+![Proxy Wizard](./media/proxy-wizard-4.2.png)
 
 * Select the default options for deployment options
 
@@ -127,7 +128,9 @@ You can copy/paste the following configuration for your `HTTPTargetConnection`:
 
 ![Click on URLs](./media/call-prod-and-test-apis.png)
 
-* Verify you get a JSON response from both the test and prod APIs. If you do, congrats, you've successfully configured an API which relies on named target servers instead of hard coded URLs!
+* Verify you get a JSON response from both the test and prod APIs.You can do this by simple clicking the test and prod URL.
+
+If you do, congrats, you've successfully configured an API which relies on named target servers instead of hard coded URLs!
 
 # Lab Video
 
