@@ -18,12 +18,21 @@ Apigee Edge lets you create encrypted key value maps (KVMs) that you'll use to s
 
 In this lab we will start with a simple proxy that generates and validates JWT tokens. This proxy uses a secret to sign the JWT token, but the secret is hard-coded in the app and visible to all developers. We'll go through a series of steps to move our secret into an encrypted KVM where it's not in plain sight.
 
-0. Download the pre-built proxy bundle from [here](./Resources/JWT_flow.zip) 
+Pre-Req: Download the pre-built proxy bundle from [here](./Resources/JWT_flow.zip) 
 
 1. Create a new proxy using this proxy bundle and name it "JWT_flow_{your_initials}.
-    ![image alt text](./Media/img-1.png)
+
+    ![image alt text](./Media/image1.png)
+
+    ![image alt text](./Media/image2.png)
+    
+    ![image alt text](./Media/image3.png)
+    
+    ![image alt text](./Media/image4.png)
 
 2. Deploy the proxy to `test` environment. Then go ahead and test the proxy using the trace tool by making the following calls:
+ ![image alt text](./Media/image5.png)
+ 
 - Make a `GET` call to `http://<org-name>-<org-env>.apigee.net/jwt-flow/generate`. You may also use the curl command `curl http://<org-name>-<org-env>.apigee.net/jwt-flow/generate`
 
   > You should receive a JWT token in the response body. Copy that token, we'll call it `jwt_token`, as you'll use it for the next call.
