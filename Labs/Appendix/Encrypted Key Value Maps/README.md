@@ -33,11 +33,16 @@ Pre-Req: Download the pre-built proxy bundle from [here](./Resources/JWT_flow.zi
 2. Deploy the proxy to `test` environment. Then go ahead and test the proxy using the trace tool by making the following calls:
  ![image alt text](./Media/image5.png)
  
-- Make a `GET` call to `http://<org-name>-<org-env>.apigee.net/jwt-flow/generate`. You may also use the curl command `curl http://<org-name>-<org-env>.apigee.net/jwt-flow/generate`
+- Make a `GET` call to `http://<org-name>-<org-env>.apigee.net/jwt-flow/generate`.
 
+You may also use the curl command `curl http://<org-name>-<org-env>.apigee.net/jwt-flow/generate`
+ 
   > You should receive a JWT token in the response body. Copy that token, we'll call it `jwt_token`, as you'll use it for the next call.
+   ![image alt text](./Media/image6.png)
 
-- Make a `GET` call to `http://<org-name>-<org-env>.apigee.net/jwt-flow/verify` and add a header `key: <jwt_token>`. You may also use the curl command `curl http://<org-name>-<org-env>.apigee.net/jwt-flow/generate -H "key:<jwt_token>"`
+- Make a `GET` call to `http://<org-name>-<org-env>.apigee.net/jwt-flow/verify` and add a header `key: <jwt_token>`. 
+
+You may also use the curl command `curl http://<org-name>-<org-env>.apigee.net/jwt-flow/verify -H "key:<jwt_token>"`
 
 3. If you examine the assign message policy named `set secret`, you can see the secret that we use to sign the JWT token. This secret, just like your password credentials, is very sensitive and shouldn't be out in the open. Let's use an encrypted KVM to store this secret instead and modify this proxy to retrieve it from that KVM.
 
