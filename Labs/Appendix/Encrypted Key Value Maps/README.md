@@ -6,9 +6,9 @@
 
 # Use case
 
-Many Cloud services are secured with Identity and Access Management (IAM), which provides access control through a combination of policies, roles, and groups that are applied to users and services.
+Many Cloud services are secured with Identity and Access Management (IAM), which provides access control through a combination of policies, roles and groups that are applied to users and services.
 
-When you make API calls to IAM-protected services, IAM requires the Access Key and Secret Access Key of a user registered in your AWS account. Keeping the keys secure is paramount, yet they need to be provided on API calls from Edge to your Cloud.
+When you make API calls to IAM-protected services, IAM requires the Access Key and Secret Access Key of a registered user. Keeping the keys secure is paramount, yet they need to be provided on API calls from Edge to your Cloud.
 
 # How can Apigee Edge help?
 
@@ -50,21 +50,21 @@ You may also use the curl command `curl http://<org-name>-<org-env>.apigee.net/j
 
 4. Keep this tab open. And in a new tab, Head over to `Admin -> Environments -> Key Value Maps`, and make sure you have the `test` environment selected.
 
-    ![image alt text](./Media/img-3.png)
+    ![image alt text](./Media/image7.png)
 
 5. Click on `+ Key Value Map` and name it `JWTSecrets`. Also check the box `encrypted`, this will encrypt the data you store in this KVM.
 
-    ![image alt text](./Media/img-4.png)
+    ![image alt text](./Media/image8.png)
 
-    ![image alt text](./Media/img-5.png)
+    ![image alt text](./Media/image9.png)
 
 6. Select the `JWTSecrets` KVM and add an entry by clicking the `+ Entry` button. Put `secret` in the as the name and `apigee0` as the value. Hit save.
 
-    ![image alt text](./Media/img-6.png)
+    ![image alt text](./Media/image10.png)
 
 7. Hit refresh on your browser and you'll notice that the data in that KVM is now masked.
 
-    ![image alt text](./Media/img-7.png)
+    ![image alt text](./Media/image11.png)
 
 8. Head back to your previous tab, you'll edit your proxy to use the KVM we just created.
 
