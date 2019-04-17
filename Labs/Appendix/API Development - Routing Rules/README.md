@@ -6,7 +6,7 @@
 
 # Use case
 
-It's common for large companies to have multiple backend systems that provide duplicate functionality for certain sets of data. A common example is a company that, usually through mergers and acquisitions, has multiple customer, contract, or ordering systems. From an API perspective, it's desirable to mask the routing complexity from the end API consumer to make it appear as though the organization has single unified API for a given business function or data type. Therefore, it's helpful to have a way to conditionally route a request to a paticular backend based on information in the request.
+It's common for enterprises to have multiple backend systems that provide duplicate functionality for certain sets of data. A common example is a company that usually through mergers and acquisitions, has multiple customer, contract, or ordering systems. From an API perspective, it's desirable to mask the routing complexity from the end API consumer to make it appear as though the organization has single unified API for a given business function or data type. Therefore, it's helpful to have a way to conditionally route a request to a paticular backend based on information in the request.
 
 # How can Apigee Edge help?
 
@@ -44,7 +44,7 @@ None
 
 * In the new proxy creation wizard, select the Reverse Proxy option and then click on Next
 
-![Reverse Proxy](./media/proxy-wizard-1.png)
+![Reverse Proxy](./media/proxy-wizard-1.1.jpg)
 
 * Enter values for Proxy Name, Proxy Base Path and Existing API. Click Next.
 
@@ -63,6 +63,7 @@ Existing API: https://findemo-168618.appspot.com/can/branches
 * Accept all the default values for the Virtual Host configuration then click Next.
 
 ![Pass through](./media/proxy-wizard-4.png)
+![Pass through](./media/proxy-wizard-4.1.png)
 
 * Accept all the default values for the final configuration confirmation, then click Next.
 
@@ -109,7 +110,7 @@ HTTP Target: https://findemo-168618.appspot.com/us/branches
 
 ![Save API Proxy](./media/save-api-proxy-2.png)
 
-* Click on +Step on the Request pipeline to add a new policy
+* Under the Proxy Endpoint, click the default and select the PreFlow. Click on +Step on the Request pipeline to add a new policy
 
 ## Add validation for missing zip codes
 
@@ -144,6 +145,12 @@ HTTP Target: https://findemo-168618.appspot.com/us/branches
 ![Default proxy endpoint](./media/default-proxy-endpoint.png)
 
 * Add a condition to only raise a fault if the zipcode query parameter wasn't supplied in the API request. Once the condition is added, click on the Save button.
+
+```
+
+<Condition>request.queryparam.zipcode = null</Condition>
+
+```
 
 ![Missing zip code condition](./media/add-missing-zipcode-condition.png)
 
@@ -202,6 +209,9 @@ HTTP Target: https://findemo-168618.appspot.com/us/branches
 * Now make another API call using a Canadian zip code value: `?zipcode=S1C 9P7` *Note that you will need to make this request outside the trace window due to limitations in sending query params with whitespace.*
 
 * Verify using Trace that your route rules are correctly sending Canadian zip codes to the Canadian endpoint and that US zip codes to the USA endpoint.
+
+Refer to the "targetURL" in the Trace Tool to see the routing rule in effect.
+![TraceTool](./media/TraceTool.png)
 
 If you successfully retrieve both branches when supplying a Canadian and a US zip code, Congratulations! You have successfully configured conditional routing rules and have completed the main instructions for this lab.
 
