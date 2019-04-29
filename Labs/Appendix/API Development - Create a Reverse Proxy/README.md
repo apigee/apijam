@@ -36,13 +36,13 @@ None.
 
   ![image alt text](./media/image_2.jpg)
 
-* Enter details in the proxy wizard. Replace **{your-initials}** with the initials of your name. 
+* Enter details in the proxy wizard.
 
-  * Proxy Name: **{your_initials}**_reverse_proxy
+  * Proxy Name: Employees
 
-  * Proxy Base Path: /v1/**{your_initials}**_reverse_proxy
+  * Proxy Base Path: /v1/employees
 
-  * Existing API: [http://apigeedemovideos-test.apigee.net/employees-api](http://apigeedemovideos-test.apigee.net/employees-api) 
+  * Existing API: [http://cosafinity-prod.apigee.net/v1/employees](http://cosafinity-prod.apigee.net/v1/employees) 
 
   ![image alt text](./media/image_3.jpg)	
 
@@ -123,4 +123,3 @@ That completes this hands-on lesson. In this simple lab you learned how to creat
 # Rate this lab
 
 How did you like this lab? Rate [here](https://goo.gl/forms/ZuI2obFmWIhV0Bym1).
-
