@@ -10,7 +10,7 @@ You have a set of APIs that are either consumed by partners or open to public. Y
 
 # How can Apigee Edge help?
 
-Policies like XML/JSON threat protection and Regular Expression protection in Apigee Edge, help you easily protect your backend and minimize attacks on your API against these threats by addressing the vulnerabilities.
+Policies like XML/JSON threat protection and Regular Expression protection in Apigee Edge, help you easily protect your backend and minimize attacks on your API against these threats by providing out of the box policies.
 
 For example, the XML Threat Protection policy screens against XML threats by validating messages against an XML schema (.xsd), evaluating message content for specific blacklisted keywords or patterns and detecting corrupt or malformed messages before those messages are parsed. And, the JSON Threat Protection policy minimizes the risk posed by content-level attacks by enabling you to specify limits on various JSON structures, such as arrays and strings.
 
@@ -28,7 +28,7 @@ You have an API proxy created in Apigee Edge. If not, jump back to *API Design :
 
 * From the list of proxies, click on your Employee API proxy that you created in the earlier lab.
 
-![image alt text](./media/image_1.png)
+![image alt text](./media/image_1.1.png)
 
 * Click on the **Develop** tab. Select **PreFlow** from the sidebar under **Proxy Endpoints** section
 
@@ -116,6 +116,7 @@ Note: The above response shows that the children count exceeded 3 because, the p
 * Now, let’s test SQL Injection protection. Clear the body and remove the header that we had used for the previous call.
 
 * Add a query param to your URL with a SQL command like this ```?query=delete * from table``` and hit send.
+![image alt text](./media/image_13.png)
 
 * You should see a response like this
 

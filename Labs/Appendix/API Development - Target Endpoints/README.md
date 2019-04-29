@@ -6,7 +6,7 @@
 
 # Use case
 
-Backend target URLs often change as an API is promoted from development through testing and finally into production. The ability to externalize these endpoints ensures you can take your API configuration and promote it through your SDLC without making manual changes as part of your deployment/promotion process.
+Backend target URLs often change as an API is promoted from development through testing and finally into production. The ability to externalize these endpoints ensures you can take your API configurations and promote them through your SDLC without making manual changes as part of your deployment/promotion process.
 
 # How can Apigee Edge help?
 
@@ -22,19 +22,11 @@ None
 
 * On the left hand menu, navigate to *Admin->Environments*:
 
-![Open Environment Menu](./media/open-environments-menu.png)
-
-* In the Environments Configuration page, select the Target Servers tab:
-
-![Select target servers](./media/select-target-servers.png)
-
-* Click on the Edit button in the top right corner of the target servers tab
-
-![Click on edit](./media/click-on-edit.png)
+![Open Environment Menu](./media/open-environments-menu.1.png)
 
 * Click on the *+Target Server* button to add a new target server
 
-![New target server](./media/new-target-server.png)
+![New target server](./media/new-target-server.1.png)
 
 * Making sure the prod environment is selected, enter the following values for your production target server, then save your configuration:
 
@@ -46,21 +38,13 @@ Port: 80
 
 Enabled: checked
 
-![Populate target server](./media/populate-prod-target-server.png)
+![Populate target server](./media/prod-targetserver.png)
 
 You should see a message indicating your target server was created successfully and your new target server should be displayed on the sreen.
 
-* Using the environment drop down, change to the *test* environment:
+* Using the environment drop down, select the *test* environment. Click on *+Target server* to add a new target server.
 
-![switch to test environment](./media/switch-to-test-environment.png)
-
-* Click on the Edit button in the top right corner of the target servers tab
-
-![Click on edit](./media/click-on-edit-test.png)
-
-* Click on the *+Target Server+ button to add a new target server
-
-![New target server](./media/new-target-server-test.png)
+![New target server](./media/new-target-server-test.1.png)
 
 * Making sure the test environment is selected, enter the following values for your test target server then save your configuration:
 
@@ -72,9 +56,9 @@ Port: 80
 
 Enabled: checked
 
-![Populate target server](./media/populate-test-target-server.png)
+![Populate target server](./media/test-targetserver.png)
 
-At this point we now have created our target server for the *Employees Service* in both the test and prod environments. Our next task will be configuring a proxy that uses the named target servers.
+At this point we now have created our target server for the *Employees Service* in both the test and prod environments. Our next task will be to configure a proxy that uses these named target servers.
 
 * Navigate to the API Proxies list view:
 
@@ -86,7 +70,7 @@ At this point we now have created our target server for the *Employees Service* 
 
 * Select the Reverse Proxy option then click on Next
 
-![Proxy Wizard](./media/proxy-wizard-1.png)
+![Proxy Wizard](./media/proxy-wizard-1.1.png)
 
 * Configure your API Proxy as shown in the following diagram:
 
@@ -99,6 +83,7 @@ At this point we now have created our target server for the *Employees Service* 
 * Select the default options for virtual host bindings:
 
 ![Proxy Wizard](./media/proxy-wizard-4.png)
+![Proxy Wizard](./media/proxy-wizard-4.2.png)
 
 * Select the default options for deployment options
 
@@ -143,7 +128,9 @@ You can copy/paste the following configuration for your `HTTPTargetConnection`:
 
 ![Click on URLs](./media/call-prod-and-test-apis.png)
 
-* Verify you get a JSON response from both the test and prod APIs. If you do, congrats, you've successfully configured an API which relies on named target servers instead of hard coded URLs!
+* Verify you get a JSON response from both the test and prod APIs.You can do this by simple clicking the test and prod URL.
+
+If you do, congrats, you've successfully configured an API which relies on named target servers instead of hard coded URLs!
 
 # Lab Video
 

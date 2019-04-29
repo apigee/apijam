@@ -6,7 +6,7 @@
 
 # Use case
 
-You have a set of APIs that are to be consumed by trusted partners. You want to package the APIs into a meaningful context for the creation of a developer app, and you want to make that package available for a developer to subscribe to, in order to provide access to an API Key.
+You have a set of APIs that are to be consumed by trusted partners. You want to package these APIs into a meaningful context for the creation of a developer app and to make that package available for a developer to subscribe to, in order to provide access to an API Key.
 
 # How can Apigee Edge help?
 
@@ -46,7 +46,7 @@ The following defines some of the terms used to register apps and generate keys:
 
 ![image alt text](./media/image_2.png)
 
-* In the *Product Details* section of the new product screen, enter or select the following values for the various fields:
+* In the *Product Details* section of the new product screen, enter or select the following values for the various fields and click on Save:
 
     *   Display Name: *{Your_Initials}*_Employees Basic Product
 
@@ -58,9 +58,9 @@ The following defines some of the terms used to register apps and generate keys:
 
     *   Key Approval Type: Automatic
 
-![image alt text](./media/image_3.png)
+![image alt text](./media/image_3.1.png)
 
-* In the ‘Resources’ section click the **+ API Proxy** button, and in the dropdown select your Employees API Proxy, and click **Save** to save the API Product.
+* Once the API Product is created, click on Edit and in the ‘API resources’ section click the ** Add a proxy** button, and in the dropdown select your Employees API Proxy, and click **Save** to save the API Product.
 
 ![image alt text](./media/image_4.png)
 
