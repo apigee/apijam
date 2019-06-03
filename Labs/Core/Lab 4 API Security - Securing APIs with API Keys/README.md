@@ -129,27 +129,19 @@ An App Developer can create any number of Apps.  Each App can register for any n
 
     * Callback URL: Leave it blank. The Callback URL is required for 3-legged OAuth implementation scenarios.
 
-    * Credentials: *Click "Add a credential".*
+    * Add Product: *Click "Add product".*
 
 ![image alt text](./media/image_11.png)
 
-3. Leave Expiry at Never, and click OK.
-
-![image alt text](./media/image_12.png)
-
-4. Click *Add Product*.
-
-![image alt text](./media/image_13.png)
-
-5. Select **employee-product**, and click Add.
+3. Select **Employee Product**, and click Add.
 
 ![image alt text](./media/image_14.png)
 
-6. Click **Create**.
+4. Click **Create**.
 
 ![image alt text](./media/image_15.png)
 
-7. Click *Show* for *Key*.  This will reveal the API Key that must be used to invoke the API when API Key verification is in use.  Copy this key into a text document for later use.  
+5. Click *Show* for *Key*.  This will reveal the API Key that must be used to invoke the API when API Key verification is in use.  Copy this key into a text document for later use.  
 
 ![image alt text](./media/image_16.png)
 
