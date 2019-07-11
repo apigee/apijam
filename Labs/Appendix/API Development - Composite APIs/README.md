@@ -26,9 +26,7 @@ For mobile applications meant for smartphones, obtaining geocode information is 
 
 * Extract the latitude and longitude geo-coordinates information from the response of the external service call
 
-* Use the geo-coordinates to create the geo-location query.
-
-* Add the location query as a query parameter before the target BaaS service is invoked
+* Apply the geo-coordinates retrieved in the final call to the target service to limit the results to a geographic area
 
 A pictorial representation of the logic is depicted below:
 
@@ -204,42 +202,7 @@ It may not be obvious, but it's important to see that ExtractVariables produces 
 
 * Save the API Proxy.
 
-## Use the Javascript Policy to create the Location Query to send to the BaaS target endpoint
-
-5. Click on **+ Step**
-
-![image alt text](./media/image_10.png)
-
-Scroll down the policy list and select **Javascript** and update the default display name to **Create Location Query** select *Create New Script* and then name it **Create-Location-Query.js**
-
-![image alt text](./media/image_11.png)
-
-6. Select the newly created script file and add the following code:
-
-![image alt text](./media/image_12.png)
-
-```
-var latitude = context.getVariable("geocodeResponse.latitude"),
-    longitude = context.getVariable("geocodeResponse.longitude"),
-    radius = context.getVariable("radius");
-
-// set default (0 meters)
-radius = (radius === "") ? "0" : radius;
-
-// set BaaS query
-var baasQL = "location within " + radius + " of " + latitude + "," + longitude;
-context.setVariable("baasQL", baasQL);
-```
-
-This Javascript code uses the ‘context’ object, which is part of the [Apigee Edge Javascript object model](http://apigee.com/docs/api-services/reference/javascript-object-model) to retrieve 3 variables - geocodeResponse.latitude, geoCodeResponse.latitude, radius - that were set by policies earlier in the flow.
-
-It sets a default in case the variables are empty strings, creates a new query variable called ‘baasQL’ using the API BaaS query language syntax for a location query, and adds the ‘baasQL’ variable to the ‘context’ object to be used later in the flow by the Assign Message policy to set the query parameter before the API BaaS target endpoint is invoked.
-
-You can read more about this policy in [Javascript policy](http://apigee.com/docs/api-services/reference/javascript-policy).
-
-* Save the API Proxy.
-
-## Use the Assign Message Policy to add the Location Query to the query parameter before BaaS target endpoint invocation
+## Use the Assign Message Policy to add the Latitude and Longitude to the querystring before target endpoint invocation
 
 7. Click on **+ Step**
 
@@ -249,7 +212,7 @@ Scroll down the policy list and select **Assign Message** and update the default
 
 ![image alt text](./media/image_14.jpg)
 
-* Update the policy to include the *baasQL* as a query parameter and remove the zipcode and radius query parameters from the request.
+* Update the policy to modify the query string by adding the *latitude* and *longitude* parameters and removing the *zipcode* parameter before passing on to the target endpoint.
 
 ```
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -258,22 +221,22 @@ Scroll down the policy list and select **Assign Message** and update the default
     <Remove>
         <QueryParams>
             <QueryParam name="zipcode"/>
-            <QueryParam name="radius"/>
         </QueryParams>
-    </Remove>
-    <Set>
+    </Remove>    
+    <Add>
         <QueryParams>
-            <QueryParam name="ql">{baasQL}</QueryParam>
+            <QueryParam name="latitude">{geocodeResponse.latitude}</QueryParam>
+            <QueryParam name="longitude">{geocodeResponse.longitude}</QueryParam>
         </QueryParams>
-    </Set>
+    </Add>
 </AssignMessage>
 ```
 
 Here's a brief description of the elements that were modified in this policy. You can read more about this policy in [Extract Variables policy](http://apigee.com/docs/api-services/reference/extract-variables-policy).
 
-- Removes the query parameters (‘zipcode’ and ‘radius’) that were sent in the original client request to the API Proxy.
+- Removes the query string parameter named ‘zipcode’, which was sent in the original client request to the API Proxy.
 
-- Adds a new query parameter (‘ql’) with the variable ‘baasQL’ providing the actual value. Note that the ‘baasQL’ variable was set by the previous Javascript policy as part of the ‘context’ object
+- Adds two new query string parameters named ‘latitude’ and ‘longitude’ with the values returned from Google's Geocode API
 
 ## Testing the API Proxy with the location query after deploying changes
 
@@ -287,20 +250,20 @@ Here's a brief description of the elements that were modified in this policy. Yo
 
 * Using your browser or the [Apigee REST Client](https://apigee-rest-client.appspot.com/), invoke the API with the following query parameter combinations and review the results being returned:
 ```
-zipcode=31721&radius=20000
+zipcode=75001&radius=100
 ```
 ```
-zipcode=31721&radius=500000
+zipcode=75001&radius=1000
 ```
 ```
 No query parameters
 ```
 
-Note: radius is measured in meters.
+Note: radius is measured in miles.
 
 Example URL: 
 ```
-http://apigeedemovideos-test.apigee.net/v1/ap_employees?zipcode=31721&radius=20000
+http://apigeedemovideos-test.apigee.net/v1/ap_employees?zipcode=75001&radius=1000
 ```
 
 # Lab Video
@@ -309,7 +272,7 @@ If you like to learn by watching, here is a short video on creating a mash-up se
 
 # Earn Extra-points
 
-You should may have noticed at the end of the lab, if you did not include the **radius **and **zipcode** query parameters, you will receive an Unresolved variable error. You can add a conditional policy to the steps you defined in the API Proxy PreFlow to automatically detect if the query parameters were not passed.
+You should may have noticed at the end of the lab, if you did not include the **zipcode** query string parameter, you will receive an Unresolved variable error. You can add a conditional policy to the steps you defined in the API Proxy PreFlow to automatically detect if a query string parameter was not passed.
 
 * Under Proxy Endpoints, select PreFlow.
 
