@@ -13,7 +13,7 @@ The goal is to have the proxy perform a geolocation query against our Employee d
 This API supports the ability to retrieve entities within a specified distance of any geocoordinate based on its location property:
 
 ```
-location within {distance_in_meters} of {latitude},{longitude}
+location within {distance_in_miles} of {latitude},{longitude}
 ```
 
 As you can see, you need to provide the latitude and longitude information to perform the query.
