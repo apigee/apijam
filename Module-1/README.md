@@ -7,8 +7,8 @@ All of the material here is released under the [Apache 2.0 license](./LICENSE.md
 * A brief presentation & product overview: 15 mins
 
 ### [Labs](./Labs/Core) 
-1. **API Design** - Design OAS & Create a Reverse Proxy with the OpenAPI specification
-2. **API Products**, Apps & API Keys* - Securing APIs with API Keys, bundle APIs into API Products and undersgtand the association between Apps, API Products & API Keys
+1. **API Design & Creation** - Design OAS & Create a Reverse Proxy with the OpenAPI specification
+2. **API Products, Apps & API Keys** - Securing APIs with API Keys, bundle APIs into API Products and undersgtand the association between Apps, API Products & API Keys
 3. **App Developer Experience** - Publish API Products Catalog throug a self-service Developer Portal. Test App Developer on-boarding experience & API consumption.
 4. **Rate Limiting**: Rate Limit API Consumption based on API Product tier quotas.
 5. **API Analytics** - Measure API Program Success with Apigee Analytics
