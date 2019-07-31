@@ -38,8 +38,7 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 4. Enter spec details. Replace **{your-initials}** with the initials of your name.
 
    * File Name: **{your-initials}**_employee_api_spec
-
-   * URL: [http://playground.apistudio.io/070cde0a-44f7-4e2c-8085-6e1020db7baf/spec](http://playground.apistudio.io/070cde0a-44f7-4e2c-8085-6e1020db7baf/spec)
+   * URL: [https://raw.githubusercontent.com/aliceinapiland/apijam/master/Module-1/Resources/products-catalog-spec.yaml](https://raw.githubusercontent.com/aliceinapiland/apijam/master/Module-1/Resources/products-catalog-spec.yaml)
 
 ![image alt text](./media/image_2.png)
 
