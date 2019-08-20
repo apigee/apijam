@@ -1,1 +1,0 @@
-## Lab 1 - Global policy management using Shared Flows, Flow Hooks and Flow Callouts
