@@ -25,7 +25,7 @@ In this lab, we will see how to
 
 # Instructions
 
-**Note: During this workshop, as you may be working within an [Apigee Org](https://docs.apigee.com/api-platform/fundamentals/apigee-edge-organization-structure) that is shared by multiple users, please prefix all asset names within the Org, with your initials. For example, Spec name = {your-initials}_{spec name}, API proxy name = {your-initials}_{proxy name}, etc.**
+**Note: During this workshop, as you may be working within an [Apigee Org](https://docs.apigee.com/api-platform/fundamentals/apigee-edge-organization-structure) that is shared by multiple users, please prefix all asset names within the Org, with your initials. For example, Spec name = {your-initials}__{spec name}, API proxy name = {your-initials}__{proxy name}, etc.**
 
 ## Create an Open API Specification
 
