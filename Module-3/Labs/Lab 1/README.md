@@ -222,7 +222,50 @@ Your should see a 200 OK response with a Hello Guest! Response. You see your API
 9. You can now Omit the API Key from your Curl Call and see that you get a ***401 Unathorized** Error
 ![image alt text](./media/image_25.png)
 
-# Flow Hooks
+## Flow Hooks
+
+So far in this Lab, you have seen how to group multiple policies for execution into a single flow and how to invoke flows from within your proxy using the flow call out feature. However, in all of this the onus for ensuring that policy is applied within a proxy is still on the Proxy developer to either include a policy or a flow that will execute the policy. 
+
+***Flow Hooks*** provides a mechanism for an Organization Administrator to enforce a shared flow as a governance feature in a manner that mandates to all proxies within an Environment. Think of Flow Hooks as a way to ENFORCE one or more of the Shared Flows to ALL the API Proxies running in a particular environment. This gives you a separately implemented and deployed sequence of logic that is are part of a proxy's implementation code (either directly or referenced through a flowCallout policy).  
+
+## Enforcement Points -
+
+There are 4 enforcement points where you can associated an Share Flow to be automatically invoked within your proxy execution. 
+
+***Pre-proxy Flow Hook*** - for logic that needs to be enforced BEFORE a proxy endpoint executes for ALL API Proxies deployed to that environment.
+
+For example, you could have logic for enforcing security across all the APIs in an environment.
+
+***Pre-target Flow Hook*** - for logic that needs to be enforced right BEFORE reaching out to a target backend for ALL API Proxies deployed to that environment.
+
+For example, you could implement logging before the request reaches the backend. You could also enforce mediation by removing certain fields from the request.
+
+***Post-target Flow Hook*** - for logic that needs to be enforced BEFORE the API Proxy response executes for ALL API Proxies deployed to that environment.This will be enforced right after the response comes back from the backend. You can use it to log the backend response or perform some mediation by removing sensitive fields from the backend response.
+
+***Post-proxy Flow Hook*** - for logic that needs to be enforced AFTER the proxy endpoint and right before the response is sent out to the client for ALL API Proxies deployed to that environment.
+
+This could include some enforcement logic for CORS, logging the response, or performing some mashup or formatting.
+
+## Using Flow Hooks
+In this last section of our Lab we will see how we can use the Flow Hooks feature to automatically execute the our ***shared flow*** within the ***Hipsset Products API*** Proxy.
+
+1) Lets start by removing the flow callout policy that we have within our proxy and click on Save to re-deploy our proxy. As our proxy stands now the current version of our proxy has not policy enforcement in place. So all incoming calls will be relayed to backend without any traffic limiting or OAuth security.
+Hint - To remove the flow callout feature we just go tot the develop tab within our proxy and click on the x on the top righthand corner of the policy box.
+
+![image alt text](./media/image_27.png)
+
+2) From the left Hand Menu, select Admin -> Environments -> Flow Hooks
+
+![image alt text](./media/image_28.png)
+
+3) From the Flow Hooks Options, Select **test** Environment and then click on on the ***Pencil*** Sign on right end of the Pre-Proxy to invoke the Pre-Proxy flow configuration dailog.
+
+![image alt text](./media/image_29.png)
+
+4) Select your ***Shared Flow***from the dropdown and then click OK.
+![image alt text](./media/image_29.png)
+
+Congratulations! You have not applied your Shared flow to all Proxies within the Test Enviroment.
 
 # Lab Video
 
