@@ -31,32 +31,32 @@ In this lab we will see how to use an out-of-the-box traffic management policy k
 
 3. You should see the **{yourinitials}_Hipster-Products-API** proxy that was created as part of [Module-1](https://github.com/aliceinapiland/apijam/tree/master/Module-1).
 
-![image alt text](./media/image_5.png)
+![image alt text](./media/image_1.png)
 
 The status column should show a green circle to indicate the proxy is already deployed to the test environment.
 
 * If it doesn't, click on the **{yourinitials}_Hipster-Products-API** proxy. Then click on the **Deployment** drop down and select the **test** environment to deploy the proxy to the test environment:
 
-![image alt text](./media/image_6.png)
+![image alt text](./media/image_2.png)
 
 Let us now add rate limiting to this proxy to protect the backend from denial of service attacks.
 
 ## Add Rate Limiting to the API Proxy
 1. From the proxy overview page, click on the **Develop** tab to access the API Proxy development dashboard.
 
-![image alt text](./media/image_9.png)
+![image alt text](./media/image_3.png)
 
 4. Click on **PreFlow** under Proxy Endpoints default, and then click on **+Step** on the upper right of the Request flow to attach a Spike Arrest policy.
 
-![image alt text](./media/image_10.png)
+![image alt text](./media/image_4.png)
 
 5. Select **Spike Arrest Policy**. Click on **Add** button to add the spike arrest policy to the proxy endpoint preflow request.
 
-![image alt text](./media/image_11.png)
+![image alt text](./media/image_5.png)
 
 6. Note the Spike Arrest policy icon on top of request flow that shows exactly where the policy is attached. Select the policy to display the policy's XML configuration in the editor.
 
-![image alt text](./media/image_12.png)
+![image alt text](./media/image_6.png)
 
 7. Change the policy's XML configuration to the below snippet to enforce a rate of 12 requests per minute.
 ```
@@ -83,7 +83,7 @@ What actually happens, then? To prevent spike-like behavior, Spike Arrest smooth
 
 8. Click on **Save** to save the API Proxy changes.
 
-![image alt text](./media/image_13.png)
+![image alt text](./media/image_7.png)
 
 *Congratulations!*...You have now secured your backend against denial of service attacks, performance lags or downtime of target servers.
 
@@ -91,15 +91,15 @@ What actually happens, then? To prevent spike-like behavior, Spike Arrest smooth
 
 1. Let us test the updated API proxy using the Trace console. Click on the **Trace** tab.
 
-![image alt text](./media/image_7.png)
+![image alt text](./media/image_8.png)
 
 2. Click on the **Start Trace Session** button to see API Proxy with spike arrest in action.  Add `/products` to the end of the URL field.
 
-![image alt text](./media/image_14.png)
+![image alt text](./media/image_9.png)
 
 3. Click on the **Send** button multiple times. You will see a 429 response code when the spike arrest policy kicks in to protect the target server from the spike in traffic.
 
-![image alt text](./media/image_15.png)
+![image alt text](./media/image_10.png)
 
 4. You may notice that the number of requests with a 200 response is more than the spike arrest rate value configured. This is due to the fact that there are multiple message processors where proxies get executed, and by default each maintains its own counter.
 

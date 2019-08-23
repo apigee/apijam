@@ -37,39 +37,39 @@ In this lab we will see how to use the following policies:
 
 4. Click the **+Proxy** button on the top-right corner to invoke the Create Proxy wizard:
 
-![image alt text](./media/image_15.png)
+![image alt text](./media/image_1.png)
 
 5. Select **Proxy Bundle** and then click **Next** to import an existing proxy from a zip archive:
 
-![image alt text](./media/image_16.png)
+![image alt text](./media/image_2.png)
 
 6. Click on **Choose File** and select the **Mock-Target-API.zip** that was previously downloaded and click **Next**.
 
-![image alt text](./media/image_17.png)
+![image alt text](./media/image_3.png)
 
 7. Click on **Build** to upload the the proxy.
 
-![image alt text](./media/image_18.png)
+![image alt text](./media/image_4.png)
 
 8. Confirm that the proxy was uploaded successfully and click on the **Mock-Target-API** link:
 
-![image alt text](./media/image_19.png)
+![image alt text](./media/image_5.png)
 
 8. On the Proxy Overview page, click the **Deployment** drop down, and select the **test** environment. Click **Deploy** in the confirmation pop-up.  Then click on the **Develop** tab:
 
-![image alt text](./media/image_20.png)
+![image alt text](./media/image_6.png)
 
 9. Click on the "**Send request and view request headers and body**" flow under **Proxy Endpoints → default**, and then click on **+Step** on the upper right of the Request flow to attach a JSON Threat Protection policy:
 
-![image alt text](./media/select-json-flow-for-policy.png)
+![image alt text](./media/image_7.png)
 
 10. Select **JSON Threat Protection** policy under **Security**. Click on the **Add** button to add the policy to the selected flow's request pipeline:
 
-![image alt text](./media/add-policy.png)
+![image alt text](./media/image_8.png)
 
 11. Select the policy to display the policy's XML configuration in the editor:
 
-![image alt text](./media/select-policy-config.png)
+![image alt text](./media/image_9.png)
 
 12. Change the policy's XML configuration to the below snippet to enforce protection against JSON payload manipulation threats:
 ```
@@ -87,17 +87,17 @@ For a full list of JSON integrity checks that can be performed using this policy
 
 13. Click on **Save** to save the API Proxy changes:
 
-![image alt text](./media/save-changes.png)
+![image alt text](./media/image_10.png)
 
 ## Test JSON Threat Protection:
 
 1. To test the changes made, first click on **Trace** tab of the API proxy dashboard:
 
-![image alt text](./media/image_21.png)
+![image alt text](./media/image_11.png)
 
 2. Click on **Start Trace Session** button to begin tracing:
 
-![image alt text](./media/image_22.png)
+![image alt text](./media/image_12.png)
 
 3. Now, send a POST request to your API endpoint at **http://{{your-organization}}-{{your-environment}}.apigee.net/mock-target-api/echo** with the following format:
 ```
@@ -123,15 +123,15 @@ curl -X POST "http://{{your-org}}-{{your-env}}.apigee.net/mock-target-api/echo" 
 ```
 * **Note:** If you are using a REST client, make sure that your HTTP request has a Header name/value pair of `Content-Type: application/json` as shown below
 
-![image alt text](./media/add-json-header.png)
+![image alt text](./media/image_13.png)
 
 4. The response received will be an error, since we attempted to send more than 5 fields in the POST request payload.
 
-![image alt text](./media/error-response.png)
+![image alt text](./media/image_14.png)
 
 On the Trace screen we also see that the JSON Threat Protection policy was triggered to return this error response:
 
-![image alt text](./media/error-response-trace.png)
+![image alt text](./media/image_15.png)
 
 5. You can now test for a successful API call, by sending the API endpoint a similar POST request, but this time with 5 or fewer fields in the JSON payload.
 ```
@@ -157,11 +157,11 @@ curl -X POST "http://{{your-org}}-{{your-env}}.apigee.net/mock-target-api/echo" 
 
 6. The response received will be a successful one, since we attempted to send fewer fields in the POST request payload:
 
-![image alt text](./media/success-response.png)
+![image alt text](./media/image_16.png)
 
 On the Trace screen we also see that the JSON Threat Protection policy allowed the request to go through and hit the API target:
 
-![image alt text](./media/success-response-trace.png)
+![image alt text](./media/image_17.png)
 
 ## Regular Expression Protection
 
@@ -169,15 +169,15 @@ On the Trace screen we also see that the JSON Threat Protection policy allowed t
 
 1. Click on the "**View IP address**" flow under **Proxy Endpoints → default**. Click on **+Step** on the upper right of the Request flow and attach a Regular Expression Protection policy.
 
-![image alt text](./media/image_23.png)
+![image alt text](./media/image_18.png)
 
 2. Select **Regular Expression Protection** policy. Click on **Add** button to add the policy to the selected flow's request pipeline.
 
-![image alt text](./media/image_24.png)
+![image alt text](./media/image_19.png)
 
 3. Select the policy to display the policy's XML configuration in the editor.
 
-![image alt text](./media/image_25.png)
+![image alt text](./media/image_20.png)
 
 4. Change the policy's XML configuration to the below snippet to protect against SQL injections.
 ```
@@ -196,13 +196,13 @@ For other sample patterns, reference the [Regular Expression Protection policy d
 
 5. Click on **Save** to save the API Proxy changes.
 
-![image alt text](./media/image_26.png)
+![image alt text](./media/image_21.png)
 
 ## Test Regular Expression Protection:
 
 1. To test the changes made, first click on **Trace** tab of the API proxy dashboard, and click on **Start Trace Session** button.
 
-![image alt text](./media/image_22.png)
+![image alt text](./media/image_12.png)
 
 2. Now, send a GET request to the API endpoint at **http://{{your-organization}}-{{your-environment}}.apigee.net/mock-target-api/ip?query=** with any of the following entries in the `query` parameter. Try out all of the entries, and see if you can determine what each attack is trying to do!
 ```
@@ -220,11 +220,11 @@ curl "http://{{your-org}}-{{your-env}}.apigee.net/mock-target-api/ip?query={{ins
 
 The response received will be an error, since we attempted to send a malicious attack that we have configured our policy to recognize:
 
-![image alt text](./media/image_27.png)
+![image alt text](./media/image_22.png)
 
 We can also confirm from the Trace screen that the Regular Expression Protection policy was triggered to return this error response:
 
-![image alt text](./media/image_28.png)
+![image alt text](./media/image_23.png)
 
 # Lab Video
 

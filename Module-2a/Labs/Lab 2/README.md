@@ -53,7 +53,7 @@ As part of this lab, you will:
 
 ![image alt text](./media/image_4.png)
 
-8. You should see a successful "Uploaded proxy" message as shown below.  You now have an OAuth Authorization Server that supports the client credentials grant type in Apigee.  Click the “oauth” link near the bottom of the page to view the proxy:
+8. You should see a successful "Uploaded proxy" message as shown below.  You now have an OAuth Authorization Server that supports the client credentials grant type in Apigee.  Click the **oauth** link near the bottom of the page to view the proxy:
 
 ![image alt text](./media/image_5.png)
 
@@ -69,27 +69,27 @@ As part of this lab, you will:
 
 2. Select the previously created **{yourinitials}_Hipster-Products-API** proxy:
 
-![image alt text](./media/image_8.png)
+![image alt text](./media/image_7.png)
 
 3. Click on the **Develop** tab:
 
+![image alt text](./media/image_8.png)
+
+4. Ensure that "**PreFlow**" is selected in the “**Proxy Endpoints**” window, and then click the **+Step** button above the “**Request**” flow:
+
 ![image alt text](./media/image_9.png)
-
-4. Ensure that "Preflow" is selected in the “Proxy Endpoints” window, and then click the **+Step** button above the “Request” flow:
-
-![image alt text](./media/image_10.png)
 
 5. Select the **"OAuth v2.0"** security policy, leave the default name, and then click **Add**:
 
-![image alt text](./media/image_11.png)
+![image alt text](./media/image_10.png)
 
 6. Drag and drop the OAuth v2.0 policy so it is the first policy (before Spike Arrest) and then click **Save**.  After the proxy is saved, click the **Trace** tab in the upper right:
 
-![image alt text](./media/image_12.png)
+![image alt text](./media/image_11.png)
 
 7. Click on the **Start Trace Session** button.  Add `/products` to the end of the URL field.
 
-![image alt text](./media/image_31.png)
+![image alt text](./media/image_12.png)
 
 8. Click **Send**:
 
@@ -113,55 +113,55 @@ Then, click **+API Product** in the upper right of the screen:
 
 3. Click **Add a proxy** under the **API resources** section:
 
-![image alt text](./media/image_26.png)
+![image alt text](./media/image_17.png)
 
 4. Select the **{yourinitials}_Hipster-Products-API** proxy from the list.  Click **Add**:
 
-![image alt text](./media/image_27.png)
+![image alt text](./media/image_18.png)
 
 5. Finally click **Save**:
 
-![image alt text](./media/image_28.png)
+![image alt text](./media/image_19.png)
 
 * You should now see the Hipster Product in the list of API Products.  
 
 6. Typically the client app developer will register his/her profile along with the App through a developer portal. However, for this lab we will create these entities through the Apigee Edge Management UI.  First, let's create the developer profile. To do this, click on **Publish** → **Developers** on the side navigation bar:
 
-![image alt text](./media/image_17.png)
+![image alt text](./media/image_20.png)
 
 7. Click on the **+Developer** button in the upper right of the screen:
 
-![image alt text](./media/image_18.png)
+![image alt text](./media/image_21.png)
 
 8. Fill out the fields with **your own name and email address** and click **Create**:
 
-![image alt text](./media/image_19.png)
+![image alt text](./media/image_22.png)
 
 You should see the new Developer you just created in the list.  
 
 5. Click on **Publish** → **Apps** from the side navigation menu:
 
-![image alt text](./media/image_20.png)
+![image alt text](./media/image_23.png)
 
 Click on **+App** in the upper right of the screen:
 
-![image alt text](./media/image_21.png)
+![image alt text](./media/image_24.png)
 
 6. Fill out the details in the New App screen as shown below, selecting the developer you just created from the dropdown list, then click **Add product**:
 
-![image alt text](./media/image_22.png)
+![image alt text](./media/image_25.png)
 
 7. Select the **Hipster Products API Product** from the list and then click **Add**:
 
-![image alt text](./media/image_29.png)
+![image alt text](./media/image_26.png)
 
 8. Click the **Create** button at the top right of the screen:
 
-![image alt text](./media/image_30.png)
+![image alt text](./media/image_27.png)
 
 9. You will now see a set of credentials created for your app.  Click the "Show/Hide" buttons next to the **Key** and **Secret** fields. Make a note of the Key and Secret values so you can use them later. These are the client credentials you will need to obtain an OAuth access token:
 
-![image alt text](./media/image_23.png)
+![image alt text](./media/image_28.png)
 
 ## Test OAuth token generation and API protection
 
@@ -185,7 +185,7 @@ Here is an example `curl` command (you will need to replace values as described 
 curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: application/json' "https://{{org-name}}-{{env}}.apigee.net/oauth/client_credential/accesstoken?grant_type=client_credentials" -d 'client_id={{app_client_key}}&client_secret={{app_client_secret}}'
 ```
 
-![image alt text](./media/image_24.png)
+![image alt text](./media/image_29.png)
 
 You should now have an OAuth access token returned in the body of the HTTP response.  Copy the value of `access_token` (not including the surrounding quotes) as you will need it for the next step.
 
@@ -208,7 +208,7 @@ Here is an example `curl` command (you will need to replace values as described 
 curl -X GET -H "Authorization: Bearer {{access-token}}" https://{{org-name}}-{{env}}.apigee.net/v1/{{yourinitials}}_hipster-products-api/products
 ```
 
-![image alt text](./media/image_25.png)
+![image alt text](./media/image_30.png)
 
 * If you see a 200 response status along with an array of products in the body, your OAuth token was valid and you have received the correct response!  
 
