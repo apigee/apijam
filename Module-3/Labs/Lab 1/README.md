@@ -50,7 +50,7 @@ In this lab we will see how we can bundle certain out of the box policies, that 
 
 * Shared flow will look similar to a proxy that you have build in previous modules of this APIJam.
 
-Note- Although a **shared flow** appers to look like a proxy, a shared flow has no endpoint. It can be used only from an actual API proxy or shared flow that's in the same organization as the shared flow itself.
+Note- Although a **shared flow** appears to look like a proxy, a shared flow has no endpoint. It can be used only from an actual API proxy or shared flow that is in the same organization as the shared flow itself.
 
 * Click on **Deployment** and select the **test** environment to deploy the flow to the test environment. 
 
