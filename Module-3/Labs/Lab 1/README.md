@@ -83,7 +83,7 @@ Note- Although a **shared flow** appears to look like a proxy, a shared flow has
 </SpikeArrest>
 ```
 
-10. Similary, Lets add the **Oauth v2.0** Policy to ensure that an API Token based security is enforced in all APIs that are using this flow. 
+10. Similary, Lets add the **OAuth v2.0** Policy to ensure that an API Token based security is enforced in all APIs that are using this flow. 
 
 ![image alt text](./media/image_10.png)
 
@@ -98,9 +98,9 @@ Please ensure OAuth v2.0 policy is the first policy (before Spike Arrest) and th
 
 Your shared flow is now ready for testing. As discussed earlier, Shared flows do not have actual backend implementations, hence for testing our shared flow we will need to either invoke this within a proxy via an explicit **flow callout** or have this flow attached to a **flow hook**. 
 
-To test this flow we will be using the existing proxy that you created within [Module 2(a)](../../Module-2a/Lab%202). If you have not completed Module 2(a), It is recommended that you review the content of the lab to familiarize with the concepts of Spike Arrest and Oauth first before we proceed with the remainder of this Lab.
+To test this flow we will be using the existing proxy that you created within [Module 2(a)](../../Module-2a/Lab%202). If you have not completed Module 2(a), It is recommended that you review the content of the lab to familiarize with the concepts of Spike Arrest and OAuth first before we proceed with the remainder of this Lab.
 
-If you have completed Module 2 and already have the Hipster Products API Proxy, you can skip the next section and move to Step 1.
+If you have completed Module 2 and already have the ***Hipster Products API*** Proxy, you can skip the next sub-section and move directly to Step 1.
 
 
 ### (Optional) Import ***Hipster Products API*** Proxy - Only required if you have not completed Module 2
@@ -129,9 +129,9 @@ e. Click **Build**:
 
 ![image alt text](./media/image_16.png)
 
-You should see a successful "Uploaded proxy" message as shown below.  You now have the **Hispster Products Api Proxy** from Module 2.  Click "Hister Products API" near the bottom of the page:
+You should see a successful "Uploaded proxy" message as shown below.  You now have the **Hipster Products Api Proxy** from Module 2.  Click "Hipster Products API" near the bottom of the page:
 
-f. Click on **Developer** Tab and and Then Select **<your_initials>_Hipster-Products-API** under the Navigator section.
+f. Click on **Develop** Tab and and Then Select **<your_initials>_Hipster-Products-API** under the Navigator section.
 ![image alt text](./media/image_17.png)
 
 
@@ -148,7 +148,7 @@ h. Deploy the proxy by clicking on the **Deployment** dropdown and selecting the
 
 Your proxy is now ready for testing, if you would like to test this, please follow instructions from Module 2. The steps below will detail how to invoke the shared flow that you have created as a part of this Lab. Following the tests from Module 2 is an import pre-requisite as you will need your application Key and Secret for the remainder of this Lab.
 
-1. Since the Hipster API already contians the Policies for Oauth and Spike arrest, we will start by removing these polcies from the preflow. Click on Each of the policies and select small "x" sign on the top right corner of the policy icon to remove the polcies from execution sequence.
+1. Since the Hipster API already contians the Policies for OAuth and Spike arrest, we will start by removing these polcies from the preflow. Click on each of the policies and select small "x" sign on the top right corner of the policy icon to remove the polcies from execution sequence.
 ![image alt text](./media/image_20.png)
 
 2. Click on **+ Step** Icon to Add Policies and select the **Flow Callout** Policy from within ***Extention*** section of the policy menu. Within the **Shared flow** dropdown menu you should see your shared flow, select it and click on Add 
@@ -169,7 +169,7 @@ export ORG_NAME="orgname"
 export ENV="envname"
 ```
 
-Note - for App Client Key and Secret, you will need an ***App*** created within Apigee Edge and Module 2 talks about API Products, Api Developer and Application. It also details out how to obtain your Applications Key and Secret that are needed for this lab.
+Note - for App Client Key and Secret, you will need an ***App*** created within Apigee Edge and Module 2 talks about API Products, Api Developer and Application creation process. It also details out how to obtain your Applications Key and Secret that are needed for this lab.
 
 6. We will be using application creadentials (Client ID and Secret) to Make ***curl***  POST Call to the OAuth Endpoint to obtain an API Token using the Client credential OAuth grant type:
 ```
