@@ -256,7 +256,7 @@ So far in this Lab, you have seen how to group multiple policies for execution i
 
 ## Enforcement Points -
 
-There are 4 enforcement points where you can associated an Share Flow to be automatically invoked within your proxy execution. 
+There are 4 enforcement points where you can associate a ***Shared Flow*** to be automatically invoked within your proxy execution. 
 
 ***Pre-proxy Flow Hook*** - for logic that needs to be enforced BEFORE a proxy endpoint executes for ALL API Proxies deployed to that environment.
 
@@ -273,11 +273,11 @@ For example, you could implement logging before the request reaches the backend.
 This could include some enforcement logic for CORS, logging the response, or performing some mashup or formatting.
 
 ## Using Flow Hooks
-In this last section of our Lab we will see how we can use the Flow Hooks feature to automatically execute the our ***shared flow*** within the ***Hipsset Products API*** Proxy.
+In this last section of our Lab we will see how we can use the Flow Hooks feature to automatically execute the our ***shared flow*** within the ***Hipster Products API*** Proxy.
 
-1) Lets start by removing the flow callout policy that we have within our proxy and click on Save to re-deploy our proxy. As our proxy stands now the current version of our proxy has not policy enforcement in place. So all incoming calls will be relayed to backend without any traffic limiting or OAuth security.
+1) Lets start by removing the flow callout policy that we have within our proxy and click on Save to re-deploy our proxy. As our proxy stands, the current version of our proxy has no policy enforcement in place. So all incoming calls will be relayed to backend without any traffic limiting or OAuth security.
 
-Hint - To remove the flow callout feature we just go tot the develop tab within our proxy and click on the x on the top righthand corner of the policy box.
+Hint - To remove the flow callout feature we just go to the develop tab within your proxy and click on the x on the top righthand corner of the policy box.
 
 ![image alt text](./media/image_27.png)
 
@@ -287,7 +287,7 @@ Note - Click on Save to ensure that the new changes are now applied to your prox
 
 ![image alt text](./media/image_28.png)
 
-3) From the Flow Hooks Options, Select **test** Environment and then click on on the ***Pencil*** Sign on right end of the Pre-Proxy to invoke the Pre-Proxy flow configuration dailog.
+3) From the Flow Hooks Options, Select **test** Environment and then click on on the ***Pencil*** Sign on right end of the Pre-Proxy to invoke the ***Pre-Proxy flow*** configuration dailog.
 
 ![image alt text](./media/image_29.png)
 
@@ -296,7 +296,7 @@ Note - Click on Save to ensure that the new changes are now applied to your prox
 
 You have now applied your Shared flow to all Proxies within the ***Test*** Enviroment. 
 
-5) To ensure that the Flow Hook is in effect and your shared flow is being applied to your proxies you can make calls to the "Hipster Product API' just like before:
+5) To ensure that the Flow Hook is in effect and your shared flow is being applied to your proxies, you can make calls to the 'Hipster Product API' just like before:
 
 Make an API Call to your Hispter Product API using below CURL and Look at the trace:
 ```
@@ -314,7 +314,7 @@ Request Headers-> Value -
 Note - Be sure to replace <Your Initials> above within the proxy base path.
 
 You should see a 200 OK response with a listing of the Product catalog in your Response. 
-You can also see your API Calls in action within the Trace Tool and will note that the Flow Call out was initiated with Spike Arrest and Oauth policies applied to this call.
+You can also see your API Calls in action within the Trace Tool and will note that the Flow Call out was initiated with Spike Arrest and OAuth policies applied to this call.
 
 ![image alt text](./media/image_31.png)
 
