@@ -138,7 +138,7 @@ f. Click on **Developer** Tab and and Then Select **<your_initials>_Hipster-Prod
 g. Replace <Your_Initials> with your initials within the Display Name and Basepaths sections as show below and click Save 
 ![image alt text](./media/image_18.png)
 
-Within ***Develop*** Tab, Under the RPxy Enpoints sections, Update the <BasePath> Element with your Initials.
+Within ***Develop*** Tab, Under the Proxy Enpoints sections, Update the <BasePath> Element with your Initials.
 ![image alt text](./media/image_30.png)
 
  
@@ -146,12 +146,12 @@ h. Deploy the proxy by clicking on the **Deployment** dropdown and selecting the
 
 ![image alt text](./media/image_19.png)
 
-Your proxy is now ready for testing, if you would like to test this, please follow instructions from Module 2. The steps below will detail how to invoke the shared flow that you have created as a part of this Lab. Following the tests from Module 2 is an import pre-requisite as you will need your applocation Key and Secret for the remainder of this Lab.
+Your proxy is now ready for testing, if you would like to test this, please follow instructions from Module 2. The steps below will detail how to invoke the shared flow that you have created as a part of this Lab. Following the tests from Module 2 is an import pre-requisite as you will need your application Key and Secret for the remainder of this Lab.
 
 1. Since the Hipster API already contians the Policies for Oauth and Spike arrest, we will start by removing these polcies from the preflow. Click on Each of the policies and select small "x" sign on the top right corner of the policy icon to remove the polcies from execution sequence.
 ![image alt text](./media/image_20.png)
 
-2. Click on **+ Step** Icon to Add Policies and select the **Flow Callout** Polciy from within ***Extention*** section of the policy menu. Within the **Shared flow** drop down menu you should see your shared flow, select it and click on Add 
+2. Click on **+ Step** Icon to Add Policies and select the **Flow Callout** Policy from within ***Extention*** section of the policy menu. Within the **Shared flow** dropdown menu you should see your shared flow, select it and click on Add 
 ![image alt text](./media/image_21.png)
 
 3. Save Your Proxy and Click on **Trace** Tab to start testing.
@@ -169,14 +169,14 @@ export ORG_NAME="orgname"
 export ENV="envname"
 ```
 
-Note - for App Client Key and Secret, you will need an ***App*** created within Apigee Edge and Module 2 talks about API Products, Api Developer and Application. It also details out how to obtain your Applications Key and Secret that are needed for this lab,
+Note - for App Client Key and Secret, you will need an ***App*** created within Apigee Edge and Module 2 talks about API Products, Api Developer and Application. It also details out how to obtain your Applications Key and Secret that are needed for this lab.
 
 6. We will be using application creadentials (Client ID and Secret) to Make ***curl***  POST Call to the OAuth Endpoint to obtain an API Token using the Client credential OAuth grant type:
 ```
 curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: application/json' "https://$ORG_NAME-$ENV.apigee.net/oauth/client_credential/accesstoken?grant_type=client_credentials" -d "client_id=$APP_CLIENT_KEY&client_secret=$APP_CLIENT_SECRET"
 ```
 
-You will see a response with status ***200 OK*** like below:
+You should see a response with status ***200 OK*** like below:
 ```
 curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: application/json' "https://$ORG_NAME-$ENV.apigee.net/oauth/client_credential/accesstoken?grant_type=client_credentials" -d "client_id=$APP_CLIENT_KEY&client_secret=$APP_CLIENT_SECRET"
 {
@@ -229,7 +229,7 @@ Request Headers-> Value -
 ```
 Note - Be sure to replace <Your Initials> above within the proxy base path.
 
-Your should see a 200 OK response with a Listing of the Product catalog in your Response. 
+Your should see a ***200 OK*** response with a Listing of the Product catalog in your Response. 
 You can also see your API Calls in action within the Trace Tool and will note that the Flow Call out was initiated with Spike Arrest and Oauth policies applied to this call.
 
 ![image alt text](./media/image_24.png)
