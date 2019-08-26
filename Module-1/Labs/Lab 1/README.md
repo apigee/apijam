@@ -1,4 +1,4 @@
-# API Design : Create a Reverse Proxy with OpenAPI Specification
+# API Design : Design & Create an API Proxy with OpenAPI Specification
 
 *Duration : 20 mins*
 
@@ -6,24 +6,31 @@
 
 # Use case
 
-You have a requirement to create a reverse proxy for taking requests from the Internet and forward them to an existing service. You have decided to follow a design first approach & built a reusable component, a specification which can be used to build API Proxies, generate API documentation, generate API test cases using OpenAPI Specification format. You would like to generate an Apigee API Proxy by using the OpenAPI Specification (Swagger) instead of building the API Proxy from scratch.
+You have a requirement to create a reverse proxy for taking requests from the Internet and forward them to an existing service. You have decided to follow a design first approach & built a reusable component, a specification which can be used to build API Proxies, generate API documentation, generate API test cases, etc., using OpenAPI Specification format. You would like to generate an Apigee API Proxy by using the OpenAPI Specification (Swagger) instead of building the API Proxy from scratch.
 
 # How can Apigee Edge help?
 
-Apigee Edge enables you to quickly expose backend services as APIs. You do this by creating an API proxy that provides a facade for the backend service that you want to expose. Apigee Edge out of the box supports the OpenAPI specification, allowing you to auto-generate API Proxies. Apigee Edge also has an OpenAPI specification editor & store which you can use to maintain your OpenAPI specifications. 
+Apigee Edge enables you to quickly expose services as APIs. You do this by creating an API proxy that provides a facade for the service that you want to expose. Apigee Edge supports the OpenAPI specification out of the box, allowing you to auto-generate API Proxies. Apigee Edge also has an OpenAPI specification editor & store which you can use to maintain your OpenAPI specifications. 
 
-The API proxy decouples your backend service implementation from the API that developers consume. This shields developers from future changes to your backend services. As you update backend services, developers, insulated from those changes, can continue to call the API uninterrupted.
+The API proxy decouples your service implementation from the API endpoint that developers consume. This shields developers from future changes to your services. As you update services, developers, insulated from those changes, can continue to call the API uninterrupted.
 
-In this lab, we will see how to create a reverse proxy, that routes inbound requests to existing HTTP backend services using a readily available OpenAPI specification.
+In this lab, we will see how to 
+* design an OpenAPI specification for an existing HTTP service and store it within the Apigee Edge platform, and
+* create an API proxy, that routes inbound requests to the existing HTTP service.
 
 # Pre-requisites
 
 * Basic understanding of [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification) (Swagger)
-* Open the [REST Client](https://apigee-rest-client.appspot.com/) on a browser window.
+* Access to a HTTP client to test the API (eg. cURL, Postman, etc.). If you do not have access to one, you can use [this REST Client](https://apigee-rest-client.appspot.com/) in a browser window.
 
 # Instructions
 
-## Import an Open API Specification
+**Note: During this workshop, as you may be working within an [Apigee Org](https://docs.apigee.com/api-platform/fundamentals/apigee-edge-organization-structure) that is shared by multiple users, please prefix all asset names within the Org, with your initials. For example, Spec name = {your-initials}\_{spec name}, API proxy name = {your-initials}\_{proxy name}, etc.**
+
+## Create an Open API Specification
+
+During the course of this workshop, the HTTP service we will expose as an API endpoint, is the Hipster Products service located at [http://cloud.hipster.s.apigee.com/products](http://cloud.hipster.s.apigee.com/products).
+First, we are going to design and create an OpenAPI specification for the different resource endpoints, i.e. /products and /products/{productId}. 
 
 1. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI. 
 
@@ -31,7 +38,7 @@ In this lab, we will see how to create a reverse proxy, that routes inbound requ
 
 ![image alt text](./media/image_0.png)
 
-3. Click **+Spec.** Click on **Import URL** to add a new spec from existing source.
+3. As we have a pre-designed sample of the spec available for this lab, we will be importing it into your Apigee Org's Spec Store. Click **+Spec**. Click on **Import URL** to add a new spec from existing source.
 
 ![image alt text](./media/image_1.png)
 
@@ -162,5 +169,5 @@ That completes this hands-on lesson. In this simple lab you learned how to creat
 
 How did you like this lab? Rate [here](https://goo.gl/forms/G8LAPkDWVNncR9iw2).
 
-Now go to [Lab-2](https://github.com/apigee/devjam3/tree/master/Labs/Core/Lab%202%20Traffic%20Management%20-%20Throttle%20APIs)
+Now go to [Lab-2](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%202)
 
