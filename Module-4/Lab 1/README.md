@@ -353,7 +353,7 @@ Click on __Save__ to save the configurations.
 Congratulations! You have successfully used the Load Balancer construct to load balance the API traffic across two different backend services.
 
 ### Lab Video
-[Load Balancing using Target Servers Video Video](https://www.youtube.com/watch?v=kil11uZ7ttY&t=)
+[Load Balancing using Target Servers Video](https://www.youtube.com/watch?v=kil11uZ7ttY&t=)
 
 ### Earn Extra Points
 The current configurations does not specify the type of load balancing algorithm used. Add necessary configuration to indicate the type of algorithm you would like to use.
