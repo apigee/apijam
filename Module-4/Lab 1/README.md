@@ -216,7 +216,7 @@ Congratulations! You have successfully created APIs which relies on named target
 
 ### Lab Video
 
-[Routing Rules Video](https://www.youtube.com/watch?v=URxpF9iWRaA&t=176s)
+[Routing Rules Video](https://www.youtube.com/watch?v=URxpF9iWRaA&t=)
 
 ### Earn Extra Points
 The current configurations handle error conditions by returning a “unknown resource” error.  E.g. if you send a value of ?target=cloudd, the route will not match and response with a “unknown resource”. Add in necessary login to your API Proxy to return a custom message or an empty JSON body when an invalid target is provided.
@@ -261,7 +261,114 @@ In the real deployment environment, this scenario is common where the user has m
 
 	`Proxy Name: {Initials}_LB-TargetServers`
 	
-<img src = "media/image26.png"> 
+<img src = "media/image26.png">
+
+6. Click __Build__ in the next screen to upload the Proxy
+
+<img src = "media/image27.png">
+
+7. heck that the Proxy is uploaded successfully
+
+<img src = "media/image28.png">
+
+8. Next, create the Target Servers to do Load Balancing to the backend services. Click on __Admin->Environment->Target Servers__
+
+<img src = "media/image29.png">
+
+9. Click on __+Target server__ to add the first Target Server using the following configurations:
+
+	```
+	Name: {initials}_lb1-targetServer
+	Host: mocktarget.apigee.net
+	Port: 80
+	```
+
+Click on __Add__ to create the Target Server.
+
+<img src = "media/image30.png">
+
+10. Add the second Target Server using the following configurations:
+
+	```
+	Name: {initials}_lb2-targetServer
+	Host: httpbin.org
+	Port: 80
+	```
+
+Click on __Add__ to create the Target Server.
+
+<img src = "media/image31.png" width = "500" >
+
+11. Now you should have 2 Target Servers created, each pointing to a different endpoints:
+
+<img src = "media/image32.png">
+
+12. Next, we will configure the load balancer across the two Target Servers. Go to __Develop -> API Proxies__ and click on the {Initials}_LB-TargetServers API Proxy which was created earlier. Click on __DEVELOP__
+
+<img src = "media/image33.png">
+
+13. Click on the default Target Endpoint. Replace the hardcoded target URL in HTTPTargetConnection configurations with:
+
+	```
+	<HTTPTargetConnection> 
+		<LoadBalancer>
+      			<Server name="{initials}_lb1-targetServer" />
+    		</LoadBalancer>
+    	</HTTPTargetConnection>
+	```
+<img src = "media/image34.png">
+
+14. Click on __Save__ and the first target endpoint is now pointing to the {initials}_lb1-targetServer.
+
+<img src = "media/image35.png">
+
+15. Add the second Target Server to the default target endpoint:
+
+	```
+	<HTTPTargetConnection> 
+		<LoadBalancer>
+      			<Server name="{initials}_lb1-targetServer" />
+			<Server name="{initials}_lb2-targetServer" />
+    		</LoadBalancer>
+    	</HTTPTargetConnection>
+	```
+
+Click on __Save__ to save the configurations.
+
+<img src = "media/image36.png">
+
+16. Click on __TRACE__ and Start Trace Session. Copy the URL and test it using a Browser or a tool like Postman.
+
+<img src = "media/image37.png">
+
+17. You should see the API calls being load balanced across the two endpoints:
+
+<img src = "media/image38.png">
+
+<img src = "media/image39.png">
+
+
+Congratulations! You have successfully used the Load Balancer construct to load balance the API traffic across two different backend services.
+
+### Lab Video
+[Load Balancing using Target Servers Video Video](https://www.youtube.com/watch?v=kil11uZ7ttY&t=)
+
+### Earn Extra Points
+The current configurations does not specify the type of load balancing algorithm used. Add necessary configuration to indicate the type of algorithm you would like to use.
+
+### Quiz
+What is the purpose and when do you used load balancing?
+What is a Load Balancer construct, and how is it used in Apigee Edge?
+What is the relationship between a Load Balancer construct and a Target Endpoint in an API Proxy?
+
+### Summary
+This lab demonstrates how to use the Load Balancer to distribute API traffic across two different Target Servers. 
+
+### References
+[Load Balancer documentation](https://docs.apigee.com/api-platform/deploy/load-balancing-across-backend-servers)
+
+
+
 
 
 
