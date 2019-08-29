@@ -222,10 +222,13 @@ Congratulations! You have successfully created APIs which relies on named target
 The current configurations handle error conditions by returning a “unknown resource” error.  E.g. if you send a value of ?target=cloudd, the route will not match and response with a “unknown resource”. Add in necessary login to your API Proxy to return a custom message or an empty JSON body when an invalid target is provided.
 
 ## Quiz
-What is the purpose of using Target Servers?
-What is a Route Rule, how is it used in Apigee Edge?
-What is the relationship between a Route Rule and a Target Endpoint in an API Proxy?
-What are some other scenarios where Route Rules could be beneficial?
+1. What is the purpose of using Target Servers?
+
+2. What is a Route Rule, how is it used in Apigee Edge?
+
+3. What is the relationship between a Route Rule and a Target Endpoint in an API Proxy?
+
+4. What are some other scenarios where Route Rules could be beneficial?
 
 ## Summary
 This lab demonstrates how to use target servers and route rules to conditionally route an API request to multiple backends based on some aspect of the incoming request. By applying Route Rules you can use Apigee Edge to provide a single facade to create a more usable API for your consumers.
