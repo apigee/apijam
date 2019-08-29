@@ -239,6 +239,8 @@ This lab demonstrates how to use target servers and route rules to conditionally
 
 
 
+
+
 ## Part2: Load Balancing across multiple Target Servers
 
 In the real deployment environment, this scenario is common where the user has multiple backend servers serving the same API call. For this lab, we will use 2 different target endpoints to demonstrate how load balancing between multiple backend services can be achieved.
@@ -257,7 +259,7 @@ In the real deployment environment, this scenario is common where the user has m
 
 <img src = "media/image3.png">
 
-5. Create the API Proxy using the proxy bundle which can be found here. Complete the configurations as shown in the following diagram. Click __Next__ when finished.
+5. Create the API Proxy using the proxy bundle which can be found [here](). Complete the configurations as shown in the following diagram. Click __Next__ when finished.
 
 	`Proxy Name: {Initials}_LB-TargetServers`
 	
