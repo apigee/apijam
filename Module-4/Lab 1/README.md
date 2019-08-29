@@ -214,14 +214,14 @@ In the TRACE tool, you will see that the API call has been routed to the soap en
 
 Congratulations! You have successfully created APIs which relies on named target servers instead of hard coded URLs, and used Route Rules to route the API call to different target endpoints.
 
-## Lab Video
+### Lab Video
 
 [Routing Rules Video](https://www.youtube.com/watch?v=URxpF9iWRaA&t=176s)
 
-## Earn Extra Points
+### Earn Extra Points
 The current configurations handle error conditions by returning a “unknown resource” error.  E.g. if you send a value of ?target=cloudd, the route will not match and response with a “unknown resource”. Add in necessary login to your API Proxy to return a custom message or an empty JSON body when an invalid target is provided.
 
-## Quiz
+### Quiz
 1. What is the purpose of using Target Servers?
 
 2. What is a Route Rule, how is it used in Apigee Edge?
@@ -230,12 +230,43 @@ The current configurations handle error conditions by returning a “unknown res
 
 4. What are some other scenarios where Route Rules could be beneficial?
 
-## Summary
+### Summary
 This lab demonstrates how to use target servers and route rules to conditionally route an API request to multiple backends based on some aspect of the incoming request. By applying Route Rules you can use Apigee Edge to provide a single facade to create a more usable API for your consumers.
 
-## References
+### References
 
 [Route Rules Documentation](https://docs.apigee.com/api-platform/fundamentals/understanding-routes)
+
+
+
+## Part2: Load Balancing across multiple Target Servers
+
+In the real deployment environment, this scenario is common where the user has multiple backend servers serving the same API call. For this lab, we will use 2 different target endpoints to demonstrate how load balancing between multiple backend services can be achieved.
+
+1. Go to https://apigee.com/edge and log in. This is the Edge management UI.
+
+2. Select __Develop → API Proxies__ in the side navigation menu
+
+<img src = "media/image1.png" width="300" >
+
+3. Click on __+Proxy__ to create a new API Proxy
+
+<img src = "media/image2.png">
+
+4. Select the Proxy bundle option then click on Next
+
+<img src = "media/image3.png">
+
+5. Create the API Proxy using the proxy bundle which can be found here. Complete the configurations as shown in the following diagram. Click __Next__ when finished.
+
+	`Proxy Name: {Initials}_LB-TargetServers`
+	
+<img src = "media/image26.png"> 
+
+
+
+
+
 
       
 
