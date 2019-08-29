@@ -259,7 +259,7 @@ In the real deployment environment, this scenario is common where the user has m
 
 <img src = "media/image3.png">
 
-5. Create the API Proxy using the proxy bundle which can be found [here](). Complete the configurations as shown in the following diagram. Click __Next__ when finished.
+5. Create the API Proxy using the proxy bundle which can be found [here](/Module-4/Resources/xx_LB-TargetServers.zip). Complete the configurations as shown in the following diagram. Click __Next__ when finished.
 
 	`Proxy Name: {Initials}_LB-TargetServers`
 	
