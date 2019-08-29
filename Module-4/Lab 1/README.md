@@ -31,7 +31,7 @@ None.
 2. Select __Develop → API Proxies__ in the side navigation menu.
 Create the API Proxy using the proxy bundle which can be found here. Complete the configurations as shown in the following diagram. Click __Next__ when finished
 
-<img src = "media/image1.png">
+<img src = "media/image1.png" width="300" >
 
 3. Click on __+Proxy__ to create a new API Proxy
 
@@ -77,7 +77,7 @@ Create the API Proxy using the proxy bundle which can be found here. Complete th
 
     Click on __Add__ to create the Target Server
 
-<img src = "media/image10.png">
+<img src = "media/image10.png" width="500" >
 
 12. Create one more Target Server for the cloud endpoint:
 
@@ -89,7 +89,7 @@ Create the API Proxy using the proxy bundle which can be found here. Complete th
 
     Click on __Add__ to create the Target Server
 
-<img src = "media/image11.png">
+<img src = "media/image11.png" width = "500" >
 
 13. Check that you should have 2 Target Servers created:
 
