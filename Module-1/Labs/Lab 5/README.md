@@ -1,110 +1,342 @@
-# Traffic Management : Rate Limit APIs
+# Lab 5 - Measure API Program Success with Apigee Analytics
 
-*Duration : 15 mins*
+**Last Updated:** 2019-09-03
 
-*Persona : API Team / API Product Manager*
+*Duration : 20 mins*
 
-# Use case
+*Persona : API Product Team*
 
-You have a requirement to apply rate limits (quota limits) dynamically, such that you can package your APIs into different bundles each with their own quotas applied. For example, you want to be able to provide ‘Platinum’ level access that has a very high quota, and ‘Bronze’ level access that has a very low quota, both for the same underlying APIs.
+# Use Case
 
-# How can Apigee Edge help?
+## What comes after publishing the first API Product
 
-Apigee provides the capability to apply quotas to API proxies to limit access to them as required.
+After you have some API Products up and running you want to have a look at how the program performs and how successful your API program is.
 
-Apigee also provides the capability to apply API quota settings at the ‘API Product’ level, allowing you to define multiple products for the same APIs, each with their own quota settings.
+* How is traffic trending over time?
+
+* When is the traffic flowing fastest?
+
+* Where are the most users?
+
+* What are the most active developers?
+
+### Insights help with capacity planning
+
+With trend usage data you can see how your API calls are trending over time and predict how the traffic will be in the next year, when you need to do your capacity planning
+
+Through visualization of the data with out of the box analytics, Apigee helps you with finding the trends and patterns of your APIs
+
+### Tying traffic to API Products
+
+![image alt text](media/image_0.png)
+
+When registering an application to an API product that metadata is loaded when verifying an API key or Oauth Token so you can identify the Developer, App and the Product. This data is crucial for insights into your program.
 
 # Pre-requisites
 
-You must have completed labs 1 - 4 in order to run this lab. 
+* If you have followed previous modules you can probably already see some traffic for the proxies you have created earlier and work with your previous API proxy for the custom statistics.
 
-# Instructions
+* If you haven't followed previous models you can follow this lab too but will see less data in your dashboards.
 
-Note: As you will have already completed labs 1 - 4 and are familiar with how to setup API products and developer apps, as well as how to use a REST client to specify an API key, detailed instructions for those steps will be omitted here. Refer back to the previous labs if you need to see detailed instructions for those steps.
+* (Optional) If you want the full experience setup a load generator before to see some data in your dashboards.
 
-* Login to the Edge Management UI.
+# (optional) Add some load to API proxies
 
-* Open up the **Develop** tab of your Employees API that you've used in the previous labs.
+If you have not followed previous modules you can use a load generator to have some data in your reports.
 
-* In the proxy request pre-flow add a **Quota policy** directly after the *Verify API Key Policy* with the following configuration (note that in the below configuration 'VAK-VerifyKey' refers to the name of the Verify API Key policy that you had added. If you used a different name you will need to alter this in the configuration):
+You have to have an API proxy with a default API key policy and 3 API keys ideally for different Apps and API products.
 
-```
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<Quota async="false" continueOnError="false" enabled="true" name="Q-EnforceQuota" type="calendar">
-    <Allow count="10" countRef="verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.limit"/>
-    <Interval ref="verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.interval">1</Interval>
-    <TimeUnit ref="verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.timeunit">minute</TimeUnit>
-    <Identifier ref="verifyapikey.VAK-VerifyKey.client_id"/>
-    <Distributed>true</Distributed>
-    <Synchronous>true</Synchronous>
-    <StartTime>2019-01-01 00:00:00</StartTime>
-</Quota>
-```
+## Configure and Run Load Generator
 
-* Your API proxy should now look like this:
+You can create a new proxy by uploading the proxy in the *loadgen* folder in this repository.
 
-![image alt text](./media/image_0.png)
+1. Create a new proxy by clicking **Develop > API Proxies > + Proxy**
 
-* Be sure to save your proxy changes.
+2. In the new proxy wizard select to upload a proxy bundle and upload your .zip file from the repository.
 
-* Create 2 new API products that include this proxy, ‘**Employees Bronze Product**’ and ‘**Employees Platinum Product**’ (refer back to [Lab-3](../Lab%203%20API%20Publishing%20-%20API%20Products%20and%20Developer%20Portals) if you don't remember how to create an API product).
+![image alt text](media/image_1.png)
 
-For both products specify as before:
+![image alt text](media/image_2.png)
 
-  * Environment: test
+3. Click **Build.**
 
-  * Access: Public
+4. After the proxy was created you can directly open it in the editor and go to the **Develop** tab to change the values for your proxies and api keys.
 
-  * Automatically approve access requests.
+![image alt text](media/image_3.png)
 
-  * Add your API proxy to the product.
+5. After changing the values **Save** and **deploy** the proxy and run the proxy from the **Trace** tab.
 
-For the **Bronze** product specify a quota limit of 1 request per minute:
+6. Let the load generator run for a while and **undeploy** it to make it stop producing traffic.
 
-![image alt text](./media/image_1.png)
+# Understand API usage using the pre-built Apigee analytics dashboards
 
-For the **Platinum** product specify a quota limit of 1000 requests per minute:
+Apigee comes with a lot of pre built reports. For the purpose of these labs and in the interest of time, we will walk through the different dashboards with screenshots from populated demo environments. Feel free to use the optional load generator to follow along in your own environment.
 
-![image alt text](./media/image_2.png)	
+If you prefer you can have a look at the API Dashboards by watching this video that gives you an overview of the metrics dashboards with a lot of filled values: [https://youtu.be/mElNO44QQFQ?t=126](https://youtu.be/mElNO44QQFQ?t=126)
 
-* Using the developer portal, register 2 new developer apps, one for each of your new products (refer back to [Lab-4](../Lab%204%20API%20Consumption%20-%20Developers%20and%20Apps) if you don't remember how to register a developer app). Record the API keys for each app.
+To get to the reports open the **Analyze** menu in the sidebar.
 
-* Launch the [REST Test client](https://apigee-restclient.appspot.com/) and run some tests using each API key. Verify that the *Bronze* API key cannot be used to send in more than 1 request per minute without triggering a quota exceeded exception:
+![image alt text](media/image_4.png)
 
-![image alt text](./media/image_3.png)
+## API Proxy Performance
 
-* Verify with the *Platinum* key that you can send in more than 1 request per minute.	
+The Proxy Performance dashboard helps you see API proxy traffic patterns and processing times. You can easily visualize how much traffic your APIs generate and how long it takes for API calls to be processed, from the time they are received by Apigee Edge until they are returned to the client app.
 
-# Lab Video
+![image alt text](media/image_5.png)
 
-If you like to learn by watching, here is a short video on setting up dynamic quotas [https://youtu.be/f9jg1fJJTRE](https://youtu.be/f9jg1fJJTRE).
+## Cache Performance
 
-# Earn Extra-points
+The Cache Performance dashboard lets you see at a glance the value of your Apigee Edge cache. The dashboard helps you visualize the benefit of the cache in terms of lower latency and reduced load backend servers.
 
-* Start a trace session for your API proxy and use it to determine at what point the quota values specified in the API product are made available within the API proxy.
+![image alt text](media/image_6.png)
+
+## Error Code Analysis
+
+The Error Code Analysis dashboard tells you about error rates for API proxies and targets. The Error Code Analysis dashboard uses:
+
+* The response code to calculate proxy errors
+
+* The target response code to calculate target errors
+
+![image alt text](media/image_7.png)
+
+## Target Performance
+
+The Target Performance dashboard helps you visualize traffic patterns and performance metrics for API proxy backend targets.
+
+![image alt text](media/image_8.png)
+
+## Developer Engagement
+
+The Developer Engagement dashboard tells you which of your registered app developers are generating the most API traffic. For each of your developers, you can find out who is generating the most API traffic and the most errors. For example, if a particular developer's app is generating a lot of errors relative to other developers, you can pro-actively address the problem with that developer.
+
+![image alt text](media/image_9.png)
+
+In the main view, if it is enabled, select the **Analyze** button under the **Actions** column for the app to view details about that app and the app developer. The following chart appears:
+
+![image alt text](media/image_10.png)
+
+## Traffic Composition
+
+The Traffic Composition dashboard measures the relative contribution of your top APIs, apps, developers, and products to your overall API program.
+
+![image alt text](media/image_11.png)
+
+## Devices
+
+The Devices dashboard tells you about the devices and servers that are being used to access your APIs. It lets you spot trends in how users are accessing your APIs. For instance, you might notice that traffic from one type of device is increasing, while another is going down, and then decide if the change requires any action or not.
+
+![image alt text](media/image_12.png)
+
+## Geomap
+
+The Geo Map dashboard tracks traffic patterns, error patterns, and quality of service across geographical locations. You can view information about all your APIs, or zoom in on specific ones.
+
+![image alt text](media/image_13.png)
+
+# Create a custom analytic report
+
+## Add Statistics Collector
+
+1. Click on **Develop → API Proxies** from side navigation menu. Open the existing API Proxy from the prerequisites and go to the Develop tab.
+
+2. To get the data from the path we need to extract it into an Apigee Flow variable first. We do this by adding an **Extract Variables** policy.
+
+3. In the **GetProductDetails **Flow add a new step to the request by clicking the "**+ Step**" button
+
+![image alt text](media/image_14.png)
+
+4. Add an **Extract Variables** Policy under the "Mediation" category.
+
+![image alt text](media/image_15.png)
+
+Pr
+
+<table>
+  <tr>
+    <td><ExtractVariables name="ExtractVariables-1">
+   <DisplayName>EV-ExtractProductID </DisplayName>
+   <Source>request</Source>
+   <URIPath>
+      <Pattern ignoreCase="true">/products/{productId}</Pattern>
+   </URIPath>
+   <VariablePrefix>urirequest</VariablePrefix>
+   <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+</ExtractVariables></td>
+  </tr>
+</table>
+
+
+5. In the **GetProductDetails** add a new step to the request by clicking the "**+ Step**" button
+
+![image alt text](media/image_16.png)
+
+6. Add a **Statistics Collector** Policy under the "Extensions" Category.
+
+![image alt text](media/image_17.png)
+
+7. Edit the new **Statistics Collector** policy and provide it with the following values.
+
+<table>
+  <tr>
+    <td><?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<StatisticsCollector async="false" continueOnError="false" enabled="true" name="Statistics-Collector-1">
+    <DisplayName>SC-CollectStatistics</DisplayName>
+    <Properties/>
+    <Statistics>
+        <Statistic name="productID" ref="urirequest.productId" type="STRING"/>
+    </Statistics>
+</StatisticsCollector></td>
+  </tr>
+</table>
+
+
+8. Run a trace session. Click on the **Trace** tab and click **Start Trace Session** to start a trace session. Enter the api key from one of your Apps as a query parameter before clicking **Send.** Click on the **Extract Variables Policy Icon** to see the value in a variable. This value is picked up by our Statistics Collector policy.
+
+![image alt text](media/image_18.png)
+
+Play around with different api keys from different API 
+
+<table>
+  <tr>
+    <td>Note: It takes about 30 minutes for a new custom dimension to be added to the database after the Statistics Collector policy is invoked for the first time, for each environment.
+
+For example, if a Statistics Collector proxy is invoked in the test environment, data for that custom dimension starts to be available in the test environment 30 minutes later, and the custom dimension will appear in the custom reports Dimensions drop-down list.</td>
+  </tr>
+</table>
+
+
+## Create custom report
+
+Now we want to have a look at the data we collected in our API proxy. To do that we need to create a custom report that looks for the value we have defined in the statistics collector policy before.
+
+1. Under **Analyze > Custom Reports > Reports** open the Custom Reports Menu
+
+![image alt text](media/image_19.png)
+
+2. Click + Custom Report to create a new custom report
+
+![image alt text](media/image_20.png)
+
+3. Now we can give the custom report a descriptive report name and report description. We also want to define the metric we want to see in our Y-axis. A custom statistic variable could also be here if we would have defined it as an integer rather than a string.
+
+For our example we want to see the **Traffic** of our proxy
+
+We also define the Dimensions we want to group our traffic by. By selecting multiple dimensions we can drill down our report to find more information on the traffic metric.
+
+![image alt text](media/image_21.png)
+
+4. In this lab we want to use these dimensions to demonstrate the drill down functionality. For this we chose **Country, Developer App **and** productId** as our dimensions.
+
+![image alt text](media/image_22.png)
+
+5. Take a look at the other dimensions to choose from. Besides our productID that we defined in our statistics collector policy you will find other common dimensions predefined by Apigee.
+
+![image alt text](media/image_23.png)
+
+6. When finished click **Save** at the bottom right.
+
+7. In the report chose a proper range to filter. Make sure you are starting now or in the future and look back long enough. Maybe 1 hour as the default is too short.
+
+![image alt text](media/image_24.png)
+
+8. Now you see the traffic grouped by our first dimension. In our case all of our traffic is coming from IE. In your case this will be different and in production this will definately be more diverse.
+
+![image alt text](media/image_25.png)
+
+9. Drill down into the report by clicking the blue column.
+
+Now we see the traffic split by Apps. This helps us to identify apps that are generating a lot of traffic to look closer at.
+
+![image alt text](media/image_26.png)
+
+10. Let's look at the fg_**Hipster Android App Free **for example.
+
+![image alt text](media/image_27.png)
+
+11. Now we see the product IDs that were fetched.
+
+You can also download the data as CSV by clicking the download button to the right.
+
+## Get Statistics via Management API
+
+Visit the Management API documentation where you can also conveniently try out API calls:
+
+[https://apidocs.apigee.com/management/apis/get/organizations/%7Borg_name%7D/environments/%7Benv_name%7D/stats/%7Bdimension_name%7D-0](https://apidocs.apigee.com/management/apis/get/organizations/%7Borg_name%7D/environments/%7Benv_name%7D/stats/%7Bdimension_name%7D-0)
+
+### Enter the values and execute an API call
+
+In the documentation you can interactively make calls to your organization to see how the results look like.
+
+* Enter your the API call data in the blue **Resource URL **fields:
+
+    * {org_name}: your organization
+
+    * {env_name}: your environment
+
+    * {dimension_name}: apiproxy
+
+* Fill in the data in the table:
+
+    * Select: sum(message_count)
+
+    * timeRange: 08/01/2019 00:00~08/30/2019 23:59
+
+<table>
+  <tr>
+    <td>Caution: Update Time Range accordingly to have the end range date in the present.</td>
+  </tr>
+</table>
+
+
+    * Filter: (apiproxy eq 'weather-analytics')
+
+* Authenticate with your Apigee username and password that you use to login into the Admin UI.
+
+* Send a request by clicking the **Send this request **button
+
+![image alt text](media/image_28.png)
+
+![image alt text](media/image_29.png)
 
 # Quiz
 
-1. In the quota configuration we provided, the ‘distributed’ and ‘synchronous’ attributes were both set to ‘true’. What is the implication for each of these if we set them to ‘false’?
+* Why did this lab use the data type string in productId although its numerical values in the API specification?
 
-2. How would you configure the quota so that POST calls are counted as 2 calls for the purposes of evaluating the quota?
+* What happens if you put multiple statistics collectors in the proxy flow?
 
 # Summary
 
-That completes this hands-on lesson. In this simple lab you learned how to apply a quota to an API proxy and use API product configuration to dynamically alter the quota within different contexts.
+In this lab you have explored all Reports that show you the success and performance of you API Program and give you valuable insights into how to optimize your APIs.
+
+## What we've covered
+
+* Overview of the built in Apigee Dashboards
+
+* Modified a proxy to collect custom statistics data
+
+* Create a custom report using the data from API calls and defining dimensions to drill down for more details.
 
 # References
 
-* Useful Apigee documentation links on quotas: 
+## Apigee Docs Links
 
-    * Quota Policy Reference: [https://docs.apigee.com/api-platform/reference/policies/quota-policy](https://docs.apigee.com/api-platform/reference/policies/quota-policy)
+[https://docs.apigee.com/api-platform/analytics/use-analytics-api-measure-api-program-performance](https://docs.apigee.com/api-platform/analytics/use-analytics-api-measure-api-program-performance)
 
-    * Community post on setting up dynamic quotas: [https://community.apigee.com/questions/1488/how-do-the-quota-settings-on-an-api-product-intera.html](https://community.apigee.com/questions/1488/how-do-the-quota-settings-on-an-api-product-intera.html) 
+Analytics dashboards overview - [https://docs.apigee.com/api-platform/analytics/using-analytics-dashboards](https://docs.apigee.com/api-platform/analytics/using-analytics-dashboards)
 
-* Watch this 4minute video on "Dynamic Quotas’ - [https://youtu.be/z8Rj_VzSbh4](https://youtu.be/z8Rj_VzSbh4) 
+Exract Variables Policy - [https://docs.apigee.com/api-platform/reference/policies/extract-variables-policy](https://docs.apigee.com/api-platform/reference/policies/extract-variables-policy)
 
-# Rate this lab
+Statistics Collector Policy - [https://docs.apigee.com/api-platform/reference/policies/statistics-collector-policy](https://docs.apigee.com/api-platform/reference/policies/statistics-collector-policy)
 
-How did you like this lab? Rate [here](https://goo.gl/forms/BJGUY07XCGboHxrw2).
+Create and manage custom reports - [https://docs.apigee.com/api-platform/analytics/create-custom-reports](https://docs.apigee.com/api-platform/analytics/create-custom-reports)
 
+Example of custom report with statistics collector - [https://docs.apigee.com/api-platform/analytics/analyze-api-message-content-using-custom-analytics](https://docs.apigee.com/api-platform/analytics/analyze-api-message-content-using-custom-analytics)
 
+## Videos (4mv4d)
+
+Extract Variables Policy - [https://www.youtube.com/watch?v=KqFpnNt_8yo](https://www.youtube.com/watch?v=KqFpnNt_8yo)
+
+Measurement and KPIs for APIs - [https://www.youtube.com/watch?v=x6r7xHKNINU](https://www.youtube.com/watch?v=x6r7xHKNINU)
+
+Measuring and reporting the success of your API program - [https://www.youtube.com/watch?v=VcNKpoakVqQ](https://www.youtube.com/watch?v=VcNKpoakVqQ)
