@@ -214,7 +214,7 @@ Click **Add** to add the policy to your flow.
 
 ![image alt text](media/image_13.png)
 
-1. With the VerifyAPIKey policy that we have configured in our prerequisites **VAK-VerifyKey**, the following variables are populated after verification of an API key that has an API product with the quota fields set as 3 requests per 1 second:
+5. With the VerifyAPIKey policy that we have configured in our prerequisites **VAK-VerifyKey**, the following variables are populated after verification of an API key that has an API product with the quota fields set as 3 requests per 1 second:
 
 ```
 verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.limit = 3
