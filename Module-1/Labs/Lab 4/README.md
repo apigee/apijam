@@ -144,7 +144,7 @@ Now we should end up with 3 API Products resembling our Product tier strategy.
 
 ![image alt text](media/image_7.png)
 
-        * Select **Hipster Product API Product Bronze** and click **Add**
+ * Select **Hipster Product API Product Bronze** and click **Add**
 
 ![image alt text](media/image_8.png)
 
@@ -206,15 +206,15 @@ As stated before, quotas are only enforced by adding a quota policy into your pr
 
 ![image alt text](media/image_12.png)
 
-4. Click **Quota **Policy and Populate the following fields
+4. Click **Quota** Policy and Populate the following fields
 
-    1. **Display Name: **QU-ProductQuota
+    1. **Display Name:** QU-ProductQuota
 
-Click **Add **to add the policy to your flow.
+Click **Add** to add the policy to your flow.
 
 ![image alt text](media/image_13.png)
 
-5. With the VerifyAPIKey policy that we have configured in our prerequisites **VAK-VerifyKey**, the following variables are populated after verification of an API key that has an API product with the quota fields set as 3 requests per 1 second:
+1. With the VerifyAPIKey policy that we have configured in our prerequisites **VAK-VerifyKey**, the following variables are populated after verification of an API key that has an API product with the quota fields set as 3 requests per 1 second:
 
 ```
 verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.limit = 3

@@ -240,7 +240,7 @@ Now we see the traffic split by Apps. This helps us to identify apps that are ge
 
 ![image alt text](media/image_26.png)
 
-10. Let's look at the fg_**Hipster Android App Free **for example.
+10. Let's look at the **fg_Hipster Android App Free** for example.
 
 ![image alt text](media/image_27.png)
 
@@ -258,7 +258,7 @@ Visit the Management API documentation where you can also conveniently try out A
 
 In the documentation you can interactively make calls to your organization to see how the results look like.
 
-* Enter your the API call data in the blue **Resource URL **fields:
+* Enter your the API call data in the blue **Resource URL** fields:
 
     * {org_name}: your organization
 
@@ -278,7 +278,7 @@ In the documentation you can interactively make calls to your organization to se
 
 * Authenticate with your Apigee username and password that you use to login into the Admin UI.
 
-* Send a request by clicking the **Send this request **button
+* Send a request by clicking the **Send this request** button
 
 ![image alt text](media/image_28.png)
 
