@@ -150,11 +150,10 @@ The Geo Map dashboard tracks traffic patterns, error patterns, and quality of se
 
 ![image alt text](media/image_15.png)
 
-Pr
+5. Add an **Extract Variables** Policy under the "Mediation" category.
 
-<table>
-  <tr>
-    <td><ExtractVariables name="ExtractVariables-1">
+```
+<ExtractVariables name="ExtractVariables-1">
    <DisplayName>EV-ExtractProductID </DisplayName>
    <Source>request</Source>
    <URIPath>
@@ -162,48 +161,39 @@ Pr
    </URIPath>
    <VariablePrefix>urirequest</VariablePrefix>
    <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
-</ExtractVariables></td>
-  </tr>
-</table>
+</ExtractVariables>
+```
 
-
-5. In the **GetProductDetails** add a new step to the request by clicking the "**+ Step**" button
+6. In the **GetProductDetails** add a new step to the request by clicking the "**+ Step**" button
 
 ![image alt text](media/image_16.png)
 
-6. Add a **Statistics Collector** Policy under the "Extensions" Category.
+7. Add a **Statistics Collector** Policy under the "Extensions" Category.
 
 ![image alt text](media/image_17.png)
 
-7. Edit the new **Statistics Collector** policy and provide it with the following values.
+8. Edit the new **Statistics Collector** policy and provide it with the following values.
 
-<table>
-  <tr>
-    <td><?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+```
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <StatisticsCollector async="false" continueOnError="false" enabled="true" name="Statistics-Collector-1">
     <DisplayName>SC-CollectStatistics</DisplayName>
     <Properties/>
     <Statistics>
         <Statistic name="productID" ref="urirequest.productId" type="STRING"/>
     </Statistics>
-</StatisticsCollector></td>
-  </tr>
-</table>
+</StatisticsCollector>
+```
 
-
-8. Run a trace session. Click on the **Trace** tab and click **Start Trace Session** to start a trace session. Enter the api key from one of your Apps as a query parameter before clicking **Send.** Click on the **Extract Variables Policy Icon** to see the value in a variable. This value is picked up by our Statistics Collector policy.
+1. Run a trace session. Click on the **Trace** tab and click **Start Trace Session** to start a trace session. Enter the api key from one of your Apps as a query parameter before clicking **Send.** Click on the **Extract Variables Policy Icon** to see the value in a variable. This value is picked up by our Statistics Collector policy.
 
 ![image alt text](media/image_18.png)
 
 Play around with different api keys from different API 
 
-<table>
-  <tr>
-    <td>Note: It takes about 30 minutes for a new custom dimension to be added to the database after the Statistics Collector policy is invoked for the first time, for each environment.
-
-For example, if a Statistics Collector proxy is invoked in the test environment, data for that custom dimension starts to be available in the test environment 30 minutes later, and the custom dimension will appear in the custom reports Dimensions drop-down list.</td>
-  </tr>
-</table>
+> Note: It takes about 30 minutes for a new custom dimension to be added to the database after the Statistics Collector policy is invoked for the first time, for each environment.
+>  
+> For example, if a Statistics Collector proxy is invoked in the test environment, data for that custom dimension starts to be available in the test environment 30 minutes later, and the custom dimension will appear in the custom reports Dimensions drop-down list.
 
 
 ## Create custom report
@@ -282,14 +272,9 @@ In the documentation you can interactively make calls to your organization to se
 
     * timeRange: 08/01/2019 00:00~08/30/2019 23:59
 
-<table>
-  <tr>
-    <td>Caution: Update Time Range accordingly to have the end range date in the present.</td>
-  </tr>
-</table>
-
-
     * Filter: (apiproxy eq 'weather-analytics')
+
+> Caution: Update Time Range accordingly to have the end range date in the present.
 
 * Authenticate with your Apigee username and password that you use to login into the Admin UI.
 

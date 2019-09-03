@@ -56,7 +56,7 @@ In this lab we will create different API products that call the same API proxy b
 
 ![image alt text](media/image_2.png)
 
-        * Select **{yourInitials}_Hipster-Products-API Proxy** and click **Add**
+* Select **{yourInitials}_Hipster-Products-API Proxy** and click **Add**
 
 ![image alt text](media/image_3.png)
 
@@ -66,9 +66,9 @@ API products have a set of fields called "Quota" that allow you to configure how
 
 We now create 2 similar products that represent our Silver and Gold Products with different Quota settings. To create another API Product just follow these steps:
 
-    * Click **Publish → API Products**
+* Click **Publish → API Products**
 
-    * Click **+API Product**
+* Click **+API Product**
 
 * For the **Silver Product** populate the following fields
 
@@ -144,7 +144,7 @@ Now we should end up with 3 API Products resembling our Product tier strategy.
 
 ![image alt text](media/image_7.png)
 
-        * Select **Hipster Product API Product Bronze **and click **Add**
+        * Select **Hipster Product API Product Bronze** and click **Add**
 
 ![image alt text](media/image_8.png)
 
@@ -170,7 +170,7 @@ Repeat the process for the Apps that use the Silver and Gold tier as well, with 
 
         * Click **Add product**
 
-        * Select **Hipster Product API Product Silver **and click **Add**
+        * Select **Hipster Product API Product Silver** and click **Add**
 
 * App using the Gold API Product
 
@@ -186,7 +186,7 @@ Repeat the process for the Apps that use the Silver and Gold tier as well, with 
 
         * Click **Add product**
 
-        * Select **Hipster Product API Product Gold **and click **Add**
+        * Select **Hipster Product API Product Gold** and click **Add**
 
 You should end up having 3 Apps with 3 different API keys, that you have noted down.
 
@@ -216,35 +216,27 @@ Click **Add **to add the policy to your flow.
 
 5. With the VerifyAPIKey policy that we have configured in our prerequisites **VAK-VerifyKey**, the following variables are populated after verification of an API key that has an API product with the quota fields set as 3 requests per 1 second:
 
+```
 verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.limit = 3
-
 verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.interval = 1
-
 verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.timeunit = second
+```
 
-The next step then is to set the** QU-ProductQuota **Quota policy to reference these variables and use this code in the **Policy Configuration**
+The next step then is to set the **QU-ProductQuota** Quota policy to reference these variables and use this code in the **Policy Configuration**
 
+```
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-
 <Quota async="false" continueOnError="false" enabled="true" name="QU-ProductQuota" type="calendar">
-
     <DisplayName>QU-ProductQuota</DisplayName>
-
     <Allow count="3" countRef="verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.limit"/>
-
     <Interval ref="verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.interval">1</Interval>
-
     <TimeUnit ref="verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.timeunit">minute</TimeUnit>
-
-<Identifier ref='verifyapikey.VAK-VerifyKey.client_id'/>
-
+    <Identifier ref='verifyapikey.VAK-VerifyKey.client_id'/>
     <Distributed>true</Distributed>
-
     <Synchronous>true</Synchronous>
-
     <StartTime>2019-01-01 12:00:00</StartTime>
-
 </Quota>
+```
 
 ![image alt text](media/image_14.png)
 
