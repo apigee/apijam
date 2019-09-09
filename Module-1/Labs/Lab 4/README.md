@@ -40,7 +40,7 @@ In this lab we will create different API products that call the same API proxy b
 
         * Name: {yourInitials}_Hipster-Products-API-Product
 
-        * Display name: Hipster Products API Product Bronze
+        * Display name: {yourInitials}_Hipster Products API Product Bronze
 
         * Description: Free version of the Hipster Product API
 
@@ -76,7 +76,7 @@ We now create 2 similar products that represent our Silver and Gold Products wit
 
         * Name: {yourInitials}_Hipster-Products-API-Product-Silver
 
-        * Display name: Hipster Products API Product Silver
+        * Display name: {yourInitials}_Hipster Products API Product Silver
 
         * Description: Free version of the Hipster Product API
 
@@ -98,7 +98,7 @@ We now create 2 similar products that represent our Silver and Gold Products wit
 
         * Name: {yourInitials}_Hipster-Products-API-Product-Gold
 
-        * Display name: Hipster Products API Product Gold
+        * Display name: {yourInitials}_Hipster Products API Product Gold
 
         * Description: Deluxe version of the Hipster Product API
 
@@ -134,7 +134,7 @@ Now we should end up with 3 API Products resembling our Product tier strategy.
 
         * Name: {yourInitials}_Hipster Android App Free
 
-        * Display name: Hipster Android App Free
+        * Display name: {yourInitials}_Hipster Android App Free
 
         * Developer: Chose any existing Developer
 
@@ -162,7 +162,7 @@ Repeat the process for the Apps that use the Silver and Gold tier as well, with 
 
         * Name: {yourInitials}_Hipster Android App Basic
 
-        * Display name: Hipster Android App Basic
+        * Display name: {yourInitials}_Hipster Android App Basic
 
         * Developer: Chose any existing Developer
 
@@ -178,7 +178,7 @@ Repeat the process for the Apps that use the Silver and Gold tier as well, with 
 
         * Name: {yourInitials}_Hipster Android App Deluxe
 
-        * Display name: Hipster Android App Deluxe
+        * Display name: {yourInitials}_Hipster Android App Deluxe
 
         * Developer: Chose any existing Developer
 
@@ -254,7 +254,7 @@ Go to the API proxy and enter the trace tab so we can run some tests:
 
 * Click **Start Trace Session**
 
-* Add the Bronze apikey value as a query parameter to the URL (e.g.: [http://{yourapigeeorg}-test.apigee.net/v1/{yourInitials}_hipster-products-api?apikey=GYuZekimsQ2TLdWWMHkqB1poAquHaGsv](http://{yourapigeeorg}-test.apigee.net/v1/{yourInitials}_hipster-products-api?apikey=GYuZekimsQ2TLdWWMHkqB1poAquHaGsv)
+* Add the Bronze apikey value as a query parameter to the URL (e.g.: [http://{yourapigeeorg}-test.apigee.net/v1/{yourInitials}_hipster-products-api/products?apikey=GYuZekimsQ2TLdWWMHkqB1poAquHaGsv](http://{yourapigeeorg}-test.apigee.net/v1/{yourInitials}_hipster-products-api/products?apikey=GYuZekimsQ2TLdWWMHkqB1poAquHaGsv)
 
 * Run a test by clicking the **Send** button multiple times
 
@@ -264,7 +264,7 @@ Go to the API proxy and enter the trace tab so we can run some tests:
 
 ![image alt text](media/image_17.png)
 
-Now we switch API products and add the Silver apikey value from our App as a query parameter to the URL (e.g.: [http://{yourapigeeorg}-test.apigee.net/v1/{yourInitials}_hipster-products-api?apikey=GYuZekimsQ2TLdWWMHkqB1poAquHaGsv](http://{yourapigeeorg}-test.apigee.net/v1/{yourInitials}_hipster-products-api?apikey=GYuZekimsQ2TLdWWMHkqB1poAquHaGsv)
+Now we switch API products and add the Silver apikey value from our App as a query parameter to the URL (e.g.: [http://{yourapigeeorg}-test.apigee.net/v1/{yourInitials}_hipster-products-api/products?apikey=GYuZekimsQ2TLdWWMHkqB1poAquHaGsv](http://{yourapigeeorg}-test.apigee.net/v1/{yourInitials}_hipster-products-api/products?apikey=GYuZekimsQ2TLdWWMHkqB1poAquHaGsv)
 
 * Change your apikey parameter to match your Silver App credentials
 
@@ -305,3 +305,7 @@ In this lab you have created 3 products aligned with your API product strategy t
 [https://www.youtube.com/watch?v=z8Rj_VzSbh4](https://www.youtube.com/watch?v=z8Rj_VzSbh4)
 
 [https://www.youtube.com/watch?v=1RDDpH0wOdc](https://www.youtube.com/watch?v=1RDDpH0wOdc)
+
+## Next Steps
+
+Now go to [Lab-5](../Lab%205)
