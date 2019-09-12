@@ -44,7 +44,7 @@ First, we are going to design and create an OpenAPI specification for the differ
 
 4. Enter spec details. Replace **{your-initials}** with the initials of your name.
 
-   * File Name: **{your-initials}**_employee_api_spec
+   * File Name: **{your-initials}**_hipster_products_api_spec
    * URL: [https://raw.githubusercontent.com/aliceinapiland/apijam/master/Module-1/Resources/products-catalog-spec.yaml](https://raw.githubusercontent.com/aliceinapiland/apijam/master/Module-1/Resources/products-catalog-spec.yaml)
 
 ![image alt text](./media/image_2.png)
@@ -53,7 +53,7 @@ First, we are going to design and create an OpenAPI specification for the differ
 
 ![image alt text](./media/image_3.png)
 
-6. Click on **{your-initials}**_employee_api_spec from the list to access Open API spec editor & interactive documentation that lists API details & API Resources.
+6. Click on **{your-initials}**_hipster_products_api_spec from the list to access Open API spec editor & interactive documentation that lists API details & API Resources.
 
 ![image alt text](./media/image_4.png)
 
@@ -61,17 +61,17 @@ First, we are going to design and create an OpenAPI specification for the differ
 
 1. It’s time to create Apigee API Proxy from Open API Specification. Click on **Develop → API Proxies** from side navigation menu.
 
-![image alt text](./media/image_5.jpg)
+![image alt text](./media/image_5.png)
 
 2. Click **+Proxy** The Build a Proxy wizard is invoked. 
 
-![image alt text](./media/image_6.jpg)
+![image alt text](./media/image_6.png)
 
 3. Select **Reverse proxy**, Click on **Use OpenAPI** below reverse proxy option.
 
 ![image alt text](./media/image_7.png)
 
-4. You should see a popup with list of Specs. Select **{your-initials}**_employee_api_spec and click **Select.** 
+4. You should see a popup with list of Specs. Select **{your-initials}**_hipster_products_api_spec and click **Select.** 
 
 ![image alt text](./media/image_8.png)
 
@@ -81,9 +81,9 @@ First, we are going to design and create an OpenAPI specification for the differ
 
 6. Enter details in the proxy wizard. Replace **{your-initials}** with the initials of your name. 
 
-    * Proxy Name: **{your_initials}**_employee_proxy
+    * Proxy Name: **{your_initials}**_Hipster-Products-API
 
-    * Proxy Base Path: /v1/**{your_initials}**_employee_proxy
+    * Proxy Base Path: /v1/**{your_initials}**_hipster-products-api
 
     * Existing API: Observe the field value which is auto filled from OpenAPI Spec.
 
@@ -97,15 +97,15 @@ First, we are going to design and create an OpenAPI specification for the differ
 
 9. Select **Pass through (none)** for the authorization in order to choose not to apply any security policy for the proxy. Click Next. 
 
-![image alt text](./media/image_12.jpg)
+![image alt text](./media/image_12.png)
 
 10. Go with the **default Virtual Host** configuration.
 
-![image alt text](./media/image_13.jpg)
+![image alt text](./media/image_13.png)
 
 11. Ensure that only the **test** environment is selected to deploy to and click **Build and Deploy** 
 
-![image alt text](./media/image_14.jpg)
+![image alt text](./media/image_14.png)
 
 12. Once the API proxy is built and deployed **click** the link to view your proxy in the proxy editor. 
 
@@ -132,12 +132,12 @@ curl -X GET "https://"
 
 ![image alt text](./media/image_17.png)
 
-3. Paste the link into the REST Client and make a GET call
+3. Paste the link into the REST Client. Add resource path `/products` and make a GET call.
 
 ![image alt text](./media/image_18.png)
 
 4. You should see a success response similar to this -
-![image alt text](./media/image_19.jpg)
+![image alt text](./media/image_19.png)
 
 
 
