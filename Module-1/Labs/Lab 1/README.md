@@ -120,8 +120,11 @@ Let us test the newly built API proxy. You can use a terminal HTTP client like c
 
 ### Using cURL
 
+org = Organization name
+env = Environment where API is deployed
+
 ```
-curl -X GET "https://"
+curl -X GET "https://{{org}}-{{env}}.apigee.net/{{your initials}}_hipster-products-api/products"
 ```
 
 ### Using the Sample REST Client:
