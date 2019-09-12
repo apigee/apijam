@@ -10,7 +10,7 @@ You have a requirement to create a reverse proxy for taking requests from the In
 
 # How can Apigee Edge help?
 
-Apigee Edge enables you to quickly expose services as APIs. You do this by creating an API proxy that provides a facade for the service that you want to expose. Apigee Edge supports the OpenAPI specification out of the box, allowing you to auto-generate API Proxies. Apigee Edge also has an OpenAPI specification editor & store which you can use to maintain your OpenAPI specifications. 
+Apigee Edge enables you to quickly expose services as APIs. You do this by creating an API proxy that provides a facade for the service that you want to expose. Apigee Edge supports the OpenAPI specification out of the box, allowing you to auto-generate API Proxies. Apigee Edge also has an OpenAPI specification editor & store which you can use to design and maintain your OpenAPI specifications. 
 
 The API proxy decouples your service implementation from the API endpoint that developers consume. This shields developers from future changes to your services. As you update services, developers, insulated from those changes, can continue to call the API uninterrupted.
 
@@ -29,7 +29,7 @@ In this lab, we will see how to
 
 ## Create an Open API Specification
 
-During the course of this workshop, the HTTP service we will expose as an API endpoint, is the Hipster Products service located at [http://cloud.hipster.s.apigee.com/products](http://cloud.hipster.s.apigee.com/products).
+During the course of this lab, the sample HTTP service we will expose as an API endpoint, is the Hipster Products service located at [http://cloud.hipster.s.apigee.com/products](http://cloud.hipster.s.apigee.com/products).
 First, we are going to design and create an OpenAPI specification for the different resource endpoints, i.e. /products and /products/{productId}. 
 
 1. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI. 
@@ -116,7 +116,17 @@ First, we are going to design and create an OpenAPI specification for the differ
 ![image alt text](./media/image_16.png)
 
 ## Test the API Proxy
-1. Let us test the newly built API proxy using the [REST Client](https://apigee-rest-client.appspot.com/). Open the REST Client on a new browser window.  
+Let us test the newly built API proxy. You can use a terminal HTTP client like cURL, or any browser based client like the [Sample REST Client Here](https://apigee-rest-client.appspot.com/). 
+
+### Using cURL
+
+```
+curl -X GET "https://"
+```
+
+### Using the Sample REST Client:
+
+1. Open the REST Client on a new browser window.  
 
 2. Copy the URL for your API proxy. 
 
@@ -128,6 +138,8 @@ First, we are going to design and create an OpenAPI specification for the differ
 
 4. You should see a success response similar to this -
 ![image alt text](./media/image_19.jpg)
+
+
 
 ## Save the API Proxy
 
