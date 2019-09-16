@@ -108,35 +108,35 @@ For this lab, you will need an API proxy that is not currently secured.  If you 
 
 **_Note_**: _Replace {{your initials}} with your initials, so as to not accidentally modify other developers work. Eg. API product 'Name = xx_Hipster-Products-API-Product'._
 
-    * Section: Product details
+   * Section: Product details
 
-        * Name: {{your initials}}_Hipster-Products-API-Product
+        * Name: `{{your initials}}_Hipster-Products-API-Product`
         
-        * Display name: {{your initials}}_Hipster Products API Product
+        * Display name: `{{your initials}}_Hipster Products API Product`
 
-        * Description: Product that provides access to the Hipster Products API.
+        * Description: `Product that provides access to the Hipster Products API.`
 
-        * Environment: test
+        * Environment: `test`
 
-        * Access: Public
+        * Access: `Public`
 
-    * Section: API resources
+   * Section: API resources
 
         * Section: API Proxies
 
-            * Click the **Add a proxy** link
+           * Click the **Add a proxy** link
 
-            ![image alt text](./media/AddProductProxy.png)
+           ![image alt text](./media/AddProductProxy.png)
 
-            * Select your Hipster Products API Proxy and click **Add**.
+           * Select your Hipster Products API Proxy and click **Add**.
 
-            ![image alt text](./media/ProductProxySelect.png)
+           ![image alt text](./media/ProductProxySelect.png)
 
-            * Click the **Add a Path** link, select the '/' option for you Hipster Products API Proxy and click **Add**.
+           * Click the **Add a Path** link, select the `/` option for you Hipster Products API Proxy and click **Add**.
 
-            ![image alt text](./media/AddPath1.png)
+           ![image alt text](./media/AddPath1.png)
 
-            ![image alt text](./media/AddPath2.png)
+           ![image alt text](./media/AddPath2.png)
 
 3. **Save** the API Product.
 ![image alt text](./media/SaveProduct.png)
