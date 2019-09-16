@@ -137,8 +137,6 @@ curl -X GET "https://{{org}}-{{env}}.apigee.net/{{your initials}}_hipster-produc
 
 3. Paste the link into the REST Client. Add resource path `/products` and make a GET call.
 
-![image alt text](./media/image_18.png)
-
 4. You should see a success response similar to this -
 ![image alt text](./media/image_19.png)
 
