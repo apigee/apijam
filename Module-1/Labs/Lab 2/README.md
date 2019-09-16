@@ -35,7 +35,7 @@ For this lab, you will need an API proxy that is not currently secured.  If you 
 
 # Instructions
 
-## Choose (and invoke) an API Proxy to secure
+## Choose and test the API Proxy to secure
 
 1. Log into the Apigee Edge Management UI at [https://login.apigee.com](https://login.apigee.com). Navigate to  **Develop → API Proxies**, and select the API Proxy (labeled **{your_initials}**_Hipster-Products-API) that you created in [Lab 1](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%201).
 
@@ -61,17 +61,13 @@ For this lab, you will need an API proxy that is not currently secured.  If you 
 
 ## Add a Verify API Key Policy
 
-* Menu: **Develop > API Proxies**
+1. Navigate to **Develop > API Proxies** in the side menu, and open your API proxy. Click the **Develop** tab (in the upper right area of the page) to see the flow editor (you may have to move the panes to see the full request and response flow lines)
 
-* Open your API proxy and click the **Develop** tab (in the upper right area of the page) to see the flow editor (you may have to move the panes to see the full request and response flow lines)
-
-* Click **+Step** on the request flow.
+2. Click **+Step** on the request flow.
 
 ![image alt text](./media/image_4.png)
 
-* Select *Verify API Key* policy from the *Security* section of the list.  The name can be changed or left at the default.
-
-* Click **Add**
+3. Select *Verify API Key* policy from the *Security* section of the list.  The name can be changed or left at the default. Click **Add**
 
 ![image alt text](./media/image_5.png)
 
@@ -81,30 +77,137 @@ For this lab, you will need an API proxy that is not currently secured.  If you 
 
 ```
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-  <VerifyAPIKey async="false" continueOnError="false" enabled="true" name="VAK-VerifyKey">
-    <DisplayName>VAK-VerifyKey</DisplayName>
-     <Properties/>
+<VerifyAPIKey async="false" continueOnError="false" enabled="true" name="Verify-API-Key">
+    <DisplayName>Verify API Key</DisplayName>
+    <Properties/>
     <APIKey ref="request.queryparam.apikey"/>
 </VerifyAPIKey>
 ```
 
+![image alt text](./media/VAKPolicyConfig.png)
+
 * **Save** the API proxy.
 
-* Click the **Trace** tab near the top of the window.
+4. Click the **Trace** tab near the top of the window and click **Start Trace Session** to begin a trace session.
 
-* Click **Start Trace Session** to begin a trace session.
-
-* Click **Send** to send a request.  
+* If you're using the API proxy you built in the [previous Lab](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%201), add the `/products` resource path to the URL prior to sending a sample API call request. Click **Send** to send a request.  
 
 * You should see a 401 (unauthorized) response for your API Call because the API proxy was expecting an API Key as a query parameter.  See the trace session below
 
-* NOTE: In Lab 4, you will get an API Key that will allow you to make this API call successfully.
+* NOTE: In subsequent steps, you will get an API Key that will allow you to make this API call successfully.
 
 ![image alt text](./media/image_6.png)
 
+## Create API Product
+
+1. Select **Publish → API Products** from the side navigation menu, and click the **+API Product** button.
+
+![image alt text](./media/APIProductsAddProductBtn.png)
+
+2. Populate the following fields
+
+**_Note_**: _Replace {{your initials}} with your initials, so as to not accidentally modify other developers work. Eg. API product 'Name = xx_Hipster-Products-API-Product'._
+
+    * Section: Product details
+
+        * Name: {{your initials}}_Hipster-Products-API-Product
+        
+        * Display name: {{your initials}}_Hipster Products API Product
+
+        * Description: Product that provides access to the Hipster Products API.
+
+        * Environment: test
+
+        * Access: Public
+
+    * Section: API resources
+
+        * Section: API Proxies
+
+            * Click the **Add a proxy** link
+
+            ![image alt text](./media/AddProductProxy.png)
+
+            * Select your Hipster Products API Proxy and click **Add**.
+
+            ![image alt text](./media/ProductProxySelect.png)
+
+            * Click the **Add a Path** link, select the '/' option for you Hipster Products API Proxy and click **Add**.
+
+            ![image alt text](./media/AddPath1.png)
+
+            ![image alt text](./media/AddPath2.png)
+
+3. **Save** the API Product.
+![image alt text](./media/SaveProduct.png)
+
+Note: We are adding the entire API Proxy to the API Product.  We can just as easily select one or more operations from one or more API proxies and bundle them together in an API Product.
+
+## Manually register App from Management UI & generate API Key
+
+1. Select **Publish → Developers** from the side navigation menu, and click the **+Developer** button.
+
+![image alt text](./media/AddDeveloperBtn.png)
+
+2. Populate the following details:
+
+	* First Name: {{your initials}}\_Test
+
+	* Last Name: Developer
+
+	* Username: {{your initials}}\_testdev
+
+	* Email: {{your initials}}\_testdev@test.com
+
+3. Click **Create**
+
+![image alt text](./media/CreateDeveloper.png)
+
+4. Select **Publish → Apps** from the side navigation menu, and click the **+App** button.
+
+![image alt text](./media/AddAppBtn.png)
+
+5. Populate the following details:
+
+	* Name: {{your initials}}\_Hipster-Products-App
+
+	* Disaplay Name: {{your initials}}\_Hipster Products App
+
+	* Select the **Developer** radial option.
+
+	* Select the developer you previously created.
+
+	* Click the **Add Product** button.
+
+	![image alt text](./media/FillAppCreateFormAddProduct.png)
+
+	* Select the API Product you previously created, and click **Add**.
+
+	![image alt text](./media/AddAppProduct.png)
+
+6. Click the **Create** button to save.
+
+	![image alt text](./media/AppCreateBtn.png)
+
+7. Once created, you will then see that Apigee has generated an API Key and Secret pair for the App. Click on the 'Show' link next to the Key, and **copy this API Key**.
+
+![image alt text](./media/CopyAPIKey.png)
+
+You can now use this API Key to make a valid API request to your API Proxy.
+
+## Test your API with a valid API Key
+
+1. Navigate to **Develop > API Proxies** in the side menu, and open your API proxy. Click the **Trace** tab near the top of the window and click **Start Trace Session** to begin a trace session.
+
+2. Add the `/products` resource path to the URL prior to sending a sample API call request. In addition, add a query parameter called `apikey` with the value of the API Key you copied. Click **Send** to send a request. 
+
+3. You should now see that the API request returns a 200 OK response, as the Verify API Key policy has found the API key to be valid.
+
+![image alt text](./media/TraceValidReq.png)
+
 # Lab Video
 
-If you would rather watch a video that covers this topic, point your browser [here](https://youtu.be/3nUFCOgGlS8). (note: you only need to watch until the 3:00 minute mark for this specific lab).
+If you would rather watch a video that covers this topic, point your browser [here](https://youtu.be/3nUFCOgGlS8).
 
 # Quiz
 
@@ -114,7 +217,7 @@ If you would rather watch a video that covers this topic, point your browser [he
 
 # Summary
 
-In this lab you learned how to protect your API proxy using the Verify API Key policy.  You implemented the policy and tested it using the built-in Trace Tool.
+In this lab you learned how the relationship between API Proxies, API Products and Apps, helps obfuscate API production from API consumption; and how to protect your API proxy using the Verify API Key policy.  You then implemented the policy and tested it using the built-in Trace Tool.
 
 # References
 
