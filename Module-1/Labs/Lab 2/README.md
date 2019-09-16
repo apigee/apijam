@@ -151,13 +151,13 @@ Note: We are adding the entire API Proxy to the API Product.  We can just as eas
 
 2. Populate the following details:
 
-	* First Name: {{your initials}}\_Test
+	* First Name: `{{your initials}}_Test`
 
-	* Last Name: Developer
+	* Last Name: `Developer`
 
-	* Username: {{your initials}}\_testdev
+	* Username: `{{your initials}}_testdev`
 
-	* Email: {{your initials}}\_testdev@test.com
+	* Email: `{{your initials}}_testdev@test.com`
 
 3. Click **Create**
 
@@ -169,11 +169,11 @@ Note: We are adding the entire API Proxy to the API Product.  We can just as eas
 
 5. Populate the following details:
 
-	* Name: {{your initials}}\_Hipster-Products-App
+	* Name: `{{your initials}}\Hipster-Products-App`
 
-	* Disaplay Name: {{your initials}}\_Hipster Products App
+	* Disaplay Name: `{{your initials}}_Hipster Products App`
 
-	* Select the **Developer** radial option.
+	* Select the `Developer` radial option.
 
 	* Select the developer you previously created.
 
