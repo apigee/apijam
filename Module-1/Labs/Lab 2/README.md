@@ -229,5 +229,5 @@ In this lab you learned how the relationship between API Proxies, API Products a
 
 How did you like this lab? Rate [here](https://goo.gl/forms/XxDqVtWHnyFdEChv1).
 
-Now go to [Lab-3](../Lab%203%20API%20Publishing%20-%20API%20Products%20and%20Developer%20Portals)
+Now go to [Lab-3](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%203)
 
