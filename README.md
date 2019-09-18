@@ -13,8 +13,8 @@ All of the material here is released under the [Apache 2.0 license](./LICENSE.md
 ### [Module 1](./Module-1) 
 * Lab 1 - Create a Reverse Proxy with OpenAPI specification
 * Lab 2 - Apps, API Products & API Keys
-* Lab 3 - Developer Experience
-* Lab 4 - Manage tiered API Product subscription through API call quotas
+* Lab 3 - Manage tiered API Product subscription through API call quotas
+* Lab 4 - Developer Experience
 * Lab 5 - Measure API Program Success with Apigee Analytics
 
 ** **
