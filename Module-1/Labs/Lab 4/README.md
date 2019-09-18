@@ -1,4 +1,4 @@
-# API Publishing: API Products and Developer Portals
+# Lab 4 - Build an App Developer Experience using Apigee Integrated Developer Portals
 
 *Duration : 15 mins*
 
@@ -6,19 +6,25 @@
 
 # Use case
 
-You have an API proxy that you would like to share with app developers via a Developer Portal.  You want to enable developers to learn about, register for, and begin using your API proxy.
+You want to provide and manage an easy on-boarding experince for app developers who wish to consume your API Products via a Developer Portal.  You want to enable app developers to learn about, register for, and begin using your APIs, as well as control visibility and access to different API Products.
 
 # How can Apigee Edge help?
 
-Apigee Edge provides multiple options for your Developer Portal.  There is a lightweight portal that supports branding and customization of much of the site, such as theme, logos, and page content.  The lightweight portal can be published in seconds, directly from the management UI.  We also provide a Drupal-based portal if you want full control and to leverage any of the hundreds of Drupal modules available in the Drupal Market.  This lab focuses on the lightweight Apigee Developer Portal.
+Apigee Edge provides multiple options for your Developer Portal.  There is a lightweight Integrated Developer Portal option that supports branding and customization of much of the site, such as theme, logos, and page content.  The lightweight portal can be published in seconds, directly from the management UI.  We also provide a Drupal-based portal if you want full control and to leverage any of the hundreds of Drupal modules available in the Drupal Market.  This lab focuses on the lightweight Apigee Developer Portal.
 
-In this lab, you will create a Developer Portal and publish an OpenAPI specification that can be used by developers.
+In this lab, you will create an Integrated Developer Portal wherein you will publish API Products, and through which app developers can 
+* learn API usage through OpenAPI specification based interactive documentation
+* register Apps that consume API Products, and thereby
+* generate App client credentials (API Key and Secret) that can be used to consume APIs.
 
 # Pre-requisites
 
-For this lab, you will need…
+For this lab, you should have completed [Lab 1](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%201) and [Lab 2](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%202).
 
-* An OpenAPI specification uploaded to your Organization.  This specification will make up the documentation of your API proxy.  If you do not have an OpenAPI Specification available for this lab, revisit the lab *API Design : Create a Reverse Proxy from OpenAPI Spec* and then return here to complete these steps.
+You will need…
+
+* An OpenAPI specification uploaded to your Spec store within your Organization. This specification will make up the documentation of your API.  If you do not have an OpenAPI Specification available for this lab, revisit [*Lab 1 - Design & Create an API Proxy with OpenAPI Specification*](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%201)
+* An API Product that bundles and API Proxy. If you do not have an API Product configured, revisit [*Lab 2 - API Security and API Producer/Consumer Relationship on Apigee Edge*](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%202).
 
 # Instructions
 

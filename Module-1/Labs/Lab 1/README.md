@@ -1,4 +1,4 @@
-# API Design : Design & Create an API Proxy with OpenAPI Specification
+# Lab 1 - Design & Create an API Proxy with OpenAPI Specification
 
 *Duration : 20 mins*
 

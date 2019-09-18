@@ -1,4 +1,4 @@
-# Lab 4 - Manage tiered API Product subscription through API call quotas
+# Lab 3 - Manage tiered API Product subscription through API call quotas
 
 Duration : 15 mins
 
