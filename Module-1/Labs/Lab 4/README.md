@@ -32,99 +32,70 @@ In this lab, you will create an Integrated Developer Portal wherein you will pub
 
 # Pre-requisites
 
-For this lab, you should have completed [Lab 1](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%201) and [Lab 2](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%202).
+For this lab, you should have completed [Lab 1](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%201), [Lab 2](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%202) and [Lab 3](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%203) of this module.
 
 You will need…
 
 * An OpenAPI specification uploaded to your Spec store within your Organization. This specification will make up the documentation of your API.  If you do not have an OpenAPI Specification available for this lab, revisit [*Lab 1 - Design & Create an API Proxy with OpenAPI Specification*](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%201)
-* An API Product that bundles and API Proxy. If you do not have an API Product configured, revisit [*Lab 2 - API Security and API Producer/Consumer Relationship on Apigee Edge*](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%202).
+* API Products that bundle your API Proxies. If you do not have an API Product configured, revisit [*Lab 2 - API Security and API Producer/Consumer Relationship on Apigee Edge*](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%202), and [Lab 3 - Manage tiered API Product subscription through API call quotas](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%203).
 
 # Instructions
 
 ## Update the Open API Spec
 
 In order to ensure that we have an updated OpenAPI Spec that accurately describes the API endpoint exposed through our API Proxy, we must first modify the spec - specifically the `host` and `basepath` properties. To do this, navigate to **Develop → Specs** on the main menu, select the spec that we previously imported in Lab 1, and modify the the `host` and `basepath` properties to reflect the host and basepath of the proxy. Change them to:
-* host: {{your API proxy host}}  <--- In Apigee Trial orgs this will be {{your org}}-{{environment}}.apigee.net
+* `host: {{your API proxy host}}`  _<--- In Apigee Trial orgs this will be {{your org}}-{{environment}}.apigee.net_
+* `basepth: /v1/{{your initials}}_hipster-products-api`
 
-## Publish API as part of API Product
+![image alt text](./media/EditSpec.png)
 
-API products (which contain API proxies) are the unit of deployment to the Developer Portal, where App Developers can learn about, register for, and consume your APIs.  Read more about API products [here](https://docs.apigee.com/api-platform/publish/what-api-product).
+## Create a Developer Portal
 
-* Select **Publish → API Products** from the side navigation menu
-
-* Click  **+API Product**
-
-![image alt text](./media/image_0.png)
-
-* Populate the following fields
-
-    * Section: Product details
-
-        * Name: employee-product
-        
-        * Display name: Employee Product
-
-        * Description: Access the Employee API
-
-        * Environment: test
-
-        * Access: Public
-
-    * Section: API resources
-
-        * Section: API Proxies
-
-            * Click the **Add a proxy** link
-
-            ![image alt text](./media/image_1.png)
-
-            * Select your Employee API Proxy and click **Add**.
-
-            ![image alt text](./media/image_2.png)
-
-* **Save** the API Product.
-
-Note: We are adding the entire API Proxy to the API Product.  We can just as easily select one or more operations from one or more API proxies and bundle them together in an API Product.
-
-## Publish a new Portal on Apigee Edge
-
-* Select **Publish → Portals → +Portal**
+1. Navigate to **Publish → Portals** and click **+Portal**, or **Get started** (if you haven't created any portals yet within the org).
 
 ![image alt text](./media/image_3.png)
 
-* Enter details in the portal creation wizard. Replace **{your-initials}** with the initials of your name and replace **{api_proxy_name}** with the name of the proxy.
+2. Enter details in the portal creation wizard. Replace **{{your-initials}}** with the initials of your name.
 
-  * Name: Employee API Portal
+  * Name: {{your initials}}\_Hipster API Portal
 
-  * Description: Employee APIs
+  * Description: Developer portal for consumption of Hipster APIs.
 
-* Click **Create**
+3. Click **Create**
 
 ![image alt text](./media/image_4.png)
 
-## Publish an API Product to the Portal
+## Publish the Bronze API Product to the Portal
 
-* Click the Portal Editor’s dropdown and select **APIs**.
+1. Click the Portal Editor’s dropdown and select **APIs**.
 
 ![image alt text](./media/image_5.png)
 
-* Click **+API** to select an API Product to publish to the Portal.
-
-* Select the API Product to publish and click **Next**.
+2. Click **+API** to select the Bronze API Product to publish to the Portal. Select the API Product to publish and click **Next**.
 
 ![image alt text](./media/image_6.png)
 
-* Click the **Spec Source** dropdown and select **Choose a different spec...**.
+3. Click the **Change Spec Source** dropdown and select **Choose a different spec...**.
 
 ![image alt text](./media/image_7.png)
 
-* Select the OpenAPI Specification to use as a source. (NOTE: technically, you should update the "host:" and "path:" variables in your OpenAPI Spec that you created in Lab 1 so they now point to your API proxy hosted on Apigee, as well as add the API key you have in your proxy to the spec. However, for the purposes of this lab, it is also OK to use your existing OpenAPI Spec as is.) The current version (snapshot) of the selected OpenAPI Specification will be used to generate the documentation for this API product in the portal.
+4. Select the recently updated OpenAPI Specification to use as a source. The current version (snapshot) of the selected OpenAPI Specification will be used to generate the documentation for this API product in the portal.
 
 ![image alt text](./media/image_8.png)
 
-* Select the "Anonymous users (anyone can view)" option so anyone can view this API through the portal. Click **Finish** to publish the API product (and OpenAPI Specification Snapshot) to the Developer Portal.
+5. Select the **Registered users** option so registered developers on the Developer Portal can view this API through the portal. Click **Next**.
 
 ![image alt text](./media/image_9.png)
+
+6. Select the **Image** button to update the icon image associated with this API product. 
+
+![image alt text](./media/image_9b.png)
+
+7. Then select **External Image** and provide the following URL to import image.
+
+`Image URL: `
+
+
 
 * You should now see your new API Product published to the portal.
 
