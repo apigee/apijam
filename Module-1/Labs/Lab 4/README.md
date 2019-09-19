@@ -14,7 +14,7 @@ Apigee Edge provides multiple options for your Developer Portal. Apigee supports
 
 ## Developer Programs, Teams and Audience Management
 
-On Apigee Edge, a Developer Program is the configuration set associated to each Developer Portal - specifically, App Developer accounts, App Developer identity management configuration, App Developer Teams, and Audience configuration for access to content published on the portal.
+On Apigee Edge, a [Developer Program](https://docs.apigee.com/api-platform/publish/portal/intro-developer-program) is the configuration set associated to each Developer Portal - specifically, App Developer accounts, App Developer identity management configuration, App Developer Teams, and Audience configuration for access to content published on the portal.
 
 App Developers have the option of creating [Teams](https://docs.apigee.com/api-platform/publish/portal/developer-teams) to share responsibility for an app with other developers. Each developer within a Team is assigned a role (`Owner`, `App Admin` or `Viewer` ) that defines their access level to the shared apps.
 

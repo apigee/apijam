@@ -38,7 +38,7 @@ In this lab we will create different API products that bundle the same API proxy
 
     * Section: Product details
 
-        * Name: {yourInitials}_Hipster-Products-API-Product
+        * Name: {yourInitials}_Hipster-Products-API-Product-Bronze
 
         * Display name: {yourInitials}_Hipster Products API Product Bronze
 
@@ -78,13 +78,13 @@ We now create 2 similar products that represent our Silver and Gold Products wit
 
         * Display name: {yourInitials}_Hipster Products API Product Silver
 
-        * Description: Free version of the Hipster Product API
+        * Description: Basic version of the Hipster Product API
 
         * Environment: test
 
         * Access: Public
 
-        * Quota: **5** requests every **1 Minute**
+        * Quota: **20** requests every **1 Minute**
 
     * Section: API resources
 
@@ -106,7 +106,7 @@ We now create 2 similar products that represent our Silver and Gold Products wit
 
         * Access: Public
 
-        * Quota: **9000** requests every **1 Minute**
+        * Quota: **1000** requests every **1 Minute**
 
     * Section: API resources
 
