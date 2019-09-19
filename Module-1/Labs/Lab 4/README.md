@@ -6,11 +6,24 @@
 
 # Use case
 
-You want to provide and manage an easy on-boarding experince for app developers who wish to consume your API Products via a Developer Portal.  You want to enable app developers to learn about, register for, and begin using your APIs, as well as control visibility and access to different API Products.
+You want to provide and manage an easy, self-service on-boarding experince for app developers who wish to consume your API Products via a Developer Portal.  You want to enable app developers to learn about, register for, and begin using your APIs, as well as control visibility and access to different API Products.
 
 # How can Apigee Edge help?
 
-Apigee Edge provides multiple options for your Developer Portal.  There is a lightweight Integrated Developer Portal option that supports branding and customization of much of the site, such as theme, logos, and page content.  The lightweight portal can be published in seconds, directly from the management UI.  We also provide a Drupal-based portal if you want full control and to leverage any of the hundreds of Drupal modules available in the Drupal Market.  This lab focuses on the lightweight Apigee Developer Portal.
+Apigee Edge provides multiple options for your Developer Portal. Apigee supports several developer portal solutions, ranging from simple turn-key to fully customizable and extensible. The turn-key [Integrated Developer Portal](https://docs.apigee.com/api-platform/publish/portal/build-integrated-portal) option supports branding and customization of much of the site, such as theme, logos, and page content, and can be published in seconds, directly from the management UI.  We also provide a [Drupal-based portal](https://docs.apigee.com/api-platform/publish/drupal/open-source-drupal-8) if you want full control and to leverage any of the hundreds of Drupal modules available in the Drupal Market.  This lab focuses on the Integrated Developer Portal.
+
+## Developer Programs, Teams and Audience Management
+
+On Apigee Edge, a Developer Program is the configuration set associated to each Developer Portal - specifically, App Developer accounts, App Developer identity management configuration, App Developer Teams, and Audience configuration for access to content published on the portal.
+
+App Developers have the option of creating [Teams](https://docs.apigee.com/api-platform/publish/portal/developer-teams) to share responsibility for an app with other developers. Each developer within a Team is assigned a role (`Owner`, `App Admin` or `Viewer` ) that defines their access level to the shared apps.
+
+[Audience](https://docs.apigee.com/api-platform/publish/portal/portal-audience) configurations are used to segment portal users or developer teams to control access to the following resources:
+* Pages in your portal
+* Published API products
+
+The following figure shows how audiences are used to control access to a set of resources.
+![image alt text](./media/DevTeamAudienceRelationship.png)
 
 In this lab, you will create an Integrated Developer Portal wherein you will publish API Products, and through which app developers can 
 * learn API usage through OpenAPI specification based interactive documentation
@@ -27,6 +40,11 @@ You will need…
 * An API Product that bundles and API Proxy. If you do not have an API Product configured, revisit [*Lab 2 - API Security and API Producer/Consumer Relationship on Apigee Edge*](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%202).
 
 # Instructions
+
+## Update the Open API Spec
+
+In order to ensure that we have an updated OpenAPI Spec that accurately describes the API endpoint exposed through our API Proxy, we must first modify the spec - specifically the `host` and `basepath` properties. To do this, navigate to **Develop → Specs** on the main menu, select the spec that we previously imported in Lab 1, and modify the the `host` and `basepath` properties to reflect the host and basepath of the proxy. Change them to:
+* host: {{your API proxy host}}  <--- In Apigee Trial orgs this will be {{your org}}-{{environment}}.apigee.net
 
 ## Publish API as part of API Product
 

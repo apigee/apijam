@@ -21,8 +21,10 @@ Once the API Products are created, client Apps can then subscribe to them. On su
 
 ## API Proxy Configuration
 
-Within the API Proxy, the [Verify API Key Policy](http://docs.apigee.com/api-services/reference/verify-api-key-policy) can be used to authenticate and authorize incoming API calls.
-As a result of successful authentication, the [Verify API Key Policy](https://docs.apigee.com/api-platform/reference/policies/verify-api-key-policy) also populates the API Proxy runtime context with details about the App making the call, the App developer, the API product associated with the call, and so on.  This context can be used to parameterize other policies applied, in order to affect API behavior such as quota enforcement or routing based on the client App. The data can also be extracted and used to gain business insights through Apigee Analytics.
+While Apigee provides multiple ways of securing an API and authorizing API calls - including [API Keys](https://docs.apigee.com/api-platform/security/api-keys), [OAuth](https://docs.apigee.com/api-platform/security/oauth/oauth-home), [JWT Tokens](https://docs.apigee.com/api-platform/reference/policies/jwt-policies-overview) and [SAML](https://docs.apigee.com/api-platform/reference/policies/saml-assertion-policy.html) - this lab will focus on using simple API Key validation to secure an API.
+
+Within the API Proxy, the [Verify API Key Policy](http://docs.apigee.com/api-services/reference/verify-api-key-policy) can be used to authenticate and authorize incoming API calls, based on API Key validation.
+As a result of successful API Key validation, the [Verify API Key Policy](https://docs.apigee.com/api-platform/reference/policies/verify-api-key-policy) also populates the API Proxy runtime context with details about the App making the call, the App developer, the API product associated with the call, and so on.  This context can then be used to parameterize other policies applied, in order to affect API behavior such as quota enforcement or routing based on the client App. The data can also be extracted and used to gain business insights through Apigee Analytics.
 
 In this lab, you will..
 * Configure a [Verify API Key Policy](https://docs.apigee.com/api-platform/reference/policies/verify-api-key-policy) for an existing API proxy, and use the Apigee Trace tool to see the policy in action.  
