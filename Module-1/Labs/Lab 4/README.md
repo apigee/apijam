@@ -43,9 +43,19 @@ You will need…
 
 ## Update the Open API Spec
 
-In order to ensure that we have an updated OpenAPI Spec that accurately describes the API endpoint exposed through our API Proxy, we must first modify the spec - specifically the `host` and `basepath` properties. To do this, navigate to **Develop → Specs** on the main menu, select the spec that we previously imported in Lab 1, and modify the the `host` and `basepath` properties to reflect the host and basepath of the proxy. Change them to:
-* `host: {{your API proxy host}}`  _<--- In Apigee Trial orgs this will be {{your org}}-{{environment}}.apigee.net_
-* `basepth: /v1/{{your initials}}_hipster-products-api`
+In order to ensure that we have an updated OpenAPI Spec that accurately describes the API endpoint exposed through our API Proxy, we must first modify the spec - specifically the `host`, `basepath`, `securityDefinitions` and `security` properties. To do this, navigate to **Develop → Specs** on the main menu, select the spec that we previously imported in Lab 1, and modify the the `host`, `basepath`, `securityDefinitions` and `security` properties as shown below:
+
+    `host: {{your API proxy host}}`  _<--- In Apigee Trial orgs this will be {{your org}}-{{environment}}.apigee.net_
+    `basepth: /v1/{{your initials}}_hipster-products-api`
+    ```
+        securityDefinitions:
+            APIKeyQuery:
+                type: "apiKey"
+                in: "query"
+                name: "apikey"
+        security:
+        - APIKeyQuery: []
+    ```
 
 ![image alt text](./media/EditSpec.png)
 
@@ -93,15 +103,83 @@ In order to ensure that we have an updated OpenAPI Spec that accurately describe
 
 7. Then select **External Image** and provide the following URL to import image.
 
-`Image URL: `
+`Image URL: https://raw.githubusercontent.com/aliceinapiland/apijam/master/Module-1/Labs/Lab%204/media/HipsterAPIProductImage.png`
 
+![image alt text](./media/image_9c.png)
 
+8. Click **Finish**.
 
-* You should now see your new API Product published to the portal.
+![image alt text](./media/image_9d.png)
 
-* Click the **Live Portal** link to launch a browser tab/window with the new Developer Portal.
+The API product is now published to the developer portal.
+
+## App Developer sign-up
+
+1. Click the **Live Portal** link to launch a browser tab/window with the new Developer Portal.
 
 ![image alt text](./media/image_10.png)
+
+2. On the developer portal, click the main menu option labeled **Sign In**. This will take you to the App Developer login page. Here, click **Create Account**.
+
+![image alt text](./media/SignInButton.png)
+
+![image alt text](./media/CreateAccountLink.png)
+
+3. Provide the following details, and then click **Create Account**.
+
+    ```
+    First Name: {{your first name}}
+    Last Name: {{your last name}}
+    Email: {{your email address}}
+    Password: {{enter a password}}
+    Check the "I agree to terms." box
+    ```
+![image alt text](./media/CreateAccountForm.png)
+
+4. On account creation, the App Developer will receive an email notification with an account verification link. 
+
+![image alt text](./media/AccountVerify1.png)
+
+Since we you have provided your own email address as the App Developer in this lab, you should have received this notification. Click the link or copy and paste it into the browser to verify the account.
+
+![image alt text](./media/AccountVerify2.png)
+
+5. Once account is verified, the App Developer can sign into the portal using their credentials.
+
+![image alt text](./media/SignInForm.png)
+
+## View API Documentation
+
+1. Log in as App Developer using the account credentials created in the previous steps. Click on the **APIs** menu link on the Developer Portal. This will take you to the API catalog page. Here' you will see that API product we previously published to be visible to all registered developers.
+
+![image alt text](./media/APICatalogFree.png)
+
+2. Click the API Product icon for the Bronze product in the catalog, to view it's documentation. This will take you to an interactive documentation page generated from the OpenAPI spec that we associated to the API product at the time of publishing.
+
+![image alt text](./media/FreeProductDocsPage.png)
+
+3. To test the API, first click on the **Authorize** button to provide a valid API Key.
+Provide one of the API Keys you obtained from the previous labs to authorize test calls to the API.
+
+![image alt text](./media/AuthorizeInDocs.png)
+
+![image alt text](./media/AuthorizeInDocsOk.png)
+
+4. Select one of the API resource paths from the left pannel of the docs and click **Execute**. You will then see the response in the right pannel.
+
+## Enable Audience and Teams features
+
+1. To utilize Audience and Teams features, you must first enroll into the Beta program within Edge. To do this, navigate to the **Publish -> Developer Programs** menu on the Edge UI, and select the developer program associated with your developer portal.
+
+![image alt text](./media/SelectDevProgram.png)
+
+2. Click the **Enroll** button to "Enroll in beta for team and audience management".
+
+![image alt text](./media/EnrollBtn.png)
+
+## Create Developer Team
+
+2. Ensure that you are logged into the Developer Portal with your App Developer credentials. Navigate to the **Teams** menu from your account drop-down.
 
 * In the Portal UI, click **APIs** to view the products that have been published. Products are used to bundle APIs together so that a developer can request access to a set of related functionality without registering for each API.  They are also useful for managing access to, and quotas for, particular developers.  For more on API products, [read this document](https://docs.apigee.com/api-platform/publish/what-api-product).
 
