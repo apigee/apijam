@@ -57,7 +57,128 @@ In order to ensure that we have an updated OpenAPI Spec that accurately describe
         - APIKeyQuery: []
     ```
 
-![image alt text](./media/EditSpec.png)
+    ![image alt text](./media/EditSpec.png)
+
+## Update API Proxy for CORS Support
+
+CORS (Cross-origin resource sharing) is a standard mechanism that allows JavaScript XMLHttpRequest (XHR) calls executed in a web page to interact with resources from non-origin domains. CORS is a commonly implemented solution to the "[same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy)" that is enforced by all browsers. For example, if you make an XHR call to your API Proxy from JavaScript code executing in your browser, the call will fail. This is because the domain serving the page to your browser is not the same as the domain serving your API, eg. "{your org name}-{environment name}.apigee.net". CORS provides a solution to this problem by allowing servers to "opt-in" if they wish to provide cross-origin resource sharing.
+
+In this step, we ensure that we implement CORS support for your API Proxy, before it is published to a Developer Portal where it could be invoked within interactive docs pages.
+
+For further information, see "[Adding CORS support to an API proxy](https://docs.apigee.com/api-platform/develop/adding-cors-support-api-proxy)".
+
+1. Navigate to **Develop → API Proxies** and select your API Proxy "{your initials}\_Hipster-Products-API". Open the **Develop** tab for this proxy, in order to edit proxy configuration.
+
+    ![image alt text](./media/OpenProxyDevelop.png)
+
+2. Select the '**+**' option in the **Policies** left panel, to add a new policy.
+
+    ![image alt text](./media/AddPolicy.png)
+
+3. Select the **Assign Message** option and add the policy with the following details:
+
+    Display Name: `Set CORS Response Headers`
+    Name: `Set-CORS-Response-Headers`
+
+   ![image alt text](./media/AddAMCORSHeaders.png)
+
+   Edit the policy configuration to the following:
+
+       ```
+       <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+       <AssignMessage async="false" continueOnError="false" enabled="true" name="Set-CORS-Response-Headers">
+        <DisplayName>Set CORS Response Headers</DisplayName>
+        <FaultRules/>
+        <Properties/>
+        <Set>
+            <Headers>
+                <Header name="Access-Control-Allow-Origin">{request.header.origin}</Header>
+                <Header name="Access-Control-Allow-Headers">origin, x-requested-with, accept, content-type</Header>
+                <Header name="Access-Control-Max-Age">3628800</Header>
+                <Header name="Access-Control-Allow-Methods">GET, PUT, POST, DELETE</Header>
+            </Headers>
+        </Set>
+        <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+        <AssignTo createNew="false" transport="http" type="response"/>
+       </AssignMessage>
+       ```
+   ![image alt text](./media/EditAMCORSHeadersPolicy.png)
+
+4. Repeat steps 2 & 3 above add another **Assign Message** policy, with the following details:
+    
+    Display Name: `Set OPTIONS Status Code`
+    Name: `Set-OPTIONS-Status-Code`
+
+    Policy configuration:
+        ```
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <AssignMessage async="false" continueOnError="false" enabled="true" name="Set-OPTIONS-Status-Code">
+            <DisplayName>Set OPTIONS Status Code</DisplayName>
+            <Properties/>
+            <AssignVariable>
+                <Name>error.status.code</Name>
+                <Value>200</Value>
+            </AssignVariable>
+            <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+            <AssignTo createNew="false" transport="http" type="request"/>
+        </AssignMessage>
+        ```
+5. Select the **'PreFlow'** flow under **'Target Endpoint' -> 'default'** from the left panel. Then drag and drop the **'Set CORS Response Headers'** policy to the response pipeline of the flow, as shown below:
+
+   ![image alt text](./media/DragDropCORSHeadersTargetRespPreFlow.png)
+
+   This ensures that CORS headers are returned on any valid API call.
+
+6. Select the '**+**' button to add a flow to **'Proxy Endpoint' -> 'default'** on the left panel.
+
+   ![image alt text](./media/AddProxyEndpointFlow.png)
+
+7. Select the **Manual** entry tab and enter the following flow details:
+   
+       Flow Name: `OptionsPreFlight`
+       Description: `For CORS preflight requests`
+       Condition Type: Custom
+       Condition: `request.verb == "OPTIONS"`
+
+       ![image alt text](./media/ConfigureOPTIONSFlow.png)
+   
+   Click **Add**.
+
+   This flow handles CORS Preflight OPTIONS requests.
+
+8. Select the **'OptionsPreFlight'** flow under **'Proxy Endpoint' -> 'default'** from the left panel. Then drag and drop the **'Set CORS Response Headers'** policy to the response pipeline of the flow, as shown below:
+
+   ![image alt text](./media/DragDropCORSHeadersOPTIONSPreflight.png)
+
+   This ensures that CORS headers are returned on CORS Preflight OPTIONS requests.
+
+9. Select **'Proxy Endpoint -> default'** on the left panel. Scroll down to the bottom of the configuration, and add the following [RouteRule](https://docs.apigee.com/api-platform/fundamentals/understanding-routes#determiningtheurlofthetargetendpoint) setting before the 'default' rule, as shown below:
+
+   ![image alt text](./media/OPTIONSRouteRule.png)
+
+    ```
+    <RouteRule name="NoRoute">
+        <Condition>request.verb == "OPTIONS"</Condition>
+    </RouteRule>
+    ```
+   This RouteRule ensures that CORS Preflight OPTIONS requests are not forwarded to the API target service.
+
+10. Select **'Proxy Endpoint -> default'** on the left panel. Scroll to the top of the configuration, and add the following [DefaultFaultRule](https://docs.apigee.com/api-platform/fundamentals/fault-handling#creatingfaultrules-creatingadefaultfaultrule) setting, as shown below:
+
+    ```
+    <DefaultFaultRule name="DefaultFaultRule">
+        <Step>
+            <Name>Set-CORS-Response-Headers</Name>
+        </Step>
+        <Step>
+            <Name>Set-OPTIONS-Status-Code</Name>
+            <Condition>request.verb = "OPTIONS"</Condition>
+        </Step>
+        <AlwaysEnforce>true</AlwaysEnforce>
+    </DefaultFaultRule>
+    ```
+   
+   This ensures that, in the event of any API Proxy error, CORS headers are sent back correctly, and CORS Preflight OPTIONS requests are always handled. Eg. When API Key validation fails.
 
 ## Create a Developer Portal
 
