@@ -188,15 +188,15 @@ For further information, see "[Adding CORS support to an API proxy](https://docs
 
 2. Enter details in the portal creation wizard. Replace **{{your-initials}}** with the initials of your name.
 
-  * Name: {{your initials}}\_Hipster API Portal
+  * Name: `{{your initials}}_Hipster API Portal`
 
-  * Description: Developer portal for consumption of Hipster APIs.
+  * Description: `Developer portal for consumption of Hipster APIs.`
 
 3. Click **Create**
 
 ![image alt text](./media/image_4.png)
 
-## Publish the Bronze API Product to the Portal
+## Publish the Bronze (Free) API Product to the Portal
 
 1. Click the Portal Editor’s dropdown and select **APIs**.
 
@@ -279,14 +279,46 @@ Since we you have provided your own email address as the App Developer in this l
 
 ![image alt text](./media/FreeProductDocsPage.png)
 
-3. To test the API, first click on the **Authorize** button to provide a valid API Key.
-Provide one of the API Keys you obtained from the previous labs to authorize test calls to the API.
+4. Select one of the API resource paths from the left pannel of the docs and click **Execute**. You will then see a 401 Unauthorized response in the right pannel.
 
-![image alt text](./media/AuthorizeInDocs.png)
+   ![image alt text](./media/TestDocsUnauthorized.png)
 
-![image alt text](./media/AuthorizeInDocsOk.png)
+   This is because you haven't yet registered any Apps and therefore have no API Keys to use for an authorized API call.
 
-4. Select one of the API resource paths from the left pannel of the docs and click **Execute**. You will then see the response in the right pannel.
+## Register Apps
+
+1. Navigate to the developer account drop down menu on the top right corner, and select the **Apps** link.
+
+   ![image alt text](./media/AccountApps.png)
+
+2. Click the **New App** button (either on the page itself or on the top panel, as shown below).
+
+   ![image alt text](./media/NewApp.png)
+
+3. Enter the following App details and click **Create**:
+    
+    App Name: `VR_Hipster-Test-App`
+    Description: `Test app to try out Hipster Products API using the Bronze (Free) API Product`
+
+    Select the Bronze (Free) API Product that is available for subscription.
+
+    ![image alt text](./media/AppCreateForm.png)
+
+4. You will find that an API Key/Secret pair has been generated for your newly created App. You can now use this API Key to test the API.
+
+   ![image alt text](./media/TestAppOverview.png)
+
+5. Navigate to the API Catalog, select the Bronze API Product docs, and test out the GET `/products` resource again. This time though, first click on the **Authorize** button and select the newly created App's credentials to set authorization information (API Key) for the API call.
+
+   ![image alt text](./media/TestDocsAuthorized.png)
+
+   Click **OK** after authorization information is set.
+
+   ![image alt text](./media/AuthorizeInDocsOk.png)
+
+   Now, click **Execute**. You will see that a valid 200 OK API response is received.
+
+   ![image alt text](./media/AuthorizedDocsTestResult.png)
 
 ## Enable Audience and Teams features
 
