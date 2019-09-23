@@ -279,7 +279,7 @@ Since we you have provided your own email address as the App Developer in this l
 
 ![image alt text](./media/FreeProductDocsPage.png)
 
-4. Select one of the API resource paths from the left pannel of the docs and click **Execute**. You will then see a 401 Unauthorized response in the right pannel.
+3. Select one of the API resource paths from the left pannel of the docs and click **Execute**. You will then see a 401 Unauthorized response in the right pannel.
 
    ![image alt text](./media/TestDocsUnauthorized.png)
 
@@ -296,7 +296,6 @@ Since we you have provided your own email address as the App Developer in this l
    ![image alt text](./media/NewApp.png)
 
 3. Enter the following App details and click **Create**:
-    
     App Name: `VR_Hipster-Test-App`
     Description: `Test app to try out Hipster Products API using the Bronze (Free) API Product`
 
@@ -332,37 +331,37 @@ Since we you have provided your own email address as the App Developer in this l
 
    Once enrolled, you will see the Teams and Audience Management features enabled within your Developer Program.
 
-   ![image alt text](.media/EnrollmentComplete.png)
+  ![image alt text](./media/EnrollmentComplete.png)
 
 ## Create Developer Team
 
 1. Ensure that you are logged into the Developer Portal with your App Developer credentials. Navigate to the **Teams** menu from your account drop-down.
 
-   ![image alt text](.media/NavToTeamsPortalScreen.png)
+  ![image alt text](./media/NavToTeamsPortalScreen.png)
 
 2. Click the **+ New Team** button.
 
-   ![image alt text](.media/AddNewTeamBtn.png)
+  ![image alt text](./media/AddNewTeamBtn.png)
 
 3. Fill in team details and click **Create**.
 
     Overview section:
-        Team name: `{{your initials}}_Hipster App Team`
-        Description: `Team that will work together on Hipster apps, and share API Keys.`
-        Point of contact: `{your App Developer email address}`
+        * Team name: `{{your initials}}_Hipster App Team`
+        * Description: `Team that will work together on Hipster apps, and share API Keys.`
+        * Point of contact: `{your App Developer email address}`
 
     Memebers:
 
         Your App Developer email ID has already been added to the team with 'Owner' role.
         If required, you can add additional Developers with different roles.
 
-    ![image alt text](.media/CreateTeamForm.png)
+    ![image alt text](./media/CreateTeamForm.png)
 
 4. Once created, you will be able to access this team as a team member from the Developer Portal, and as an API producer, you can view teams created on the Developer Program within the Apigee Management UI as well.
 
-   ![image alt text](.media/TeamCreatedDevPortal.png)
+   ![image alt text](./media/TeamCreatedDevPortal.png)
 
-   ![image alt text](.media/TeamCreatedManagementUI.png)
+   ![image alt text](./media/TeamCreatedManagementUI.png)
 
 ## Publish Silver and Gold API Products with Audience Entitlements
 
@@ -370,26 +369,26 @@ We will now see how to publish API products on the Developer Portal, with only c
 
 1. Navigate to **Publish → Developer Programs → {the developer program associated to your Developer Portal}**. Click the **Audiences** tab and click the '**+**' button to add a new audience.
 
-   ![image alt text](.media/AddAudienceBtn.png)
+   ![image alt text](./media/AddAudienceBtn.png)
 
    Enter the following details and click **OK**.
 
     Name: `Hipster-API-Privileged-Audience`
     Description: `A privileged audience that is allowed access to the Hispter API Silver and Gold products.`
 
-    ![image alt text](.media/NewAudienceForm.png)
+    ![image alt text](./media/NewAudienceForm.png)
 
 2. Once the Audience is created, you define who should be assigned to it. To do this, click the **+** button in the **Assignments** section of the Audience.
 
-   ![image alt text](.media/AddAssignmentBtn.png)
+   ![image alt text](./media/AddAssignmentBtn.png)
 
    In the popup, type in the name of the team that you previously created. Select the team and click **Add(1)**.
 
-   ![image alt text](.media/AddAssignmentForm.png)
+   ![image alt text](./media/AddAssignmentForm.png)
 
    Click **Save** to save the audience assignment.
 
-   ![image alt text](.media/SaveAssignment.png)
+   ![image alt text](./media/SaveAssignment.png)
 
 3. 
 
