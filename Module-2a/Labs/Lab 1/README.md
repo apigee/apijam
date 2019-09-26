@@ -68,7 +68,7 @@ In this lab we will see how to use an out-of-the-box traffic management policy k
    * To save, click **Project → Save as new revision**.
    ![image alt text](./media/ClickNewRevSave.png)
 
-4. Deploy the latest revision of the API Proxy to the `test` environment. Click the **Deployment** drop down and select the **test** environment to deploy the proxy to the test environment:
+4. Deploy the **latest revision** (it may not be 'Revision 1' as shown below), of the API Proxy to the `test` environment. Click the **Deployment** drop down and select the **test** environment to deploy the proxy to the test environment:
 
 ![image alt text](./media/image_2.png)
 
