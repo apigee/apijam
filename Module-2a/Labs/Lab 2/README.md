@@ -29,6 +29,8 @@ As part of this lab, you will:
 
 ## Create OAuth Token Endpoints
 
+**Note: In Apigee Edge trial account orgs, the oauth endpoint should already have been created at the time of org provisioning. Check you API Proxies list under Develop -> API Proxies. If there is already a proxy labeled 'oauth', simply go to the proxy details page, click on 'Deployment' and ensure that it is deployed to the 'test' environment (Step 9 below). After that, you can skip this section and head to [the next section](https://github.com/aliceinapiland/apijam/tree/master/Module-2a/Labs/Lab%202#secure-the-hipster-products-api-proxy-with-oauth-access-token-verification).**
+
 1. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI.
 
 2. Select **Develop** → **API Proxies** in the side navigation menu.
