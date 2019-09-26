@@ -1,4 +1,4 @@
-# Apigee API Jam - Module 3 - Advanced API Management Part 2
+# Apigee API Jam - Module 4 - Advanced API Management Part 2
 
 In Apigee’s API Jam [Module 1](https://github.com/aliceinapiland/apijam/tree/master/Module-1), we saw how to suppor the overal API lifecycle management for your APIs with Apigee Edge.
 This module - Apigee’s API Jam Module 3 - is the second part of a hands-on workshop where you will delve further into the advanced features for API lifecycle management that Apigee Edge has to offer. In this module, you will walk through two lab exercises that will help you...
@@ -18,12 +18,12 @@ This workshop will be valuable to API developers, dev-ops engineers, architects,
 
 ## Workshop Agenda
 
-### Module 3
-* Lab 1 - Route and Load Balancing across multiple API target backends using Target Server and Route Rule configurations [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-4/Labs/Lab%201)
-* Lab 2: API Monitoring & Security Dashboard (Note: these features are not turned on for Apigee Trial account orgs) [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-4/Labs/Lab%202)
+### Module 4
+* Lab 1 - Route and Load Balancing across multiple API target backends using Target Server and Route Rule configurations [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-4/Lab%201)
+* Lab 2: API Monitoring & Security Dashboard (Note: these features are not turned on for Apigee Trial account orgs) [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-4/Lab%202)
 * Demo - Hosted Targets
 
-Let's get started with [Lab 1](https://github.com/aliceinapiland/apijam/tree/master/Module-4/Labs/Lab%201).
+Let's get started with [Lab 1](https://github.com/aliceinapiland/apijam/tree/master/Module-4/Lab%201).
 
 #### Apigee Community 
 If you have any questions/comments please visit https://community.apigee.com/index.html
