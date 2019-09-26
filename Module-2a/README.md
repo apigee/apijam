@@ -1,5 +1,5 @@
-# Apigee API Jam Module 2a - Security
-Apigee’s API Jam Module 2a is a hands-on workshop that will jumpstart your understanding of API security. You will walk through two lab exercises that will help you throttle, protect, and secure your APIs by utilizing modern security principles with OAuth 2.0. 
+# Apigee API Jam - Module 2a - API Security
+Apigee’s API Jam Module 2a is the first part of a hands-on workshop that will jumpstart your understanding of API security. In this module, you will walk through two lab exercises that will help you throttle, protect, and secure your APIs by utilizing modern security principles with OAuth 2.0. 
 
 API developers and architects who want to build a secure API, this workshop is for you!
 
@@ -16,5 +16,12 @@ This workshop will be valuable to API developers, architects, and anyone who wan
 
 ### Module 2a
 * Introduction to API Security
-* Lab 1 - Throttle your API Traffic to prevent DoS, using Apigee Spike Arrest
-* Lab 2 - OAuth 2.0 based API security (OAuth 2.0 Client Credentials)
+* Lab 1 - Throttle your API Traffic to prevent DoS, using Apigee Spike Arrest [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-2a/Labs/Lab%201)
+* Lab 2 - OAuth 2.0 based API security (OAuth 2.0 Client Credentials) [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-2a/Labs/Lab%202)
+
+Let's get started with [Lab 1](https://github.com/aliceinapiland/apijam/tree/master/Module-2a/Labs/Lab%201).
+
+#### Apigee Community 
+If you have any questions/comments please visit https://community.apigee.com/index.html
+
+##### This is not an official Google or Apigee product. This repository is used for educational/training purposes only.

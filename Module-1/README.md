@@ -1,12 +1,14 @@
-# Apigee API Jam
-This is the supporting material for a one-day hands-on workshop that introduces developers to Apigee Edge. We call this event an "**Apigee API Jam**".
+# Apigee API Jam - Module 1 - API Lifecycle
+This is the supporting material for a one-day hands-on workshop that introduces developers to Apigee Edge. We call this event an "**Apigee API Jam**". This module - the **"Apigee API Jam - Module 1 - API Lifecycle"** - focuses on giving attendees an overall understanding of how to manage their APIs across all phases of the API Lifecycle - from design, to development to documentation, all the way through to analytics and monitoring.
+
+![image alt text](./media/APILifecycle.png)
 
 All of the material here is released under the [Apache 2.0 license](./LICENSE.md)
 
 ### Agenda
 * A brief presentation & product overview: 15 mins
 
-### [Labs](./Labs/Core) 
+### [Labs](./Labs) 
 1. **API Design & Creation** - Design OAS & Create a Reverse Proxy with the OpenAPI specification [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%201)
 2. **API Products, Apps & API Keys** - Securing APIs with API Keys, bundle APIs into API Products and undersgtand the association between Apps, API Products & API Keys [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%202)
 3. **Rate Limiting**: Rate Limit API Consumption based on API Product tier quotas. [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%203)
