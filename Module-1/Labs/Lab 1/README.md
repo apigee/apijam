@@ -1,6 +1,6 @@
 # Lab 1 - Design & Create an API Proxy with OpenAPI Specification
 
-*Duration : 20 mins*
+*Duration : 15 mins*
 
 *Persona : API Team*
 
@@ -138,8 +138,8 @@ curl -X GET "https://{{org}}-{{env}}.apigee.net/{{your initials}}_hipster-produc
 3. Paste the link into the REST Client. Add resource path `/products` and make a GET call.
 
 4. You should see a success response similar to this -
-![image alt text](./media/image_19.png)
 
+![image alt text](./media/image_19.png)
 
 
 ## Save the API Proxy

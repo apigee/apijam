@@ -1,6 +1,6 @@
 # Lab 4 - Build an App Developer Experience using Apigee Integrated Developer Portals
 
-*Duration : 15 mins*
+*Duration : 30 mins*
 
 *Persona : API Team*
 

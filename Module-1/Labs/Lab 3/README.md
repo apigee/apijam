@@ -1,6 +1,6 @@
 # Lab 3 - Manage tiered API Product subscription through API call quotas
 
-Duration : 15 mins
+Duration : 20 mins
 
 Persona : API Product Team & API Dev Team
 

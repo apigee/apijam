@@ -1,6 +1,6 @@
 # Lab 2 - API Security and API Producer/Consumer Relationship on Apigee Edge
 
-*Duration : 10 mins*
+*Duration : 20 mins*
 
 *Persona : API Team*
 
