@@ -23,6 +23,7 @@ App Developers have the option of creating [Teams](https://docs.apigee.com/api-p
 * Published API products
 
 The following figure shows how audiences are used to control access to a set of resources.
+
 ![image alt text](./media/DevTeamAudienceRelationship.png)
 
 In this lab, you will create an Integrated Developer Portal wherein you will publish API Products, and through which app developers can 
