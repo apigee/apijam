@@ -13,6 +13,13 @@ This workshop will be valuable to API developers, architects, and anyone who wan
 ## Workshop Agenda
 
 ## Module 2b
-* Lab 3 - Protect your APIs against content-based threats
-* Lab 4 - JWT based API security
-* Lab 5 - OAuth 2.0 based API security using Apigee as OAuth server, and an External Identity Provider for App end-user identity (OAuth 2.0 Password Grant Type)
+* Lab 3 - Protect your APIs against content-based threats [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-2b/Labs/Lab%203)
+* Lab 4 - JWT based API security [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-2b/Labs/Lab%204)
+* Lab 5 - OAuth 2.0 based API security using Apigee as OAuth server, and an External Identity Provider for App end-user identity (OAuth 2.0 Password Grant Type) [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-2b/Labs/Lab%205)
+
+Let's get started with [Lab 1](https://github.com/aliceinapiland/apijam/tree/master/Module-2b/Labs/Lab%201).
+
+#### Apigee Community 
+If you have any questions/comments please visit https://community.apigee.com/index.html
+
+##### This is not an official Google or Apigee product. This repository is used for educational/training purposes only.
