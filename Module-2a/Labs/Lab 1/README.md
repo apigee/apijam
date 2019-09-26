@@ -36,7 +36,7 @@ In this lab we will see how to use an out-of-the-box traffic management policy k
 ### If you do not already have the API Proxy
 
    If you do not already have the API Proxy, please complete the steps below:
-   * Download [this API Proxy bundle](https://github.com/aliceinapiland/apijam/tree/master/Module-2a/Labs/Lab%201/Resources/xx_Hipster-Products-API.zip?raw=true).
+   * Download [this API Proxy bundle](https://github.com/aliceinapiland/apijam/blob/master/Module-2a/Resources/xx_Hipster-Products-API.zip?raw=true).
 
    * Under **Develop → API Proxies** click the **+ Proxy** button.
    ![image alt text](./media/AddProxyBtn.png)
