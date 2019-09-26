@@ -41,24 +41,6 @@ You will need…
 
 # Instructions
 
-## Update the Open API Spec
-
-In order to ensure that we have an updated OpenAPI Spec that accurately describes the API endpoint exposed through our API Proxy, we must first modify the spec - specifically the `host`, `basepath`, `securityDefinitions` and `security` properties. To do this, navigate to **Develop → Specs** on the main menu, select the spec that we previously imported in Lab 1, and modify the the `host`, `basepath`, `securityDefinitions` and `security` properties as shown below:
-
-    `host: {{your API proxy host}}`  _<--- In Apigee Trial orgs this will be {{your org}}-{{environment}}.apigee.net_
-    `basepth: /v1/{{your initials}}_hipster-products-api`
-    ```
-        securityDefinitions:
-            APIKeyQuery:
-                type: "apiKey"
-                in: "query"
-                name: "apikey"
-        security:
-        - APIKeyQuery: []
-    ```
-
-    ![image alt text](./media/EditSpec.png)
-
 ## Update API Proxy for CORS Support
 
 CORS (Cross-origin resource sharing) is a standard mechanism that allows JavaScript XMLHttpRequest (XHR) calls executed in a web page to interact with resources from non-origin domains. CORS is a commonly implemented solution to the "[same-origin policy](https://en.wikipedia.org/wiki/Same-origin_policy)" that is enforced by all browsers. For example, if you make an XHR call to your API Proxy from JavaScript code executing in your browser, the call will fail. This is because the domain serving the page to your browser is not the same as the domain serving your API, eg. "{your org name}-{environment name}.apigee.net". CORS provides a solution to this problem by allowing servers to "opt-in" if they wish to provide cross-origin resource sharing.
@@ -180,6 +162,24 @@ For further information, see "[Adding CORS support to an API proxy](https://docs
    
    This ensures that, in the event of any API Proxy error, CORS headers are sent back correctly, and CORS Preflight OPTIONS requests are always handled. Eg. When API Key validation fails.
 
+## Update the Open API Spec
+
+In order to ensure that we have an updated OpenAPI Spec that accurately describes the API endpoint exposed through our API Proxy, we must first modify the spec - specifically the `host`, `basepath`, `securityDefinitions` and `security` properties. To do this, navigate to **Develop → Specs** on the main menu, select the spec that we previously imported in Lab 1, and modify the the `host`, `basepath`, `securityDefinitions` and `security` properties as shown below:
+
+    `host: {{your API proxy host}}`  _<--- In Apigee Trial orgs this will be {{your org}}-{{environment}}.apigee.net_
+    `basepth: /v1/{{your initials}}_hipster-products-api`
+    ```
+        securityDefinitions:
+            APIKeyQuery:
+                type: "apiKey"
+                in: "query"
+                name: "apikey"
+        security:
+        - APIKeyQuery: []
+    ```
+
+    ![image alt text](./media/EditSpec.png)
+
 ## Create a Developer Portal
 
 1. Navigate to **Publish → Portals** and click **+Portal**, or **Get started** (if you haven't created any portals yet within the org).
@@ -224,7 +224,7 @@ For further information, see "[Adding CORS support to an API proxy](https://docs
 
 7. Then select **External Image** and provide the following URL to import image.
 
-`Image URL: https://raw.githubusercontent.com/aliceinapiland/apijam/master/Module-1/Labs/Lab%204/media/HipsterAPIProductImage.png`
+Image URL: `https://raw.githubusercontent.com/aliceinapiland/apijam/master/Module-1/Labs/Lab%204/media/HipsterAPIProductImage.png`
 
 ![image alt text](./media/image_9c.png)
 
@@ -296,7 +296,7 @@ Since we you have provided your own email address as the App Developer in this l
    ![image alt text](./media/NewApp.png)
 
 3. Enter the following App details and click **Create**:
-    App Name: `VR_Hipster-Test-App`
+    App Name: `{{your initials}}_Hipster-Test-App`
     Description: `Test app to try out Hipster Products API using the Bronze (Free) API Product`
 
     Select the Bronze (Free) API Product that is available for subscription.
@@ -363,7 +363,7 @@ Since we you have provided your own email address as the App Developer in this l
 
    ![image alt text](./media/TeamCreatedManagementUI.png)
 
-## Publish Silver and Gold API Products with Audience Entitlements
+## Create Audience
 
 We will now see how to publish API products on the Developer Portal, with only certain audiences that have entitlement to view and subscribe to those products.
 
@@ -390,13 +390,90 @@ We will now see how to publish API products on the Developer Portal, with only c
 
    ![image alt text](./media/SaveAssignment.png)
 
-3. 
+## Publish Silver API Products with New Audience Entitlements
 
+1. Navigate to **Publish → Portals → {{your developer portal}} → APIs** and click the **+API** button.
 
+![image alt text](./media/AddAPIToPortal1.png)
+
+2. Select the Silver API Product and click **Next**.
+
+![image alt text](./media/AddAPIToPortalSilver1.png)
+
+3. Click the **Generate docs from** dropdown and select **Choose a different spec...**.
+
+![image alt text](./media/AddAPIToPortalSilver2.png)
+
+4. Select the recently updated OpenAPI Specification to use as a source. The current version (snapshot) of the selected OpenAPI Specification will be used to generate the documentation for this API product in the portal.
+
+![image alt text](./media/AddAPIToPortalSilver3.png)
+
+5. Make sure that the **Published** checkbox is checked, so that the Silver API Product is visible to authorized App developers through the API catalog, during App creation. Then click **Next**.
+
+![image alt text](./media/AddAPIToPortalSilver4.png)
+
+6. Select the **Image** button to update the icon image associated with this API product. 
+
+![image alt text](./media/AddAPIToPortalSilver5.png)
+
+7. Then select **External Image** and provide the following URL to import image.
+
+Image URL: `https://raw.githubusercontent.com/aliceinapiland/apijam/master/Module-1/Labs/Lab%204/media/HipsterAPIProductImage.png`
+
+Then click **Add**.
+
+![image alt text](./media/AddAPIToPortalSilver6.png)
+
+8. Click **Finish**.
+
+![image alt text](./media/AddAPIToPortalSilver7.png)
+
+9. Click the Audience Visibility icon for the Silver API Product.
+
+![image alt text](./media/ModifyAudienceBtn.png)
+
+10. Select the **Restricted access** option, and check the box for the Audience you just created. Click **Submit**.
+
+![image alt text](./media/ModifyAudienceForm.png)
+
+## Create Team App
+
+1. On the developer portal, navigate to the developer account drop down menu on the top right corner, and select the **Apps** link. Then click the **New App** button.
+
+   ![image alt text](./media/NewAppWithTeam.png)
+
+3. Enter the following App details and click **Create**:
+    App Name: `{{your initials}}_Hipster App`
+    Description: `App that is registered against the team to share App credentials and access Silver tier Hipster API product.`
+    Owner: `{{your initials}}_Hipster App Team`
+
+    Select the Silver (Free) API Product that is available for subscription.
+
+    ![image alt text](./media/CreateAppFormWithTeam.png)
+
+4. You will find that an API Key/Secret pair has been generated for your newly created App. You can now use this API Key to test the API.
+
+   ![image alt text](./media/TeamAppOverview.png)
+
+5. Navigate to the API Catalog, select the Silver API Product docs.
+
+   ![image alt text](./media/SilverAPIsCatalog.png)
+
+6. Select the GET `/products` resource. Click on the **Authorize** button and select the newly created Team App's credentials to set authorization information (API Key) for the API call. Then click **Authorize** within the popup.
+
+   ![image alt text](./media/SilverAPIsCatalogAuthorize1.png)
+
+   Click **OK** after authorization information is set.
+
+   ![image alt text](./media/SilverAPIsCatalogAuthorize2.png)
+
+   Now, click **Execute**. You will see that a valid 200 OK API response is received.
+
+   ![image alt text](./media/TeamAuthorizedDocsTestResult.png)
 
 # Lab Video
 
-If you would rather watch a video that covers this topic, point your browser [here](https://youtu.be/_gDpzDJPNQg). (note: instead of using the "Street Carts" sample, use the "Employee API" that you have built in Lab 1).
+If you would rather watch a video that covers this topic, point your browser [here](https://youtu.be/_gDpzDJPNQg).
 
 # Earn Extra-points
 
