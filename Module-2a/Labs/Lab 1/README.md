@@ -17,7 +17,7 @@ In this lab we will see how to use an out-of-the-box traffic management policy k
 # Prerequisites
 
 * A basic understanding of [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification) (aka Swagger)
-* Have completed API Jam [Module-1](https://github.com/aliceinapiland/apijam/tree/master/Module-1)
+* **Optional**: You have completed API Jam [Module-1](https://github.com/aliceinapiland/apijam/tree/master/Module-1)
 
 # Instructions
 
@@ -29,13 +29,46 @@ In this lab we will see how to use an out-of-the-box traffic management policy k
 
 ![image alt text](./media/image_0.png)
 
-3. You should see the **{yourinitials}_Hipster-Products-API** proxy that was created as part of [Module-1](https://github.com/aliceinapiland/apijam/tree/master/Module-1).
+3. If you have already completed API Jam [Module-1](https://github.com/aliceinapiland/apijam/tree/master/Module-1), you should see the **{yourinitials}_Hipster-Products-API** proxy that was created as part of that module.
 
 ![image alt text](./media/image_1.png)
 
-The status column should show a green circle to indicate the proxy is already deployed to the test environment.
+### If you do not already have the API Proxy
 
-* If it doesn't, click on the **{yourinitials}_Hipster-Products-API** proxy. Then click on the **Deployment** drop down and select the **test** environment to deploy the proxy to the test environment:
+   If you do not already have the API Proxy, please complete the steps below:
+   * Download [this API Proxy bundle](https://github.com/aliceinapiland/apijam/tree/master/Module-2a/Labs/Lab%201/Resources/xx_Hipster-Products-API.zip?raw=true).
+
+   * Under **Develop → API Proxies** click the **+ Proxy** button.
+   ![image alt text](./media/AddProxyBtn.png)
+
+   * In the subsequent wizard, select the **Proxy bundle** option, and click **Next**.
+   ![image alt text](./media/SelectProxyBundle.png)
+
+   * Click **Choose file** and upload the API Proxy zip bundle you previously downloaded. Replace the API Proxy name prefix '`xx`', with your initials. You do this so that you're not breaking any other user's work within the same Apigee Edge org. Then click **Next**.
+   ![image alt text](./media/ZipBundleUpload.png)
+
+   * Review API Proxy details and click **Build**.
+   ![image alt text](./media/BuildBtn.png)
+
+   * Once the proxy is uploaded, click the link to open the proxy.
+   ![image alt text](./media/OpenProxy.png)
+
+   * Click the **Develop** tab to edit the proxy configuration. Select the '**default**' Proxy Endpoint and edit the basepath as shown below, to `/v1/{{your initials}}_hipster-products-api`. Then click the **Save** button to save the changes.
+   ![image alt text](./media/EditBasepath.png)
+
+### If you already have the Hipster API Products proxy built from previous API Jam
+
+   If you already have the Hipster API Products proxy built from API Jam [Module-1](https://github.com/aliceinapiland/apijam/tree/master/Module-1) deployed in your Apigee Edge org, please complete the steps below:
+   * You will need to clean the proxy up and save as a new revision. We do this so that existing policies do not conflict with the policies you configured during the previous API Jam module labs. To do this, go ahead and detach all existing policies from flows within your proxy.
+   ![image alt text](./media/DetachPolicy.png)
+
+   * Then delete each of the policies you detached.
+   ![image alt text](./media/DeletePolicy.png)
+
+   * To save, click **Project → Save as new revision**.
+   ![image alt text](./media/ClickNewRevSave.png)
+
+4. Deploy the latest revision of the API Proxy to the `test` environment. Click the **Deployment** drop down and select the **test** environment to deploy the proxy to the test environment:
 
 ![image alt text](./media/image_2.png)
 
