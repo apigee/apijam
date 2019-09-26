@@ -161,4 +161,4 @@ In this lab, you learned how to use Apigee's out of the box JWT policies to both
 
 * [Adding Additional Claims to your JWT](https://docs.apigee.com/api-platform/reference/policies/generate-jwt-policy#additionalclaimsclaim)
 
-You may now proceed to [Lab 5](https://github.com/aliceinapiland/apijam/tree/master/Module-2b/Lab%205).
+You may now proceed to [Lab 5](https://github.com/aliceinapiland/apijam/tree/master/Module-2b/Labs/Lab%205).
