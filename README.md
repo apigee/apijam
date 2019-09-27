@@ -1,11 +1,11 @@
-# Apigee API Jam
-This is the supporting material for a hands-on workshop that introduces developers to Apigee Edge. We call this event an "**Apigee API Jam**".
+# Apigee API Jam Lab Guides
+
+This repository contains the supporting material for Apigee hands-on workshops that introduces users to the Apigee Edge API Management Platform. We call these events "**API Jams**".
+These hands-on workshops take into account the experience of hundreds of Apigee customers who have used Apigee Edge to implement successful API programs. By the end of these workshops, attendees will walk away with practical experience using the Apigee Edge platform, along with an understanding of its comprehensive capabilities.
 
 All of the material here is released under the [Apache 2.0 license](./LICENSE.md)
 
-### Agenda
-* A brief presentation : 15 mins
-* Product Demo : 60 mins
+This material is divided into different API Jam modules, based on which Apigee Edge funtionalities they showcase, the needs of different API program stakeholder, and varying degrees of complexity.
 
 ## Modules
 ** **
