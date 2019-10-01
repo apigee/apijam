@@ -1,4 +1,4 @@
-# Lab 2 : API Monitoring & Security Dashboard (Optional as these features are not turned on for Trial orgs)
+# Lab 2 : API Monitoring
 
 *Duration : 10 mins*
 
