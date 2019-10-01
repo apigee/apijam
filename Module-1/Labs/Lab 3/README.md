@@ -1,6 +1,6 @@
 # Lab 3 - Manage tiered API Product subscription through API call quotas
 
-Duration : 20 mins
+Duration : 15 mins
 
 Persona : API Product Team & API Dev Team
 
@@ -38,9 +38,9 @@ In this lab we will create different API products that bundle the same API proxy
 
     * Section: Product details
 
-        * Name: {yourInitials}_Hipster-Products-API-Product-Bronze
+        * Name: {yourInitials}\_Hipster-Products-API-Product-Bronze
 
-        * Display name: {yourInitials}_Hipster Products API Product Bronze
+        * Display name: {yourInitials}\_Hipster Products API Product Bronze
 
         * Description: Free version of the Hipster Product API
 
@@ -74,9 +74,9 @@ We now create 2 similar products that represent our Silver and Gold Products wit
 
     * Section: Product details
 
-        * Name: {yourInitials}_Hipster-Products-API-Product-Silver
+        * Name: {yourInitials}\_Hipster-Products-API-Product-Silver
 
-        * Display name: {yourInitials}_Hipster Products API Product Silver
+        * Display name: {yourInitials}\_Hipster Products API Product Silver
 
         * Description: Basic version of the Hipster Product API
 
@@ -96,9 +96,9 @@ We now create 2 similar products that represent our Silver and Gold Products wit
 
     * Section: Product details
 
-        * Name: {yourInitials}_Hipster-Products-API-Product-Gold
+        * Name: {yourInitials}\_Hipster-Products-API-Product-Gold
 
-        * Display name: {yourInitials}_Hipster Products API Product Gold
+        * Display name: {yourInitials}\_Hipster Products API Product Gold
 
         * Description: Deluxe version of the Hipster Product API
 
@@ -132,9 +132,9 @@ Now we should end up with 3 API Products resembling our Product tier strategy.
 
     * Section: App Details
 
-        * Name: {yourInitials}_Hipster Android App Free
+        * Name: {yourInitials}\_Hipster Android App Free
 
-        * Display name: {yourInitials}_Hipster Android App Free
+        * Display name: {yourInitials}\_Hipster Android App Free
 
         * Developer: Chose any existing Developer
 
@@ -160,9 +160,9 @@ Repeat the process for the Apps that use the Silver and Gold tier as well, with 
 
     * Section: App Details
 
-        * Name: {yourInitials}_Hipster Android App Basic
+        * Name: {yourInitials}\_Hipster Android App Basic
 
-        * Display name: {yourInitials}_Hipster Android App Basic
+        * Display name: {yourInitials}\_Hipster Android App Basic
 
         * Developer: Chose any existing Developer
 
@@ -176,9 +176,9 @@ Repeat the process for the Apps that use the Silver and Gold tier as well, with 
 
     * Section: App Details
 
-        * Name: {yourInitials}_Hipster Android App Deluxe
+        * Name: {yourInitials}\_Hipster Android App Deluxe
 
-        * Display name: {yourInitials}_Hipster Android App Deluxe
+        * Display name: {yourInitials}\_Hipster Android App Deluxe
 
         * Developer: Chose any existing Developer
 
@@ -254,7 +254,7 @@ Go to the API proxy and enter the trace tab so we can run some tests:
 
 * Click **Start Trace Session**
 
-* Add the Bronze apikey value as a query parameter to the URL (e.g.: [http://{yourapigeeorg}-test.apigee.net/v1/{yourInitials}_hipster-products-api/products?apikey=GYuZekimsQ2TLdWWMHkqB1poAquHaGsv](http://{yourapigeeorg}-test.apigee.net/v1/{yourInitials}_hipster-products-api/products?apikey=GYuZekimsQ2TLdWWMHkqB1poAquHaGsv)
+* Add the Bronze apikey value as a query parameter to the URL (e.g.: [http://{yourapigeeorg}-test.apigee.net/v1/{yourInitials}\_hipster-products-api/products?apikey=GYuZekimsQ2TLdWWMHkqB1poAquHaGsv](http://{yourapigeeorg}-test.apigee.net/v1/{yourInitials}_hipster-products-api/products?apikey=GYuZekimsQ2TLdWWMHkqB1poAquHaGsv)
 
 * Run a test by clicking the **Send** button multiple times
 
@@ -264,7 +264,7 @@ Go to the API proxy and enter the trace tab so we can run some tests:
 
 ![image alt text](media/image_17.png)
 
-Now we switch API products and add the Silver apikey value from our App as a query parameter to the URL (e.g.: [http://{yourapigeeorg}-test.apigee.net/v1/{yourInitials}_hipster-products-api/products?apikey=GYuZekimsQ2TLdWWMHkqB1poAquHaGsv](http://{yourapigeeorg}-test.apigee.net/v1/{yourInitials}_hipster-products-api/products?apikey=GYuZekimsQ2TLdWWMHkqB1poAquHaGsv)
+Now we switch API products and add the Silver apikey value from our App as a query parameter to the URL (e.g.: [http://{yourapigeeorg}-test.apigee.net/v1/{yourInitials}\_hipster-products-api/products?apikey=GYuZekimsQ2TLdWWMHkqB1poAquHaGsv](http://{yourapigeeorg}-test.apigee.net/v1/{yourInitials}_hipster-products-api/products?apikey=GYuZekimsQ2TLdWWMHkqB1poAquHaGsv)
 
 * Change your apikey parameter to match your Silver App credentials
 

@@ -502,4 +502,4 @@ You’ve learned how to do the following:
 
 How did you link this lab? Rate [here](https://goo.gl/forms/j33WG2U0NFf02QHi1).
 
-Now go to [Lab-4](../Lab%204%20API%20Consumption%20-%20Developers%20and%20Apps)
+Now go to [Lab-4](../Lab%205)

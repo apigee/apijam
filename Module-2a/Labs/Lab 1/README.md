@@ -12,7 +12,7 @@ You have an existing Apigee API proxy that takes requests from the internet and 
 
 By exposing an API through Apigee Edge, you gain the ability to modify and monitor its behavior using out-of-the-box policies. Edge's out-of-the-box policies enable you to enhance your API with sophisticated features to control traffic, enhance performance, enforce security, and increase the utility of your APIs, without requiring you to write any code or to modify any backend services. Extension policies also enable you to implement custom logic in the form of JavaScript, Python, Java, and XSLT.
 
-In this lab we will see how to use an out-of-the-box traffic management policy known as "Spike Arrest" to protect against traffic spikes. A Spike Arrest policy can throttle the number of requests processed by an API proxy and sent to a target backend, thereby protecting against performance issues and downtime.
+In this lab we will see how to use an out-of-the-box traffic management policy known as "Spike Arrest" to protect against traffic spikes. A [Spike Arrest policy](https://docs.apigee.com/api-platform/reference/policies/spike-arrest-policy) can throttle the number of requests processed by an API proxy and sent to a target backend, thereby protecting against performance issues and downtime.
 
 # Prerequisites
 

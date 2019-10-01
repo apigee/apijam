@@ -2,7 +2,7 @@
 
 **Last Updated:** 2019-09-03
 
-*Duration : 20 mins*
+*Duration : 15 mins*
 
 *Persona : API Product Team*
 
