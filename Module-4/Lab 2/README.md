@@ -63,17 +63,9 @@ For this lab, please ensure that you have an API Proxy with a [Spike Arrest poli
 
 ### If you already have the Hipster API Products proxy built from previous API Jam
 
-   If you already have the Hipster API Products proxy built from API Jam [Module-1](https://github.com/aliceinapiland/apijam/tree/master/Module-1) deployed in your Apigee Edge org, please complete the steps below:
-   * You will need to clean the proxy up and save as a new revision. We do this so that existing policies do not conflict with the policies you configured during the previous API Jam module labs. To do this, go ahead and detach all existing policies from flows within your proxy.
-   ![image alt text](./media/DetachPolicy.png)
+   If you already have the Hipster API Products proxy built from API Jam [Module-1](https://github.com/aliceinapiland/apijam/tree/master/Module-1) deployed in your Apigee Edge org, no other setup is required.
 
-   * Then delete each of the policies you detached.
-   ![image alt text](./media/DeletePolicy.png)
-
-   * To save, click **Project → Save as new revision**.
-   ![image alt text](./media/ClickNewRevSave.png)
-
-4. Deploy the **latest revision** (it may not be 'Revision 1' as shown below), of the API Proxy to the `test` environment. Click the **Deployment** drop down and select the **test** environment to deploy the proxy to the test environment:
+4. Ensure that the **latest revision** (it may not be 'Revision 1' as shown below), of the API Proxy is deoployed to the `test` environment. Click the **Deployment** drop down and select the **test** environment to deploy the proxy to the test environment:
 
 ![image alt text](./media/image_2.png)
 
