@@ -138,11 +138,11 @@ The Geo Map dashboard tracks traffic patterns, error patterns, and quality of se
 
 ## Add Statistics Collector
 
-1. Click on **Develop → API Proxies** from side navigation menu. Open the existing API Proxy from the prerequisites and go to the Develop tab.
+1. Click on **Develop → API Proxies** from side navigation menu. Open the existing Hipster Products API Proxy that you created in previous labs, and go to the Develop tab.
 
 2. To get the data from the path we need to extract it into an Apigee Flow variable first. We do this by adding an **Extract Variables** policy.
 
-3. In the **GetProductDetails **Flow add a new step to the request by clicking the "**+ Step**" button
+3. In the **GetProductDetails** Flow add a new step to the request by clicking the "**+ Step**" button
 
 ![image alt text](media/image_14.png)
 
