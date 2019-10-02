@@ -171,7 +171,7 @@ Note: We are adding the entire API Proxy to the API Product.  We can just as eas
 
 5. Populate the following details:
 
-	* Name: `{{your initials}}\Hipster-Products-App`
+	* Name: `{{your initials}}_Hipster-Products-App`
 
 	* Disaplay Name: `{{your initials}}_Hipster Products App`
 
