@@ -69,7 +69,7 @@ As part of this lab, you will:
 
 ![image alt text](./media/image_0.png)
 
-2. Select the previously created **{yourinitials}_Hipster-Products-API** proxy:
+2. Select the previously created **{{your initials}}_Hipster-Products-API** proxy:
 
 ![image alt text](./media/image_7.png)
 
@@ -101,7 +101,7 @@ As part of this lab, you will:
 
 ## Create API Product, App Config and Generate Client Key & Secret
 
-1. To provide access to the API, we must first package the API proxy into an [API Product](https://docs.apigee.com/api-platform/publish/what-api-product). For this step you may use the products, developers and apps you created during Module-1.  Alternatively, to do this from scratch first log into the Apigee Edge Management UI, and navigate to **Publish → API Products**:
+1. To provide access to the API, we must first package the API proxy into an [API Product](https://docs.apigee.com/api-platform/publish/what-api-product). For this step you may use the products, developers and apps you created during [Module-1](../../../Module-1/README.md).  Alternatively, to do this from scratch first log into the Apigee Edge Management UI, and navigate to **Publish → API Products**:
 
 ![image alt text](./media/image_14.png)
 
@@ -238,5 +238,5 @@ In this lab you learned how to secure an API using two-legged OAuth 2.0 with the
 
 * Search and Revoke tokens - [https://community.apigee.com/articles/1571/how-to-enable-oauth-20-token-search-and-revocation.html](https://community.apigee.com/articles/1571/how-to-enable-oauth-20-token-search-and-revocation.html)
 
-You may now proceed to [Module-2b](https://github.com/aliceinapiland/apijam/tree/master/Module-2b).
+You may now proceed to [Module-2b](../../../Module-2b/README.md).
 

@@ -60,7 +60,7 @@ You can create a new proxy by uploading the proxy in the *loadgen* folder in thi
 
 3. Click **Build.**
 
-4. After the proxy was created you can directly open it in the editor and go to the **Develop** tab to change the values for your proxies and api keys.
+4. After the proxy was created you can directly open it in the editor and go to the **Develop** tab to change the values for your proxies and api keys. Navigate to the **config/model.json** resource in the Resources section on the left panel, and change the values as shown below:
 
 ![image alt text](media/image_3.png)
 
