@@ -19,7 +19,7 @@ Apigee has built in support to implement OAuth 2.0 with the ROPC grant type. Usi
 
 # Prerequisites
 
-* Have completed the API Jam [Module-2a labs](https://github.com/aliceinapiland/apijam/tree/master/Module-2a). If not, please complete those first.
+* Have completed the API Jam [Module-2a labs](../../../Module-2a). If not, please complete those first.
 
 # Instructions
 
@@ -66,7 +66,7 @@ This will create an active end user profile in Okta:
 
 ## Create OAuth Token Endpoints
 
-1. First, we must set up the OAuth token endpoint. To do this, download the API proxy bundle from [here](https://github.com/aliceinapiland/apijam/blob/master/Module-2b/Labs/Lab%205/resources/oauth-okta-integration.zip?raw=true).
+1. First, we must set up the OAuth token endpoint. To do this, download the API proxy bundle from [here](./resources/oauth-okta-integration.zip?raw=true).
 
 2. Once downloaded, navigate to **Develop → API Proxies** from the side navigation menu:
 

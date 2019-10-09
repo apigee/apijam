@@ -8,16 +8,16 @@ This workshop will be valuable to API developers, architects, and anyone who wan
 - (**Required for Virtual API Jams**) Register for the session. Make sure to register for the Virtual API Jam so that we can send you the relevant connection details to join the online session.
 - Browser (Chrome). A modern web browser like Chrome (v50+) to access the Apigee Edge Platform UI.
 - (**Required for Virtual API Jams**) An Apigee Account. Create and activate your free Apigee Edge account prior to attending the workshop. You can sign up for one at https://login.apigee.com/sign_up. Ensure that your Org has been provisioned as part of your trial account.
-- A basic understanding of Apigee Edge entities such as API Proxies, Apps, and Products. For a refresher of the API Management Lifecycle, please complete lab exercises in Module-1 [here](https://github.com/aliceinapiland/apijam/tree/master/Module-1).
+- A basic understanding of Apigee Edge entities such as API Proxies, Apps, and Products. For a refresher of the API Management Lifecycle, please complete lab exercises in Module-1 [here](../Module-1).
 
 ## Workshop Agenda
 
 ## Module 2b
-* Lab 3 - Protect your APIs against content-based threats [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-2b/Labs/Lab%203)
-* Lab 4 - JWT based API security [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-2b/Labs/Lab%204)
-* Lab 5 - OAuth 2.0 based API security using Apigee as OAuth server, and an External Identity Provider for App end-user identity (OAuth 2.0 Password Grant Type) [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-2b/Labs/Lab%205)
+* Lab 3 - Protect your APIs against content-based threats [Link](./Labs/Lab%203)
+* Lab 4 - JWT based API security [Link](./Labs/Lab%204)
+* Lab 5 - OAuth 2.0 based API security using Apigee as OAuth server, and an External Identity Provider for App end-user identity (OAuth 2.0 Password Grant Type) [Link](./Labs/Lab%205)
 
-Let's get started with [Lab 1](https://github.com/aliceinapiland/apijam/tree/master/Module-2b/Labs/Lab%201).
+Let's get started with [Lab 1](./Labs/Lab%201).
 
 #### Apigee Community 
 If you have any questions/comments please visit https://community.apigee.com/index.html

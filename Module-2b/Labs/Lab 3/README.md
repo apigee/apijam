@@ -21,13 +21,13 @@ In this lab we will see how to use the following policies:
 * Basic understanding of [JSON](https://www.json.org/) and [XML](https://www.w3.org/TR/2008/REC-xml-20081126) data formats.
 * Basic understanding of [SQL injection attacks](https://en.wikipedia.org/wiki/SQL_injection)
 * Basic understanding of [Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-* Have completed API Jam [Module-1](https://github.com/aliceinapiland/apijam/tree/master/Module-1) and [Module-2a](https://github.com/aliceinapiland/apijam/tree/master/Module-2a)
+* Have completed API Jam [Module-1](../../../Module-1) and [Module-2a](../../../Module-2a)
 
 # Instructions
 
 ## JSON Threat Protection
 
-1. For this lab we will be using a mock target API.  An initial Apigee API proxy has been created for you. Download the API proxy [here](https://github.com/aliceinapiland/apijam/tree/master/Module-2b/Labs/Lab%203/resources/Mock-Target-API.zip?raw=true).
+1. For this lab we will be using a mock target API.  An initial Apigee API proxy has been created for you. Download the API proxy [here](./resources/Mock-Target-API.zip?raw=true).
 
 2. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI. 
 
@@ -252,4 +252,4 @@ That completes this hands-on lesson. In this simple lab you learned how to prote
 
     * [Video](https://youtu.be/rC8kZJgwBFM) on using Threat Protection policies in Apigee Edge
 
-You may now proceed to [Lab 4](https://github.com/aliceinapiland/apijam/tree/master/Module-2b/Labs/Lab%204)
+You may now proceed to [Lab 4](../Lab%204)

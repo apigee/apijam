@@ -21,7 +21,7 @@ For more information on JWS and JWT support in Apigee visit the documentation pa
 
 # Prerequisites
 
-* Have completed Module-2b [Lab 3](https://github.com/aliceinapiland/apijam/tree/master/Module-2b/Labs/Lab%203).
+* Have completed Module-2b [Lab 3](../Lab%203).
 
 # Instructions
 
@@ -65,7 +65,7 @@ For more information on JWS and JWT support in Apigee visit the documentation pa
 
 ![image alt text](./media/image_8.png)
 
-11. Download the Apigee proxy "**JWT.zip**" that generates and verifies JWTs from [here](https://github.com/aliceinapiland/apijam/blob/master/Module-2b/Labs/Lab%204/resources/JWT.zip?raw=true).  Then click "**Choose File**", select the “**JWT.zip**” file you just downloaded and click **Next**:
+11. Download the Apigee proxy "**JWT.zip**" that generates and verifies JWTs from [here](./resources/JWT.zip?raw=true).  Then click "**Choose File**", select the “**JWT.zip**” file you just downloaded and click **Next**:
 
 ![image alt text](./media/image_9.png)
 
@@ -161,4 +161,4 @@ In this lab, you learned how to use Apigee's out of the box JWT policies to both
 
 * [Adding Additional Claims to your JWT](https://docs.apigee.com/api-platform/reference/policies/generate-jwt-policy#additionalclaimsclaim)
 
-You may now proceed to [Lab 5](https://github.com/aliceinapiland/apijam/tree/master/Module-2b/Labs/Lab%205).
+You may now proceed to [Lab 5](../Lab%205).
