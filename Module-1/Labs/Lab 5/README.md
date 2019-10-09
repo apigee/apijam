@@ -52,7 +52,7 @@ You can create a new proxy by uploading the proxy in the *loadgen* folder in thi
 
 1. Create a new proxy by clicking **Develop > API Proxies > + Proxy**
 
-2. In the new proxy wizard select to upload a proxy bundle and upload your .zip file from the repository. You can download this .zip file [**here**](../../../blob/master/Module-1/Labs/Lab%205/loadgen/LoadGen-Proxy.zip?raw=true)
+2. In the new proxy wizard select to upload a proxy bundle and upload your .zip file from the repository. You can download this .zip file [**here**](../../../Module-1/Labs/Lab%205/loadgen/LoadGen-Proxy.zip?raw=true)
 
 ![image alt text](media/image_1.png)
 
