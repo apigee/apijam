@@ -17,7 +17,7 @@ In this lab we will see how to use an out-of-the-box traffic management policy k
 # Prerequisites
 
 * A basic understanding of [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification) (aka Swagger)
-* **Optional**: You have completed API Jam [Module-1](https://github.com/aliceinapiland/apijam/tree/master/Module-1)
+* **Optional**: You have completed API Jam [Module-1](../../../Module-1)
 
 # Instructions
 
@@ -29,14 +29,14 @@ In this lab we will see how to use an out-of-the-box traffic management policy k
 
 ![image alt text](./media/image_0.png)
 
-3. If you have already completed API Jam [Module-1](https://github.com/aliceinapiland/apijam/tree/master/Module-1), you should see the **{yourinitials}_Hipster-Products-API** proxy that was created as part of that module.
+3. If you have already completed API Jam [Module-1](../../../Module-1), you should see the **{yourinitials}_Hipster-Products-API** proxy that was created as part of that module.
 
 ![image alt text](./media/image_1.png)
 
 ### If you do not already have the API Proxy
 
    If you do not already have the API Proxy, please complete the steps below:
-   * Download [this API Proxy bundle](https://github.com/aliceinapiland/apijam/blob/master/Module-2a/Resources/xx_Hipster-Products-API.zip?raw=true).
+   * Download [this API Proxy bundle](../../Resources/xx_Hipster-Products-API.zip?raw=true).
 
    * Under **Develop → API Proxies** click the **+ Proxy** button.
    ![image alt text](./media/AddProxyBtn.png)
@@ -159,4 +159,4 @@ That completes this hands-on lab. In this simple lesson you learned how to prote
     * Comparing Rate Limiting Policies - [http://docs.apigee.com/api-services/content/comparing-quota-spike-arrest-and-concurrent-rate-limit-policies](http://docs.apigee.com/api-services/content/comparing-quota-spike-arrest-and-concurrent-rate-limit-policies) 
 
 
-You may now proceed to [Lab 2](https://github.com/aliceinapiland/apijam/tree/master/Module-2a/Labs/Lab%202).
+You may now proceed to [Lab 2](../Lab%202).

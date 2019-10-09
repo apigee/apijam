@@ -18,7 +18,7 @@ An introduction to OAuth 2.0 is available on our documentation site [here](https
 
 # Prerequisites
 
-* You have completed Module-2a [Lab 1](https://github.com/aliceinapiland/apijam/tree/master/Module-2a/Labs/Lab%201)
+* You have completed Module-2a [Lab 1](../Lab%201)
 
 # Instructions
 
@@ -29,7 +29,7 @@ As part of this lab, you will:
 
 ## Create OAuth Token Endpoints
 
-**Note: In Apigee Edge trial account orgs, the oauth endpoint should already have been created at the time of org provisioning. Check you API Proxies list under Develop -> API Proxies. If there is already a proxy labeled 'oauth', simply go to the proxy details page, click on 'Deployment' and ensure that it is deployed to the 'test' environment (Step 9 below). After that, you can skip this section and head to [the next section](https://github.com/aliceinapiland/apijam/tree/master/Module-2a/Labs/Lab%202#secure-the-hipster-products-api-proxy-with-oauth-access-token-verification).**
+**Note: In Apigee Edge trial account orgs, the oauth endpoint should already have been created at the time of org provisioning. Check you API Proxies list under Develop -> API Proxies. If there is already a proxy labeled 'oauth', simply go to the proxy details page, click on 'Deployment' and ensure that it is deployed to the 'test' environment (Step 9 below). After that, you can skip this section and head to [the next section](../Lab%202#secure-the-hipster-products-api-proxy-with-oauth-access-token-verification).**
 
 1. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI.
 
@@ -45,7 +45,7 @@ As part of this lab, you will:
 
 ![image alt text](./media/image_2.png)
 
-5. Download the API proxy bundle named `oauth.zip` that implements the OAuth 2.0 client credentials grant type from [here](https://github.com/aliceinapiland/apijam/blob/master/Module-2a/Labs/Lab%202/resources/oauth.zip?raw=true). 
+5. Download the API proxy bundle named `oauth.zip` that implements the OAuth 2.0 client credentials grant type from [here](./resources/oauth.zip?raw=true). 
 
 6. Back in the proxy creation wizard, click the **Choose File** button, select the `oauth.zip` file you just downloaded, and click **Next**:
 
