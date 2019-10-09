@@ -22,7 +22,7 @@ In this lab we will see how to use [**Apigee API Monitoring**](https://docs.apig
 
 # Prerequisites
 
-For this lab, please ensure that you have an API Proxy with a [Spike Arrest policy](https://docs.apigee.com/api-platform/reference/policies/spike-arrest-policy) applied, as indicated in [Module 2a Lab 1 - Throttle APIs](https://github.com/aliceinapiland/apijam/tree/master/Module-2a/Labs/Lab%201).
+For this lab, please ensure that you have an API Proxy with a [Spike Arrest policy](https://docs.apigee.com/api-platform/reference/policies/spike-arrest-policy) applied, as indicated in [Module 2a Lab 1 - Throttle APIs](../../../Module-2a/Labs/Lab%201).
 
 # Instructions
 
@@ -34,14 +34,14 @@ For this lab, please ensure that you have an API Proxy with a [Spike Arrest poli
 
 ![image alt text](./media/image_0.png)
 
-3. If you have already completed API Jam [Module 2a Lab 1 - Throttle APIs](https://github.com/aliceinapiland/apijam/tree/master/Module-2a/Labs/Lab%201), you should see the **{yourinitials}_Hipster-Products-API** proxy that was created as part of that lab.
+3. If you have already completed API Jam [Module 2a Lab 1 - Throttle APIs](../../../Module-2a/Labs/Lab%201), you should see the **{yourinitials}_Hipster-Products-API** proxy that was created as part of that lab.
 
 ![image alt text](./media/image_1.png)
 
 ### If you do not already have the API Proxy
 
    If you do not already have the API Proxy, please complete the steps below:
-   * Download [this API Proxy bundle](https://github.com/aliceinapiland/apijam/blob/master/Module-4/Resources/xx_Hipster-Products-API_Lab2.zip?raw=true).
+   * Download [this API Proxy bundle](../Resources/xx_Hipster-Products-API_Lab2.zip?raw=true).
 
    * Under **Develop → API Proxies** click the **+ Proxy** button.
    ![image alt text](./media/AddProxyBtn.png)
@@ -63,7 +63,7 @@ For this lab, please ensure that you have an API Proxy with a [Spike Arrest poli
 
 ### If you already have the Hipster API Products proxy built from previous API Jam
 
-   If you already have the Hipster API Products proxy built from API Jam [Module-1](https://github.com/aliceinapiland/apijam/tree/master/Module-1) deployed in your Apigee Edge org, no other setup is required.
+If you already have the Hipster API Products proxy built from API Jam [Module-1](https://github.com/aliceinapiland/apijam/tree/master/Module-1) deployed in your Apigee Edge org, no other setup is required.
 
 4. Ensure that the **latest revision** (it may not be 'Revision 1' as shown below), of the API Proxy is deoployed to the `test` environment. Click the **Deployment** drop down and select the **test** environment to deploy the proxy to the test environment:
 

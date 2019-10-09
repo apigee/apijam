@@ -281,4 +281,4 @@ That completes this hands-on lesson. In this simple lab you learned how to creat
 
 How did you like this lab? Rate [here](https://goo.gl/forms/G8LAPkDWVNncR9iw2).
 
-Now go to [Lab-3](https://github.com/aliceinapiland/apijam/tree/master/Module-3/Lab%203)
+Now go to [Lab-3](../Lab%203)

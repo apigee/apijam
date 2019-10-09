@@ -19,9 +19,9 @@ In additon to these policies, Apigee Edge also provides for manner to group mult
 # Pre-requisites
 
 * Basic understanding of [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification) (Swagger)
-* Completed a previous Module 2 (a) for our [Virtual API Jam](https://github.com/aliceinapiland/apijam/tree/master/Module-2a) or have the equivalent knowledge. Alternatively, go through the ["Getting started guide"](https://docs.apigee.com/api-platform/get-started/get-started) in the Apigee Docs site.
+* Completed a previous Module 2 (a) for our [Virtual API Jam](../../../Module-2a) or have the equivalent knowledge. Alternatively, go through the ["Getting started guide"](https://docs.apigee.com/api-platform/get-started/get-started) in the Apigee Docs site.
 * We will be reusing the proxies from the module 2 of virtual Apijam, a copy of the proxy code is available within the resources section in this repo.
-* Please ensure that you have an OAuth proxy within your organization, if not, you can follow the instructions from Lab 2(a) of this APIJam. [here](../../Module-2a/Lab%202#create-oauth-token-endpoints) 
+* Please ensure that you have an OAuth proxy within your organization, if not, you can follow the instructions from Lab 2(a) of this APIJam. [here](../../../Module-2a/Lab%202#create-oauth-token-endpoints) 
 
 # Instructions
 
