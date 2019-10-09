@@ -48,7 +48,7 @@ This material is divided into different API Jam modules, based on which Apigee E
 
 ** **
 
-You can start with the first lab in Module 1 [API Design - Create a Reverse Proxy with OpenAPI specification](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%201)
+You can start with the first lab in Module 1 [API Design - Create a Reverse Proxy with OpenAPI specification](./Module-1/Labs/Lab%201)
 
 #### Apigee Community 
 If you have any questions/comments please visit https://community.apigee.com/index.html

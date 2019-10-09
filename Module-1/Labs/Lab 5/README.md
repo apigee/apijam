@@ -28,7 +28,7 @@ Through visualization of the data with out of the box analytics, Apigee helps yo
 
 ### Tying traffic to API Products
 
-![image alt text](media/image_0.png)
+![image alt text](./media/image_0.png)
 
 When registering an application to an API product that metadata is loaded when verifying an API key or Oauth Token so you can identify the Developer, App and the Product. This data is crucial for insights into your program.
 
@@ -52,7 +52,7 @@ You can create a new proxy by uploading the proxy in the *loadgen* folder in thi
 
 1. Create a new proxy by clicking **Develop > API Proxies > + Proxy**
 
-2. In the new proxy wizard select to upload a proxy bundle and upload your .zip file from the repository. You can download this .zip file [**here**](https://github.com/aliceinapiland/apijam/blob/master/Module-1/Labs/Lab%205/loadgen/LoadGen-Proxy.zip?raw=true)
+2. In the new proxy wizard select to upload a proxy bundle and upload your .zip file from the repository. You can download this .zip file [**here**](../../../blob/master/Module-1/Labs/Lab%205/loadgen/LoadGen-Proxy.zip?raw=true)
 
 ![image alt text](media/image_1.png)
 

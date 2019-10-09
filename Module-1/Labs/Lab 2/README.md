@@ -33,13 +33,13 @@ In this lab, you will..
 
 # Pre-requisites
 
-For this lab, you will need an API proxy that is not currently secured.  If you do not have an API proxy available for this lab, revisit the lab ["API Design : Create a Reverse Proxy from OpenAPI Spec"](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%201) and then return here to complete these steps.
+For this lab, you will need an API proxy that is not currently secured.  If you do not have an API proxy available for this lab, revisit the lab ["API Design : Create a Reverse Proxy from OpenAPI Spec"](../Lab%201) and then return here to complete these steps.
 
 # Instructions
 
 ## Choose and test the API Proxy to secure
 
-1. Log into the Apigee Edge Management UI at [https://login.apigee.com](https://login.apigee.com). Navigate to  **Develop → API Proxies**, and select the API Proxy (labeled **{your_initials}**_Hipster-Products-API) that you created in [Lab 1](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%201).
+1. Log into the Apigee Edge Management UI at [https://login.apigee.com](https://login.apigee.com). Navigate to  **Develop → API Proxies**, and select the API Proxy (labeled **{your_initials}**\_Hipster-Products-API) that you created in [Lab 1](../Lab%201).
 
 ![image alt text](./media/image_1.png)
 
@@ -55,7 +55,7 @@ For this lab, you will need an API proxy that is not currently secured.  If you 
 
 * Click **Start Trace Session** to begin a trace session.
 
-* If you're using the API proxy you built in the [previous Lab](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%201), add the `/products` resource path to the URL prior to sending a sample API call request. Click **Send** to send a request.
+* If you're using the API proxy you built in the [previous Lab](../Lab%201), add the `/products` resource path to the URL prior to sending a sample API call request. Click **Send** to send a request.
 
 * You should see a successful 2xx response for your API Call (it may take a few seconds for the trace results to appear)
 
@@ -92,7 +92,7 @@ For this lab, you will need an API proxy that is not currently secured.  If you 
 
 4. Click the **Trace** tab near the top of the window and click **Start Trace Session** to begin a trace session.
 
-* If you're using the API proxy you built in the [previous Lab](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%201), add the `/products` resource path to the URL prior to sending a sample API call request. Click **Send** to send a request.  
+* If you're using the API proxy you built in the [previous Lab](../Lab%201), add the `/products` resource path to the URL prior to sending a sample API call request. Click **Send** to send a request.  
 
 * You should see a 401 (unauthorized) response for your API Call because the API proxy was expecting an API Key as a query parameter.  See the trace session below
 
@@ -231,5 +231,5 @@ In this lab you learned how the relationship between API Proxies, API Products a
 
 How did you like this lab? Rate [here](https://goo.gl/forms/XxDqVtWHnyFdEChv1).
 
-Now go to [Lab-3](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%203)
+Now go to [Lab-3](../Lab%203)
 

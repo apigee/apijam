@@ -9,13 +9,13 @@ All of the material here is released under the [Apache 2.0 license](./LICENSE.md
 * A brief presentation & product overview: 15 mins
 
 ### [Labs](./Labs) 
-1. **API Design & Creation** - Design OAS & Create a Reverse Proxy with the OpenAPI specification [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%201)
-2. **API Products, Apps & API Keys** - Securing APIs with API Keys, bundle APIs into API Products and undersgtand the association between Apps, API Products & API Keys [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%202)
-3. **Rate Limiting**: Rate Limit API Consumption based on API Product tier quotas. [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%203)
-4. **App Developer Experience** - Publish API Products Catalog throug a self-service Developer Portal. Test App Developer on-boarding experience & API consumption. Restrict access to resources using Teams and Audience entitlements. [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%204)
-5. **API Analytics** - Measure API Program Success with Apigee Analytics [Link](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%205)
+1. **API Design & Creation** - Design OAS & Create a Reverse Proxy with the OpenAPI specification [Link](./Labs/Lab%201)
+2. **API Products, Apps & API Keys** - Securing APIs with API Keys, bundle APIs into API Products and undersgtand the association between Apps, API Products & API Keys [Link](./Labs/Lab%202)
+3. **Rate Limiting**: Rate Limit API Consumption based on API Product tier quotas. [Link](./Labs/Lab%203)
+4. **App Developer Experience** - Publish API Products Catalog throug a self-service Developer Portal. Test App Developer on-boarding experience & API consumption. Restrict access to resources using Teams and Audience entitlements. [Link](./Labs/Lab%204)
+5. **API Analytics** - Measure API Program Success with Apigee Analytics [Link](./Labs/Lab%205)
 
-You can start with the first lab [1. API Design - Design & Create an API Proxy with OpenAPI specification](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%201)
+You can start with the first lab [1. API Design - Design & Create an API Proxy with OpenAPI specification](./Labs/Lab%201)
 
 #### Apigee Community 
 If you have any questions/comments please visit https://community.apigee.com/index.html

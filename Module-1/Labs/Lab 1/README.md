@@ -182,5 +182,5 @@ That completes this hands-on lesson. In this simple lab you learned how to creat
 
 How did you like this lab? Rate [here](https://goo.gl/forms/G8LAPkDWVNncR9iw2).
 
-Now go to [Lab-2](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%202)
+Now go to [Lab-2](../Lab%202)
 

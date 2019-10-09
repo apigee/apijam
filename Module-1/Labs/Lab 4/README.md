@@ -33,12 +33,12 @@ In this lab, you will create an Integrated Developer Portal wherein you will pub
 
 # Pre-requisites
 
-For this lab, you should have completed [Lab 1](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%201), [Lab 2](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%202) and [Lab 3](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%203) of this module.
+For this lab, you should have completed [Lab 1](../Lab%201), [Lab 2](../Lab%202) and [Lab 3](../Lab%203) of this module.
 
 You will need…
 
-* An OpenAPI specification uploaded to your Spec store within your Organization. This specification will make up the documentation of your API.  If you do not have an OpenAPI Specification available for this lab, revisit [*Lab 1 - Design & Create an API Proxy with OpenAPI Specification*](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%201)
-* API Products that bundle your API Proxies. If you do not have an API Product configured, revisit [*Lab 2 - API Security and API Producer/Consumer Relationship on Apigee Edge*](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%202), and [Lab 3 - Manage tiered API Product subscription through API call quotas](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%203).
+* An OpenAPI specification uploaded to your Spec store within your Organization. This specification will make up the documentation of your API.  If you do not have an OpenAPI Specification available for this lab, revisit [*Lab 1 - Design & Create an API Proxy with OpenAPI Specification*](../Lab%201)
+* API Products that bundle your API Proxies. If you do not have an API Product configured, revisit [*Lab 2 - API Security and API Producer/Consumer Relationship on Apigee Edge*](../Lab%202), and [Lab 3 - Manage tiered API Product subscription through API call quotas](../Lab%203).
 
 # Instructions
 

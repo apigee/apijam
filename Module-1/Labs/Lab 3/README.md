@@ -14,7 +14,7 @@ Apigee offers the concept of API Products abstracted from the functional logic o
 
 # Pre-requisites
 
-Pre-reqs are met if you have completed [Lab 1](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%201) and [Lab 2](https://github.com/aliceinapiland/apijam/tree/master/Module-1/Labs/Lab%202).
+Pre-reqs are met if you have completed [Lab 1](../Lab%201) and [Lab 2](../Lab%202).
 
 The minimum for this lab is to have a deployed API proxy with a "Verify API Key" policy and a Developer for who we can register an App with our API product.
 
