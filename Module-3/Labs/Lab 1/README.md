@@ -21,7 +21,7 @@ In additon to these policies, Apigee Edge also provides for manner to group mult
 * Basic understanding of [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification) (Swagger)
 * Completed a previous Module 2 (a) for our [Virtual API Jam](../../../Module-2a) or have the equivalent knowledge. Alternatively, go through the ["Getting started guide"](https://docs.apigee.com/api-platform/get-started/get-started) in the Apigee Docs site.
 * We will be reusing the proxies from the module 2 of virtual Apijam, a copy of the proxy code is available within the resources section in this repo.
-* Please ensure that you have an OAuth proxy within your organization, if not, you can follow the instructions from Lab 2(a) of this APIJam. [here](../../../Module-2a/Lab%202#create-oauth-token-endpoints) 
+* Please ensure that you have an OAuth proxy within your organization, if not, you can follow the instructions from Lab 2(a) of this APIJam. [here](../../../Module-2a/Labs/Lab%202#create-oauth-token-endpoints) 
 
 # Instructions
 
@@ -98,7 +98,7 @@ Please ensure OAuth v2.0 policy is the first policy (before Spike Arrest) and th
 
 Your shared flow is now ready for testing. As discussed earlier, Shared flows do not have actual backend implementations, hence for testing our shared flow we will need to either invoke this within a proxy via an explicit **flow callout** or have this flow attached to a **flow hook**. 
 
-To test this flow we will be using the existing proxy that you created within [Module 2(a)](../../Module-2a/Lab%202). If you have not completed Module 2(a), It is recommended that you review the content of the lab to familiarize with the concepts of Spike Arrest and OAuth first before we proceed with the remainder of this Lab.
+To test this flow we will be using the existing proxy that you created within [Module 2(a)](../../Module-2a/Labs/Lab%202). If you have not completed Module 2(a), It is recommended that you review the content of the lab to familiarize with the concepts of Spike Arrest and OAuth first before we proceed with the remainder of this Lab.
 
 If you have completed Module 2 and already have the ***Hipster Products API*** Proxy, you can skip the next sub-section and move directly to Step 1.
 
