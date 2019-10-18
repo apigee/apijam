@@ -1,5 +1,7 @@
 # Apigee API Jam Lab Guides
 
+## Note: For the previous version of the API Jam, please refer to supporting material in the [Archives folder](./Archives/Archived_10-18-2019)
+
 This repository contains the supporting material for Apigee hands-on workshops that introduces users to the Apigee Edge API Management Platform. We call these events "**API Jams**".
 These hands-on workshops take into account the experience of hundreds of Apigee customers who have used Apigee Edge to implement successful API programs. By the end of these workshops, attendees will walk away with practical experience using the Apigee Edge platform, along with an understanding of its comprehensive capabilities.
 
