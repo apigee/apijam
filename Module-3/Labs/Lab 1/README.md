@@ -342,6 +342,5 @@ That completes this hands-on lesson. In this simple lab you learned how to re-us
 
     * [Flow Hooks](https://docs.apigee.com/api-platform/fundamentals/flow-hooks)
 
+Now go to [Lab-2](../Lab%202)
 
-Now go to [Lab-2](../Lab 2)
-=======

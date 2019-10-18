@@ -41,7 +41,7 @@ Create the API Proxy using the proxy bundle which can be found here. Complete th
 
 <img src = "media/image3.png">
 
-5. Create the API Proxy using the proxy bundle which can be found [here](../Resources/xx_Hipster-Products-API.zip). Complete the configurations as shown in the following diagram. Click __Next__ when finished.
+5. Create the API Proxy using the proxy bundle which can be found [here](../../Resources/xx_Hipster-Products-API.zip). Complete the configurations as shown in the following diagram. Click __Next__ when finished.
 
      `Proxy Name: {Initials}_Hipster-Products-API`
 
@@ -51,7 +51,7 @@ Create the API Proxy using the proxy bundle which can be found here. Complete th
 
 <img src = "media/image5.png">
 
-7. Check that the Proxy is uploaded successfully. Click on {Initials}_Hipster-Products-API to view the API Proxy configurations.
+7. Check that the Proxy is uploaded successfully. Click on {Initials}\_Hipster-Products-API to view the API Proxy configurations.
 
 <img src = "media/image6.png">
 
@@ -95,7 +95,7 @@ Create the API Proxy using the proxy bundle which can be found here. Complete th
 
 <img src = "media/image12.png">
 
-14. Click on __Develop -> API Proxies__, and select {Initials}_Hipster-Products-API
+14. Click on __Develop -> API Proxies__, and select {Initials}\_Hipster-Products-API
 
 <img src = "media/image13.png">
 
@@ -259,7 +259,7 @@ In the real deployment environment, this scenario is common where the user has m
 
 <img src = "media/image3.png">
 
-5. Create the API Proxy using the proxy bundle which can be found [here](../Resources/xx_LB-TargetServers.zip). Complete the configurations as shown in the following diagram. Click __Next__ when finished.
+5. Create the API Proxy using the proxy bundle which can be found [here](../../Resources/xx_LB-TargetServers.zip). Complete the configurations as shown in the following diagram. Click __Next__ when finished.
 
 	`Proxy Name: {Initials}_LB-TargetServers`
 	
@@ -305,7 +305,7 @@ Click on __Add__ to create the Target Server.
 
 <img src = "media/image32.png">
 
-12. Next, we will configure the load balancer across the two Target Servers. Go to __Develop -> API Proxies__ and click on the {Initials}_LB-TargetServers API Proxy which was created earlier. Click on __DEVELOP__
+12. Next, we will configure the load balancer across the two Target Servers. Go to __Develop -> API Proxies__ and click on the {Initials}\_LB-TargetServers API Proxy which was created earlier. Click on __DEVELOP__
 
 <img src = "media/image33.png">
 
@@ -320,7 +320,7 @@ Click on __Add__ to create the Target Server.
 	```
 <img src = "media/image34.png">
 
-14. Click on __Save__ and the first target endpoint is now pointing to the {initials}_lb1-targetServer.
+14. Click on __Save__ and the first target endpoint is now pointing to the {initials}\_lb1-targetServer.
 
 <img src = "media/image35.png">
 

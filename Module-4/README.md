@@ -19,11 +19,11 @@ This workshop will be valuable to API developers, dev-ops engineers, architects,
 ## Workshop Agenda
 
 ### Module 4
-* Lab 1 - Route and Load Balancing across multiple API target backends using Target Server and Route Rule configurations [Link](./Lab%201)
-* Lab 2: API Monitoring & Security Dashboard (Note: these features are not turned on for Apigee Trial account orgs) [Link](./Lab%202)
+* Lab 1 - Route and Load Balancing across multiple API target backends using Target Server and Route Rule configurations [Link](./Labs/Lab%201)
+* Lab 2: API Monitoring & Security Dashboard (Note: these features are not turned on for Apigee Trial account orgs) [Link](./Labs/Lab%202)
 * Demo - Hosted Targets
 
-Let's get started with [Lab 1](./Lab%201).
+Let's get started with [Lab 1](./Labs/Lab%201).
 
 #### Apigee Community 
 If you have any questions/comments please visit https://community.apigee.com/index.html

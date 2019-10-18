@@ -41,7 +41,7 @@ For this lab, please ensure that you have an API Proxy with a [Spike Arrest poli
 ### If you do not already have the API Proxy
 
    If you do not already have the API Proxy, please complete the steps below:
-   * Download [this API Proxy bundle](../Resources/xx_Hipster-Products-API_Lab2.zip?raw=true).
+   * Download [this API Proxy bundle](../../Resources/xx_Hipster-Products-API_Lab2.zip?raw=true).
 
    * Under **Develop → API Proxies** click the **+ Proxy** button.
    ![image alt text](./media/AddProxyBtn.png)
@@ -63,7 +63,7 @@ For this lab, please ensure that you have an API Proxy with a [Spike Arrest poli
 
 ### If you already have the Hipster API Products proxy built from previous API Jam
 
-If you already have the Hipster API Products proxy built from API Jam [Module-1](../../Module-1) deployed in your Apigee Edge org, no other setup is required.
+If you already have the Hipster API Products proxy built from API Jam [Module-1](../../../Module-1) deployed in your Apigee Edge org, no other setup is required.
 
 4. Ensure that the **latest revision** (it may not be 'Revision 1' as shown below), of the API Proxy is deoployed to the `test` environment. Click the **Deployment** drop down and select the **test** environment to deploy the proxy to the test environment:
 
