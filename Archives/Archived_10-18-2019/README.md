@@ -1,4 +1,4 @@
-## Note: Please note that this is the supporting material for the older version of Apigee API Jam. For the latest version supporting materials, please head to the root [apijam repository](../..)
+## Note: Please note that this is the supporting material for the older version of Apigee API Jam. For the latest version supporting materials, please head to the root [apijam repository](../../README.md)
 
 # Apigee API Jam
 This is the supporting material for a one-day hands-on workshop that introduces developers to Apigee Edge. We call this event an "**Apigee API Jam**".
