@@ -1,0 +1,300 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id=""
+                  title=""
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="Lab 4 - Manage tiered API Product subscription through API call quotas" duration="0">
+        <p><strong>Last Updated:</strong> 2019-08-12</p>
+<p>Duration : 15 mins</p>
+<p>Persona : API Product Team &amp; API Dev Team</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Use Case" duration="0">
+        <h2 is-upgraded><strong>The concept of tiered API products in an API strategy</strong></h2>
+<h3 is-upgraded><strong>Freemium</strong></h3>
+<p>API tiering is a new look at API as a Product. With tiering you provide the base level (e.g. bronze) as a free option. This offer is an entry point to leverage your data offering in an upsell. The goal is to upsell to additional functional levels. This term is also known as <strong>&#34;freemium&#34;</strong>.</p>
+<h3 is-upgraded><strong>Provide more functionality for a cost</strong></h3>
+<p>The approach it follows a very basic approach – offer basic functions or call quotas as an entry level and if more data access or more functionality is required, offer this for a fee.</p>
+<p>This gives developers the chance to have a working prototype and explore your API in a real life scenario before making an informed purchase decision.</p>
+<h2 is-upgraded><strong>How can Apigee help</strong></h2>
+<p>Apigee offers the concept of API Products abstracted from the functional logic of API proxies. The proxies can access the limits defined in API Products. This way the API product team can focus on the business logic (e.g. setting quotas per product) while the API development team works with these values to implement the parametrized behaviour.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Pre-requisites" duration="0">
+        <p>Pre-reqs are met if you have followed Lab 1 and 2.</p>
+<p>The minimum for this lab is to have the following:</p>
+<ul>
+<li>Deployed API proxy with a &#34;Verify API Key&#34; policy</li>
+<li>Developer for who we can register an App with our API product.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create API Products (Bronze, Silver, Gold)" duration="0">
+        <p>In this lab we will create different API products that call the same API proxy but with different quotas attached to it.</p>
+<ul>
+<li>Go to Apigee Edge and log in. This is the Edge management UI:</li>
+</ul>
+<p><a href="https://apigee.com/edge" target="_blank"><paper-button class="colored" raised>https://apigee.com/edge</paper-button></a></p>
+<ul>
+<li>Select <strong>Publish → API Products</strong></li>
+<li>Click <strong>+API Product</strong></li>
+</ul>
+<p class="image-container"><img style="width: 391.66px" src="img/1ae2aec8f31ca12.png"></p>
+<p class="image-container"><img style="width: 624.00px" src="img/e3aefd2af101f07c.png"></p>
+<ul>
+<li>Populate the following fields</li>
+<li>Section: Product details</li>
+<li>Name: {yourInitials}_Hipster-Products-API-Product</li>
+<li>Display name: Hipster Products API Product Bronze</li>
+<li>Description: Free version of the Hipster Product API</li>
+<li>Environment: test</li>
+<li>Access: Public</li>
+<li>Quota: <strong>5</strong> requests every <strong>1 Minute</strong></li>
+<li>Section: API resources</li>
+<li>Click the <strong>Add a proxy</strong> link</li>
+</ul>
+<p class="image-container"><img style="width: 624.00px" src="img/bb29c32450d9d83a.png"></p>
+<ul>
+<li>Select <strong>{yourInitials}_Hipster-Products-API Proxy</strong> and click <strong>Add</strong></li>
+</ul>
+<p class="image-container"><img style="width: 417.00px" src="img/6fc1fe5f79156e96.png"></p>
+<p>API products have a set of fields called &#34;Quota&#34; that allow you to configure how many requests per number of time periods (e.g. 5 requests per 1 second) you want to allow. Just configuring this does NOT enforce quotas though! This is just a definition that the quota policy that we define in the next steps picks up dynamically.</p>
+<ul>
+<li>Click <strong>Save</strong> to create the API Product</li>
+</ul>
+<p>We now create 2 similar products that represent our Silver and Gold Products with different Quota settings. To create another API Product just follow these steps:</p>
+<ul>
+<li>Click <strong>Publish → API Products</strong></li>
+<li>Click <strong>+API Product</strong></li>
+<li>For the <strong>Silver Product</strong> populate the following fields</li>
+<li>Section: Product details</li>
+<li>Name: {yourInitials}_Hipster-Products-API-Product-Silver</li>
+<li>Display name: Hipster Products API Product Silver</li>
+<li>Description: Free version of the Hipster Product API</li>
+<li>Environment: test</li>
+<li>Access: Public</li>
+<li>Quota: <strong>5</strong> requests every <strong>1 Minute</strong></li>
+<li>Section: API resources</li>
+<li>Click the <strong>Add a proxy</strong> link</li>
+<li>Select <strong>{yourInitials}_Hipster-Products-API Proxy</strong> and click <strong>Add</strong></li>
+<li>For the <strong>Gold Product</strong> populate the following fields</li>
+<li>Section: Product details</li>
+<li>Name: {yourInitials}_Hipster-Products-API-Product-Gold</li>
+<li>Display name: Hipster Products API Product Gold</li>
+<li>Description: Deluxe version of the Hipster Product API</li>
+<li>Environment: test</li>
+<li>Access: Public</li>
+<li>Quota: <strong>9000</strong> requests every <strong>1 Minute</strong></li>
+<li>Section: API resources</li>
+<li>Click the <strong>Add a proxy</strong> link</li>
+<li>Select <strong>{yourInitials}_Hipster-Products-API Proxy</strong> and click <strong>Add</strong></li>
+</ul>
+<p>Now we should end up with 3 API Products resembling our Product tier strategy.</p>
+<p class="image-container"><img style="width: 624.00px" src="img/5e6dcacb5e07e280.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create an App for our Products" duration="0">
+        <ul>
+<li>Select <strong>Publish → Apps</strong></li>
+<li>Click <strong>+API Product</strong></li>
+</ul>
+<p class="image-container"><img style="width: 360.77px" src="img/6798d20d9fa05f30.png"></p>
+<p class="image-container"><img style="width: 624.00px" src="img/a7f3310c2fa9793e.png"></p>
+<ul>
+<li>Populate the following fields</li>
+<li>Section: App Details</li>
+<li>Name: {yourInitials}_Hipster Android App Free</li>
+<li>Display name: Hipster Android App Free</li>
+<li>Developer: Chose any existing Developer</li>
+<li>Section: Credentials</li>
+<li>Click <strong>Add product</strong></li>
+</ul>
+<p class="image-container"><img style="width: 624.00px" src="img/34532d87a409022e.png"></p>
+<ul>
+<li>Select <strong>Hipster Product API Product Bronze </strong>and click <strong>Add</strong></li>
+</ul>
+<p class="image-container"><img style="width: 363.34px" src="img/4d8a86aa9e735519.png"></p>
+<ul>
+<li>Click <strong>Create</strong> to create the App</li>
+<li>Note down the Key for later by clicking on &#34;Show&#34; in the App properties.</li>
+</ul>
+<p class="image-container"><img style="width: 624.00px" src="img/e37eb30b71698880.png"></p>
+<p>Repeat the process for the Apps that use the Silver and Gold tier as well, with using these values:</p>
+<ul>
+<li>App using the Silver API Product</li>
+<li>Section: App Details</li>
+<li>Name: {yourInitials}_Hipster Android App Basic</li>
+<li>Display name: Hipster Android App Basic</li>
+<li>Developer: Chose any existing Developer</li>
+<li>Section: Credentials</li>
+<li>Click <strong>Add product</strong></li>
+<li>Select <strong>Hipster Product API Product Silver </strong>and click <strong>Add</strong></li>
+<li>App using the Gold API Product</li>
+<li>Section: App Details</li>
+<li>Name: {yourInitials}_Hipster Android App Deluxe</li>
+<li>Display name: Hipster Android App Deluxe</li>
+<li>Developer: Chose any existing Developer</li>
+<li>Section: Credentials</li>
+<li>Click <strong>Add product</strong></li>
+<li>Select <strong>Hipster Product API Product Gold </strong>and click <strong>Add</strong></li>
+</ul>
+<p>You should end up having 3 Apps with 3 different API keys, that you have noted down.</p>
+<p class="image-container"><img style="width: 624.00px" src="img/778a2d503ca5e6.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Create and Configure Quota Policy" duration="0">
+        <p>As stated before, quotas are only enforced by adding a quota policy into your proxies. With the configuration of the API Product Quota fields in the API product this will populate the necessary variables that are available in your proxy, which then can be fed into a quota policy.</p>
+<ol type="1" start="1">
+<li>Click on <strong>Develop → API Proxies</strong> from side navigation menu. Open the existing API Proxy from the prerequisites.</li>
+<li>Verify that the policy for Verify API Key exists with the proper name. Click on the <strong>Policy Name</strong> and look at the XML configuration below.</li>
+</ol>
+<p class="image-container"><img style="width: 624.00px" src="img/51de0e77b6156c3d.png"></p>
+<ol type="1" start="3">
+<li>Click <strong>PreFlow</strong> and <strong>+ Step</strong> to add a new policy</li>
+</ol>
+<p class="image-container"><img style="width: 624.00px" src="img/4216b2d1c5268060.png"></p>
+<ol type="1" start="4">
+<li>Click <strong>Quota </strong>Policy and Populate the following fields</li>
+</ol>
+<ol type="1" start="1">
+<li><strong>Display Name: </strong>QU-ProductQuota</li>
+</ol>
+<p>Click <strong>Add </strong>to add the policy to your flow.</p>
+<p class="image-container"><img style="width: 624.00px" src="img/a7c032a40dd30e7d.png"></p>
+<ol type="1" start="5">
+<li>With the VerifyAPIKey policy that we have configured in our prerequisites <strong>VAK-VerifyKey</strong>, the following variables are populated after verification of an API key that has an API product with the quota fields set as 3 requests per 1 second:</li>
+</ol>
+<pre><code>verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.limit = 3
+verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.interval = 1
+verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.timeunit = second</code></pre>
+<p>The next step then is to set the<strong> QU-ProductQuota </strong>Quota policy to reference these variables and use this code in the <strong>Policy Configuration</strong></p>
+<pre><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;yes&#34;?&gt;
+&lt;Quota async=&#34;false&#34; continueOnError=&#34;false&#34; enabled=&#34;true&#34; name=&#34;QU-ProductQuota&#34; type=&#34;calendar&#34;&gt;
+    &lt;DisplayName&gt;QU-ProductQuota&lt;/DisplayName&gt;
+    &lt;Allow count=&#34;3&#34; countRef=&#34;verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.limit&#34;/&gt;
+    &lt;Interval ref=&#34;verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.interval&#34;&gt;1&lt;/Interval&gt;
+    &lt;TimeUnit ref=&#34;verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.timeunit&#34;&gt;minute&lt;/TimeUnit&gt;
+&lt;Identifier ref=&#39;verifyapikey.VAK-VerifyKey.client_id&#39;/&gt;
+    &lt;Distributed&gt;true&lt;/Distributed&gt;
+    &lt;Synchronous&gt;true&lt;/Synchronous&gt;
+    &lt;StartTime&gt;2019-01-01 12:00:00&lt;/StartTime&gt;
+&lt;/Quota&gt;</code></pre>
+<p class="image-container"><img style="width: 624.00px" src="img/5b49f6408c742c93.png"></p>
+<aside class="special"><p><strong>Note:</strong> If the field is not set in the API product, this would allow a default of 3 calls per minute</p>
+</aside>
+<ol type="1" start="6">
+<li>Click on <strong>Save</strong> after you have changed the policy in the previous step</li>
+</ol>
+<p class="image-container"><img style="width: 624.00px" src="img/1f20aab0b74f5f95.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Test the results" duration="0">
+        <p>Go to the API proxy and enter the trace tab so we can run some tests:</p>
+<ul>
+<li>Click <strong>Trace</strong></li>
+<li>Click <strong>Start Trace Session</strong></li>
+<li>Add the Bronze apikey value as a query parameter to the URL (e.g.: http://{yourapigeeorg}-test.apigee.net/v1/{yourInitials}_hipster-products-api?apikey=GYuZekimsQ2TLdWWMHkqB1poAquHaGsv</li>
+<li>Run a test by clicking the <strong>Send</strong> button multiple times</li>
+</ul>
+<p class="image-container"><img style="width: 624.00px" src="img/f8206f04e946873a.png"></p>
+<ul>
+<li>After 6 calls we see that our free quota of 5 calls is exceeded and the quota policy shows a red exclamation mark sign</li>
+</ul>
+<p class="image-container"><img style="width: 624.00px" src="img/21c474fb953f78ac.png"></p>
+<p>Now we switch API products and add the Silver apikey value from our App as a query parameter to the URL (e.g.: http://{yourapigeeorg}-test.apigee.net/v1/{yourInitials}_hipster-products-api?apikey=GYuZekimsQ2TLdWWMHkqB1poAquHaGsv</p>
+<ul>
+<li>Change your apikey parameter to match your Silver App credentials</li>
+<li>Run a test by clicking the <strong>Send</strong> button around 15 times before clicking <strong>Start Trace Session</strong></li>
+<li>Start the trace session and click the <strong>Send</strong> button a couple of times again before reaching your limit.</li>
+</ul>
+<p>Let&#39;s check out the trace result:</p>
+<ul>
+<li>Click on one of the successful trace results on the left (indicated by a green Status with 200)</li>
+<li>Click the quota policy icon in the Transaction Map</li>
+</ul>
+<p class="image-container"><img style="width: 624.00px" src="img/1ce49d0c900169ff.png"></p>
+<ul>
+<li>Here we see at the end of our calls that we only have one count available (ratelimit.QU-ProductQuota.available.count) out of the original 20 (ratelimit.QU-ProductQuota.allowed.count).</li>
+<li>Also have a look at the other variables available as part of the proxy flow.</li>
+</ul>
+<p>At this point, we will skip the Deluxe/Gold version of our product, but you get the idea, that your developers won&#39;t easily reach the limit with this one.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Quiz" duration="0">
+        <ul>
+<li>What would happen if you leave out the Identifier Tag in the Quota Policy?</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Summary" duration="0">
+        <p>In this lab you have created 3 products aligned with your API product strategy to offer a tiered model and have different quotas attached to each product. We have not defined the limits in our API proxies but made the same proxy available as different API products that define the quota amount.</p>
+<h2 class="checklist" is-upgraded><strong>What we&#39;ve covered</strong></h2>
+<ul class="checklist">
+<li>Setup a freemium model</li>
+<li>Define quotas in API products</li>
+<li>Reference the quotas in API proxies</li>
+<li>Test our setup</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="References" duration="0">
+        <h2 is-upgraded><strong>Apigee Docs Links</strong></h2>
+<p><a href="https://docs.apigee.com/api-platform/reference/policies/quota-policy" target="_blank">https://docs.apigee.com/api-platform/reference/policies/quota-policy</a></p>
+<h2 is-upgraded><strong>Videos (4mv4d)</strong></h2>
+<p><a href="https://www.youtube.com/watch?v=z8Rj_VzSbh4" target="_blank">https://www.youtube.com/watch?v=z8Rj_VzSbh4</a></p>
+<p><a href="https://www.youtube.com/watch?v=1RDDpH0wOdc" target="_blank">https://www.youtube.com/watch?v=1RDDpH0wOdc</a></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>
