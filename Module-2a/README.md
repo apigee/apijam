@@ -1,4 +1,4 @@
-# Apigee API Jam - Module 2a - API Security
+# Module 2a - API Security Part 1
 Apigee’s API Jam Module 2a is the first part of a hands-on workshop that will jumpstart your understanding of API security. In this module, you will walk through two lab exercises that will help you throttle, protect, and secure your APIs by utilizing modern security principles with OAuth 2.0. 
 
 API developers and architects who want to build a secure API, this workshop is for you!

@@ -1,4 +1,4 @@
-# Apigee API Jam - Module 4 - Advanced API Management Part 2
+# Module 4 - Advanced API Management Part 2
 
 In Apigee’s API Jam [Module 1](../Module-1), we saw how to suppor the overal API lifecycle management for your APIs with Apigee Edge.
 This module - Apigee’s API Jam Module 3 - is the second part of a hands-on workshop where you will delve further into the advanced features for API lifecycle management that Apigee Edge has to offer. In this module, you will walk through two lab exercises that will help you...

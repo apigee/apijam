@@ -1,4 +1,4 @@
-# Apigee API Jam Module 2b - Security Part Two
+# Module 2b - API Security Part 2
 Apigee’s API Jam Module 2b is a hands-on workshop that will further deepen your understanding of API security. You will walk through three additional lab exercises that will help you protect against threats, and secure your APIs by utilizing modern security principles including JWT as well as show how to integrate OAuth 2.0 flows with external identity providers. 
 
 ## Who should attend?

@@ -5,12 +5,13 @@ These hands-on workshops take into account the experience of hundreds of Apigee 
 
 All of the material here is released under the [Apache 2.0 license](./LICENSE.md)
 
+## Modules
+
 This material is divided into different API Jam modules, based on which Apigee Edge funtionalities they showcase, the needs of different API program stakeholder, and varying degrees of complexity.
 
-## Modules
-** **
+**Note - If you are using this repository during a virtual or in-person API Jam, please reference the approrite module(s) based on instructor instructions.**
 
-### [Module 1](./Module-1) 
+### [Module 1 - API Management](./Module-1) 
 * Lab 1 - Create a Reverse Proxy with OpenAPI specification
 * Lab 2 - Apps, API Products & API Keys
 * Lab 3 - Manage tiered API Product subscription through API call quotas
@@ -19,21 +20,21 @@ This material is divided into different API Jam modules, based on which Apigee E
 
 ** **
 
-### [Module 2a](./Module-2a) 
+### [Module 2a - API Security Part 1](./Module-2a) 
 * Introduction to API Security
 * Lab 1 - Throttle your API Traffic to prevent DoS, using Apigee Spike Arrest
 * Lab 2 - OAuth 2.0 based API security (OAuth 2.0 Client Credentials)
 
 ** **
 
-### [Module 2b](./Module-2b) 
+### [Module 2b - API Security Part 2](./Module-2b) 
 * Lab 3 - Protect your APIs against content-based threats
 * Lab 4 - JWT based API security
 * Lab 5 - OAuth 2.0 based API security using Apigee as OAuth server, and an External Identity Provider for App end-user identity (OAuth 2.0 Password Grant Type)
 
 ** **
 
-### [Module 3](./Module-3) 
+### [Module 3 - Advanced API Management Part 1](./Module-3) 
 * Lab 1 - Global policy management using Shared Flows, Flow Hooks and Flow Callouts
 * Lab 2 - Build composite APIs using Service Callouts and Proxy Chaining
 * Lab 3 - API Message logging using the Apigee Stackdriver Extension
@@ -41,9 +42,9 @@ This material is divided into different API Jam modules, based on which Apigee E
 
 ** **
 
-### [Module 4](./Module-4) 
+### [Module 4 - Advanced API Management Part 2](./Module-4) 
 * Lab 1 - Route and Load Balancing across multiple API target backends using Target Server and Route Rule configurations
-* OPTIONAL - Lab 2: API Monitoring & Security Dashboard (Optional as these features are not turned on for Trial orgs)
+* Lab 2: API Monitoring & Security Dashboard (Note: API Monitoring & Security Dashboard features are not turned on for Trial orgs)
 * Demo - Hosted Targets
 
 ** **

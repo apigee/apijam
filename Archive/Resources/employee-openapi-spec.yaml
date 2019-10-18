@@ -1,0 +1,176 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Employees API
+  contact:
+    name: Apigee
+    email: support@apigee.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: cosafinity-prod.apigee.net
+basePath: /v1/employees
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /:
+    get:
+      summary: Get all Employees
+      description: This endpoint returns a list of all Employees as an array.
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/EmployeesArray'
+    post:
+      summary: Create a new Employee
+      description: This endpoint will create a new Employee.
+      parameters:
+        - name: body
+          required: true
+          description: an Employee oject
+          in: body
+          schema:
+            $ref: '#/definitions/Employee'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Employee'
+  '/{employee-uuid}':
+    get:
+      summary: Get an Employee with given UUID
+      description: This endpoint returns an Employee.
+      parameters:
+        - name: employee-uuid
+          in: path
+          required: true
+          description: UUID of an Employee
+          type: integer
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Employee'
+    put:
+      summary: Update an Employee with given UUID
+      description: This endpoint will update an existing Employee.
+      parameters:
+        - name: employee-uuid
+          in: path
+          required: true
+          description: UUID of a Employee
+          type: integer
+        - name: body
+          required: true
+          description: an Employee oject
+          in: body
+          schema:
+            $ref: '#/definitions/Employee'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Employee'
+    delete:
+      summary: Delete an Employee with given UUID
+      description: This endpoint will delete an existing Employee.
+      parameters:
+        - name: employee-uuid
+          in: path
+          required: true
+          description: UUID of a Employee
+          type: integer
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Employee'
+definitions:
+  EmployeesArray:
+    type: array
+    items:
+      type: object
+      properties:
+        uuid:
+          type: string
+        type:
+          type: string
+        name:
+          type: string
+        created:
+          type: integer
+        modified:
+          type: integer
+        birthDate:
+          type: string
+        city:
+          type: string
+        department:
+          type: string
+        email:
+          type: string
+        gender:
+          type: string
+        isActive:
+          type: boolean
+        metadata:
+          type: object
+          properties:
+            path:
+              type: string
+            size:
+              type: integer
+        phone:
+          type: string
+        postal:
+          type: integer
+        state:
+          type: string
+        street:
+          type: string
+  Employee:
+    type: object
+    properties:
+      uuid:
+        type: string
+      type:
+        type: string
+      name:
+        type: string
+      created:
+        type: integer
+      modified:
+        type: integer
+      birthDate:
+        type: string
+      city:
+        type: string
+      department:
+        type: string
+      email:
+        type: string
+      gender:
+        type: string
+      isActive:
+        type: boolean
+      metadata:
+        type: object
+        properties:
+          path:
+            type: string
+          size:
+            type: integer
+      phone:
+        type: string
+      postal:
+        type: integer
+      state:
+        type: string
+      street:
+        type: string
