@@ -60,14 +60,14 @@ For further information, see "[Adding CORS support to an API proxy](https://docs
 
 3. Select the **Assign Message** option and add the policy with the following details:
 
-    Display Name: `Set CORS Response Headers`
-    Name: `Set-CORS-Response-Headers`
+      Display Name: `Set CORS Response Headers`
+      Name: `Set-CORS-Response-Headers`
 
    ![image alt text](./media/AddAMCORSHeaders.png)
 
    Edit the policy configuration to the following:
 
-       ```
+      ```
        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
        <AssignMessage async="false" continueOnError="false" enabled="true" name="Set-CORS-Response-Headers">
         <DisplayName>Set CORS Response Headers</DisplayName>
@@ -163,23 +163,53 @@ For further information, see "[Adding CORS support to an API proxy](https://docs
    
    This ensures that, in the event of any API Proxy error, CORS headers are sent back correctly, and CORS Preflight OPTIONS requests are always handled. Eg. When API Key validation fails.
 
+11. Select the **'PreFlow'** flow under **'Proxy Endpoint' -> 'default'** from the left panel, and click **+Step** on the request pipeline.
+
+![image alt text](./media/AddStepForRemoveAPIKey.png)
+
+12. Select the **Assign Message** policy and add the policy with the following details:
+
+      Display Name: `Remove API Key`
+      Name: `Remove-API-Key`
+
+![image alt text](./media/AddRemoveAPIKeyPolicy.png)
+
+  Policy Configuration:
+      <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+      <AssignMessage async="false" continueOnError="false" enabled="true" name="Remove-API-Key">
+        <DisplayName>Remove API Key</DisplayName>
+        <Remove>
+          <QueryParams>
+              <QueryParam name="apikey"/>
+          </QueryParams>
+        </Remove>
+        <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+        <AssignTo createNew="false" transport="http" type="request"/>
+      </AssignMessage>
+
+![image alt text](./media/AddRemoveAPIKeyPolicyConfig.png)
+
+13. Click **Save**.
+
 ## Update the Open API Spec
 
 In order to ensure that we have an updated OpenAPI Spec that accurately describes the API endpoint exposed through our API Proxy, we must first modify the spec - specifically the `host`, `basepath`, `securityDefinitions` and `security` properties. To do this, navigate to **Develop → Specs** on the main menu, select the spec that we previously imported in Lab 1, and modify the the `host`, `basepath`, `securityDefinitions` and `security` properties as shown below:
 
-    `host: {{your API proxy host}}`  _<--- In Apigee Trial orgs this will be {{your org}}-{{environment}}.apigee.net_
-    `basepth: /v1/{{your initials}}_hipster-products-api`
-    ```
-        securityDefinitions:
-            APIKeyQuery:
-                type: "apiKey"
-                in: "query"
-                name: "apikey"
-        security:
-        - APIKeyQuery: []
-    ```
+    host: {{your API proxy host}}  
+    basePath: /v1/{{your initials}}_hipster-products-api
+    securityDefinitions:
+      APIKeyQuery:
+        type: "apiKey"
+        in: "query"
+        name: "apikey"
+    security:
+      - APIKeyQuery: []
+    schemes:
+      - https
 
-    ![image alt text](./media/EditSpec.png)
+  Where {{your API proxy host}} = {{your org}}-{{environment}}.apigee.net, in Apigee Trial orgs 
+
+  ![image alt text](./media/EditSpec.png)
 
 ## Create a Developer Portal
 

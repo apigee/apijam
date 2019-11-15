@@ -130,13 +130,7 @@ For this lab, you will need an API proxy that is not currently secured.  If you 
 
            ![image alt text](./media/AddProductProxy.png)
 
-           * Select your Hipster Products API Proxy and click **Add**.
-
-           ![image alt text](./media/ProductProxySelect.png)
-
-           * Click the **Add a Path** link, select the `/` option for you Hipster Products API Proxy and click **Add**.
-
-           ![image alt text](./media/AddPath1.png)
+           * In the popup window, select the **API Proxy & path** radio button. Then select your Hipster Products API Proxy (with deployed revision), select the `/` option for Path, and click **Add**.
 
            ![image alt text](./media/AddPath2.png)
 
