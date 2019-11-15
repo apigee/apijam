@@ -216,11 +216,10 @@ Click **Add** to add the policy to your flow.
 
 5. With the VerifyAPIKey policy that we have configured in our prerequisites **VAK-VerifyKey**, the following variables are populated after verification of an API key that has an API product with the quota fields set as 3 requests per 1 second:
 
-```
-verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.limit = 3
-verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.interval = 1
-verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.timeunit = second
-```
+* verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.limit = 3
+* verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.interval = 1
+* verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.timeunit = second
+
 
 The next step then is to set the **QU-ProductQuota** Quota policy to reference these variables and use this code in the **Policy Configuration**
 
@@ -288,7 +287,13 @@ At this point, we will skip the Deluxe/Gold version of our product, but you get 
 
 # Quiz
 
-* What would happen if you leave out the Identifier Tag in the Quota Policy?
+1. What would happen if you leave out the Identifier Tag in the Quota Policy?
+
+2. What would happen if the Quota Policy were placed before the Verify API Key policy?
+
+3. In the configuration we provided the ‘Distributed’ and ‘Synchronous’ attributes were both set to ‘true’. What is the implication if we set these to ‘false’?
+
+4. How would you configure the quota so that POST calls are counted as 2 calls for the purposes of evaluating the quota?
 
 # Summary
 
