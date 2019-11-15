@@ -103,7 +103,7 @@ For further information, see "[Adding CORS support to an API proxy](https://docs
         <Properties/>
         <Set>
             <Headers>
-                <Header name="Access-Control-Allow-Origin">{request.header.origin}</Header>
+                <Header name="Access-Control-Allow-Origin">*</Header>
                 <Header name="Access-Control-Allow-Headers">origin, x-requested-with, accept, content-type</Header>
                 <Header name="Access-Control-Max-Age">3628800</Header>
                 <Header name="Access-Control-Allow-Methods">GET, PUT, POST, DELETE</Header>
@@ -534,4 +534,4 @@ You’ve learned how to do the following:
 
 How did you link this lab? Rate [here](https://goo.gl/forms/j33WG2U0NFf02QHi1).
 
-Now go to [Lab-4](../Lab%205)
+Now go to [Lab-5](../Lab%205)
