@@ -174,7 +174,8 @@ For further information, see "[Adding CORS support to an API proxy](https://docs
 
 ![image alt text](./media/AddRemoveAPIKeyPolicy.png)
 
-  Policy Configuration:
+  * Policy Configuration:
+      ```
       <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
       <AssignMessage async="false" continueOnError="false" enabled="true" name="Remove-API-Key">
         <DisplayName>Remove API Key</DisplayName>
@@ -186,6 +187,7 @@ For further information, see "[Adding CORS support to an API proxy](https://docs
         <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
         <AssignTo createNew="false" transport="http" type="request"/>
       </AssignMessage>
+      ```
 
 ![image alt text](./media/AddRemoveAPIKeyPolicyConfig.png)
 
