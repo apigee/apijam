@@ -54,11 +54,39 @@ For further information, see "[Adding CORS support to an API proxy](https://docs
 
     ![image alt text](./media/OpenProxyDevelop.png)
 
-2. Select the '**+**' option in the **Policies** left panel, to add a new policy.
+2. Select the **'PreFlow'** flow under **'Proxy Endpoint' -> 'default'** from the left panel, and click **+Step** on the request pipeline.
+
+![image alt text](./media/AddStepForRemoveAPIKey.png)
+
+3. Select the **Assign Message** policy and add the policy with the following details:
+
+      Display Name: `Remove API Key`
+      Name: `Remove-API-Key`
+
+![image alt text](./media/AddRemoveAPIKeyPolicy.png)
+
+  * Policy Configuration:
+      ```
+      <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+      <AssignMessage async="false" continueOnError="false" enabled="true" name="Remove-API-Key">
+        <DisplayName>Remove API Key</DisplayName>
+        <Remove>
+          <QueryParams>
+              <QueryParam name="apikey"/>
+          </QueryParams>
+        </Remove>
+        <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+        <AssignTo createNew="false" transport="http" type="request"/>
+      </AssignMessage>
+      ```
+
+![image alt text](./media/AddRemoveAPIKeyPolicyConfig.png)
+
+4. Select the '**+**' option in the **Policies** left panel, to add a new policy.
 
     ![image alt text](./media/AddPolicy.png)
 
-3. Select the **Assign Message** option and add the policy with the following details:
+5. Select the **Assign Message** option and add the policy with the following details:
 
       Display Name: `Set CORS Response Headers`
       Name: `Set-CORS-Response-Headers`
@@ -87,7 +115,7 @@ For further information, see "[Adding CORS support to an API proxy](https://docs
        ```
    ![image alt text](./media/EditAMCORSHeadersPolicy.png)
 
-4. Repeat steps 2 & 3 above add another **Assign Message** policy, with the following details:
+6. Repeat steps 2 & 3 above add another **Assign Message** policy, with the following details:
     
     Display Name: `Set OPTIONS Status Code`
     Name: `Set-OPTIONS-Status-Code`
@@ -106,17 +134,17 @@ For further information, see "[Adding CORS support to an API proxy](https://docs
             <AssignTo createNew="false" transport="http" type="request"/>
         </AssignMessage>
         ```
-5. Select the **'PreFlow'** flow under **'Target Endpoint' -> 'default'** from the left panel. Then drag and drop the **'Set CORS Response Headers'** policy to the response pipeline of the flow, as shown below:
+7. Select the **'PreFlow'** flow under **'Target Endpoint' -> 'default'** from the left panel. Then drag and drop the **'Set CORS Response Headers'** policy to the response pipeline of the flow, as shown below:
 
    ![image alt text](./media/DragDropCORSHeadersTargetRespPreFlow.png)
 
    This ensures that CORS headers are returned on any valid API call.
 
-6. Select the '**+**' button to add a flow to **'Proxy Endpoint' -> 'default'** on the left panel.
+8. Select the '**+**' button to add a flow to **'Proxy Endpoint' -> 'default'** on the left panel.
 
    ![image alt text](./media/AddProxyEndpointFlow.png)
 
-7. Select the **Manual** entry tab and enter the following flow details:
+9. Select the **Manual** entry tab and enter the following flow details:
    
       Flow Name: `OptionsPreFlight`
       Description: `For CORS preflight requests`
@@ -129,13 +157,13 @@ For further information, see "[Adding CORS support to an API proxy](https://docs
 
    This flow handles CORS Preflight OPTIONS requests.
 
-8. Select the **'OptionsPreFlight'** flow under **'Proxy Endpoint' -> 'default'** from the left panel. Then drag and drop the **'Set CORS Response Headers'** policy to the response pipeline of the flow, as shown below:
+10. Select the **'OptionsPreFlight'** flow under **'Proxy Endpoint' -> 'default'** from the left panel. Then drag and drop the **'Set CORS Response Headers'** policy to the response pipeline of the flow, as shown below:
 
    ![image alt text](./media/DragDropCORSHeadersOPTIONSPreflight.png)
 
    This ensures that CORS headers are returned on CORS Preflight OPTIONS requests.
 
-9. Select **'Proxy Endpoint -> default'** on the left panel. Scroll down to the bottom of the configuration, and add the following [RouteRule](https://docs.apigee.com/api-platform/fundamentals/understanding-routes#determiningtheurlofthetargetendpoint) setting before the 'default' rule, as shown below:
+11. Select **'Proxy Endpoint -> default'** on the left panel. Scroll down to the bottom of the configuration, and add the following [RouteRule](https://docs.apigee.com/api-platform/fundamentals/understanding-routes#determiningtheurlofthetargetendpoint) setting before the 'default' rule, as shown below:
 
    ![image alt text](./media/OPTIONSRouteRule.png)
 
@@ -146,7 +174,7 @@ For further information, see "[Adding CORS support to an API proxy](https://docs
     ```
    This RouteRule ensures that CORS Preflight OPTIONS requests are not forwarded to the API target service.
 
-10. Select **'Proxy Endpoint -> default'** on the left panel. Scroll to the top of the configuration, and add the following [DefaultFaultRule](https://docs.apigee.com/api-platform/fundamentals/fault-handling#creatingfaultrules-creatingadefaultfaultrule) setting, as shown below:
+12. Select **'Proxy Endpoint -> default'** on the left panel. Scroll to the top of the configuration, and add the following [DefaultFaultRule](https://docs.apigee.com/api-platform/fundamentals/fault-handling#creatingfaultrules-creatingadefaultfaultrule) setting, as shown below:
 
     ```
     <DefaultFaultRule name="DefaultFaultRule">
@@ -162,34 +190,6 @@ For further information, see "[Adding CORS support to an API proxy](https://docs
     ```
    
    This ensures that, in the event of any API Proxy error, CORS headers are sent back correctly, and CORS Preflight OPTIONS requests are always handled. Eg. When API Key validation fails.
-
-11. Select the **'PreFlow'** flow under **'Proxy Endpoint' -> 'default'** from the left panel, and click **+Step** on the request pipeline.
-
-![image alt text](./media/AddStepForRemoveAPIKey.png)
-
-12. Select the **Assign Message** policy and add the policy with the following details:
-
-      Display Name: `Remove API Key`
-      Name: `Remove-API-Key`
-
-![image alt text](./media/AddRemoveAPIKeyPolicy.png)
-
-  * Policy Configuration:
-      ```
-      <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-      <AssignMessage async="false" continueOnError="false" enabled="true" name="Remove-API-Key">
-        <DisplayName>Remove API Key</DisplayName>
-        <Remove>
-          <QueryParams>
-              <QueryParam name="apikey"/>
-          </QueryParams>
-        </Remove>
-        <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
-        <AssignTo createNew="false" transport="http" type="request"/>
-      </AssignMessage>
-      ```
-
-![image alt text](./media/AddRemoveAPIKeyPolicyConfig.png)
 
 13. Click **Save**.
 
