@@ -214,11 +214,11 @@ Click **Add** to add the policy to your flow.
 
 ![image alt text](media/image_13.png)
 
-5. With the VerifyAPIKey policy that we have configured in our prerequisites **VAK-VerifyKey**, the following variables are populated after verification of an API key that has an API product with the quota fields set as 3 requests per 1 second:
+5. With the VerifyAPIKey policy that we have configured in our prerequisites **Verify-API-Key**, the following variables are populated after verification of an API key that has an API product with the quota fields set as 3 requests per 1 second:
 
-* verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.limit = 3
-* verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.interval = 1
-* verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.timeunit = second
+* verifyapikey.Verify-API-Key.apiproduct.developer.quota.limit = 3
+* verifyapikey.Verify-API-Key.apiproduct.developer.quota.interval = 1
+* verifyapikey.Verify-API-Key.apiproduct.developer.quota.timeunit = second
 
 
 The next step then is to set the **QU-ProductQuota** Quota policy to reference these variables and use this code in the **Policy Configuration**
@@ -227,10 +227,10 @@ The next step then is to set the **QU-ProductQuota** Quota policy to reference t
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Quota async="false" continueOnError="false" enabled="true" name="QU-ProductQuota" type="calendar">
     <DisplayName>QU-ProductQuota</DisplayName>
-    <Allow count="3" countRef="verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.limit"/>
-    <Interval ref="verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.interval">1</Interval>
-    <TimeUnit ref="verifyapikey.VAK-VerifyKey.apiproduct.developer.quota.timeunit">minute</TimeUnit>
-    <Identifier ref='verifyapikey.VAK-VerifyKey.client_id'/>
+    <Allow count="3" countRef="verifyapikey.Verify-API-Key.apiproduct.developer.quota.limit"/>
+    <Interval ref="verifyapikey.Verify-API-Key.apiproduct.developer.quota.interval">1</Interval>
+    <TimeUnit ref="verifyapikey.Verify-API-Key.apiproduct.developer.quota.timeunit">minute</TimeUnit>
+    <Identifier ref='verifyapikey.Verify-API-Key.client_id'/>
     <Distributed>true</Distributed>
     <Synchronous>true</Synchronous>
     <StartTime>2019-01-01 12:00:00</StartTime>
