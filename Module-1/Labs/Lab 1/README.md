@@ -26,7 +26,7 @@ In this lab, we will see how to
 # Pre-requisites
 
 * Basic understanding of [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification) (Swagger)
-* Access to a HTTP client to test the API (eg. cURL, Postman, etc.). If you do not have access to one, you can use [this REST Client](https://apigee-rest-client.appspot.com/) in a browser window.
+* Access to a HTTP client to test the API (eg. cURL, Postman, etc.). If you do not have access to one, you can use the [Apigee Trace Tool](https://docs.apigee.com/api-platform/debug/using-trace-tool-0).
 
 # Instructions
 
@@ -58,7 +58,7 @@ First, we are going to design and create an OpenAPI specification for the differ
 
 ![image alt text](./media/image_3.png)
 
-6. Click on **{your-initials}**_hipster_products_api_spec from the list to access Open API spec editor & interactive documentation that lists API details & API Resources.
+6. Click on **{your-initials}**\_hipster_products_api_spec from the list to access Open API spec editor & interactive documentation that lists API details & API Resources.
 
 ![image alt text](./media/image_4.png)
 
@@ -76,7 +76,7 @@ First, we are going to design and create an OpenAPI specification for the differ
 
 ![image alt text](./media/image_7.png)
 
-4. You should see a popup with list of Specs. Select **{your-initials}**_hipster_products_api_spec and click **Select.** 
+4. You should see a popup with list of Specs. Select **{your-initials}**\_hipster_products_api_spec and click **Select.** 
 
 ![image alt text](./media/image_8.png)
 
@@ -86,9 +86,9 @@ First, we are going to design and create an OpenAPI specification for the differ
 
 6. Enter details in the proxy wizard. Replace **{your-initials}** with the initials of your name. 
 
-    * Proxy Name: **{your_initials}**_Hipster-Products-API
+    * Proxy Name: **{your_initials}**\_Hipster-Products-API
 
-    * Proxy Base Path: /v1/**{your_initials}**_hipster-products-api
+    * Proxy Base Path: /v1/**{your_initials}**\_hipster-products-api
 
     * Existing API: Observe the field value which is auto filled from OpenAPI Spec.
 
@@ -116,12 +116,12 @@ First, we are going to design and create an OpenAPI specification for the differ
 
 ![image alt text](./media/image_15.png)
 
-13. *Congratulations!* ...You have now built a reverse proxy for an existing backend service. You should see the proxy **Overview** screen.
+13. *Congratulations!* ...You have now built a reverse proxy for an existing backend service. You should see the proxy **Overview** tab.
 
 ![image alt text](./media/image_16.png)
 
 ## Test the API Proxy
-Let us test the newly built API proxy. You can use a terminal HTTP client like cURL, or any browser based client like the [Sample REST Client Here](https://apigee-rest-client.appspot.com/). 
+Let us test the newly built API proxy. You can use any HTTP client like cURL or Postman, or the [Apigee Trace Tool](https://docs.apigee.com/api-platform/debug/using-trace-tool-0). 
 
 ### Using cURL
 
@@ -132,19 +132,27 @@ env = Environment where API is deployed
 curl -X GET "https://{{org}}-{{env}}.apigee.net/{{your initials}}_hipster-products-api/products"
 ```
 
-### Using the Sample REST Client:
+### Using Trace Tool:
 
-1. Open the REST Client on a new browser window.  
+* Navigate to your proxy's **Trace** tab.
 
-2. Copy the URL for your API proxy. 
+* Ensure that the deployed API revision is selected.
 
-![image alt text](./media/image_17.png)
+* Hit **Start Trace Session**.
 
-3. Paste the link into the REST Client. Add resource path `/products` and make a GET call.
+![image alt text](./media/trace-tool-start.png)  
 
-4. You should see a success response similar to this -
+* Wait for Trace session to start.
 
-![image alt text](./media/image_19.png)
+* Modify the URL to send to a valid API resource - append a '/products' to the end of the URL.
+
+* Hit 'Send'.
+
+![image alt text](./media/trace-tool-send.png)
+
+* You will see that the API proxy recieved the request and sent back a HTTP status 200 response which was logged by the Trace session. You can click on the step shown below to view the response body.
+
+![image alt text](./media/trace-tool-response.png)
 
 
 ## Save the API Proxy
