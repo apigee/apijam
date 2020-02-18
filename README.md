@@ -11,7 +11,7 @@ All of the material here is released under the [Apache 2.0 license](./LICENSE.md
 
 This material is divided into different API Jam modules, based on which Apigee Edge funtionalities they showcase, the needs of different API program stakeholder, and varying degrees of complexity.
 
-**Note - If you are using this repository during a virtual or in-person API Jam, please reference the approrite module(s) based on instructor instructions.**
+**Note - If you are using this repository during a virtual or in-person API Jam, please reference the appropriate module(s) based on instructor instructions.**
 
 ### [Module 1 - API Management](./Module-1) 
 * Lab 1 - Create a Reverse Proxy with OpenAPI specification
