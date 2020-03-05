@@ -116,20 +116,23 @@ Now that we have configured the end user credentials in Okta, and the API Proxy 
 
 ![image alt text](./media/image_14.png)
 
-5. Send the following token generation request to the access token endpoint, using a terminal or a [REST client](https://apigee-rest-client.appspot.com):
+5. Send the following token generation request to the access token endpoint, using a terminal or a [REST client](https://apigee-restclient.appspot.com):
 
 ```
 POST /oauth-ext/token HTTP/1.1
 Host: {{org}}-{{env}}.apigee.net
 Content-Type: application/x-www-form-urlencoded
 Accept: application/json
+Authorization: {{Base 64 encoded value of Key:Secret, where Key & Secret are the ones you just noted down}}
 
-grant_type=password&user={{okta_user}}&password={{okta_password}}&client_id={{app_client_key}}&client_secret={{app_client_secret}}
+grant_type=password&user={{okta_user}}&password={{okta_password}}
 ```
 
 * Replace {{org-name}} with your actual Apigee org name, and {{env}} with the deployment environment for your proxy (eg. test)
 
-* Replace {{app_client_key}} and {{app_client_secret}} with the Key and Secret you just noted down
+* To obtain a base64 encoded value of 'Key:Secret', you can utilize an open tool like Gsuite Toolbox:
+
+![iamge alt text](./media/gsuitetoolbox_base64_encode.png)
 
 * Replace {{okta_user}} and {{okta_password}} with the values you used to add the app end user to Okta
 
@@ -139,7 +142,11 @@ grant_type=password&user={{okta_user}}&password={{okta_password}}&client_id={{ap
 
 Example `curl` command (replace with values as described above):
 ```
-curl -X POST -H "Accept:application/json" -H "Content-Type:application/x-www-form-urlencoded" -d 'grant_type=password&user={{okta_user}}&password={{okta_password}}&client_id={{client_id}}&client_secret={{client_secret}}' "https://{{org}}-{{env}}.apigee.net/oauth-ext/token"
+curl -X POST -H "Accept:application/json" \
+-H "Content-Type:application/x-www-form-urlencoded" \
+-H "Authorization:{{Base64 encoded Key:Secret}}" \
+-d 'grant_type=password&user={{okta_user}}&password={{okta_password}}' \
+"https://{{org}}-{{env}}.apigee.net/oauth-ext/token"
 ```
 
 ![image alt text](./media/image_17.png)
