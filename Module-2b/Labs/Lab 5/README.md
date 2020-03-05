@@ -130,7 +130,7 @@ grant_type=password&user={{okta_user}}&password={{okta_password}}
 
 * Replace {{org-name}} with your actual Apigee org name, and {{env}} with the deployment environment for your proxy (eg. test)
 
-* To obtain a base64 encoded value of 'Key:Secret', you can utilize an open tool like [Gsuite Toolbox](https://toolbox.googleapps.com/apps/encode_decode/):
+* To obtain a base64 encoded value of 'Key:Secret', you can utilize an open tool like [G Suite Toolbox](https://toolbox.googleapps.com/apps/encode_decode/):
 
 ![iamge alt text](./media/gsuitetoolbox_base64_encode.png)
 
