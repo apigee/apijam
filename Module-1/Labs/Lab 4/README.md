@@ -113,7 +113,8 @@ For further information, see "[Adding CORS support to an API proxy](https://docs
         <AssignTo createNew="false" transport="http" type="response"/>
        </AssignMessage>
        ```
-   ![image alt text](./media/EditAMCORSHeadersPolicy.png)
+
+![image alt text](./media/EditAMCORSHeadersPolicy.png)
 
 6. Repeat steps 2 & 3 above add another **Assign Message** policy, with the following details:
     
