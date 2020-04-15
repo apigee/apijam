@@ -122,19 +122,19 @@ For further information, see "[Adding CORS support to an API proxy](https://docs
     Name: `Set-OPTIONS-Status-Code`
 
     Policy configuration:
-        ```
-        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-        <AssignMessage async="false" continueOnError="false" enabled="true" name="Set-OPTIONS-Status-Code">
-            <DisplayName>Set OPTIONS Status Code</DisplayName>
-            <Properties/>
-            <AssignVariable>
-                <Name>error.status.code</Name>
-                <Value>200</Value>
-            </AssignVariable>
-            <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
-            <AssignTo createNew="false" transport="http" type="request"/>
-        </AssignMessage>
-        ```
+    ```
+    <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    <AssignMessage async="false" continueOnError="false" enabled="true" name="Set-OPTIONS-Status-Code">
+      <DisplayName>Set OPTIONS Status Code</DisplayName>
+      <Properties/>
+      <AssignVariable>
+        <Name>error.status.code</Name>
+        <Value>200</Value>
+      </AssignVariable>
+      <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+      <AssignTo createNew="false" transport="http" type="request"/>
+    </AssignMessage>
+    ```
 7. Select the **'PreFlow'** flow under **'Target Endpoint' -> 'default'** from the left panel. Then drag and drop the **'Set CORS Response Headers'** policy to the response pipeline of the flow, as shown below:
 
    ![image alt text](./media/DragDropCORSHeadersTargetRespPreFlow.png)
