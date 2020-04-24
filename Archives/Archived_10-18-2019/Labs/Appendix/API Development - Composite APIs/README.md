@@ -248,7 +248,7 @@ Here's a brief description of the elements that were modified in this policy. Yo
 
 ![image alt text](./media/image_16.png)
 
-* Using your browser or the [Apigee REST Client](https://apigee-rest-client.appspot.com/), invoke the API with the following query parameter combinations and review the results being returned:
+* Using your browser or the [Apigee REST Client](https://apigee-restclient.appspot.com/), invoke the API with the following query parameter combinations and review the results being returned:
 ```
 zipcode=75001&radius=100
 ```

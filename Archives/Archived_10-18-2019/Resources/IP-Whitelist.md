@@ -3,7 +3,7 @@
 - https://github.com/
 - https://apigee.com/
 - http://playground.apistudio.io/
-- https://apigee-rest-client.appspot.com/
+- https://apigee-restclient.appspot.com/
 - http://docs.apigee.com/
 - http://maps.googleapis.com/
 - http://apigeedemovideos-test.apigee.net/

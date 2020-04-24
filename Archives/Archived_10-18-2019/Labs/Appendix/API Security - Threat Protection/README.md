@@ -84,7 +84,7 @@ You have an API proxy created in Apigee Edge. If not, jump back to *API Design :
 
 * *Congratulations!*...Your API is now protected from SQL Injection Attacks.
 
-* Firstly, let’s test XML threat protection using the [REST Client](https://apigee-rest-client.appspot.com/). Open the REST Client on a new browser window.  
+* Firstly, let’s test XML threat protection using the [REST Client](https://apigee-restclient.appspot.com/). Open the REST Client on a new browser window.  
 
 * Copy the URL for your API proxy. 
 

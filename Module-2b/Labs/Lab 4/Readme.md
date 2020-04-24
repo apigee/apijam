@@ -98,7 +98,7 @@ Check both flows and read the JWT policies to get a deeper understanding of how 
 
 ![image alt text](./media/image_15.png)
 
-18. Next, send a request to the `/token` endpoint to generate a valid JWT. You can send this request either using a REST client like the one [here](https://apigee-rest-client.appspot.com/), or by using the `curl` command from a terminal. The HTTP request to send is:
+18. Next, send a request to the `/token` endpoint to generate a valid JWT. You can send this request either using a REST client like the one [here](https://apigee-restclient.appspot.com/), or by using the `curl` command from a terminal. The HTTP request to send is:
 
 ```
 POST /v1/jwt/token HTTP/1.1
@@ -121,7 +121,7 @@ curl -X POST -H "Content-Length: 0" https://{{org-name}}-{{env}}.apigee.net/v1/j
 
 ![image alt text](./media/image_17.png)
 
-20. Now verify the token using the `/verify` proxy endpoint in Apigee.  Use the same REST [tool](https://apigee-rest-client.appspot.com/) or `curl` to do so.  The HTTP request is:
+20. Now verify the token using the `/verify` proxy endpoint in Apigee.  Use the same REST [tool](https://apigee-restclient.appspot.com/) or `curl` to do so.  The HTTP request is:
 
 ```
 POST /v1/jwt/verify HTTP/1.1

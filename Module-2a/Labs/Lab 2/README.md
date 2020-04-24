@@ -167,7 +167,7 @@ Click on **+App** in the upper right of the screen:
 
 ## Test OAuth token generation and API protection
 
-1. First, send a valid request to the OAuth token endpoint to generate a valid access token. You can send this request either using a REST client like the one [here](https://apigee-rest-client.appspot.com/), or by using the `curl` command from a terminal. The HTTP request to send is:
+1. First, send a valid request to the OAuth token endpoint to generate a valid access token. You can send this request either using a REST client like the one [here](https://apigee-restclient.appspot.com/), or by using the `curl` command from a terminal. The HTTP request to send is:
 
 ```
 POST /oauth/client_credential/accesstoken?grant_type=client_credentials HTTP/1.1
@@ -191,7 +191,7 @@ curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: ap
 
 You should now have an OAuth access token returned in the body of the HTTP response.  Copy the value of `access_token` (not including the surrounding quotes) as you will need it for the next step.
 
-2. Now, let's test the protected API by passing in the valid access token. Again, you can send this request either using a REST client like the one [here](https://apigee-rest-client.appspot.com/), or by using the `curl` command in a terminal. The HTTP request to send is:
+2. Now, let's test the protected API by passing in the valid access token. Again, you can send this request either using a REST client like the one [here](https://apigee-restclient.appspot.com/), or by using the `curl` command in a terminal. The HTTP request to send is:
 
 ```
 GET /v1/{{yourinitials}}_hipster-products-api/products HTTP/1.1

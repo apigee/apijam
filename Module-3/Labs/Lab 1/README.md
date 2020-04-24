@@ -197,7 +197,7 @@ curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: ap
 }%                                         
 ```
 
-Note - Apigee also provides a rest client that you can use to make these calls if you do not have access to a terminal or would like a UI based utility. This tool can be accessed [here] (https://apigee-rest-client.appspot.com).
+Note - Apigee also provides a rest client that you can use to make these calls if you do not have access to a terminal or would like a UI based utility. This tool can be accessed [here] (https://apigee-restclient.appspot.com/).
 
 Here are the details of the call:
 

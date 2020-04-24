@@ -107,7 +107,7 @@ Note: You’ll have to remove the Authorization header using the Assign Message 
 
 If you are using Windows, refer this [link](https://www.base64encode.org/) to generate the value.
 
-* Now, let’s test the deployment using the [REST Client](https://apigee-rest-client.appspot.com/). Open the REST Client on a new browser window.  
+* Now, let’s test the deployment using the [REST Client](https://apigee-restclient.appspot.com/). Open the REST Client on a new browser window.  
 
 * Copy the URL for oauth API proxy. 
 

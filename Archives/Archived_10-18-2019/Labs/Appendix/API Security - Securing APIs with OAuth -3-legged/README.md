@@ -213,7 +213,7 @@ Note: You’ll have to remove the Authorization header using the Assign Message 
 	* client_secret : **{app’s client_secret}**
   
 
-* Now, let’s use the [REST Client](https://apigee-rest-client.appspot.com/) to obtain an access token. Open the REST Client on a new browser window.  
+* Now, let’s use the [REST Client](https://apigee-restclient.appspot.com/) to obtain an access token. Open the REST Client on a new browser window.  
 
 * Paste the URL with the ```/token``` endpoint, select **POST** and then fill up the body.
 

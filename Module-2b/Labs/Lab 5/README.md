@@ -36,7 +36,7 @@ In this scenario, we will set up:
 
 1. In this lab, we will use a pre-configured Okta instance to authenticate end user identity. To add a new app end user, we will use the Okta User API.
 
-Invoke the following API request (either from a terminal or a [REST client](https://apigee-rest-client.appspot.com/)):
+Invoke the following API request (either from a terminal or a [REST client](https://apigee-restclient.appspot.com/)):
 
 ```
 POST /api/v1/users?activate=true HTTP/1.1

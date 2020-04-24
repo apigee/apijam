@@ -46,9 +46,9 @@ For this lab, you will need an API Proxy that returns JSON.  If you do not have 
 
 ![image alt text](./media/image_2.png)
 
-* Verify the API returns JSON data using the [Apigee Rest Client](https://apigee-rest-client.appspot.com/) or any http client of your choosing
+* Verify the API returns JSON data using the [Apigee Rest Client](https://apigee-restclient.appspot.com/) or any http client of your choosing
 
-    * Open [Apigee Rest Client](https://apigee-rest-client.appspot.com/)
+    * Open [Apigee Rest Client](https://apigee-restclient.appspot.com/)
 
     * Paste URL from **Overview** page.
 
@@ -271,7 +271,7 @@ You’ve learned how to do the following;
 
 * Apigee Rest Client
 
-    * [https://apigee-rest-client.appspot.com/](https://apigee-rest-client.appspot.com/)
+    * [https://apigee-restclient.appspot.com/](https://apigee-restclient.appspot.com/)
 
 # Rate this lab
 

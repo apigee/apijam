@@ -115,7 +115,7 @@ Content-Type: application/json
 }
 ```
 
-You can make this call either using a REST client like the one [here](https://apigee-rest-client.appspot.com/), or using a terminal.
+You can make this call either using a REST client like the one [here](https://apigee-restclient.appspot.com/), or using a terminal.
 
 Example `curl` command:
 ```
@@ -148,7 +148,7 @@ Content-Type: application/json
 }
 ```
 
-Again, you can make this call either using a REST client like the one [here](https://apigee-rest-client.appspot.com/), or using a terminal.
+Again, you can make this call either using a REST client like the one [here](https://apigee-restclient.appspot.com/), or using a terminal.
 
 Example `curl` command:
 ```
@@ -211,7 +211,7 @@ query=password’ OR 1=1
 query=5; DROP TABLE USERS;
 ```
 
-You can make this call either using a REST client like the one [here](https://apigee-rest-client.appspot.com/), or using a terminal.
+You can make this call either using a REST client like the one [here](https://apigee-restclient.appspot.com/), or using a terminal.
 
 Example `curl` command:
 ```

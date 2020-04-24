@@ -70,7 +70,7 @@ None.
 
 * *Congratulations!*...You have now built a reverse proxy for an existing backend service.
 
-* Let us test the newly built API proxy using the [REST Client](https://apigee-rest-client.appspot.com/). Open the REST Client on a new browser window.  
+* Let us test the newly built API proxy using the [REST Client](https://apigee-restclient.appspot.com/). Open the REST Client on a new browser window.  
 
 * Copy the URL for your API proxy. 
 
