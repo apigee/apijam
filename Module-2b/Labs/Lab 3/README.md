@@ -115,7 +115,7 @@ Content-Type: application/json
 }
 ```
 
-You can make this call either using a REST client like the one [here](https://apigee-restclient.appspot.com/), or using a terminal.
+You can make this call either using a REST client like the one <a href="https://apigee-restclient.appspot.com/" target="_blank">here</a>, or using a terminal.
 
 Example `curl` command:
 ```
