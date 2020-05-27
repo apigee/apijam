@@ -80,11 +80,7 @@ First, we are going to design and create an OpenAPI specification for the differ
 
 ![image alt text](./media/image_8.png)
 
-5. You can see the selected OpenAPI Spec URL below the Reverse Proxy option, Click **Next** to continue.
-
-![image alt text](./media/image_9.png)
-
-6. Enter details in the proxy wizard. Replace **{your-initials}** with the initials of your name. 
+5. Enter details in the proxy wizard. Replace **{your-initials}** with the initials of your name. 
 
     * Proxy Name: **{your_initials}**\_Hipster-Products-API
 
@@ -94,29 +90,29 @@ First, we are going to design and create an OpenAPI specification for the differ
 
 ![image alt text](./media/image_10.png)
 
-7. Verify the values and click **Next**.
+6. Verify the values and click **Next**.
 
-8. You can select, de-select list of API Proxy Resources that are pre-filled from OpenAPI Spec. Select all & Click on **Next**
+7. You can select, de-select list of API Proxy Resources that are pre-filled from OpenAPI Spec. Select all & Click on **Next**
 
 ![image alt text](./media/image_11.png)
 
-9. Select **Pass through (none)** for the authorization in order to choose not to apply any security policy for the proxy. Click Next. 
+8. Select **Pass through (none)** for the authorization in order to choose not to apply any security policy for the proxy. Click Next. 
 
 ![image alt text](./media/image_12.png)
 
-10. Go with the **default Virtual Host** configuration.
+9. Go with the **default Virtual Host** configuration.
 
 ![image alt text](./media/image_13.png)
 
-11. Ensure that only the **test** environment is selected to deploy to and click **Build and Deploy** 
+10. Ensure that only the **test** environment is selected to deploy to and click **Build and Deploy** 
 
 ![image alt text](./media/image_14.png)
 
-12. Once the API proxy is built and deployed **click** the link to view your proxy in the proxy editor. 
+11. Once the API proxy is built and deployed **click** the link to view your proxy in the proxy editor. 
 
 ![image alt text](./media/image_15.png)
 
-13. *Congratulations!* ...You have now built a reverse proxy for an existing backend service. You should see the proxy **Overview** tab.
+12. *Congratulations!* ...You have now built a reverse proxy for an existing backend service. You should see the proxy **Overview** tab.
 
 ![image alt text](./media/image_16.png)
 
