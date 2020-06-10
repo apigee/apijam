@@ -92,23 +92,23 @@ First, we are going to design and create an OpenAPI specification for the differ
 
 6. Verify the values and click **Next**.
 
-7. You can select, de-select list of API Proxy Resources that are pre-filled from OpenAPI Spec. Select all & Click on **Next**
-
-![image alt text](./media/image_11.png)
-
-8. Select **Pass through (none)** for the authorization in order to choose not to apply any security policy for the proxy. Click Next. 
+7. Select **Pass through (none)** for the authorization in order to choose not to apply any security policy for the proxy. Click Next. 
 
 ![image alt text](./media/image_12.png)
+
+8. You can select, de-select list of API Proxy Resources that are pre-filled from OpenAPI Spec. Select all & Click on **Next**
+
+![image alt text](./media/image_11.png)
 
 9. Go with the **default Virtual Host** configuration.
 
 ![image alt text](./media/image_13.png)
 
-10. Ensure that only the **test** environment is selected to deploy to and click **Build and Deploy** 
+10. Ensure that only the **test** environment is selected to deploy to and click **Create and Deploy** 
 
 ![image alt text](./media/image_14.png)
 
-11. Once the API proxy is built and deployed **click** the link to view your proxy in the proxy editor. 
+11. Once the API proxy is created and deployed click **Edit Proxy** to view your proxy in the proxy editor. 
 
 ![image alt text](./media/image_15.png)
 
