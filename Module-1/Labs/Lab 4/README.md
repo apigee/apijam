@@ -12,19 +12,7 @@ You want to provide and manage an easy, self-service on-boarding experince for a
 
 Apigee Edge provides multiple options for your Developer Portal. Apigee supports several developer portal solutions, ranging from simple turn-key to fully customizable and extensible. The turn-key [Integrated Developer Portal](https://docs.apigee.com/api-platform/publish/portal/build-integrated-portal) option supports branding and customization of much of the site, such as theme, logos, and page content, and can be published in seconds, directly from the management UI.  We also provide a [Drupal-based portal](https://docs.apigee.com/api-platform/publish/drupal/open-source-drupal-8) if you want full control and to leverage any of the hundreds of Drupal modules available in the Drupal Market.  This lab focuses on the Integrated Developer Portal.
 
-## Developer Programs, Teams and Audience Management
-
-On Apigee Edge, a [Developer Program](https://docs.apigee.com/api-platform/publish/portal/intro-developer-program) is the configuration set associated to each Developer Portal - specifically, App Developer accounts, App Developer identity management configuration, App Developer Teams, and Audience configuration for access to content published on the portal.
-
-App Developers have the option of creating [Teams](https://docs.apigee.com/api-platform/publish/portal/developer-teams) to share responsibility for an app with other developers. Each developer within a Team is assigned a role (`Owner`, `App Admin` or `Viewer` ) that defines their access level to the shared apps.
-
-[Audience](https://docs.apigee.com/api-platform/publish/portal/portal-audience) configurations are used to segment portal users or developer teams to control access to the following resources:
-* Pages in your portal
-* Published API products
-
-The following figure shows how audiences are used to control access to a set of resources.
-
-![image alt text](./media/DevTeamAudienceRelationship.png)
+![image alt text](./media/devportals.png)
 
 In this lab, you will create an Integrated Developer Portal wherein you will publish API Products, and through which app developers can 
 * learn API usage through OpenAPI specification based interactive documentation
@@ -231,7 +219,21 @@ Since we you have provided your own email address as the App Developer in this l
 
    ![image alt text](./media/AuthorizedDocsTestResult.png)
 
-## Enable Teams and Audience Management features
+## Optional: Try out Developer Program, Teams and Audience Management features
+
+On Apigee Edge, a [Developer Program](https://docs.apigee.com/api-platform/publish/portal/intro-developer-program) is the configuration set associated to each Developer Portal - specifically, App Developer accounts, App Developer identity management configuration, App Developer Teams, and Audience configuration for access to content published on the portal.
+
+App Developers have the option of creating [Teams](https://docs.apigee.com/api-platform/publish/portal/developer-teams) to share responsibility for an app with other developers. Each developer within a Team is assigned a role (`Owner`, `App Admin` or `Viewer` ) that defines their access level to the shared apps.
+
+[Audience](https://docs.apigee.com/api-platform/publish/portal/portal-audience) configurations are used to segment portal users or developer teams to control access to the following resources:
+* Pages in your portal
+* Published API products
+
+The following figure shows how audiences are used to control access to a set of resources.
+
+![image alt text](./media/DevTeamAudienceRelationship.png)
+
+### Enable Teams and Audience Management features
 
 1. To utilize Teams and Audience Management features, you must first enroll into the Beta program within your Apigee Edge org. To do this, navigate to the **Publish -> Developer Programs** menu on the Management UI, and select the developer program associated with your Integrated Developer Portal.
 
@@ -245,7 +247,7 @@ Since we you have provided your own email address as the App Developer in this l
 
   ![image alt text](./media/EnrollmentComplete.png)
 
-## Create Developer Team
+### Create Developer Team
 
 1. Ensure that you are logged into the Developer Portal with your App Developer credentials. Navigate to the **Teams** menu from your account drop-down.
 
@@ -275,7 +277,7 @@ Since we you have provided your own email address as the App Developer in this l
 
    ![image alt text](./media/TeamCreatedManagementUI.png)
 
-## Create Audience
+### Create Audience
 
 We will now see how to publish API products on the Developer Portal, with only certain audiences that have entitlement to view and subscribe to those products.
 
@@ -302,7 +304,7 @@ We will now see how to publish API products on the Developer Portal, with only c
 
    ![image alt text](./media/SaveAssignment.png)
 
-## Publish Silver API Products with New Audience Entitlements
+### Publish Silver API Products with New Audience Entitlements
 
 1. Navigate to **Publish → Portals → {{your developer portal}} → APIs** and click the **+API** button.
 
@@ -348,7 +350,7 @@ Then click **Add**.
 
 ![image alt text](./media/ModifyAudienceForm.png)
 
-## Create Team App
+### Create Team App
 
 1. On the developer portal, navigate to the developer account drop down menu on the top right corner, and select the **Apps** link. Then click the **New App** button.
 
