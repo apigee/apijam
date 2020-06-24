@@ -100,7 +100,7 @@ First, we are going to design and create an OpenAPI specification for the differ
 
 ![image alt text](./media/image_11.png)
 
-9. Go with the **default Virtual Host** configuration.
+9. Go with the **secure Virtual Host** configuration. Ensure that the **default** one is unchecked.
 
 ![image alt text](./media/image_13.png)
 
