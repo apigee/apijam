@@ -58,7 +58,7 @@ In the pop-up dialog, choose the previously downloaded revision of the API proxy
 
 ![image alt text](./media/Choose-downloaded-proxy-zip.png)
 
-3. Once uploaded, in the latest revision of your API proxy, navigate to the **Proxy Endpoints** >> **default** XML, scroll down and change the <BasePath> node value to match your proxy's basepath.
+3. Once uploaded, in the latest revision of your API proxy, navigate to the **Proxy Endpoints** >> **default** XML, scroll down and change the `<BasePath>` node value to match your proxy's basepath.
 
 ![image alt text](./media/Change-basepath-after-CORS-import.png)
 
