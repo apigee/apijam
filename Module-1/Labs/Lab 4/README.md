@@ -48,7 +48,7 @@ CORS (Cross-origin resource sharing) is a standard mechanism that allows JavaScr
 
 In this step, we upload and deploy a version of your API proxy which includes configurations that support CORS, before it is published to a Developer Portal where it could be invoked within interactive docs pages. Typically, you would set these configurations up as described under "[Adding CORS support to an API proxy](https://docs.apigee.com/api-platform/develop/adding-cors-support-api-proxy)". However, in the interest of time, in this lab, we will make use of a pre-configured proxy revision instead.
 
-1. Download [this revision](https://github.com/apigee/apijam/blob/master/Module-1/Resources/Hipster-Products-API_With_CORS_Config.zip) of the API proxy. This is a version of the same Hipster Products API that we have been working on so far, but with CORS configurations.
+1. Download [this revision](https://github.com/apigee/apijam/raw/master/Module-1/Resources/Hipster-Products-API_With_CORS_Config.zip) of the API proxy. This is a version of the same Hipster Products API that we have been working on so far, but with CORS configurations.
 
 2. Navigate to **API Proxies** and select your Hipster Product API proxy. Then click the **Project** button and select **Upload a New Revision**.
 
