@@ -1,3 +1,5 @@
+### English | [日本語](https://github.com/apigee/apijam/raw/master/Module-1/README_JA.pdf)
+
 # Module 1 - API Management
 This is the supporting material for a one-day hands-on workshop that introduces developers to Apigee Edge. We call this event an "**Apigee API Jam**". This module - the **"Apigee API Jam - Module 1 - API Management"** - focuses on giving attendees an overall understanding of how to build a successful API program with a well managed developer ecosystem. Attendees will learn how to manage their APIs across all phases of the API Lifecycle - including API design, API Security, Developer consumption, as well as API Analytics and Monitoring. 
 
