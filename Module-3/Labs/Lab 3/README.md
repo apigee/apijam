@@ -190,4 +190,4 @@ That completes this hands-on lesson. In this lab you learned how to create an Ex
 
 How did you like this lab? Rate [here](https://goo.gl/forms/G8LAPkDWVNncR9iw2).
 
-Now go to [Module-4](../../../Module-4/Lab%201)
+Now go to [Module-4](https://github.com/apigee/apijam/tree/master/Module-4)
