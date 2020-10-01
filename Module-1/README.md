@@ -1,14 +1,11 @@
 ### English | [日本語](https://github.com/apigee/apijam/raw/master/Module-1/README_JA.pdf) | [中文](https://github.com/apigee/apijam/raw/master/Module-1/README_ZH.pdf)
 
 # Module 1 - API Management
-This is the supporting material for a one-day hands-on workshop that introduces developers to Apigee Edge. We call this event an "**Apigee API Jam**". This module - the **"Apigee API Jam - Module 1 - API Management"** - focuses on giving attendees an overall understanding of how to build a successful API program with a well managed developer ecosystem. Attendees will learn how to manage their APIs across all phases of the API Lifecycle - including API design, API Security, Developer consumption, as well as API Analytics and Monitoring. 
+This is the supporting material for a hands-on workshop that introduces you to fundamental API Management concepts and the Apigee API Management Platform. We call this event an "**Apigee API Jam**". This module - the **"Module 1"** - focuses on giving attendees an overall understanding of how to build a successful API program with a well managed developer ecosystem. Attendees will learn how to manage their APIs across all phases of the API Lifecycle - including API design, API Security, Developer consumption, as well as API Analytics and Monitoring. 
 
 ![image alt text](./media/APIManagement.png)
 
 All of the material here is released under the [Apache 2.0 license](./LICENSE.md)
-
-### Agenda
-* A brief presentation & product overview: 15 mins
 
 ### [Labs](./Labs) 
 1. **API Design & Creation** - Design OAS & Create a Reverse Proxy with the OpenAPI specification [Link](./Labs/Lab%201)
@@ -22,4 +19,4 @@ You can start with the first lab [1. API Design - Design & Create an API Proxy w
 #### Apigee Community 
 If you have any questions/comments please visit https://community.apigee.com/index.html
 
-##### This is not an official Google or Apigee product. This repository is used for educational/training purposes only.
+##### This repository is not an official Google or Apigee product. This repository is used for educational/training purposes only.

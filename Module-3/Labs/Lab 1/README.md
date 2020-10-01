@@ -16,12 +16,13 @@ By exposing an API through Apigee Edge, you gain the ability to modify and monit
 In additon to these policies, Apigee Edge also provides for manner to group multiple of these policies into a single re-usable collection called Shared Flows. Shared Flows gives you an ability reuse policies / best practices across different API proxies and even across different teams. Furthermore Apigee Edge also provides concepts of flow hooks by which you can have these shared flows invoked automatically within any new proxy that is created within your organization, hence eliminating the need to explicitly callout flows and enforcing API Governance centrally.
 
 
-# Pre-requisites
+# Prerequisites
 
 * Basic understanding of [OpenAPI Specification](https://github.com/OAI/OpenAPI-Specification) (Swagger)
-* Completed a previous Module 2 (a) for our [Virtual API Jam](../../../Module-2a) or have the equivalent knowledge. Alternatively, go through the ["Getting started guide"](https://docs.apigee.com/api-platform/get-started/get-started) in the Apigee Docs site.
-* We will be reusing the proxies from the module 2 of virtual Apijam, a copy of the proxy code is available within the resources section in this repo.
-* Please ensure that you have an OAuth proxy within your organization, if not, you can follow the instructions from Lab 2(a) of this APIJam. [here](../../../Module-2a/Labs/Lab%202#create-oauth-token-endpoints) 
+* Basic understanding of OAuth v2 and Apigee Proxy-Product-App concepts. As a primer, you can complete a previous [set of labs on API Security](../../../Module-2a). Alternatively, go through the ["Getting started guide"](https://docs.apigee.com/api-platform/get-started/get-started) in the Apigee Docs site.
+* Download the following proxy bundle: [Advanced-Hipster-Products-API](./Resources/Advanced-Hipster-Products-API.zip)
+* Download the following proxy bundle: [oauth](./Resources/oauth.zip)
+* Access to a REST client like [Apigee REST Client](https://apigee-restclient.appspot.com).
 
 # Instructions
 
@@ -40,7 +41,11 @@ In this lab we will see how we can bundle certain out of the box policies, that 
 ![image alt text](./media/image_1.png)
 
 4. Provide a name and description for your shared flow.
- Note - To avoid confusion with others members participating in the APIJam, please prefix your shared flow with your initials.
+```
+Name: {your initials}-shared-flow
+Description: Shared flow with Spike Arrest and OAuth
+```
+ Note - To avoid confusion with others members in your Apigee organization, you could prefix your shared flow with your initials.
 
 ![image alt text](./media/image_2.png)
 
@@ -87,168 +92,183 @@ Note- Although a **shared flow** appears to look like a proxy, a shared flow has
 
 ![image alt text](./media/image_10.png)
 
-Please ensure OAuth v2.0 policy is the first policy (before Spike Arrest) and then click **Save**.
+11. Please drag your OAuth v2.0 policy to execute before the Spike Arrest policy, and then click **Save**.
 
 ![image alt text](./media/image_11.png)
-
-* Note- if your  OAuth v2.0 policy does not appear as the first policy you can use the drag and drop feature to move policies around within the canvas.
 
 
 ## Testing your shared flow using Flow Callouts and Flow Hooks
 
 Your shared flow is now ready for testing. As discussed earlier, Shared flows do not have actual backend implementations, hence for testing our shared flow we will need to either invoke this within a proxy via an explicit **flow callout** or have this flow attached to a **flow hook**. 
 
-To test this flow we will be using the existing proxy that you created within [Module 2(a)](../../Module-2a/Labs/Lab%202). If you have not completed Module 2(a), It is recommended that you review the content of the lab to familiarize with the concepts of Spike Arrest and OAuth first before we proceed with the remainder of this Lab.
+### Import and configure the ***Advanced Hipster Products API*** Proxy and OAuth proxy
 
-If you have completed Module 2 and already have the ***Hipster Products API*** Proxy, you can skip the next sub-section and move directly to Step 1.
-
-
-### (Optional) Import ***Hipster Products API*** Proxy - Only required if you have not completed Module 2
-
-a. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI.
-
-b. Select **Develop** → **API Proxies** in the side navigation menu.
+1. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI.
+Here, Select **Develop** → **API Proxies** in the side navigation menu and click the **+Proxy** button on the top-right corner to invoke the Create Proxy wizard.
 
 ![image alt text](./media/image_12.png)
 
-c. Click the **+Proxy** button on the top-right corner to invoke the Create Proxy wizard.
+2. Select the **Upload Proxy Bundle** option, to import an existing proxy form a zip archive.
 
 ![image alt text](./media/image_13.png)
 
-d. Select **Proxy Bundle** and then click **Next** to import an existing proxy form a zip archive.
-
-![image alt text](./media/image_14.png)
-
-Download the API proxy "as_Hipster-Products-API_rev1_2019_08_20.zip" that implements OAuth client credentials grant type [here](./Resources/as_Hipster-Products-API_rev1_2019_08_15.zip). 
-
-Back in the proxy creation wizard, click "Choose File", select the ***“zip”*** file you just downloaded and click **Next**:
+3. Click "Drag and drop file here or click to upload", and select the ***“Advanced-Hipster-Products-API.zip”*** file you downloaded in the **[Prerequisites](https://github.com/apigee/apijam/tree/master/Module-3/Labs/Lab%201#prerequisites)** section, and click **Next**:
 
 ![image alt text](./media/image_15.png)
 
-e. Click **Build**:
+4. Review the Summary and Click **Create**:
 
 ![image alt text](./media/image_16.png)
 
-You should see a successful "Uploaded proxy" message as shown below.  You now have the **Hipster Products Api Proxy** from Module 2.  Click "Hipster Products API" near the bottom of the page:
+5. Once the proxy is successfully uploaded, click **'Edit Proxy'**.
 
-f. Click on **Develop** Tab and and Then Select **<your_initials>_Hipster-Products-API** under the Navigator section.
-![image alt text](./media/image_17.png)
+![image alt text](./media/image_14.png)
 
-
-g. Replace <Your_Initials> with your initials within the Display Name and Basepaths sections as show below and click Save 
-![image alt text](./media/image_18.png)
-
-Within ***Develop*** Tab, Under the Proxy Enpoints sections, Update the <BasePath> Element with your Initials.
-![image alt text](./media/image_30.png)
-
- 
-h. Deploy the proxy by clicking on the **Deployment** dropdown and selecting the **test** environment:
+6. To deploy the proxy, click the **Deployment** dropdown and select the **test** environment. In the pop-up window, click **Deploy**:
 
 ![image alt text](./media/image_19.png)
 
-Your proxy is now ready for testing, if you would like to test this, please follow instructions from Module 2. The steps below will detail how to invoke the shared flow that you have created as a part of this Lab. Following the tests from Module 2 is an import pre-requisite as you will need your application Key and Secret for the remainder of this Lab.
+![image alt text](./media/image_19b.png)
 
-1. Since the Hipster API already contians the Policies for OAuth and Spike arrest, we will start by removing these polcies from the preflow. Click on each of the policies and select small "x" sign on the top right corner of the policy icon to remove the polcies from execution sequence.
+7. **If you do not already have a proxy in your org for OAuth (typically named 'oauth'), then:** Repeat steps 1-6 above for the **"oauth"** proxy that you downloaded in the **[Prerequisites](https://github.com/apigee/apijam/tree/master/Module-3/Labs/Lab%201#prerequisites)** section.
+
+8. Navigate back to the API proxy list and select the **Advanced Hipster Products API**. 
+
+![image alt text](./media/image_20a.png)
+
+9. Click the **Develop** tab in the proxy editor.
+
 ![image alt text](./media/image_20.png)
 
-2. Click on **+ Step** Icon to Add Policies and select the **Flow Callout** Policy from within ***Extention*** section of the policy menu. Within the **Shared flow** dropdown menu you should see your shared flow, select it and click on Add 
+10. Select the **PreFlow** flow and click **+ Step** for the Request pipeline.
+
 ![image alt text](./media/image_21.png)
 
-3. Save Your Proxy and Click on **Trace** Tab to start testing.
+11. Select the **Flow Callout** Policy from within ***Extention*** section of the policy menu. Within the **Shared flow** dropdown menu you should see your shared flow. Select it and then click on **Add**.
+
+![image alt text](./media/image_21b.png)
+
+12. Click **Save**.
+
 ![image alt text](./media/image_22.png)
 
-4.  Click on **Start Trace Session** to see API Proxy with spike arrest in action.
+
+### Create API Product, Developer, App and Client Credentials
+
+Follow the steps below to generate a valid set of client credentials (API Key and Secret) to use while testing the shared flow and proxy flow hook.
+
+1. Navigate to the Apigee documentation website at [https://docs.apigee.com](https://docs.apigee.com). Here, select the **Reference** tab and navigate to **Edge API**.
+
+![image alt text](./media/select-management-api-docs.png)
+
+2. Under **API Products**, pick the **Create API Product** management API.
+
+![image alt text](./media/select-management-api.png)
+
+
+3. Fill out request details as shown below:
+
+* Add org name to URL:
+![image alt text](./media/set-management-api-org.png)
+
+* Add Payload:
+![image alt text](./media/set-management-api-payload.png)
+
+* Set Apigee Org authentication:
+![image alt text](./media/set-management-api-auth-a.png)
+![image alt text](./media/set-management-api-auth.png)
+
+4. Execute the API as shown below, to create a new API Product:
+
+![image alt text](./media/click-management-api-send.png)
+
+5. Similarly, create a Developer to regiter an App against:
+
+![image alt text](./media/select-management-api-developer.png)
+
+![image alt text](./media/set-management-api-payload-dev.png)
+
+![image alt text](./media/click-management-api-send-dev.png)
+
+6. Similarly, register an App for the developer we just created:
+
+![image alt text](./media/select-management-api-app.png)
+
+![image alt text](./media/set-management-api-org-and-dev.png)
+
+![image alt text](./media/set-management-api-payload-app.png)
+
+![image alt text](./media/click-management-api-send-app.png)
+
+7. Back in the Apigee Management console, Navigate to **Publish** >> **API Products** / **Developers** / **Apps** to see that our API product, developer and app are created.
+
+![image alt text](./media/api-product-list.png)
+
+![image alt text](./media/api-product-overview.png)
+
+![image alt text](./media/dev-list.png)
+
+![image alt text](./media/dev-overview.png)
+
+8. On the App overview page for the new App, click **'Show'** and copy both API Key and Secret.
+
+![image alt text](./media/app-overview-copy-creds.png)
+
+### Generate Access Token
+
+1. Provide the API Key and Secret to the oauth endpoint in your org (thanks to the Oauth proxy we imported) to generate a valid access token. You can do this using the [Apigee REST Client](https://apigee-restclient.appspot.com) or similar REST/HTTP client:
+
+**Request Details:**
+
+Verb: `POST`
+Headers:
+ Content-Type: `application/x-www-form-urlencoded`
+ Accept: `application/json`
+Request URL: `https://{your org name}-{your env}.apigee.net/oauth/client_credential/accesstoken?grant_type=client_credentials`
+Request Body: `client_id={your API Key}&client_secret={your API Secret}`
+
+![image alt text](./media/access-token-req-a.png)
+
+![image alt text](./media/access-token-req-b.png)
+
+2. Copy and save the access token:
+
+![image alt text](./media/access-token-resp.png)
+
+
+### Test API Proxy and Shared Flow
+
+1. Navigate to **API Proxies** >> **Your Proxy**.
+
+![image alt text](./media/image_20a.png)
+
+4.  In the **Trace** tab, click **Start Trace Session** to see API Proxy with the Shared Flow in action.
 ![image alt text](./media/image_23.png)
 
-5. To streamline testing you can externalize credentials and org specefic details as below:
+5. Naigate back to the [Apigee REST Client](https://apigee-restclient.appspot.com) and make the API call  as shown below:
 
-```
-export APP_CLIENT_SECRET="secret"
-export APP_CLIENT_KEY="key"
-export ORG_NAME="orgname"
-export ENV="envname"
-```
+Verb: `GET`
+Headers:
+ Authorization: `Bearer {your access token}`
+Request URL: `https://{your org name}-{your env}.apigee.net//v1/advanced-hipster-products-api/products`
 
-Note - for App Client Key and Secret, you will need an ***App*** created within Apigee Edge and Module 2 talks about API Products, Api Developer and Application creation process. It also details out how to obtain your Applications Key and Secret that are needed for this lab.
-
-6. We will be using application creadentials (Client ID and Secret) to Make ***curl***  POST Call to the OAuth Endpoint to obtain an API Token using the Client credential OAuth grant type:
-```
-curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: application/json' "https://$ORG_NAME-$ENV.apigee.net/oauth/client_credential/accesstoken?grant_type=client_credentials" -d "client_id=$APP_CLIENT_KEY&client_secret=$APP_CLIENT_SECRET"
-```
-
-You should see a response with status ***200 OK*** like below:
-```
-curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: application/json' "https://$ORG_NAME-$ENV.apigee.net/oauth/client_credential/accesstoken?grant_type=client_credentials" -d "client_id=$APP_CLIENT_KEY&client_secret=$APP_CLIENT_SECRET"
-{
-  "refresh_token_expires_in" : "0",
-  "api_product_list" : "[dr_Hipster-Products-API-Product]",
-  "api_product_list_json" : [ "dr_Hipster-Products-API-Product" ],
-  "organization_name" : "apijams-amer-1",
-  "developer.email" : "jdev@gmail.com",
-  "token_type" : "BearerToken",
-  "issued_at" : "1566275920240",
-  "client_id" : "<Client ID>",
-  "access_token" : "<Token>",
-  "application_name" : "ae65d3ab-38bf-44c8-955c-c9bc5ebdbf86",
-  "scope" : "",
-  "expires_in" : "3599",
-  "refresh_count" : "0",
-  "status" : "approved"
-}%                                         
-```
-
-Note - Apigee also provides a rest client that you can use to make these calls if you do not have access to a terminal or would like a UI based utility. This tool can be accessed [here] (https://apigee-restclient.appspot.com/).
-
-Here are the details of the call:
-
-```
-Rest Endpoint - https://$ORG_NAME-$ENV.apigee.net/oauth/client_credential/accesstoken?grant_type=client_credentials
-Rest VERB - POST
-Request Headers-> Value - 
-      Accept ->  Application/json
-      Content-Type -> application/x-www-form-urlencoded
-Request Body - client_id=<Your Apps Client ID>&client_secret=<Secret>
-```
-
-7. Take the token from above response and externalise it using another ENV Variable like below:
-```
-export ACCESS_TOKEN="Token from Above Response"
-```
-Now make the actual Call your Hispter API using below CURL and Look at the trace:
-```
-curl -X GET -H "Authorization: Bearer $ACCESS-TOKEN" "https://$ORG_NAME-$ENV.apigee.net/v1/<Your Initials>_hipster-products-api/products"
-
-```
-
-Call Details if you are using a UI Utility:
-```
-Rest Endpoint - https://$ORG_NAME-$ENV.apigee.net/v1/<Your Initials>_hipster-products-api/products
-Rest VERB - GET
-Request Headers-> Value - 
-      Authorization ->  Bearer <Your API Token>
-```
-Note - Be sure to replace <Your Initials> above within the proxy base path.
+![image alt text](./media/api-req-resp.png)
 
 Your should see a ***200 OK*** response with a Listing of the Product catalog in your Response. 
 You can also see your API Calls in action within the Trace Tool and will note that the Flow Call out was initiated with Spike Arrest and Oauth policies applied to this call.
 
-![image alt text](./media/image_24.png)
+![image alt text](./media/trace-api-flowcallout.png)
 
-8. Lets re-enter the above CURL command Multiple Times in Quick succession to Engage our Spike Arrest Policy, You should see an error like below:
+8. Lets re-send the above API call Multiple Times in Quick succession to Engage our Spike Arrest Policy, You should see an error like below:
 ```
 {"fault":{"faultstring":"Spike arrest violation. Allowed rate : MessageRate{messagesPerPeriod=12, periodInMicroseconds=240000000, maxBurstMessageCount=1.0}","detail":{"errorcode":"policies.ratelimit.SpikeArrestViolation"}}}%  
 ```
 
-![image alt text](./media/image_26.png)
+This concludes our Lab for Shared Flow execution using the [Flow Callout policy](https://docs.apigee.com/api-platform/reference/policies/flow-callout-policy).
 
+You can follow the steps in the next optional section to attach a Shared Flow using a [Flow Hook](https://docs.apigee.com/api-platform/fundamentals/flow-hooks).
 
-
-9. You can now Omit the API Key from your Curl Call and see that you get a ***401 Unathorized** Error
-![image alt text](./media/image_25.png)
-
-This concludes our Lab for Shared Flows and Next we will look at the concept of Flow Hooks.
-
-## Flow Hooks
+## Optional: Flow Hooks
 
 So far in this Lab, you have seen how to group multiple policies for execution into a single flow and how to invoke flows from within your proxy using the flow call out feature. However, in all of this the onus for ensuring that policy is applied within a proxy is still on the Proxy developer to either include a policy or a flow that will execute the policy. 
 
@@ -304,9 +324,9 @@ curl -X GET -H "Authorization: Bearer $ACCESS-TOKEN" "https://$ORG_NAME-$ENV.api
 
 ```
 
-Call Details if you are using a UI Tool:
+Call Details if you are using a the REST client Tool:
 ```
-Rest Endpoint - https://$ORG_NAME-$ENV.apigee.net/v1/<Your Initials>_hipster-products-api/products
+Rest Endpoint - https://$ORG_NAME-$ENV.apigee.net/v1/advanced-hipster-products-api/products
 Rest VERB - GET
 Request Headers-> Value - 
       Authorization ->  Bearer <Your API Token>

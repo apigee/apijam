@@ -8,19 +8,19 @@
 
 You have a requirement to create a reverse proxy for taking requests from the Internet and forward them to an existing service. You have decided to follow a design first approach & built a reusable component, a specification which can be used to build API Proxies, generate API documentation, generate API test cases, etc., using OpenAPI Specification format. You would like to generate an Apigee API Proxy by using the OpenAPI Specification (Swagger) instead of building the API Proxy from scratch.
 
-# How can Apigee Edge help?
+# How can Apigee API Management help?
 
-Apigee Edge enables you to quickly expose services as APIs. You do this by creating an [**API proxy**](https://docs.apigee.com/api-platform/fundamentals/understanding-apis-and-api-proxies#whatisanapiproxy), which provides a facade for the service that you want to expose, such as existing API endpoints, generic HTTP services, or applications (such as Node.js). The API proxy decouples your service implementation from the API endpoint that developers consume. This shields developers from future changes to your services. As you update services, developers, insulated from those changes, can continue to call the API uninterrupted.
-On Apigee Edge, the API Proxy is also where runtime policy configuration is applied for API Management capabilites. For further information, please see: [Understanding APIs and API Proxies](https://docs.apigee.com/api-platform/fundamentals/understanding-apis-and-api-proxies#whatisanapiproxy).
+Apigee enables you to quickly expose services as APIs. You do this by creating an [**API proxy**](https://docs.apigee.com/api-platform/fundamentals/understanding-apis-and-api-proxies#whatisanapiproxy), which provides a facade for the service that you want to expose, such as existing API endpoints, generic HTTP services, or applications (such as Node.js). The API proxy decouples your service implementation from the API endpoint that developers consume. This shields developers from future changes to your services. As you update services, developers, insulated from those changes, can continue to call the API uninterrupted.
+On Apigee, the API Proxy is also where runtime policy configuration is applied for API Management capabilites. For further information, please see: [Understanding APIs and API Proxies](https://docs.apigee.com/api-platform/fundamentals/understanding-apis-and-api-proxies#whatisanapiproxy).
 
 ![image alt text](./media/ProxyToBackendWithFlows_v3.png)
 
-Apigee Edge also supports the [**OpenAPI specification**](https://swagger.io/specification/) out of the box, allowing you to auto-generate API Proxies. Apigee Edge has a built-in OpenAPI specification editor & store which you can use to design and maintain your OpenAPI specifications. 
+Apigee also supports the [**OpenAPI specification**](https://swagger.io/specification/) out of the box, allowing you to auto-generate API Proxies. Apigee has a built-in OpenAPI specification editor & store which you can use to design and maintain your OpenAPI specifications. 
 
 ![image alt text](./media/OASEditor.png)
 
 In this lab, we will see how to 
-* design an OpenAPI specification for an existing HTTP service and store it within the Apigee Edge platform, and
+* design an OpenAPI specification for an existing HTTP service and store it within the Apigee platform, and
 * create an API proxy, that routes inbound requests to the existing HTTP service.
 
 # Pre-requisites
@@ -37,7 +37,7 @@ In this lab, we will see how to
 During the course of this lab, the sample HTTP service we will expose as an API endpoint, is the Hipster Products service located at [http://cloud.hipster.s.apigee.com/products](http://cloud.hipster.s.apigee.com/products).
 First, we are going to design and create an OpenAPI specification for the different resource endpoints, i.e. /products and /products/{productId}. 
 
-1. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Edge management UI. 
+1. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Apigee management UI. 
 
 2. Select **Develop → Specs** in the side navigation menu
 
@@ -54,7 +54,7 @@ First, we are going to design and create an OpenAPI specification for the differ
 
 ![image alt text](./media/image_2.png)
 
-5. Verify the values and click **Import**. Spec has been imported into Apigee Edge & Ready to use. You should see your spec in the list. For example,
+5. Verify the values and click **Import**. Spec has been imported into Apigee & Ready to use. You should see your spec in the list. For example,
 
 ![image alt text](./media/image_3.png)
 
@@ -140,7 +140,7 @@ curl -X GET "https://{{org}}-{{env}}.apigee.net/{{your initials}}_hipster-produc
 
 * Wait for Trace session to start.
 
-* Modify the URL to send to a valid API resource - append a '/products' to the end of the URL.
+* Modify the URL to send to a valid API resource - **append a '/products' to the end of the URL.**
 
 * Hit 'Send'.
 
@@ -170,12 +170,12 @@ Now that you have created a reverse proxy using OpenAPI spec, Click on the Devel
 # Quiz
 
 1. How do you import the proxy bundle you just downloaded? 
-2. How does Apigee Edge handle API versioning? 
+2. How does Apigee handle API versioning? 
 3. Are there administrative APIs to create, update or delete API proxies in Apigee?
 
 # Summary
 
-That completes this hands-on lesson. In this simple lab you learned how to create a proxy for an existing backend using OpenAPI Specification and Apigee Edge proxy wizard.
+That completes this hands-on lesson. In this simple lab you learned how to create a proxy for an existing backend using OpenAPI Specification and Apigee proxy wizard.
 
 # References
 
