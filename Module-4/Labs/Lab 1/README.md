@@ -71,8 +71,8 @@ Create the API Proxy using the proxy bundle which can be found here. Complete th
 
       ```
       Name: {initials}_legacy_hipster
-      Host: soap.hipster.s.apigee.com
-      Port: 80
+      Host: hipster-soap.apigee.io
+      Port: 443
       ```
 
     Click on __Add__ to create the Target Server
