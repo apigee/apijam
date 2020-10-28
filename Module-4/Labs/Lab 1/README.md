@@ -41,7 +41,7 @@ Create the API Proxy using the proxy bundle which can be found here. Complete th
 
 <img src = "media/image3.png">
 
-5. Create the API Proxy using the proxy bundle which can be found [here](../../Resources/xx_Hipster-Products-API.zip). Complete the configurations as shown in the following diagram. Click __Next__ when finished.
+5. Create the API Proxy using the proxy bundle which can be found [here](https://github.com/apigee/apijam/raw/master/Module-4/Resources/xx_Hipster-Products-API.zip). Complete the configurations as shown in the following diagram. Click __Next__ when finished.
 
      `Proxy Name: {Initials}_Hipster-Products-API`
 
