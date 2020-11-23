@@ -59,7 +59,7 @@ In this lab we will see how to use an out-of-the-box traffic management policy k
 ### If you already have the Hipster API Products proxy built from previous API Jam
 
    If you already have the Hipster API Products proxy built from API Jam [Module-1](https://github.com/aliceinapiland/apijam/tree/master/Module-1) deployed in your Apigee Edge org, please complete the steps below:
-   * You will need to clean the proxy up and save as a new revision. We do this so that existing policies do not conflict with the policies you configured during the previous API Jam module labs. To do this, go ahead and detach all existing policies from flows within your proxy.
+   * You will need to clean the proxy up and save as a new revision. We do this so that existing policies do not conflict with the policies you configured during the previous API Jam module labs. To do this, **go ahead and detach all existing policies from flows within your proxy**.
    ![image alt text](./media/DetachPolicy.png)
 
    * Then delete each of the policies you detached.
