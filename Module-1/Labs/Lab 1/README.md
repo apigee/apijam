@@ -15,7 +15,7 @@ On Apigee, the API Proxy is also where runtime policy configuration is applied f
 
 ![image alt text](./media/ProxyToBackendWithFlows_v3.png)
 
-Apigee also supports the [**OpenAPI specification**](https://swagger.io/specification/) out of the box, allowing you to auto-generate API Proxies. Apigee has a built-in OpenAPI specification editor & store which you can use to design and maintain your OpenAPI specifications. 
+Apigee also supports the [**OpenAPI specification**](https://github.com/OAI/OpenAPI-Specification) out of the box, allowing you to auto-generate API Proxies. Apigee has a built-in OpenAPI specification editor & store which you can use to design and maintain your OpenAPI specifications. 
 
 ![image alt text](./media/OASEditor.png)
 
