@@ -32,9 +32,9 @@ In this lab, we will see how to
 
 **Note: During this workshop, as you may be working within an [Apigee Org](https://docs.apigee.com/api-platform/fundamentals/apigee-edge-organization-structure) that is shared by multiple users, please prefix all asset names within the Org, with your initials. For example, Spec name = {your-initials}\_{spec name}, API proxy name = {your-initials}\_{proxy name}, etc.**
 
-## Create an Open API Specification
+## Create an OpenAPI Specification
 
-During the course of this lab, the sample HTTP service we will expose as an API endpoint, is the Hipster Products service located at [http://cloud.hipster.s.apigee.com/products](http://cloud.hipster.s.apigee.com/products).
+During the course of this lab, the sample HTTP service we will expose as an API endpoint is the Hipster Products service located at [http://cloud.hipster.s.apigee.com/products](http://cloud.hipster.s.apigee.com/products).
 First, we are going to design and create an OpenAPI specification for the different resource endpoints, i.e. /products and /products/{productId}. 
 
 1. Go to [https://apigee.com/edge](https://apigee.com/edge) and log in. This is the Apigee management UI. 
@@ -54,17 +54,17 @@ First, we are going to design and create an OpenAPI specification for the differ
 
 ![image alt text](./media/image_2.png)
 
-5. Verify the values and click **Import**. Spec has been imported into Apigee & Ready to use. You should see your spec in the list. For example,
+5. Verify the values and click **Import**. Spec has been imported into Apigee and is ready to use. You should see your spec in the list. For example,
 
 ![image alt text](./media/image_3.png)
 
-6. Click on **{your-initials}**\_hipster_products_api_spec from the list to access Open API spec editor & interactive documentation that lists API details & API Resources.
+6. Click on **{your-initials}**\_hipster_products_api_spec from the list to access the OpenAPI spec editor & interactive documentation that lists API details & API Resources.
 
 ![image alt text](./media/image_4.png)
 
 ## Create an API Proxy
 
-1. It’s time to create Apigee API Proxy from Open API Specification. Click on **Develop → API Proxies** from side navigation menu.
+1. It’s time to create Apigee API Proxy from an OpenAPI Specification. Click on **Develop → API Proxies** from side navigation menu.
 
 ![image alt text](./media/image_5.png)
 
@@ -96,7 +96,7 @@ First, we are going to design and create an OpenAPI specification for the differ
 
 ![image alt text](./media/image_12.png)
 
-8. You can select, de-select list of API Proxy Resources that are pre-filled from OpenAPI Spec. Select all & Click on **Next**
+8. You can select which API resources, from the list configured in the OpenAPI Spec, should be exposed. Select all & Click on **Next**
 
 ![image alt text](./media/image_11.png)
 
@@ -161,7 +161,7 @@ curl -X GET "https://{{org}}-{{env}}.apigee.net/{{your initials}}_hipster-produc
 
 # Lab Video
 
-If you like to learn by watching, here is a short video on creating a reverse proxy using Open API Specification - [https://www.youtube.com/watch?v=3XBG9QOUPzg](https://www.youtube.com/watch?v=3XBG9QOUPzg) 
+If you like to learn by watching, here is a short video on creating a reverse proxy using OpenAPI Specification - [https://www.youtube.com/watch?v=3XBG9QOUPzg](https://www.youtube.com/watch?v=3XBG9QOUPzg) 
 
 # Earn Extra-points
 
