@@ -6,21 +6,21 @@ Persona : API Product Team & API Dev Team
 
 # Use Case
 
-API tiering is a new look at API as a Product. With tiering you provide the base level (e.g. bronze) as a free option. This offer is an entry point to leverage your data offering in an upsell. The goal is to upsell to additional functional levels. This term is also known as "freemium". The approach it follows a very basic approach – offer basic functions or call quotas as an entry level and if more data access or more functionality is required, offer this for a fee. This gives developers the chance to have a working prototype and explore your API in a real life scenario before making an informed purchase decision.
+API tiering is a new look at API as a Product. With tiering you provide the base level (e.g. bronze) as a free option. This offer is an entry point to leverage your data offering with a potential upsell to premium API Products. The goal is to upsell to additional functional levels. This term is also known as "freemium". The basic approach is as follows – offer basic functions or call quotas as an entry level and if more data access or more functionality is required, offer these options for a fee. This gives developers the chance to have a working prototype and explore your API in a real life scenario before making an informed purchase decision.
 
 # How can Apigee help
 
-Apigee offers the concept of API Products abstracted from the functional logic of API proxies. The proxies can access the limits defined in API Products. This way the API product team can focus on the business logic (e.g. setting quotas per product) while the API development team works with these values to implement the parametrized behaviour.
+Apigee offers the concept of API Products abstracted from the functional logic of API proxies. The proxies can access and enforce the limits defined in API Products. This way the API product team can focus on the business model (e.g. establishing usage quotas and entitled API operations on a per API Product basis) while the API development team works with these values to implement the parametrized behaviour.
 
 # Pre-requisites
 
 Pre-reqs are met if you have completed [Lab 1](../Lab%201) and [Lab 2](../Lab%202).
 
-The minimum for this lab is to have a deployed API proxy with a "Verify API Key" policy and a Developer for who we can register an App with our API product.
+The minimum for this lab is to have a deployed API proxy with a "Verify API Key" policy and a Developer for whom we can register an App that subscribes to our API product.
 
 # Instructions
 
-In this lab we will create different API products that bundle the same API proxy but with different quotas attached to it.
+In this lab we will create different API products that bundle the same API Proxy but with different quotas attached to it.
 
 ## Create API Products (Bronze, Silver, Gold)
 
@@ -60,7 +60,7 @@ In this lab we will create different API products that bundle the same API proxy
 
 ![image alt text](media/image_3.png)
 
-API products have a set of fields called "Quota" that allow you to configure how many requests per number of time periods (e.g. 5 requests per 1 second) you want to allow. Just configuring this does NOT enforce quotas though! This is just a definition that the quota policy that we define in the next steps picks up dynamically.
+API products have a set of fields called "Quota" that allow you to configure how many requests per number of time periods (e.g. 5 requests per 1 [minute/hour/day/month]) you want to allow. Just configuring this does NOT enforce quotas though! Think of these fields as metadata that the Quota Policy (enforcement point) can dynamically reference when enforcing the policy.
 
 * Click **Save** to create the API Product
 
@@ -188,13 +188,13 @@ Repeat the process for the Apps that use the Silver and Gold tier as well, with 
 
         * Select **Hipster Product API Product Gold** and click **Add**
 
-You should end up having 3 Apps with 3 different API keys, that you have noted down.
+You should end up with three Apps with three different API keys, that you have noted down.  Each App's API key will have an associated secret that will be used if you are implementing OAuth.
 
 ![image alt text](media/image_10.png)
 
 ## Create and Configure Quota Policy
 
-As stated before, quotas are only enforced by adding a quota policy into your proxies. With the configuration of the API Product Quota fields in the API product this will populate the necessary variables that are available in your proxy, which then can be fed into a quota policy.
+As stated, quotas are only enforced by adding a Quota Policy into your API Proxy. With the configuration of the Quota fields in the API Product, when an API call is made that presents a valid API key, Apigee will automatically fetch the associated API Product's metadata (including the Quota fields), which become available to be dynamically referenced by a quota (or any other) policy.
 
 1. Click on **Develop → API Proxies** from side navigation menu. Open the existing API Proxy from the prerequisites.
 
@@ -220,6 +220,7 @@ Click **Add** to add the policy to your flow.
 * verifyapikey.Verify-API-Key.apiproduct.developer.quota.interval = 1
 * verifyapikey.Verify-API-Key.apiproduct.developer.quota.timeunit = second
 
+**Important note about variable naming** : the variables that Apigee creates to hold the metadata include, as part of the variable name, the policy that was used to verify the API Key which in this example is "Verify-API-Key". If you named your policy "check_the_api_key", you would find the "limit" in the runtime context variable: *verifyapikey.check_the_api_key.apiproduct.developer.quota.limit*
 
 The next step then is to set the **QU-ProductQuota** Quota policy to reference these variables and use this code in the **Policy Configuration**
 
@@ -291,13 +292,13 @@ At this point, we will skip the Deluxe/Gold version of our product, but you get 
 
 2. What would happen if the Quota Policy were placed before the Verify API Key policy?
 
-3. In the configuration we provided the ‘Distributed’ and ‘Synchronous’ attributes were both set to ‘true’. What is the implication if we set these to ‘false’?
+3. In the configuration we provided, the ‘Distributed’ and ‘Synchronous’ attributes were both set to ‘true’. What is the implication if we set these to ‘false’?
 
 4. How would you configure the quota so that POST calls are counted as 2 calls for the purposes of evaluating the quota?
 
 # Summary
 
-In this lab you have created 3 products aligned with your API product strategy to offer a tiered model and have different quotas attached to each product. We have not defined the limits in our API proxies but made the same proxy available as different API products that define the quota amount.
+In this lab you have created 3 products aligned with your API product strategy to offer a tiered model and have different quotas attached to each product. We have not defined the limits in our API proxies but made the same proxy available in different API products that define the quota amount.
 
 # References
 
