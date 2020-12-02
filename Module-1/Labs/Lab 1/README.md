@@ -171,11 +171,11 @@ Now that you have created a reverse proxy using OpenAPI spec, Click on the Devel
 
 1. How do you import the proxy bundle you just downloaded? 
 2. How does Apigee handle API versioning? 
-3. Are there administrative APIs to create, update or delete API proxies in Apigee?
+3. Are there administrative APIs to create, update, or delete API proxies in Apigee?
 
 # Summary
 
-That completes this hands-on lesson. In this simple lab you learned how to create a proxy for an existing backend using OpenAPI Specification and Apigee proxy wizard.
+That completes this hands-on lesson. In this simple lab you learned how to use Apigee to proxy an existing backend using an OpenAPI Specification and the Apigee proxy wizard.
 
 # References
 
@@ -185,11 +185,10 @@ That completes this hands-on lesson. In this simple lab you learned how to creat
 
     * Best practices for API proxy design and development - [http://docs.apigee.com/api-services/content/best-practices-api-proxy-design-and-development](http://docs.apigee.com/api-services/content/best-practices-api-proxy-design-and-development) 
 
-* Watch this 4minute video on "Anatomy of an API proxy" - [https://youtu.be/O5DJuCXXIRg](https://youtu.be/O5DJuCXXIRg) 
+* Watch this "4 Minute Video 4 Developers" (4MV4D) on "Anatomy of an API Proxy" - [https://youtu.be/O5DJuCXXIRg](https://youtu.be/O5DJuCXXIRg) 
 
 # Rate this lab
 
 How did you like this lab? Rate [here](https://goo.gl/forms/G8LAPkDWVNncR9iw2).
 
 Now go to [Lab-2](../Lab%202)
-
