@@ -71,7 +71,12 @@ For this lab, you will need an API proxy that is not currently secured.  If you 
 
 ![image alt text](./media/image_4.png)
 
-3. Select *Verify API Key* policy from the *Security* section of the list.  The name can be changed or left at the default. Click **Add**
+3. Select *Verify API Key* policy from the *Security* section of the list. And provide the following values:
+  * Display Name: Verify API Key
+  * Name: Verify-API-Key
+
+
+**Add**
 
 ![image alt text](./media/image_5.png)
 
@@ -94,7 +99,7 @@ For this lab, you will need an API proxy that is not currently secured.  If you 
 
 4. Click the **Trace** tab near the top of the window and click **Start Trace Session** to begin a trace session.
 
-* If you're using the API proxy you built in the [previous Lab](../Lab%201), add the `/products` resource path to the URL prior to sending a sample API call request. Click **Send** to send a request.  
+* If you're using the API proxy you built in the [previous Lab](../Lab%201), add the `/products` resource path to the URL prior to sending a sample API call request. Click **Send** to send a request.
 
 * You should see a 401 (unauthorized) response for your API Call because the API proxy was expecting an API Key as a query parameter.  See the trace session below
 
@@ -115,7 +120,7 @@ For this lab, you will need an API proxy that is not currently secured.  If you 
    * Section: Product details
 
         * Name: `{{your initials}}_Hipster-Products-API-Product`
-        
+
         * Display name: `{{your initials}}_Hipster Products API Product`
 
         * Description: `Product that provides access to the Hipster Products API.`
@@ -197,7 +202,7 @@ You can now use this API Key to make a valid API request to your API Proxy.
 
 1. Navigate to **Develop > API Proxies** in the side menu, and open your API proxy. Click the **Trace** tab near the top of the window and click **Start Trace Session** to begin a trace session.
 
-2. Add the `/products` resource path to the URL prior to sending a sample API call request. In addition, add a query parameter called `apikey` with the value of the API Key you copied. Click **Send** to send a request. 
+2. Add the `/products` resource path to the URL prior to sending a sample API call request. In addition, add a query parameter called `apikey` with the value of the API Key you copied. Click **Send** to send a request.
 
 3. You should now see that the API request returns a 200 OK response, as the Verify API Key policy has found the API key to be valid.
 
