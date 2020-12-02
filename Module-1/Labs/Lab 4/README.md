@@ -14,7 +14,7 @@ Apigee Edge provides multiple options for your Developer Portal. Apigee supports
 
 ![image alt text](./media/devportals.png)
 
-In this lab, you will create an Integrated Developer Portal wherein you will publish API Products, and through which app developers can 
+In this lab, you will create an Integrated Developer Portal wherein you will publish API Products, and through which app developers can
 * learn API usage through OpenAPI specification based interactive documentation
 * register Apps that consume API Products, and thereby
 * generate App client credentials (API Key and Secret) that can be used to consume APIs.
@@ -64,7 +64,7 @@ Your API proxy should now include configurations to support CORS processing.
 
 In order to ensure that we have an updated OpenAPI Spec that accurately describes the API endpoint exposed through our API Proxy, we must first modify the spec - specifically the `host`, `basepath`, `securityDefinitions` and `security` properties. To do this, navigate to **Develop → Specs** on the main menu, select the spec that we previously imported in Lab 1, and modify the the `host`, `basepath`, `securityDefinitions` and `security` properties as shown below:
 
-    host: {{your API proxy host}}  
+    host: {{your API proxy host}}
     basePath: /v1/{{your initials}}_hipster-products-api
     securityDefinitions:
       APIKeyQuery:
@@ -76,7 +76,7 @@ In order to ensure that we have an updated OpenAPI Spec that accurately describe
     schemes:
       - https
 
-  Where {{your API proxy host}} = {{your org}}-{{environment}}.apigee.net, in Apigee Trial orgs 
+  Where {{your API proxy host}} = {{your org}}-{{environment}}.apigee.net, in Apigee Trial orgs
 
   ![image alt text](./media/EditSpec.png)
 
@@ -98,37 +98,43 @@ In order to ensure that we have an updated OpenAPI Spec that accurately describe
 
 ## Publish the Bronze (Free) API Product to the Portal
 
-1. Click the Portal Editor’s dropdown and select **APIs**.
+1. Click the Portal Editor’s dropdown and select **API catalog**.
 
 ![image alt text](./media/image_5.png)
 
-2. Click **+API** to select the Bronze API Product to publish to the Portal. Select the API Product to publish and click **Next**.
+2. Click **+** to select the Bronze API Product to publish to the Portal. Select the API Product to publish and click **Next**.
 
 ![image alt text](./media/image_6.png)
 
-3. Click the **Change Spec Source** dropdown and select **Choose a different spec...**.
+3. Make sure that the **Published** checkbox is checked, so that the Bronze API Product is visible to authorized App developers through the API catalog, during App creation.
+
+![image alt text](./media/AddAPIToPortalBronze3.png)
+
+4. Click the **Source API spec** dropdown and select **Choose a different spec...**.
 
 ![image alt text](./media/image_7.png)
 
-4. Select the recently updated OpenAPI Specification to use as a source. The current version (snapshot) of the selected OpenAPI Specification will be used to generate the documentation for this API product in the portal.
+5. Select the recently updated OpenAPI Specification to use as a source. The current version (snapshot) of the selected OpenAPI Specification will be used to generate the documentation for this API product in the portal.
 
 ![image alt text](./media/image_8.png)
 
-5. Select the **Registered users** option so registered developers on the Developer Portal can view this API through the portal. Click **Next**.
+6. Select the **Registered users** option so registered developers on the Developer Portal can view this API through the portal. Click **Next**.
 
 ![image alt text](./media/image_9.png)
 
-6. Select the **Image** button to update the icon image associated with this API product. 
+7. Select the **Image** button to update the icon image associated with this API product.
 
 ![image alt text](./media/image_9b.png)
 
-7. Then select **External Image** and provide the following URL to import image.
+8. Then select **Image URL** and provide the following URL to import image.
 
-Image URL: `https://raw.githubusercontent.com/aliceinapiland/apijam/master/Module-1/Labs/Lab%204/media/HipsterAPIProductImage.png`
+![image alt text](./media/image_9a.png)
+
+Image URL: `https://raw.githubusercontent.com/apigee/apijam/master/Module-1/Labs/Lab%204/media/HipsterAPIProductImage.png`
 
 ![image alt text](./media/image_9c.png)
 
-8. Click **Finish**.
+9. Click **Save**.
 
 ![image alt text](./media/image_9d.png)
 
@@ -157,7 +163,7 @@ The API product is now published to the developer portal.
     ```
 ![image alt text](./media/CreateAccountForm.png)
 
-4. On account creation, the App Developer will receive an email notification with an account verification link. 
+4. On account creation, the App Developer will receive an email notification with an account verification link.
 
 ![image alt text](./media/AccountVerify1.png)
 
@@ -306,7 +312,7 @@ We will now see how to publish API products on the Developer Portal, with only c
 
 ### Publish Silver API Products with New Audience Entitlements
 
-1. Navigate to **Publish → Portals → {{your developer portal}} → APIs** and click the **+API** button.
+1. Navigate to **Publish → Portals → {{your developer portal}} → API catalog** and click the **+** button.
 
 ![image alt text](./media/AddAPIToPortal1.png)
 
@@ -314,41 +320,43 @@ We will now see how to publish API products on the Developer Portal, with only c
 
 ![image alt text](./media/AddAPIToPortalSilver1.png)
 
-3. Click the **Generate docs from** dropdown and select **Choose a different spec...**.
+3. Make sure that the **Published** checkbox is checked, so that the Silver API Product is visible to authorized App developers through the API catalog, during App creation.
+
+![image alt text](./media/AddAPIToPortalSilver8.png)
+
+4. Click the **Source API spec** dropdown and select **Choose a different spec...**.
+
+![image alt text](./media/image_7.png)
+
+5. Select the recently updated OpenAPI Specification to use as a source. The current version (snapshot) of the selected OpenAPI Specification will be used to generate the documentation for this API product in the portal.
+
+![image alt text](./media/image_8.png)
+
+6. Select the **Selected audiences** option in under API visibility, and check the box for the Audience you just created.
+
+![image alt text](./media/ModifyAudienceForm.png)
+
+7. Select the **Image** button to update the icon image associated with this API product.
+
+![image alt text](./media/image_9b.png)
+
+8. Then select **Image URL** and provide the following URL to import image.
+
+![image alt text](./media/image_9a.png)
+
+Image URL: `https://raw.githubusercontent.com/apigee/apijam/master/Module-1/Labs/Lab%204/media/HipsterAPIProductImage.png`
+
+![image alt text](./media/image_9c.png)
+
+9. Click **Save**.
 
 ![image alt text](./media/AddAPIToPortalSilver2.png)
 
-4. Select the recently updated OpenAPI Specification to use as a source. The current version (snapshot) of the selected OpenAPI Specification will be used to generate the documentation for this API product in the portal.
-
-![image alt text](./media/AddAPIToPortalSilver3.png)
-
-5. Make sure that the **Published** checkbox is checked, so that the Silver API Product is visible to authorized App developers through the API catalog, during App creation. Then click **Next**.
-
-![image alt text](./media/AddAPIToPortalSilver4.png)
-
-6. Select the **Image** button to update the icon image associated with this API product. 
-
-![image alt text](./media/AddAPIToPortalSilver5.png)
-
-7. Then select **External Image** and provide the following URL to import image.
-
-Image URL: `https://raw.githubusercontent.com/aliceinapiland/apijam/master/Module-1/Labs/Lab%204/media/HipsterAPIProductImage.png`
-
-Then click **Add**.
-
-![image alt text](./media/AddAPIToPortalSilver6.png)
-
-8. Click **Finish**.
-
-![image alt text](./media/AddAPIToPortalSilver7.png)
-
-9. Click the Audience Visibility icon for the Silver API Product.
+10. Validate the API visibility setting for the Silver API Product.
 
 ![image alt text](./media/ModifyAudienceBtn.png)
 
-10. Select the **Restricted access** option, and check the box for the Audience you just created. Click **Submit**.
 
-![image alt text](./media/ModifyAudienceForm.png)
 
 ### Create Team App
 
@@ -393,7 +401,7 @@ If you would rather watch a video that covers this topic, point your browser [he
 
 * Add a second product to the portal and test it by launching the Live Portal.
 
-* Update your API specification, and then [take a snapshot](https://docs-new.apigee.com/publish-apis#take-snapshot) of the specification to update the portal documentation. 
+* Update your API specification, and then [take a snapshot](https://docs-new.apigee.com/publish-apis#take-snapshot) of the specification to update the portal documentation.
 
 # Quiz
 
