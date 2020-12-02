@@ -6,34 +6,34 @@
 
 # Use case
 
-You have an API that you want to secure and expose for consumption by different Apps (API clients).  In addition to setting up authorized access to the API, you also want to be able to identify and control which App is making calls to the API so you can customize API behavior based on the the caller, or gather data on consumption patterns by differnt Apps and view that data through Analytics dashboards.
+You have an API that you want to secure and expose for consumption by different Apps (API consumers).  In addition to setting up authorized access to the API, you also want to be able to identify and control which App is making calls to the API so you can customize API behavior based on the the caller, or gather data on consumption patterns by differnt Apps and view that data through Analytics dashboards.
 
 # How can Apigee Edge help?
 
 ## API Proxy - API Product - App Relationship
 
-On Apigee Edge, in order to secure an API and control access by consumers, we need to first understand the relationship between API Proxies, API Products and Apps.
+On Apigee Edge, in order to secure an API Proxy and control access by consumers, we need to first understand the relationship between API Proxies, API Products, and Apps.
 
-While the API Proxy allows you to expose the API endpoint according to API design specification, it also serves to decouple the API backend (target service) from the front end (client Apps), and in turn API production from consumption. This is accomplished by creating 'API Products', which are configurations that define how an API can be consumed. The API Product configuration may contain metadata that defines rules for consumption of the API through the particular API Product. These rules may include allowed consumption quota (Eg. 100 API calls per minute), visibility (Public vs Private vs Internal), API resource restrictions (Eg. Only /products resource URL may be called, but not /products/{product ID}), which API deployment environment the caller is allowed to access (Eg. test, prod), etc.
+While the API Proxy allows you to expose the API endpoint according to API design specification, it also serves to decouple the API backend (target service) from the front end (client Apps), and in turn API production from consumption. This is accomplished by creating 'API Products' which are configurations that define how an API can be consumed. The API Product configuration may contain metadata that defines rules for consumption of the API through the particular API Product. These rules may include allowed consumption quota (Eg. 100 API calls per minute), visibility (Public vs Private vs Internal), API resource restrictions (Eg. Only /products resource URL may be called, but not /products/{product ID}), which API deployment environment the caller is allowed to access (Eg. test, prod), etc.
 Once the API Products are created, client Apps can then subscribe to them. On subscription, Apigee automatically generates and provisions an API Key/Secret pair for the App. These credentials can then be used to call the API endpoint with authentication and authorization, from within App code.
 
 ![image alt text](./media/image_proxy_product_app.png)
 
 ## API Proxy Configuration
 
-While Apigee provides multiple ways of securing an API and authorizing API calls - including [API Keys](https://docs.apigee.com/api-platform/security/api-keys), [OAuth](https://docs.apigee.com/api-platform/security/oauth/oauth-home), [JWT Tokens](https://docs.apigee.com/api-platform/reference/policies/jwt-policies-overview) and [SAML](https://docs.apigee.com/api-platform/reference/policies/saml-assertion-policy.html) - this lab will focus on using simple API Key validation to secure an API.
+While Apigee provides multiple ways of securing an API and authorizing API calls - including [API Keys](https://docs.apigee.com/api-platform/security/api-keys), [OAuth](https://docs.apigee.com/api-platform/security/oauth/oauth-home), [JWT Tokens](https://docs.apigee.com/api-platform/reference/policies/jwt-policies-overview), and [SAML](https://docs.apigee.com/api-platform/reference/policies/saml-assertion-policy.html) - this lab will focus on using simple API Key verification to secure an API.
 
-Within the API Proxy, the [Verify API Key Policy](http://docs.apigee.com/api-services/reference/verify-api-key-policy) can be used to authenticate and authorize incoming API calls, based on API Key validation.
-As a result of successful API Key validation, the [Verify API Key Policy](https://docs.apigee.com/api-platform/reference/policies/verify-api-key-policy) also populates the API Proxy runtime context with details about the App making the call, the App developer, the API product associated with the call, and so on.  This context can then be used to parameterize other policies applied, in order to affect API behavior such as quota enforcement or routing based on the client App. The data can also be extracted and used to gain business insights through Apigee Analytics.
+Within the API Proxy, the [Verify API Key Policy](http://docs.apigee.com/api-services/reference/verify-api-key-policy) can be used to authenticate and authorize incoming API calls, based on API Key verification.
+As a result of successful API Key verification, the [Verify API Key Policy](https://docs.apigee.com/api-platform/reference/policies/verify-api-key-policy) also populates the API Proxy runtime context with details about the App making the call, the App developer, the API product associated with the call, and so on.  This context can then be used to parameterize other policies applied, in order to affect API behavior such as quota enforcement or routing based on the client App. The data can also be extracted and used to gain business insights through Apigee Analytics.
 
 In this lab, you will..
-* Configure a [Verify API Key Policy](https://docs.apigee.com/api-platform/reference/policies/verify-api-key-policy) for an existing API proxy, and use the Apigee Trace tool to see the policy in action.  
-* Bundle the API Proxy into an API Product, and
-* Register an App within your Org, that subscribes to the API Product, to test authorized consumption of the API.
+* Configure a [Verify API Key Policy](https://docs.apigee.com/api-platform/reference/policies/verify-api-key-policy) for an existing, unsecured API proxy, and use the Apigee Trace tool to see the policy in action..
+* Bundle the API Proxy into an API Product.
+* Register a Developer and an App within your Org, that subscribes to the API Product, to test authorized consumption of the API.
 
 # Pre-requisites
 
-For this lab, you will need an API proxy that is not currently secured.  If you do not have an API proxy available for this lab, revisit the lab ["API Design : Create a Reverse Proxy from OpenAPI Spec"](../Lab%201) and then return here to complete these steps.
+For this lab, you will need an API proxy that is not currently secured.  If you do not have an API proxy available for this lab, revisit lab 1 ["API Design : Create a Reverse Proxy from OpenAPI Spec"](../Lab%201) and then return here to complete these steps.
 
 # Instructions
 
@@ -61,9 +61,11 @@ For this lab, you will need an API proxy that is not currently secured.  If you 
 
 ![image alt text](./media/image_3.png)
 
+* Click the "Stop Trace Session" button.
+
 ## Add a Verify API Key Policy
 
-1. Navigate to **Develop > API Proxies** in the side menu, and open your API proxy. Click the **Develop** tab (in the upper right area of the page) to see the flow editor (you may have to move the panes to see the full request and response flow lines)
+1. To get to the proxy editor, click the "DEVELOP" tab next to the "TRACE" tab, or Navigate to **Develop > API Proxies** in the side menu, and open your API proxy. Click the **Develop** tab (in the upper right area of the page) to see the flow editor (you may have to move the panes to see the full request and response flow lines)
 
 2. Click **+Step** on the request flow.
 
@@ -75,7 +77,7 @@ For this lab, you will need an API proxy that is not currently secured.  If you 
 
 * The policy will be added after any policies you previously had in the Request flow.  Since we likely want this to occur first, drag the new policy to be the leftmost of any policies in the flow.
 
-* With the *Verify API Key* policy selected, you can see its configuration (the default policy configuration is below).  Note that the API Key is being retrieved from the context as the variable *request.queryparam.apikey*.  This is the default but the policy can be configured to retrieve the key from any parameter key you prefer.
+* With the *Verify API Key* policy selected, you can see its configuration (the default policy configuration is below).  Note that the API Key is being retrieved from the context as the variable *request.queryparam.apikey*.  This is the default but the policy can be configured to retrieve the key from any parameter you prefer, for example, *request.header.client-id*, etc. (note: if you plan to use the Apigee trace tool for the lab, only query parameters are suppoted but if you have an alternative client such as cURL or Postman, feel free to use any parameter you like)
 
 ```
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -108,7 +110,7 @@ For this lab, you will need an API proxy that is not currently secured.  If you 
 
 2. Populate the following fields
 
-**_Note_**: _Replace {{your initials}} with your initials, so as to not accidentally modify other developers work. Eg. API product 'Name = xx_Hipster-Products-API-Product'._
+**_Note_**: _Replace {{your initials}} with your initials, so as to not accidentally modify other developers' work. Eg. API product 'Name = xx_Hipster-Products-API-Product'._
 
    * Section: Product details
 
