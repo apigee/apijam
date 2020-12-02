@@ -265,10 +265,10 @@ The following figure shows how audiences are used to control access to a set of 
 
 3. Fill in team details and click **Create**.
 
-    Overview section:
-        * Team name: `{{your initials}}_Hipster App Team`
-        * Description: `Team that will work together on Hipster apps, and share API Keys.`
-        * Point of contact: `{your App Developer email address}`
+   Overview section:
+      * Team name: `{{your initials}}_Hipster App Team`
+      * Description: `Team that will work together on Hipster apps, and share API Keys.`
+      * Point of contact: `{your App Developer email address}`
 
     Memebers:
 
@@ -365,11 +365,11 @@ Image URL: `https://raw.githubusercontent.com/apigee/apijam/master/Module-1/Labs
    ![image alt text](./media/NewAppWithTeam.png)
 
 3. Enter the following App details and click **Create**:
-    App Name: `{{your initials}}_Hipster App`
+    App Name: `{{your initials}}_Hipster-App`
     Description: `App that is registered against the team to share App credentials and access Silver tier Hipster API product.`
     Owner: `{{your initials}}_Hipster App Team`
 
-    Select the Silver (Free) API Product that is available for subscription.
+    Select the Silver (Basic) API Product that is available for subscription.
 
     ![image alt text](./media/CreateAppFormWithTeam.png)
 
