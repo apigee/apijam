@@ -47,10 +47,10 @@ In this lab we will see how to use an out-of-the-box traffic management policy k
    * Click **Choose file** and upload the API Proxy zip bundle you previously downloaded. Replace the API Proxy name prefix '`xx`', with your initials. You do this so that you're not breaking any other user's work within the same Apigee Edge org. Then click **Next**.
    ![image alt text](./media/ZipBundleUpload.png)
 
-   * Review API Proxy details and click **Build**.
+   * Review API Proxy details and click **Create**.
    ![image alt text](./media/BuildBtn.png)
 
-   * Once the proxy is uploaded, click the link to open the proxy.
+   * Once the proxy is uploaded, click **Edit Proxy**.
    ![image alt text](./media/OpenProxy.png)
 
    * Click the **Develop** tab to edit the proxy configuration. Select the '**default**' Proxy Endpoint and edit the basepath as shown below, to `/v1/{{your initials}}_hipster-products-api`. Then click the **Save** button to save the changes.
