@@ -76,19 +76,19 @@ This will create an active end user profile in Okta:
 
 ![image alt text](./media/image_5.png)
 
-4. In the proxy creation wizard, select the **Proxy bundle** option and click **Next**:
+4. Select the option **Upload proxy bundle** and click **Next**:
 
 ![image alt text](./media/image_6.png)
 
-5. On the next screen, click **Choose File** and upload the previously downloaded proxy bundle zip. Then click **Next**:
+5. On the next screen, choose **Click or Drag** and upload the previously downloaded proxy bundle zip. Then click **Next**:
 
 ![image alt text](./media/image_7.png)
 
-6. On the next screen, click **Build**:
+6. On the next screen, click **Create**:
 
 ![image alt text](./media/image_8.png)
 
-7. Confirm that the proxy was uploaded successfully and click on the **oauth-okta-integration** link:
+7. Click **Edit Proxy** at the bottom of the page:
 
 ![image alt text](./media/image_9.png)
 
