@@ -39,7 +39,7 @@ In this lab we will see how to use the following policies:
 
 ![image alt text](./media/image_1.png)
 
-5. Select **Proxy Bundle** and then click **Next** to import an existing proxy from a zip archive:
+5. Select **Upload Proxy Bundle** and then click **Next** to import an existing proxy from a zip archive:
 
 ![image alt text](./media/image_2.png)
 
@@ -47,11 +47,11 @@ In this lab we will see how to use the following policies:
 
 ![image alt text](./media/image_3.png)
 
-7. Click on **Build** to upload the the proxy.
+7. Click on **Create** to upload the the proxy.
 
 ![image alt text](./media/image_4.png)
 
-8. Confirm that the proxy was uploaded successfully and click on the **Mock-Target-API** link:
+8. Confirm that the proxy was uploaded successfully and click on **Edit Proxy**:
 
 ![image alt text](./media/image_5.png)
 
