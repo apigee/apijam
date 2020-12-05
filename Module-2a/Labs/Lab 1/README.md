@@ -50,7 +50,7 @@ In this lab we will see how to use an out-of-the-box traffic management policy k
    * Review API Proxy details and click **Create**.
    ![image alt text](./media/BuildBtn.png)
 
-   * Once the proxy is uploaded, click **Edit Proxy**.
+   * Once the proxy is uploaded, click **Edit proxy**.
    ![image alt text](./media/OpenProxy.png)
 
    * Click the **Develop** tab to edit the proxy configuration. Select the '**default**' Proxy Endpoint and edit the basepath as shown below, to `/v1/{{your initials}}_hipster-products-api`. Then click the **Save** button to save the changes.
