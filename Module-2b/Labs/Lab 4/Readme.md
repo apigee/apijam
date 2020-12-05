@@ -61,19 +61,19 @@ For more information on JWS and JWT support in Apigee visit the documentation pa
 
 ![image alt text](./media/image_7.png)
 
-10. Select **Proxy bundle** and then click **Next** to import an existing proxy form a zip archive:
+10. Click on **Upload Proxy bundle** to import an existing proxy form a zip archive:
 
 ![image alt text](./media/image_8.png)
 
-11. Download the Apigee proxy "**JWT.zip**" that generates and verifies JWTs from [here](./resources/JWT.zip?raw=true).  Then click "**Choose File**", select the “**JWT.zip**” file you just downloaded and click **Next**:
+11. Download the Apigee proxy "**JWT.zip**" that generates and verifies JWTs from [here](./resources/JWT.zip?raw=true).  Then choose **Click or Drag**, and select the file you just downloaded “**JWT.zip**". Then click **Next**:
 
 ![image alt text](./media/image_9.png)
 
-12. Click **Build**:
+12. Click **Create**:
 
 ![image alt text](./media/image_10.png)
 
-13. You should see a successful "Uploaded proxy" message..  Click on the link to the **JWT** proxy near the bottom of the page:
+13. Click on **Edit Proxy** at the bottom of the page:
 
 ![image alt text](./media/image_11.png)
 
