@@ -221,7 +221,7 @@ We will now leverage the Geocode proxy to return a formatted address and pass th
    * Display Name: AM-AddAddress
    * Name: AM-AddAddress
 
-6. Modify the **ExtractVariables** policy's XML content to match the below snippet:
+6. Modify the **AssignMessage** policy's XML content to match the below snippet:
 ```
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <AssignMessage async="false" continueOnError="false" enabled="true" name="AM-AddAddressHeader">
