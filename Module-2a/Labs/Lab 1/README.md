@@ -47,10 +47,10 @@ In this lab we will see how to use an out-of-the-box traffic management policy k
    * Click **Choose file** and upload the API Proxy zip bundle you previously downloaded. Replace the API Proxy name prefix '`xx`', with your initials. You do this so that you're not breaking any other user's work within the same Apigee Edge org. Then click **Next**.
    ![image alt text](./media/ZipBundleUpload.png)
 
-   * Review API Proxy details and click **Build**.
+   * Review API Proxy details and click **Create**.
    ![image alt text](./media/BuildBtn.png)
 
-   * Once the proxy is uploaded, click the link to open the proxy.
+   * Once the proxy is uploaded, click **Edit proxy**.
    ![image alt text](./media/OpenProxy.png)
 
    * Click the **Develop** tab to edit the proxy configuration. Select the '**default**' Proxy Endpoint and edit the basepath as shown below, to `/v1/{{your initials}}_hipster-products-api`. Then click the **Save** button to save the changes.
@@ -59,7 +59,7 @@ In this lab we will see how to use an out-of-the-box traffic management policy k
 ### If you already have the Hipster API Products proxy built from previous API Jam
 
    If you already have the Hipster API Products proxy built from API Jam [Module-1](https://github.com/aliceinapiland/apijam/tree/master/Module-1) deployed in your Apigee Edge org, please complete the steps below:
-   * You will need to clean the proxy up and save as a new revision. We do this so that existing policies do not conflict with the policies you configured during the previous API Jam module labs. To do this, go ahead and detach all existing policies from flows within your proxy.
+   * You will need to clean the proxy up and save as a new revision. We do this so that existing policies do not conflict with the policies you configured during the previous API Jam module labs. To do this, **go ahead and detach all existing policies from flows within your proxy**.
    ![image alt text](./media/DetachPolicy.png)
 
    * Then delete each of the policies you detached.

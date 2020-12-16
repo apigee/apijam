@@ -51,11 +51,11 @@ As part of this lab, you will:
 
 ![image alt text](./media/image_3.png)
 
-7. Click **Build**:
+7. Click **Create**:
 
 ![image alt text](./media/image_4.png)
 
-8. You should see a successful "Uploaded proxy" message as shown below.  You now have an OAuth Authorization Server that supports the client credentials grant type in Apigee.  Click the **oauth** link near the bottom of the page to view the proxy:
+8. You should see a successful "Uploaded proxy" message as shown below.  You now have an OAuth Authorization Server that supports the client credentials grant type in Apigee.  Click **Edit Proxy** near the bottom of the page to view the proxy:
 
 ![image alt text](./media/image_5.png)
 
