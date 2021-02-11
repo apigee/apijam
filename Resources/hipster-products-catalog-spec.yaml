@@ -1,0 +1,98 @@
+swagger: '2.0'
+info:
+  title: Hipster Products API
+  version: "1"
+  description: Products API for Hipster Application
+host: <<your API hostname>>
+basePath:
+  /v1/<<your initials>>_hipster-products-api
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+securityDefinitions:
+  APIKeyQuery:
+    type: "apiKey"
+    in: "query"
+    name: "apikey"
+security:
+  - APIKeyQuery: []
+paths:
+  /products:
+    get:
+      operationId: GetProducts
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/hipstershopListProductsResponse'
+      tags:
+        - ProductCatalogService
+  /products/{productId}:
+    get:
+      operationId: GetProductDetails
+      parameters: 
+        - in: path
+          name: productId
+          type: string
+          required: true
+      responses:
+        '200':
+          description: A successful response.
+          schema:
+            $ref: '#/definitions/hipstershopProduct'
+      tags:
+        - ProductCatalogService
+definitions:
+  hipstershopListProductsResponse:
+    type: object
+    properties:
+      products:
+        type: array
+        items:
+          $ref: '#/definitions/hipstershopProduct'
+  hipstershopMoney:
+    type: object
+    properties:
+      currency_code:
+        type: string
+        description: The 3-letter currency code defined in ISO 4217.
+      units:
+        type: string
+        format: int64
+        description: |-
+          The whole units of the amount.
+          For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar.
+      nanos:
+        type: integer
+        format: int32
+        description: |-
+          Number of nano (10^-9) units of the amount.
+          The value must be between -999,999,999 and +999,999,999 inclusive.
+          If `units` is positive, `nanos` must be positive or zero.
+          If `units` is zero, `nanos` can be positive, zero, or negative.
+          If `units` is negative, `nanos` must be negative or zero.
+          For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+    description: Represents an amount of money with its currency type.
+  hipstershopProduct:
+    type: object
+    properties:
+      id:
+        type: string
+      name:
+        type: string
+      description:
+        type: string
+      picture:
+        type: string
+      price_usd:
+        $ref: '#/definitions/hipstershopMoney'
+      categories:
+        type: array
+        items:
+          type: string
+        description: |-
+          Categories such as "vintage" or "gardening" that can be used to look up
+          other related products.
