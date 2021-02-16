@@ -5,7 +5,7 @@ info:
   description: Products API for Hipster Application
 host: <<your API hostname>>
 basePath:
-  /v1/<<your initials>>_hipster-products-api
+  /v1/hipster-products-api
 schemes:
   - https
 consumes:
