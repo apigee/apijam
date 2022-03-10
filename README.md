@@ -1,3 +1,8 @@
+*********************************************************
+## Note : This repository is out of date and no longer maintained.
+*********************************************************
+
+
 # Apigee API Jam Lab Guides
 
 ## Note: For the previous version of the API Jam archived on 18th October 2019, please navigate to supporting material in the [Archives folder](./Archives/Archived_10-18-2019).
