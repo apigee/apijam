@@ -1,6 +1,6 @@
 *********************************************************
 # Note : This repository is out of date and no longer maintained. 
-## Apigee X hands-on labs are now available at https://www.cloudskillsboost.google/focuses/20940?parent=catalog 
+## Apigee X hands-on labs are now available at https://www.cloudskillsboost.google/quests/194 
 
 *********************************************************
 
